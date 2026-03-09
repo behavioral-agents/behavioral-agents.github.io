@@ -1,0 +1,54 @@
+[
+  {
+    "id": "imas_2016",
+    "title": "The Realization Effect: Risk-Taking after Realized versus Paper Losses",
+    "authors": [
+      "Alex Imas"
+    ],
+    "journal": "AER",
+    "year": 2016,
+    "doi": "10.1257/aer.20140386",
+    "replication_url": "https://doi.org/10.3886/E116155V1",
+    "description": "Study 1 (Lab) from Imas (2016). N=128 undergraduates play 4 rounds of a lottery investment game ($0-$2 per round, 1/6 chance of 7x win). After round 3, losses are either realized (handed over in cash) or remain on paper. Key finding: realized losses decrease subsequent risk-taking; paper losses increase it.",
+    "original_results": {
+      "realized_loss": {
+        "mean": 0.6188,
+        "se": 0.0801,
+        "n": 24
+      },
+      "paper_loss": {
+        "mean": 0.9417,
+        "se": 0.1138,
+        "n": 30
+      }
+    },
+    "comparisons": [
+      {
+        "model": "gpt-4o",
+        "conditions": [
+          {
+            "condition": "paper_loss",
+            "original_mean": 0.9417,
+            "original_se": 0.1138,
+            "replicated_mean": 1.05,
+            "replicated_se": 0.05,
+            "delta": 0.1083,
+            "z_stat": 0.8713,
+            "p_value": 0.3836
+          },
+          {
+            "condition": "realized_loss",
+            "original_mean": 0.6188,
+            "original_se": 0.0801,
+            "replicated_mean": 0.95,
+            "replicated_se": 0.05,
+            "delta": 0.3312,
+            "z_stat": 3.5076,
+            "p_value": 0.0005
+          }
+        ]
+      }
+    ],
+    "has_results": true
+  }
+]
