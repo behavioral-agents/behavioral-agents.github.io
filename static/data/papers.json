@@ -50,5 +50,540 @@
       }
     ],
     "has_results": true
+  },
+  {
+    "id": "enke_2020",
+    "title": "What You See Is All There Is",
+    "authors": [
+      "Benjamin Enke"
+    ],
+    "journal": "QJE",
+    "year": 2020,
+    "doi": "10.1093/qje/qjaa012",
+    "replication_url": "https://doi.org/10.7910/DVN/CZYXQK",
+    "description": "Six treatments from Enke (2020). Subjects estimate unknown quantities from partially observed signals. Treatments vary the signal selection mechanism (Selected, Control), signal complexity (Complex, Simple), and include a Nudge treatment and a Selected Replication. The naivete parameter \u03c7 measures neglect of unobserved information (0=Bayesian, 1=full neglect).",
+    "original_results": {
+      "selected": {
+        "mean": 0.475,
+        "se": 0.035,
+        "n": 74
+      },
+      "control": {
+        "mean": -0.089,
+        "se": 0.035,
+        "n": 38
+      },
+      "complex": {
+        "mean": 0.549,
+        "se": 0.038,
+        "n": 74
+      },
+      "simple": {
+        "mean": 0.307,
+        "se": 0.036,
+        "n": 74
+      },
+      "nudge": {
+        "mean": 0.237,
+        "se": 0.038,
+        "n": 74
+      },
+      "selected_replication": {
+        "mean": 0.471,
+        "se": 0.035,
+        "n": 74
+      }
+    },
+    "comparisons": [
+      {
+        "model": "gpt-4o",
+        "conditions": [
+          {
+            "condition": "complex",
+            "original_mean": 0.549,
+            "original_se": 0.038,
+            "replicated_mean": 0.7384,
+            "replicated_se": 0.0109,
+            "delta": 0.1894,
+            "z_stat": 4.7919,
+            "p_value": 0.0
+          },
+          {
+            "condition": "control",
+            "original_mean": -0.089,
+            "original_se": 0.035,
+            "replicated_mean": 0.5959,
+            "replicated_se": 0.0093,
+            "delta": 0.6849,
+            "z_stat": 18.915,
+            "p_value": 0.0
+          },
+          {
+            "condition": "nudge",
+            "original_mean": 0.237,
+            "original_se": 0.038,
+            "replicated_mean": 0.6872,
+            "replicated_se": 0.0044,
+            "delta": 0.4502,
+            "z_stat": 11.7685,
+            "p_value": 0.0
+          },
+          {
+            "condition": "selected",
+            "original_mean": 0.475,
+            "original_se": 0.035,
+            "replicated_mean": 0.6341,
+            "replicated_se": 0.0066,
+            "delta": 0.1591,
+            "z_stat": 4.4654,
+            "p_value": 0.0
+          },
+          {
+            "condition": "selected_replication",
+            "original_mean": 0.471,
+            "original_se": 0.035,
+            "replicated_mean": 0.643,
+            "replicated_se": 0.0053,
+            "delta": 0.172,
+            "z_stat": 4.8591,
+            "p_value": 0.0
+          },
+          {
+            "condition": "simple",
+            "original_mean": 0.307,
+            "original_se": 0.036,
+            "replicated_mean": 0.266,
+            "replicated_se": 0.006,
+            "delta": -0.041,
+            "z_stat": -1.1223,
+            "p_value": 0.2617
+          }
+        ]
+      }
+    ],
+    "has_results": true
+  },
+  {
+    "id": "enke_graeber_2023",
+    "title": "Cognitive Uncertainty \u2014 Risk A",
+    "authors": [
+      "Benjamin Enke",
+      "Thomas Graeber"
+    ],
+    "journal": "QJE",
+    "year": 2023,
+    "doi": "10.1093/qje/qjad025",
+    "replication_url": "https://doi.org/10.7910/DVN/YDEAPO",
+    "description": "Risk A experiment from Enke & Graeber (2023). Subjects state certainty equivalents for binary lotteries and report cognitive uncertainty. The probability weighting function shows the canonical inverse-S shape, and this effect is substantially stronger for high-CU decisions.",
+    "original_results": {
+      "p05": {
+        "mean": 0.175,
+        "se": 0.012,
+        "n": 500
+      },
+      "p50": {
+        "mean": 0.505,
+        "se": 0.013,
+        "n": 500
+      },
+      "p95": {
+        "mean": 0.81,
+        "se": 0.012,
+        "n": 500
+      }
+    },
+    "comparisons": [
+      {
+        "model": "gpt-4o",
+        "conditions": [
+          {
+            "condition": "p05",
+            "original_mean": 0.175,
+            "original_se": 0.012,
+            "replicated_mean": 0.05,
+            "replicated_se": 0.0,
+            "delta": -0.125,
+            "z_stat": -10.4167,
+            "p_value": 0.0
+          },
+          {
+            "condition": "p10",
+            "original_mean": 0.22,
+            "original_se": 0.012,
+            "replicated_mean": 0.1,
+            "replicated_se": 0.0,
+            "delta": -0.12,
+            "z_stat": -10.0,
+            "p_value": 0.0
+          },
+          {
+            "condition": "p25",
+            "original_mean": 0.355,
+            "original_se": 0.012,
+            "replicated_mean": 0.25,
+            "replicated_se": 0.0,
+            "delta": -0.105,
+            "z_stat": -8.75,
+            "p_value": 0.0
+          },
+          {
+            "condition": "p50",
+            "original_mean": 0.505,
+            "original_se": 0.013,
+            "replicated_mean": 0.5,
+            "replicated_se": 0.0,
+            "delta": -0.005,
+            "z_stat": -0.3846,
+            "p_value": 0.7005
+          },
+          {
+            "condition": "p75",
+            "original_mean": 0.645,
+            "original_se": 0.013,
+            "replicated_mean": 0.75,
+            "replicated_se": 0.0,
+            "delta": 0.105,
+            "z_stat": 8.0769,
+            "p_value": 0.0
+          },
+          {
+            "condition": "p95",
+            "original_mean": 0.81,
+            "original_se": 0.012,
+            "replicated_mean": 0.95,
+            "replicated_se": 0.0,
+            "delta": 0.14,
+            "z_stat": 11.6667,
+            "p_value": 0.0
+          }
+        ]
+      }
+    ],
+    "has_results": true
+  },
+  {
+    "id": "enke_graeber_2023_beliefs",
+    "title": "Cognitive Uncertainty \u2014 Beliefs A",
+    "authors": [
+      "Benjamin Enke",
+      "Thomas Graeber"
+    ],
+    "journal": "QJE",
+    "year": 2023,
+    "doi": "10.1093/qje/qjad025",
+    "replication_url": "https://doi.org/10.7910/DVN/YDEAPO",
+    "description": "Beliefs A experiment from Enke & Graeber (2023). Subjects perform balls-and-urns Bayesian updating tasks with varying base rates and signal diagnosticities. Reported beliefs show compression toward 50%, consistent with cognitive uncertainty causing people to shrink their beliefs toward the uninformative prior.",
+    "original_results": {
+      "low_posterior": {
+        "mean": 0.28,
+        "se": 0.015,
+        "n": 500
+      },
+      "medium_posterior": {
+        "mean": 0.52,
+        "se": 0.014,
+        "n": 500
+      },
+      "high_posterior": {
+        "mean": 0.72,
+        "se": 0.015,
+        "n": 500
+      }
+    },
+    "comparisons": [
+      {
+        "model": "gpt-4o",
+        "conditions": [
+          {
+            "condition": "high_posterior",
+            "original_mean": 0.72,
+            "original_se": 0.015,
+            "replicated_mean": 0.547,
+            "replicated_se": 0.0353,
+            "delta": -0.173,
+            "z_stat": -4.5117,
+            "p_value": 0.0
+          },
+          {
+            "condition": "low_posterior",
+            "original_mean": 0.28,
+            "original_se": 0.015,
+            "replicated_mean": 0.042,
+            "replicated_se": 0.0052,
+            "delta": -0.238,
+            "z_stat": -14.9865,
+            "p_value": 0.0
+          },
+          {
+            "condition": "medium_posterior",
+            "original_mean": 0.52,
+            "original_se": 0.014,
+            "replicated_mean": 0.1559,
+            "replicated_se": 0.0124,
+            "delta": -0.3641,
+            "z_stat": -19.4507,
+            "p_value": 0.0
+          }
+        ]
+      }
+    ],
+    "has_results": true
+  },
+  {
+    "id": "exley_kessler_2024",
+    "title": "Motivated Errors \u2014 Adding Study",
+    "authors": [
+      "Christine L. Exley",
+      "Judd B. Kessler"
+    ],
+    "journal": "AER",
+    "year": 2024,
+    "doi": "10.1257/aer.20191849",
+    "replication_url": "https://doi.org/10.3886/E195862V1",
+    "description": "Adding Study from Exley & Kessler (2024). Subjects choose between an outside option and a charitable bundle. Adding a zero to the bundle reduces charity choice by 6pp when selfish motives are present (Self/Charity) but has no effect when both options benefit charity (Charity/Charity). Evidence of 'motivated errors'.",
+    "original_results": {
+      "self_charity": {
+        "mean": -0.06,
+        "se": 0.014,
+        "n": 1166
+      },
+      "charity_charity": {
+        "mean": -0.004,
+        "se": 0.015,
+        "n": 401
+      }
+    },
+    "comparisons": [
+      {
+        "model": "gpt-4o",
+        "conditions": [
+          {
+            "condition": "charity_charity",
+            "original_mean": -0.004,
+            "original_se": 0.015,
+            "replicated_mean": -0.3333,
+            "replicated_se": 0.0,
+            "delta": -0.3293,
+            "z_stat": -21.9556,
+            "p_value": 0.0
+          },
+          {
+            "condition": "self_charity",
+            "original_mean": -0.06,
+            "original_se": 0.014,
+            "replicated_mean": 0.1667,
+            "replicated_se": 0.0,
+            "delta": 0.2267,
+            "z_stat": 16.1905,
+            "p_value": 0.0
+          }
+        ]
+      }
+    ],
+    "has_results": true
+  },
+  {
+    "id": "exley_kessler_2024_correlation",
+    "title": "Motivated Errors \u2014 Correlation Neglect Study",
+    "authors": [
+      "Christine L. Exley",
+      "Judd B. Kessler"
+    ],
+    "journal": "AER",
+    "year": 2024,
+    "doi": "10.1257/aer.20191849",
+    "replication_url": "https://doi.org/10.3886/E195862V1",
+    "description": "Correlation Neglect Study from Exley & Kessler (2024). Subjects predict a number from correlated news channels. Correlation neglect (overweighting a common estimate) is exacerbated when selfish incentives align with the bias direction.",
+    "original_results": {
+      "control": {
+        "mean": -19.5,
+        "se": 1.03,
+        "n": 400
+      },
+      "overestimate": {
+        "mean": -24.81,
+        "se": 1.37,
+        "n": 400
+      },
+      "underestimate": {
+        "mean": -7.7,
+        "se": 1.43,
+        "n": 400
+      }
+    },
+    "comparisons": [
+      {
+        "model": "gpt-4o",
+        "conditions": [
+          {
+            "condition": "control",
+            "original_mean": -19.5,
+            "original_se": 1.03,
+            "replicated_mean": 8.8675,
+            "replicated_se": 0.5286,
+            "delta": 28.3675,
+            "z_stat": 24.5025,
+            "p_value": 0.0
+          },
+          {
+            "condition": "overestimate",
+            "original_mean": -24.81,
+            "original_se": 1.37,
+            "replicated_mean": 2.7925,
+            "replicated_se": 0.3217,
+            "delta": 27.6025,
+            "z_stat": 19.6143,
+            "p_value": 0.0
+          },
+          {
+            "condition": "underestimate",
+            "original_mean": -7.7,
+            "original_se": 1.43,
+            "replicated_mean": 9.565,
+            "replicated_se": 0.4176,
+            "delta": 17.265,
+            "z_stat": 11.5893,
+            "p_value": 0.0
+          }
+        ]
+      }
+    ],
+    "has_results": true
+  },
+  {
+    "id": "exley_kessler_2024_anchoring_a",
+    "title": "Motivated Errors \u2014 Anchoring Study A",
+    "authors": [
+      "Christine L. Exley",
+      "Judd B. Kessler"
+    ],
+    "journal": "AER",
+    "year": 2024,
+    "doi": "10.1257/aer.20191849",
+    "replication_url": "https://doi.org/10.3886/E195862V1",
+    "description": "Anchoring Study A from Exley & Kessler (2024). Subjects answer trivia questions with a low anchor (20). Slider default is the anchor value. Anchoring bias is exacerbated when selfish motives align with the bias direction.",
+    "original_results": {
+      "control": {
+        "mean": -19.93,
+        "se": 1.47,
+        "n": 398
+      },
+      "overestimate": {
+        "mean": -27.91,
+        "se": 1.61,
+        "n": 398
+      },
+      "underestimate": {
+        "mean": -9.11,
+        "se": 1.79,
+        "n": 399
+      }
+    },
+    "comparisons": [
+      {
+        "model": "gpt-4o",
+        "conditions": [
+          {
+            "condition": "control",
+            "original_mean": -19.93,
+            "original_se": 1.47,
+            "replicated_mean": 8.4323,
+            "replicated_se": 0.5939,
+            "delta": 28.3623,
+            "z_stat": 17.8894,
+            "p_value": 0.0
+          },
+          {
+            "condition": "overestimate",
+            "original_mean": -27.91,
+            "original_se": 1.61,
+            "replicated_mean": 7.3155,
+            "replicated_se": 0.3333,
+            "delta": 35.2255,
+            "z_stat": 21.425,
+            "p_value": 0.0
+          },
+          {
+            "condition": "underestimate",
+            "original_mean": -9.11,
+            "original_se": 1.79,
+            "replicated_mean": 9.784,
+            "replicated_se": 0.7489,
+            "delta": 18.894,
+            "z_stat": 9.7375,
+            "p_value": 0.0
+          }
+        ]
+      }
+    ],
+    "has_results": true
+  },
+  {
+    "id": "exley_kessler_2024_anchoring_b",
+    "title": "Motivated Errors \u2014 Anchoring Study B",
+    "authors": [
+      "Christine L. Exley",
+      "Judd B. Kessler"
+    ],
+    "journal": "AER",
+    "year": 2024,
+    "doi": "10.1257/aer.20191849",
+    "replication_url": "https://doi.org/10.3886/E195862V1",
+    "description": "Anchoring Study B from Exley & Kessler (2024). Same as Study A but subjects first judge above/below anchor, and slider starts at 50. Reduced anchoring bias but motivated-errors pattern persists.",
+    "original_results": {
+      "control": {
+        "mean": -14.35,
+        "se": 1.52,
+        "n": 398
+      },
+      "overestimate": {
+        "mean": -21.36,
+        "se": 1.96,
+        "n": 398
+      },
+      "underestimate": {
+        "mean": -5.01,
+        "se": 1.94,
+        "n": 399
+      }
+    },
+    "comparisons": [
+      {
+        "model": "gpt-4o",
+        "conditions": [
+          {
+            "condition": "control",
+            "original_mean": -14.35,
+            "original_se": 1.52,
+            "replicated_mean": 1.804,
+            "replicated_se": 0.2652,
+            "delta": 16.154,
+            "z_stat": 10.4694,
+            "p_value": 0.0
+          },
+          {
+            "condition": "overestimate",
+            "original_mean": -21.36,
+            "original_se": 1.96,
+            "replicated_mean": 1.8025,
+            "replicated_se": 0.2653,
+            "delta": 23.1625,
+            "z_stat": 11.7108,
+            "p_value": 0.0
+          },
+          {
+            "condition": "underestimate",
+            "original_mean": -5.01,
+            "original_se": 1.94,
+            "replicated_mean": 1.8045,
+            "replicated_se": 0.2652,
+            "delta": 6.8145,
+            "z_stat": 3.4803,
+            "p_value": 0.0005
+          }
+        ]
+      }
+    ],
+    "has_results": true
   }
 ]
