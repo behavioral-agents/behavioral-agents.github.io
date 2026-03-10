@@ -71,6 +71,55 @@ header .subtitle { color: #555; font-size: 0.95rem; }
 }
 .paper-card .status.replicated { background: #dcfce7; color: #166534; }
 .paper-card .status.pending { background: #fef3c7; color: #92400e; }
+.paper-card .status.partial { background: #dbeafe; color: #1d4ed8; }
+
+/* === Experiment selector cards === */
+.experiment-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.experiment-card {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  flex: 1;
+  min-width: 200px;
+}
+.experiment-card:hover {
+  border-color: #a5b4fc;
+  box-shadow: 0 1px 4px rgba(37,99,235,0.08);
+}
+.experiment-card.active {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+}
+.experiment-list-label {
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.15rem;
+}
+.experiment-card-number {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.15rem;
+}
+.experiment-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
 
 /* === Detail view === */
 #paper-detail { animation: fadeIn 0.2s ease; }
@@ -155,13 +204,12 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   height: 140px;
 }
 .bar {
-  width: 36px;
+  width: 28px;
   border-radius: 4px 4px 0 0;
   position: relative;
   transition: height 0.3s ease;
 }
-.bar.original { background: #93c5fd; }
-.bar.replicated { background: #3b82f6; }
+.bar.original { background: #f87171; }
 .bar .bar-value {
   position: absolute;
   top: -1.3rem;
@@ -179,42 +227,61 @@ header .subtitle { color: #555; font-size: 0.95rem; }
 }
 .chart-legend {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
   font-size: 0.8rem;
   color: #555;
   margin-bottom: 0.25rem;
 }
-.chart-legend span::before {
-  content: "";
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-  margin-right: 0.3rem;
-  vertical-align: middle;
-}
-.chart-legend .leg-original::before { background: #93c5fd; }
-.chart-legend .leg-replicated::before { background: #3b82f6; }
 
 /* === Model tabs === */
 .model-tabs {
   display: flex;
   gap: 0.25rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .model-tab {
-  padding: 0.35rem 0.8rem;
+  padding: 0.4rem 0.9rem;
   font-size: 0.82rem;
   border: 1px solid #d1d5db;
-  border-radius: 5px;
+  border-bottom: 3px solid transparent;
+  border-radius: 5px 5px 0 0;
   background: #fff;
   cursor: pointer;
   font-weight: 500;
+  transition: border-color 0.15s, background 0.15s;
+}
+.model-tab:hover {
+  background: #f8f9fc;
 }
 .model-tab.active {
-  background: #2563eb;
-  color: #fff;
-  border-color: #2563eb;
+  background: #f8f9fc;
+  font-weight: 600;
+}
+
+/* === Distribution plots === */
+.dist-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.dist-plot {
+  background: #f8f9fc;
+  border: 1px solid #e2e5eb;
+  border-radius: 6px;
+  padding: 0.6rem 0.5rem 0.3rem;
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+}
+.dist-plot-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+  text-align: center;
+  margin-bottom: 0.25rem;
 }
 
 /* === Utility === */
