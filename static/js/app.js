@@ -249,6 +249,7 @@ function renderComparison(comp) {
   const rows = conditions.map(c => {
     const pval = parseFloat(c.p_value);
     const isSig = pval < 0.05;
+    const hasW = c.wasserstein != null;
     return `
       <tr>
         <td>${formatCondition(c.condition)}</td>
@@ -257,6 +258,7 @@ function renderComparison(comp) {
         <td class="num">${fmtNum(c.delta)}</td>
         <td class="num">${fmtNum(c.z_stat)}</td>
         <td class="num ${isSig ? 'sig' : 'ns'}">${fmtNum(c.p_value)}${isSig ? ' *' : ''}</td>
+        <td class="num">${hasW ? fmtNum(c.wasserstein) : '—'}</td>
       </tr>
     `;
   }).join('');
@@ -272,6 +274,7 @@ function renderComparison(comp) {
           <th class="num">Delta</th>
           <th class="num">z-stat</th>
           <th class="num">p-value</th>
+          <th class="num">W₁ Distance</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -279,6 +282,7 @@ function renderComparison(comp) {
     <p style="font-size:0.78rem;color:#888;margin-top:0.5rem">
       * p &lt; 0.05 indicates the replicated mean differs significantly from the original.
       Non-significant = closer replication.
+      W₁ = Wasserstein-1 distance (lower = closer distributions).
     </p>
   `;
 
@@ -313,7 +317,101 @@ function renderComparison(comp) {
     <div class="bar-chart">${bars}</div>
   `;
 
-  return chart + table;
+  // Distribution plots
+  const distributions = comp.distributions || {};
+  let distPlots = '';
+  if (Object.keys(distributions).length > 0) {
+    const plots = conditions
+      .filter(c => distributions[c.condition])
+      .map(c => renderDistributionPlot(c.condition, distributions[c.condition], modelName))
+      .join('');
+    if (plots) {
+      const firstDist = distributions[conditions.find(c => distributions[c.condition])?.condition];
+      const origLabel = firstDist?.original_type === 'empirical' ? 'Original (empirical)' : 'Original (Normal approx.)';
+      distPlots = `
+        <div style="margin-top:1.5rem">
+          <h4 style="font-size:0.95rem;font-weight:600;margin-bottom:0.75rem">Distribution Comparison</h4>
+          <div class="chart-legend">
+            <span class="leg-original">${origLabel}</span>
+            <span class="leg-replicated">Replicated (${modelName})</span>
+          </div>
+          <div class="dist-grid">${plots}</div>
+        </div>
+      `;
+    }
+  }
+
+  return chart + table + distPlots;
+}
+
+// ---------------------------------------------------------------------------
+// Distribution density plot (SVG)
+// ---------------------------------------------------------------------------
+function renderDistributionPlot(condition, dist, modelName) {
+  const W = 320, H = 160;
+  const pad = {top: 10, right: 15, bottom: 30, left: 15};
+  const plotW = W - pad.left - pad.right;
+  const plotH = H - pad.top - pad.bottom;
+
+  const centers = dist.bin_centers;
+  const repDensity = dist.replicated_density;
+  const origDensity = dist.original_density;
+
+  const xMin = centers[0] - dist.bin_width / 2;
+  const xMax = centers[centers.length - 1] + dist.bin_width / 2;
+  const yMax = Math.max(...repDensity, ...origDensity) * 1.15;
+
+  const xScale = (v) => pad.left + ((v - xMin) / (xMax - xMin)) * plotW;
+  const yScale = (v) => pad.top + plotH - (v / yMax) * plotH;
+
+  // Replicated histogram bars
+  const barW = (dist.bin_width / (xMax - xMin)) * plotW;
+  const bars = centers.map((c, i) => {
+    const x = xScale(c) - barW / 2;
+    const h = (repDensity[i] / yMax) * plotH;
+    const y = pad.top + plotH - h;
+    return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" fill="#3b82f6" opacity="0.35"/>`;
+  }).join('');
+
+  // Original distribution — empirical histogram or Normal curve
+  const isEmpirical = dist.original_type === 'empirical';
+  let origLayer;
+  if (isEmpirical) {
+    origLayer = centers.map((c, i) => {
+      const x = xScale(c) - barW / 2;
+      const h = (origDensity[i] / yMax) * plotH;
+      const y = pad.top + plotH - h;
+      return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" fill="#dc2626" opacity="0.35"/>`;
+    }).join('');
+  } else {
+    const origPoints = centers.map((c, i) => `${xScale(c).toFixed(1)},${yScale(origDensity[i]).toFixed(1)}`).join(' ');
+    origLayer = `<polyline points="${origPoints}" fill="none" stroke="#dc2626" stroke-width="2.5"/>`;
+  }
+
+  // X-axis ticks (5 ticks)
+  const nTicks = 5;
+  let ticks = '';
+  for (let i = 0; i <= nTicks; i++) {
+    const val = xMin + (i / nTicks) * (xMax - xMin);
+    const x = xScale(val);
+    ticks += `<line x1="${x.toFixed(1)}" y1="${pad.top + plotH}" x2="${x.toFixed(1)}" y2="${pad.top + plotH + 4}" stroke="#999"/>`;
+    ticks += `<text x="${x.toFixed(1)}" y="${pad.top + plotH + 16}" text-anchor="middle" font-size="10" fill="#666">${val.toFixed(2)}</text>`;
+  }
+
+  // Baseline
+  const baseline = `<line x1="${pad.left}" y1="${pad.top + plotH}" x2="${pad.left + plotW}" y2="${pad.top + plotH}" stroke="#ccc"/>`;
+
+  return `
+    <div class="dist-plot">
+      <div class="dist-plot-title">${formatCondition(condition)}</div>
+      <svg width="${W}" height="${H}" style="display:block">
+        ${baseline}
+        ${origLayer}
+        ${bars}
+        ${ticks}
+      </svg>
+    </div>
+  `;
 }
 
 // ---------------------------------------------------------------------------
