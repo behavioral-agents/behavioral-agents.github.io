@@ -72,55 +72,6 @@ header .subtitle { color: #555; font-size: 0.95rem; }
 .paper-card .status.replicated { background: #dcfce7; color: #166534; }
 .paper-card .status.pending { background: #fef3c7; color: #92400e; }
 
-/* === Experiment selector cards === */
-.experiment-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-.experiment-card {
-  background: #fff;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  padding: 0.6rem 1rem;
-  cursor: pointer;
-  transition: border-color 0.15s, box-shadow 0.15s;
-  flex: 1;
-  min-width: 200px;
-}
-.experiment-card:hover {
-  border-color: #a5b4fc;
-  box-shadow: 0 1px 4px rgba(37,99,235,0.08);
-}
-.experiment-card.active {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
-}
-.experiment-list-label {
-  width: 100%;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #555;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.15rem;
-}
-.experiment-card-number {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #2563eb;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-bottom: 0.15rem;
-}
-.experiment-card-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-.paper-card .status.partial { background: #dbeafe; color: #1d4ed8; }
-
 /* === Detail view === */
 #paper-detail { animation: fadeIn 0.2s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -209,7 +160,7 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   position: relative;
   transition: height 0.3s ease;
 }
-.bar.original { background: #f87171; }
+.bar.original { background: #93c5fd; }
 .bar.replicated { background: #3b82f6; }
 .bar .bar-value {
   position: absolute;
@@ -242,8 +193,8 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   margin-right: 0.3rem;
   vertical-align: middle;
 }
-.chart-legend .leg-original::before { background: #dc2626; }
-.chart-legend .leg-replicated::before { background: rgba(59, 130, 246, 0.6); }
+.chart-legend .leg-original::before { background: #93c5fd; }
+.chart-legend .leg-replicated::before { background: #3b82f6; }
 
 /* === Model tabs === */
 .model-tabs {
@@ -264,30 +215,6 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   background: #2563eb;
   color: #fff;
   border-color: #2563eb;
-}
-
-/* === Distribution plots === */
-.dist-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-.dist-plot {
-  background: #f8f9fc;
-  border: 1px solid #e2e5eb;
-  border-radius: 6px;
-  padding: 0.6rem 0.5rem 0.3rem;
-  flex: 1;
-  min-width: 300px;
-  max-width: 360px;
-}
-.dist-plot-title {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #334155;
-  text-align: center;
-  margin-bottom: 0.25rem;
 }
 
 /* === Utility === */
