@@ -194,6 +194,7 @@ function renderExperiment(paper) {
         <h3>Replication Results</h3>
         ${renderAllModels(paper.comparisons)}
       </div>
+      ${renderPaperTests(paper.comparisons)}
     ` : `
       <div class="detail-section">
         <h3>Replication Results</h3>
@@ -372,6 +373,66 @@ function renderComparisonTable(comp) {
       Non-significant = closer replication.
       W\u2081 = Wasserstein-1 distance (lower = closer distributions).
     </p>
+  `;
+}
+
+// ---------------------------------------------------------------------------
+// Paper-level statistical tests
+// ---------------------------------------------------------------------------
+function renderPaperTests(comparisons) {
+  const hasTests = comparisons.some(c => c.paper_tests && c.paper_tests.length > 0);
+  if (!hasTests) return '';
+
+  const rows = [];
+  comparisons.forEach(comp => {
+    if (!comp.paper_tests || comp.paper_tests.length === 0) return;
+    const mc = getModelColor(comp.model);
+    comp.paper_tests.forEach(pt => {
+      const conclusion = pt.conclusion || '';
+      const conclusionClass = conclusion.includes('correct_significant') ? 'correct-sig'
+        : conclusion.includes('correct_direction') ? 'correct-dir'
+        : conclusion.includes('wrong') ? 'wrong'
+        : 'null';
+      const conclusionLabel = conclusion.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      rows.push(`
+        <tr>
+          <td style="color:${mc.stroke};font-weight:600">${mc.label || comp.model}</td>
+          <td>${pt.test_name || ''}</td>
+          <td class="num">${fmtNum(pt.original_effect)}</td>
+          <td class="num">${fmtNum(pt.effect)}</td>
+          <td class="num">${fmtNum(pt.p_value)}</td>
+          <td class="conclusion ${conclusionClass}">${conclusionLabel}</td>
+        </tr>
+      `);
+    });
+  });
+
+  return `
+    <div class="detail-section" style="border-left:3px solid #2563eb">
+      <h3>Paper-Level Statistical Tests</h3>
+      <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem">
+        Same tests as reported in the original paper, applied to simulated data.
+      </p>
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Test</th>
+            <th class="num">Original Effect</th>
+            <th class="num">Simulated Effect</th>
+            <th class="num">p-value</th>
+            <th>Conclusion</th>
+          </tr>
+        </thead>
+        <tbody>${rows.join('')}</tbody>
+      </table>
+      <p style="font-size:0.78rem;color:#888;margin-top:0.5rem">
+        Conclusion fidelity: <strong>Correct Significant</strong> = same direction &amp; significant;
+        <strong>Correct Direction</strong> = same direction but not significant;
+        <strong>Null</strong> = near-zero effect;
+        <strong>Wrong Direction/Significant</strong> = opposite to original.
+      </p>
+    </div>
   `;
 }
 

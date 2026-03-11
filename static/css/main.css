@@ -284,5 +284,12 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   margin-bottom: 0.25rem;
 }
 
+/* === Conclusion fidelity === */
+.conclusion { font-weight: 600; font-size: 0.82rem; }
+.conclusion.correct-sig { color: #16a34a; }
+.conclusion.correct-dir { color: #65a30d; }
+.conclusion.null { color: #9ca3af; }
+.conclusion.wrong { color: #dc2626; }
+
 /* === Utility === */
 .hidden { display: none; }
