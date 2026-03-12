@@ -103,7 +103,6 @@ function renderLeaderboard(leaderboard) {
     const medal = rank === 1 ? '1' : rank === 2 ? '2' : rank === 3 ? '3' : rank;
     const fid = entry.mean_fidelity != null ? entry.mean_fidelity.toFixed(3) : '\u2014';
     const w = entry.mean_wasserstein != null ? entry.mean_wasserstein.toFixed(2) : '\u2014';
-    const delta = entry.mean_abs_delta != null ? entry.mean_abs_delta.toFixed(2) : '\u2014';
     const nonsig = entry.nonsig_rate != null ? (entry.nonsig_rate * 100).toFixed(0) + '%' : '\u2014';
 
     return `
@@ -112,10 +111,8 @@ function renderLeaderboard(leaderboard) {
         <td style="font-weight:600;color:${mc.stroke}">${mc.label || entry.model}</td>
         <td class="num" style="font-weight:600">${fid}</td>
         <td class="num">${w}</td>
-        <td class="num">${delta}</td>
         <td class="num">${nonsig}</td>
         <td class="num">${entry.n_papers}</td>
-        <td class="num">${entry.n_conditions}</td>
       </tr>
     `;
   }).join('');
@@ -128,10 +125,8 @@ function renderLeaderboard(leaderboard) {
           <th>Model</th>
           <th class="num">Fidelity</th>
           <th class="num">Mean W\u2081</th>
-          <th class="num">Mean |Delta|</th>
           <th class="num">Non-sig Rate</th>
           <th class="num">Papers</th>
-          <th class="num">Conditions</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -139,6 +134,7 @@ function renderLeaderboard(leaderboard) {
     <p style="font-size:0.78rem;color:#888;margin-top:0.5rem">
       Ranked by Fidelity Score F = 1 \u2212 EMD(sim,real)/EMD(random,real). F=1 is perfect replication, F=0 is no better than random.
       W\u2081 = Wasserstein-1 distance (lower = better). Non-sig Rate = fraction of conditions where replicated mean is not significantly different from original.
+      All means are paper-weighted: first averaged within each paper, then across papers (each paper counts equally).
     </p>
   `;
 }
@@ -275,6 +271,7 @@ function renderExperiment(paper) {
 function goBack() {
   document.getElementById('paper-detail').classList.add('hidden');
   document.getElementById('paper-list').classList.remove('hidden');
+  document.getElementById('leaderboard-section').classList.remove('hidden');
 }
 
 // ---------------------------------------------------------------------------
@@ -405,15 +402,15 @@ function renderComparisonTable(comp) {
     const pval = parseFloat(c.p_value);
     const isSig = pval < 0.05;
     const hasW = c.wasserstein != null;
+    const hasF = c.fidelity != null;
     return `
       <tr>
         <td>${formatCondition(c.condition)}</td>
         <td class="num">${fmtNum(c.original_mean)}</td>
         <td class="num">${fmtNum(c.replicated_mean)}</td>
-        <td class="num">${fmtNum(c.delta)}</td>
-        <td class="num">${fmtNum(c.z_stat)}</td>
         <td class="num ${isSig ? 'sig' : 'ns'}">${fmtNum(c.p_value)}${isSig ? ' *' : ''}</td>
         <td class="num">${hasW ? fmtNum(c.wasserstein) : '\u2014'}</td>
+        <td class="num">${hasF ? fmtNum(c.fidelity) : '\u2014'}</td>
       </tr>
     `;
   }).join('');
@@ -428,10 +425,9 @@ function renderComparisonTable(comp) {
           <th>Condition</th>
           <th class="num">Original Mean</th>
           <th class="num">Replicated Mean</th>
-          <th class="num">Delta</th>
-          <th class="num">z-stat</th>
           <th class="num">p-value</th>
           <th class="num">W\u2081 Distance</th>
+          <th class="num">Fidelity</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
@@ -440,6 +436,7 @@ function renderComparisonTable(comp) {
       * p &lt; 0.05 indicates the replicated mean differs significantly from the original.
       Non-significant = closer replication.
       W\u2081 = Wasserstein-1 distance (lower = closer distributions).
+      Fidelity F = 1 &minus; EMD(sim,real)/EMD(random,real); 1 = perfect, 0 = random, &lt;0 = worse than random.
     </p>
   `;
 }
