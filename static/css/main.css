@@ -291,5 +291,56 @@ header .subtitle { color: #555; font-size: 0.95rem; }
 .conclusion.null { color: #9ca3af; }
 .conclusion.wrong { color: #dc2626; }
 
+/* === Leaderboard === */
+#leaderboard-section {
+  background: #fff;
+  border: 1px solid #e2e5eb;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+#leaderboard-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.leaderboard-table tr:first-child td {
+  background: #f0fdf4;
+}
+
+/* === Notes dropdown === */
+.notes-section {
+  margin-top: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background: #fefce8;
+}
+.notes-section summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #92400e;
+}
+.notes-list {
+  margin: 0.5rem 0 0 1rem;
+  font-size: 0.82rem;
+  color: #444;
+}
+.notes-list li {
+  margin-bottom: 0.4rem;
+}
+.note-category {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 4px;
+  text-transform: uppercase;
+}
+
 /* === Utility === */
 .hidden { display: none; }

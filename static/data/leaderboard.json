@@ -1,0 +1,29 @@
+[
+  {
+    "model": "gpt-4o",
+    "n_papers": 8,
+    "n_conditions": 28,
+    "mean_wasserstein": 7.1934,
+    "mean_abs_delta": 3.6048,
+    "mean_fidelity": -0.556,
+    "nonsig_rate": 0.25
+  },
+  {
+    "model": "gpt-4o-mini",
+    "n_papers": 8,
+    "n_conditions": 28,
+    "mean_wasserstein": 7.7054,
+    "mean_abs_delta": 2.6685,
+    "mean_fidelity": -0.7572,
+    "nonsig_rate": 0.25
+  },
+  {
+    "model": "claude-sonnet-4-6",
+    "n_papers": 8,
+    "n_conditions": 28,
+    "mean_wasserstein": 11.2386,
+    "mean_abs_delta": 5.7077,
+    "mean_fidelity": -1.2968,
+    "nonsig_rate": 0.2143
+  }
+]
