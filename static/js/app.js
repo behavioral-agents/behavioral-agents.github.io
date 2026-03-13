@@ -289,11 +289,6 @@ function renderExperiment(paper) {
       ${renderDesignSummary(paper.design_summary, paper.original_results)}
     </div>
 
-    <div class="detail-section">
-      <h3>Original Results</h3>
-      ${renderOriginalResults(paper.original_results)}
-    </div>
-
     ${hasComps ? `
       <div class="detail-section">
         <div class="section-header">
@@ -548,7 +543,9 @@ function renderAllModels(comparisons, paper) {
   const xAxisLabel = paper?.design_summary?.outcome_variables?.[0]?.name || '';
   const distPlots = renderAllModelDistributions(comparisons, conditionNames, xAxisLabel);
 
-  return distPlots + chart + tabs +
+  const meansHeader = `<h4 style="font-size:0.95rem;font-weight:600;margin-top:1.5rem;margin-bottom:0.75rem">Statistical Comparison</h4>`;
+
+  return distPlots + meansHeader + chart + tabs +
     `<div id="comparison-content">${tableContent}</div>`;
 }
 
@@ -568,16 +565,20 @@ function renderComparisonTable(comp) {
   const modelName = comp.model;
   const mc = getModelColor(modelName);
 
+  const origResults = window._currentExperiment?.original_results || {};
+
   const rows = conditions.map(c => {
     const pval = parseFloat(c.p_value);
     const isSig = pval < 0.05;
     const hasW = c.wasserstein != null;
     const hasF = c.fidelity != null;
+    const n = origResults[c.condition]?.n;
     return `
       <tr>
         <td>${formatCondition(c.condition)}</td>
         <td class="num">${fmtNum(c.original_mean)}</td>
         <td class="num">${fmtNum(c.replicated_mean)}</td>
+        <td class="num">${n != null ? n : '\u2014'}</td>
         <td class="num ${isSig ? 'sig' : 'ns'}">${fmtNum(c.p_value)}${isSig ? ' *' : ''}</td>
         <td class="num">${hasW ? fmtNum(c.wasserstein) : '\u2014'}</td>
         <td class="num">${hasF ? fmtNum(c.fidelity) : '\u2014'}</td>
@@ -595,6 +596,7 @@ function renderComparisonTable(comp) {
           <th>Condition</th>
           <th class="num">Original Mean</th>
           <th class="num">Replicated Mean</th>
+          <th class="num">N</th>
           <th class="num">p-value</th>
           <th class="num">W\u2081 Distance</th>
           <th class="num">Fidelity</th>
