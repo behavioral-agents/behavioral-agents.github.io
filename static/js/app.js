@@ -51,10 +51,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('searchInput').addEventListener('input', filterPapers);
   document.getElementById('journalFilter').addEventListener('change', filterPapers);
 
-  // Close model selector dropdown when clicking outside
+  // Close dropdowns when clicking outside
   document.addEventListener('click', (e) => {
     document.querySelectorAll('.model-selector.open').forEach(sel => {
       if (!sel.contains(e.target)) sel.classList.remove('open');
+    });
+    // Close info tooltips
+    document.querySelectorAll('.info-tooltip:not(.hidden)').forEach(tip => {
+      if (!tip.previousElementSibling?.contains(e.target) && !tip.contains(e.target)) {
+        tip.classList.add('hidden');
+      }
     });
   });
 });
@@ -272,8 +278,15 @@ function renderExperiment(paper) {
 
   return `
     <div class="detail-section">
-      <h3>Experiment Design</h3>
+      <div class="section-header">
+        <h3>Experiment Design</h3>
+        <button class="info-btn" onclick="this.nextElementSibling.classList.toggle('hidden')" title="What do these fields mean?">i</button>
+        <div class="info-tooltip hidden">
+          ${renderDesignTooltip()}
+        </div>
+      </div>
       <p>${paper.description}</p>
+      ${renderDesignSummary(paper.design_summary, paper.original_results)}
     </div>
 
     <div class="detail-section">
@@ -284,15 +297,15 @@ function renderExperiment(paper) {
     ${hasComps ? `
       <div class="detail-section">
         <div class="section-header">
-          <h3>Replication Results</h3>
+          <h3>Simulation Results</h3>
           ${renderModelSelector(paper.comparisons)}
         </div>
-        ${hasFiltered ? renderAllModels(filteredComps) : '<p style="color:#888">Select at least one model above.</p>'}
+        ${hasFiltered ? renderAllModels(filteredComps, paper) : '<p style="color:#888">Select at least one model above.</p>'}
       </div>
       ${renderPaperTests(filteredComps)}
     ` : `
       <div class="detail-section">
-        <h3>Replication Results</h3>
+        <h3>Simulation Results</h3>
         <p style="color:#888">No replication results yet.</p>
       </div>
     `}
@@ -388,9 +401,77 @@ function renderOriginalResults(results) {
 }
 
 // ---------------------------------------------------------------------------
+// Design summary table
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// Design field definitions — single source of truth for the table AND tooltip.
+// Each entry: { key, label, description }
+// When adding/removing/renaming a field, update THIS array and both the table
+// and tooltip will stay in sync automatically.
+// ---------------------------------------------------------------------------
+const DESIGN_FIELDS = [
+  { key: 'decision_type',    label: 'Decision Type',    description: 'The general category of decision participants make (e.g., Binary Choice, Willingness to Pay, Numerical Estimation).' },
+  { key: 'outcome_variable', label: 'Outcome Variable', description: 'The measured variable used to compare original and simulated results. If multiple exist, the primary one is marked.' },
+  { key: 'scale',            label: 'Scale',            description: 'The range or set of options available to participants when making their decision.' },
+  { key: 'conditions',       label: 'Conditions',       description: 'The experimental treatment arms. N shows the number of observations per condition in the original study.' },
+  { key: 'sample',           label: 'Sample',           description: 'Total number of unique subjects in the original experiment and the type of participant pool.' },
+  { key: 'observations',     label: 'Observations',     description: 'Total data points across all conditions. May differ from sample size: in within-subject designs each subject contributes multiple observations, while in between-subject designs it equals the number of subjects.' },
+];
+
+function renderDesignTooltip() {
+  return DESIGN_FIELDS.map(f =>
+    `<strong>${f.label}</strong> — ${f.description}`
+  ).join('<br>');
+}
+
+function renderDesignSummary(ds, originalResults) {
+  if (!ds) return '';
+
+  // Outcome variables
+  const outcomeRows = (ds.outcome_variables || []).map((ov, i) => {
+    const isPrimary = i === 0 && ds.outcome_variables.length > 1;
+    return `<span class="design-tag">${ov.name}${isPrimary ? ' (primary)' : ''}</span>`;
+  }).join(' ');
+
+  // Conditions with per-condition N
+  const condRows = (ds.conditions || []).map(c => {
+    const n = originalResults?.[c]?.n;
+    return `<span class="design-tag">${formatCondition(c)}${n != null ? ` (N=${n})` : ''}</span>`;
+  }).join(' ');
+
+  // Build rows using the same labels from DESIGN_FIELDS
+  const fieldLabel = key => DESIGN_FIELDS.find(f => f.key === key)?.label ?? key;
+  const rows = [
+    { label: fieldLabel('decision_type'), value: ds.decision_type },
+    { label: fieldLabel('outcome_variable'), value: outcomeRows, html: true },
+    { label: fieldLabel('scale'), value: ds.outcome_variables?.[0]?.scale },
+    { label: fieldLabel('conditions'), value: condRows, html: true },
+    { label: fieldLabel('sample'), value: `${ds.sample_size ?? '—'} subjects (${ds.sample_type || '—'})` },
+    { label: fieldLabel('observations'), value: ds.total_observations ?? '—' },
+  ].filter(r => r.value);
+
+  const tableRows = rows.map(r => `
+    <tr>
+      <td class="design-label">${r.label}</td>
+      <td>${r.html ? r.value : escapeHtml(String(r.value))}</td>
+    </tr>
+  `).join('');
+
+  return `
+    <table class="design-table">
+      <tbody>${tableRows}</tbody>
+    </table>
+  `;
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// ---------------------------------------------------------------------------
 // All-models combined view
 // ---------------------------------------------------------------------------
-function renderAllModels(comparisons) {
+function renderAllModels(comparisons, paper) {
   const conditionNames = comparisons[0].conditions.map(c => c.condition);
 
   // Combined legend
@@ -464,11 +545,11 @@ function renderAllModels(comparisons) {
   const tableContent = renderComparisonTable(comparisons[0]);
 
   // Distribution plots (all models overlaid)
-  const distPlots = renderAllModelDistributions(comparisons, conditionNames);
+  const xAxisLabel = paper?.design_summary?.outcome_variables?.[0]?.name || '';
+  const distPlots = renderAllModelDistributions(comparisons, conditionNames, xAxisLabel);
 
-  return chart + tabs +
-    `<div id="comparison-content">${tableContent}</div>` +
-    distPlots;
+  return distPlots + chart + tabs +
+    `<div id="comparison-content">${tableContent}</div>`;
 }
 
 function switchModel(idx) {
@@ -619,7 +700,7 @@ function renderPaperTests(comparisons) {
 // ---------------------------------------------------------------------------
 // Distribution plots — all models overlaid
 // ---------------------------------------------------------------------------
-function renderAllModelDistributions(comparisons, conditionNames) {
+function renderAllModelDistributions(comparisons, conditionNames, xAxisLabel) {
   const hasAnyDist = comparisons.some(comp =>
     comp.distributions && Object.keys(comp.distributions).length > 0
   );
@@ -639,7 +720,7 @@ function renderAllModelDistributions(comparisons, conditionNames) {
 
   const plots = conditionNames
     .filter(cond => comparisons.some(comp => comp.distributions?.[cond]))
-    .map(cond => renderMultiModelDistPlot(cond, comparisons))
+    .map(cond => renderMultiModelDistPlot(cond, comparisons, xAxisLabel))
     .join('');
 
   if (!plots) return '';
@@ -662,9 +743,34 @@ function renderAllModelDistributions(comparisons, conditionNames) {
 // ---------------------------------------------------------------------------
 // Distribution density plot (SVG) — multi-model overlay
 // ---------------------------------------------------------------------------
-function renderMultiModelDistPlot(condition, comparisons) {
-  const W = 360, H = 180;
-  const pad = {top: 10, right: 15, bottom: 30, left: 15};
+/**
+ * Choose nice round tick values covering [lo, hi].
+ * For discrete data with few unique values (≤ 15), use the actual values.
+ * Otherwise pick ~nTarget evenly spaced round numbers.
+ */
+function niceAxisTicks(lo, hi, binCenters, nTarget = 6) {
+  // Check if data looks discrete (few unique non-zero-density bins)
+  const unique = [...new Set(binCenters.map(v => +v.toFixed(6)))];
+  if (unique.length > 0 && unique.length <= 15) return unique;
+
+  const range = hi - lo;
+  if (range <= 0) return [lo];
+  // Pick a "nice" step size
+  const rawStep = range / nTarget;
+  const mag = Math.pow(10, Math.floor(Math.log10(rawStep)));
+  const candidates = [1, 2, 2.5, 5, 10];
+  const niceStep = candidates.map(c => c * mag).find(s => range / s <= nTarget + 1) || rawStep;
+  const ticks = [];
+  const start = Math.ceil(lo / niceStep) * niceStep;
+  for (let v = start; v <= hi + niceStep * 0.01; v += niceStep) {
+    ticks.push(+v.toFixed(6));
+  }
+  return ticks;
+}
+
+function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
+  const W = 380, H = 220;
+  const pad = {top: 10, right: 15, bottom: 50, left: 45};
   const plotW = W - pad.left - pad.right;
   const plotH = H - pad.top - pad.bottom;
 
@@ -676,17 +782,18 @@ function renderMultiModelDistPlot(condition, comparisons) {
 
   const refDist = modelDists[0].dist;
   const centers = refDist.bin_centers;
-  const origDensity = refDist.original_density;
+  const origCounts = refDist.original_counts;
 
   const xMin = centers[0] - refDist.bin_width / 2;
   const xMax = centers[centers.length - 1] + refDist.bin_width / 2;
-  let yMax = Math.max(...origDensity);
+  let yMax = Math.max(...origCounts);
   modelDists.forEach(md => {
-    yMax = Math.max(yMax, ...md.dist.replicated_density);
+    yMax = Math.max(yMax, ...md.dist.replicated_counts);
   });
-  yMax *= 1.15;
+  yMax = Math.ceil(yMax * 1.15) || 1;
 
   const xScale = (v) => pad.left + ((v - xMin) / (xMax - xMin)) * plotW;
+  const yScale = (v) => pad.top + plotH - (v / yMax) * plotH;
   const barW = (refDist.bin_width / (xMax - xMin)) * plotW;
 
   // Original distribution layer (red)
@@ -695,27 +802,25 @@ function renderMultiModelDistPlot(condition, comparisons) {
   if (isEmpirical) {
     origLayer = centers.map((c, i) => {
       const x = xScale(c) - barW / 2;
-      const h = (origDensity[i] / yMax) * plotH;
+      const h = (origCounts[i] / yMax) * plotH;
       const y = pad.top + plotH - h;
       return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" fill="#dc2626" opacity="0.3"/>`;
     }).join('');
   } else {
-    const yScaleFn = (v) => pad.top + plotH - (v / yMax) * plotH;
-    const origPoints = centers.map((c, i) => `${xScale(c).toFixed(1)},${yScaleFn(origDensity[i]).toFixed(1)}`).join(' ');
+    const origPoints = centers.map((c, i) => `${xScale(c).toFixed(1)},${yScale(origCounts[i]).toFixed(1)}`).join(' ');
     origLayer = `<polyline points="${origPoints}" fill="none" stroke="#dc2626" stroke-width="2.5"/>`;
   }
 
   // Replicated distribution layers — one curve per model
   const modelLayers = modelDists.map(md => {
     const mc = getModelColor(md.model);
-    const yScaleFn = (v) => pad.top + plotH - (v / yMax) * plotH;
     const points = centers.map((c, i) =>
-      `${xScale(c).toFixed(1)},${yScaleFn(md.dist.replicated_density[i]).toFixed(1)}`
+      `${xScale(c).toFixed(1)},${yScale(md.dist.replicated_counts[i]).toFixed(1)}`
     ).join(' ');
     const firstX = xScale(centers[0]).toFixed(1);
     const lastX = xScale(centers[centers.length - 1]).toFixed(1);
-    const baseline = (pad.top + plotH).toFixed(1);
-    const fillPoints = `${firstX},${baseline} ${points} ${lastX},${baseline}`;
+    const baseY = (pad.top + plotH).toFixed(1);
+    const fillPoints = `${firstX},${baseY} ${points} ${lastX},${baseY}`;
     return `
       <polygon points="${fillPoints}" fill="${mc.fill}" opacity="${mc.fillAlpha * 0.6}"/>
       <polyline points="${points}" fill="none" stroke="${mc.stroke}" stroke-width="2" opacity="0.8"/>
@@ -723,25 +828,47 @@ function renderMultiModelDistPlot(condition, comparisons) {
   }).join('');
 
   // X-axis ticks
-  const nTicks = 5;
-  let ticks = '';
-  for (let i = 0; i <= nTicks; i++) {
-    const val = xMin + (i / nTicks) * (xMax - xMin);
+  const xTickVals = niceAxisTicks(xMin, xMax, centers);
+  const allXIntegers = xTickVals.every(v => Number.isInteger(v));
+  const formatXTick = (v) => allXIntegers ? String(v) : (Number.isInteger(v) ? String(v) : v.toFixed(2).replace(/0+$/, '').replace(/\.$/, ''));
+
+  let xTicksSvg = '';
+  for (const val of xTickVals) {
     const x = xScale(val);
-    ticks += `<line x1="${x.toFixed(1)}" y1="${pad.top + plotH}" x2="${x.toFixed(1)}" y2="${pad.top + plotH + 4}" stroke="#999"/>`;
-    ticks += `<text x="${x.toFixed(1)}" y="${pad.top + plotH + 16}" text-anchor="middle" font-size="10" fill="#666">${val.toFixed(2)}</text>`;
+    xTicksSvg += `<line x1="${x.toFixed(1)}" y1="${pad.top + plotH}" x2="${x.toFixed(1)}" y2="${pad.top + plotH + 4}" stroke="#999"/>`;
+    xTicksSvg += `<text x="${x.toFixed(1)}" y="${pad.top + plotH + 16}" text-anchor="middle" font-size="10" fill="#666">${formatXTick(val)}</text>`;
   }
 
-  const baseline = `<line x1="${pad.left}" y1="${pad.top + plotH}" x2="${pad.left + plotW}" y2="${pad.top + plotH}" stroke="#ccc"/>`;
+  // Y-axis ticks
+  const yTickVals = niceAxisTicks(0, yMax, [], 4);
+  let yTicksSvg = '';
+  for (const val of yTickVals) {
+    const y = yScale(val);
+    yTicksSvg += `<line x1="${pad.left - 4}" y1="${y.toFixed(1)}" x2="${pad.left}" y2="${y.toFixed(1)}" stroke="#999"/>`;
+    yTicksSvg += `<text x="${pad.left - 7}" y="${(y + 3).toFixed(1)}" text-anchor="end" font-size="10" fill="#666">${Math.round(val)}</text>`;
+  }
+
+  const baseLine = `<line x1="${pad.left}" y1="${pad.top + plotH}" x2="${pad.left + plotW}" y2="${pad.top + plotH}" stroke="#ccc"/>`;
+  const yAxisLine = `<line x1="${pad.left}" y1="${pad.top}" x2="${pad.left}" y2="${pad.top + plotH}" stroke="#ccc"/>`;
+
+  // Axis labels
+  const xLabel = xAxisLabel
+    ? `<text x="${pad.left + plotW / 2}" y="${H - 4}" text-anchor="middle" font-size="11" fill="#555">${xAxisLabel}</text>`
+    : '';
+  const yLabel = `<text transform="rotate(-90)" x="${-(pad.top + plotH / 2)}" y="13" text-anchor="middle" font-size="11" fill="#555">Count</text>`;
 
   return `
     <div class="dist-plot">
       <div class="dist-plot-title">${formatCondition(condition)}</div>
       <svg width="${W}" height="${H}" style="display:block">
-        ${baseline}
+        ${baseLine}
+        ${yAxisLine}
         ${origLayer}
         ${modelLayers}
-        ${ticks}
+        ${xTicksSvg}
+        ${yTicksSvg}
+        ${xLabel}
+        ${yLabel}
       </svg>
     </div>
   `;

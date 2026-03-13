@@ -157,6 +157,81 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   margin-bottom: 0.5rem;
 }
 
+/* === Info button & tooltip === */
+.info-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid #94a3b8;
+  background: #fff;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-style: italic;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+.info-btn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+.info-tooltip {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 100;
+  width: 340px;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: #444;
+}
+.info-tooltip strong {
+  color: #1a1a2e;
+}
+.section-header {
+  position: relative;
+}
+
+/* === Design summary table === */
+.design-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+.design-table td {
+  padding: 0.45rem 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+.design-table tr:last-child td { border-bottom: none; }
+.design-label {
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+  width: 140px;
+}
+.design-tag {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin: 2px 4px 2px 0;
+}
+
 /* === Results table === */
 .results-table {
   width: 100%;
@@ -273,8 +348,8 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   border-radius: 6px;
   padding: 0.6rem 0.5rem 0.3rem;
   flex: 1;
-  min-width: 300px;
-  max-width: 380px;
+  min-width: 320px;
+  max-width: 400px;
 }
 .dist-plot-title {
   font-size: 0.82rem;
