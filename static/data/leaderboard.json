@@ -7,6 +7,13 @@
     "nonsig_rate": 0.2708
   },
   {
+    "model": "gemini-2.5-flash",
+    "n_papers": 8,
+    "mean_wasserstein": 7.7501,
+    "mean_fidelity": -0.8393,
+    "nonsig_rate": 0.2292
+  },
+  {
     "model": "gpt-4o-mini",
     "n_papers": 8,
     "mean_wasserstein": 8.946,

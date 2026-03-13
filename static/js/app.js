@@ -5,6 +5,11 @@ const LEADERBOARD_URL = 'static/data/leaderboard.json';
 let allPapers = [];    // raw experiment entries
 let groupedPapers = []; // grouped by DOI
 
+// Default models shown (max 3 at a time)
+const DEFAULT_VISIBLE_MODELS = ['claude-sonnet-4-6', 'gemini-2.5-flash', 'gpt-4o'];
+const MAX_VISIBLE_MODELS = 3;
+let visibleModels = [...DEFAULT_VISIBLE_MODELS];
+
 // Model color palette — add new models here
 const MODEL_COLORS = {
   'gpt-4o':              { fill: '#3b82f6', fillAlpha: 0.35, stroke: '#3b82f6', label: 'GPT-4o' },
@@ -12,6 +17,7 @@ const MODEL_COLORS = {
   'claude-haiku-4-5-20251001': { fill: '#f59e0b', fillAlpha: 0.35, stroke: '#f59e0b', label: 'Claude Haiku 4.5' },
   'claude-opus-4-6':    { fill: '#06b6d4', fillAlpha: 0.35, stroke: '#06b6d4', label: 'Claude Opus 4.6' },
   'gemini-2.5-pro':      { fill: '#10b981', fillAlpha: 0.35, stroke: '#10b981', label: 'Gemini 2.5 Pro' },
+  'gemini-2.5-flash':    { fill: '#34d399', fillAlpha: 0.35, stroke: '#34d399', label: 'Gemini 2.5 Flash' },
 };
 const DEFAULT_COLORS = [
   { fill: '#f97316', fillAlpha: 0.35, stroke: '#f97316' },
@@ -44,6 +50,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   document.getElementById('searchInput').addEventListener('input', filterPapers);
   document.getElementById('journalFilter').addEventListener('change', filterPapers);
+
+  // Close model selector dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.model-selector.open').forEach(sel => {
+      if (!sel.contains(e.target)) sel.classList.remove('open');
+    });
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -238,8 +251,24 @@ function showExperiment(expId, el) {
 }
 
 function renderExperiment(paper) {
+  window._currentExperiment = paper;
   const hasComps = paper.comparisons && paper.comparisons.length > 0;
   window._comparisons = paper.comparisons || [];
+
+  // Init visible models: keep current selection if models overlap, else use defaults
+  if (hasComps) {
+    const availableModels = paper.comparisons.map(c => c.model);
+    const stillValid = visibleModels.filter(m => availableModels.includes(m));
+    if (stillValid.length === 0) {
+      visibleModels = availableModels.filter(m => DEFAULT_VISIBLE_MODELS.includes(m));
+      if (visibleModels.length === 0) visibleModels = availableModels.slice(0, MAX_VISIBLE_MODELS);
+    } else {
+      visibleModels = stillValid.slice(0, MAX_VISIBLE_MODELS);
+    }
+  }
+
+  const filteredComps = getVisibleComparisons(paper.comparisons);
+  const hasFiltered = filteredComps.length > 0;
 
   return `
     <div class="detail-section">
@@ -254,10 +283,13 @@ function renderExperiment(paper) {
 
     ${hasComps ? `
       <div class="detail-section">
-        <h3>Replication Results</h3>
-        ${renderAllModels(paper.comparisons)}
+        <div class="section-header">
+          <h3>Replication Results</h3>
+          ${renderModelSelector(paper.comparisons)}
+        </div>
+        ${hasFiltered ? renderAllModels(filteredComps) : '<p style="color:#888">Select at least one model above.</p>'}
       </div>
-      ${renderPaperTests(paper.comparisons)}
+      ${renderPaperTests(filteredComps)}
     ` : `
       <div class="detail-section">
         <h3>Replication Results</h3>
@@ -272,6 +304,62 @@ function goBack() {
   document.getElementById('paper-detail').classList.add('hidden');
   document.getElementById('paper-list').classList.remove('hidden');
   document.getElementById('leaderboard-section').classList.remove('hidden');
+}
+
+// ---------------------------------------------------------------------------
+// Model selector dropdown (checkbox-based, max 3)
+// ---------------------------------------------------------------------------
+function renderModelSelector(comparisons) {
+  if (!comparisons || comparisons.length <= 1) return '';
+  const allModels = comparisons.map(c => c.model);
+
+  const items = allModels.map(m => {
+    const mc = getModelColor(m);
+    const checked = visibleModels.includes(m) ? 'checked' : '';
+    const disabled = !visibleModels.includes(m) && visibleModels.length >= MAX_VISIBLE_MODELS ? 'disabled' : '';
+    return `<label class="model-selector-item ${disabled ? 'disabled' : ''}">
+      <input type="checkbox" value="${m}" ${checked} ${disabled}
+             onchange="toggleModelVisibility('${m}', this.checked)"/>
+      <span class="model-selector-swatch" style="background:${mc.stroke}"></span>
+      ${mc.label || m}
+    </label>`;
+  }).join('');
+
+  return `
+    <div class="model-selector">
+      <button class="model-selector-btn" onclick="this.parentElement.classList.toggle('open')">
+        Models (${visibleModels.length}/${MAX_VISIBLE_MODELS}) &#9662;
+      </button>
+      <div class="model-selector-dropdown">${items}</div>
+    </div>
+  `;
+}
+
+function toggleModelVisibility(model, checked) {
+  if (checked && !visibleModels.includes(model)) {
+    if (visibleModels.length >= MAX_VISIBLE_MODELS) return;
+    visibleModels.push(model);
+  } else if (!checked) {
+    visibleModels = visibleModels.filter(m => m !== model);
+  }
+  refreshExperimentView();
+}
+
+function refreshExperimentView() {
+  const exp = window._currentExperiment;
+  if (!exp) return;
+  // Preserve dropdown open state across re-render
+  const wasOpen = document.querySelector('.model-selector.open') != null;
+  document.getElementById('experiment-detail').innerHTML = renderExperiment(exp);
+  if (wasOpen) {
+    const sel = document.querySelector('.model-selector');
+    if (sel) sel.classList.add('open');
+  }
+}
+
+function getVisibleComparisons(comparisons) {
+  if (!comparisons) return [];
+  return comparisons.filter(c => visibleModels.includes(c.model));
 }
 
 // ---------------------------------------------------------------------------
@@ -384,13 +472,14 @@ function renderAllModels(comparisons) {
 }
 
 function switchModel(idx) {
+  const filtered = getVisibleComparisons(window._comparisons);
   document.querySelectorAll('.model-tab').forEach((tab, i) => {
-    const mc = getModelColor(window._comparisons[i].model);
+    const mc = getModelColor(filtered[i].model);
     tab.classList.toggle('active', i === idx);
     tab.style.borderBottomColor = i === idx ? mc.stroke : 'transparent';
   });
   document.getElementById('comparison-content').innerHTML =
-    renderComparisonTable(window._comparisons[idx]);
+    renderComparisonTable(filtered[idx]);
 }
 
 function renderComparisonTable(comp) {
