@@ -151,7 +151,7 @@ function renderLeaderboard(leaderboard) {
       <tbody>${rows}</tbody>
     </table>
     <p style="font-size:0.78rem;color:#888;margin-top:0.5rem">
-      Ranked by Fidelity Score F = 1 \u2212 EMD(sim,real)/EMD(random,real). F=1 is perfect replication, F=0 is no better than random.
+      Ranked by Fidelity Score F = 1 \u2212 W\u2081(sim,real)/W\u2081(random,real). F=1 is perfect replication, F=0 is no better than random.
       W\u2081 = Wasserstein-1 distance (lower = better). Non-sig Rate = fraction of conditions where replicated mean is not significantly different from original.
       All means are paper-weighted: first averaged within each paper, then across papers (each paper counts equally).
     </p>
@@ -488,42 +488,45 @@ function renderAllModels(comparisons, paper) {
     </div>
   `;
 
-  // Combined bar chart
-  const allVals = comparisons.flatMap(comp =>
-    comp.conditions.map(c => Math.abs(parseFloat(c.original_mean || 0)))
-  ).concat(comparisons.flatMap(comp =>
-    comp.conditions.map(c => Math.abs(parseFloat(c.replicated_mean || 0)))
-  ));
-  const maxVal = Math.max(...allVals) * 1.2 || 1;
-
-  const barGroups = conditionNames.map(cond => {
+  // Per-condition bar charts — each box scales independently
+  const barCards = conditionNames.map(cond => {
     const origMean = parseFloat(comparisons[0].conditions.find(c => c.condition === cond)?.original_mean || 0);
-    const origH = (Math.abs(origMean) / maxVal) * 140;
+    const condVals = [Math.abs(origMean)];
+    comparisons.forEach(comp => {
+      const repMean = parseFloat(comp.conditions.find(c => c.condition === cond)?.replicated_mean || 0);
+      condVals.push(Math.abs(repMean));
+    });
+    const condMax = Math.max(...condVals) * 1.2 || 1;
+    const origH = (Math.abs(origMean) / condMax) * 130;
 
     const modelBars = comparisons.map(comp => {
       const mc = getModelColor(comp.model);
       const condData = comp.conditions.find(c => c.condition === cond);
       const repMean = parseFloat(condData?.replicated_mean || 0);
-      const repH = (Math.abs(repMean) / maxVal) * 140;
+      const repH = (Math.abs(repMean) / condMax) * 130;
       return `<div class="bar" style="height:${repH}px;background:${mc.fill};opacity:0.7">
         <span class="bar-value">${fmtNum(repMean)}</span>
       </div>`;
     }).join('');
 
     return `
-      <div class="bar-group">
-        <div class="bar-pair">
-          <div class="bar original" style="height:${origH}px">
-            <span class="bar-value">${fmtNum(origMean)}</span>
+      <div class="dist-plot">
+        <div class="dist-plot-title">${formatCondition(cond)}</div>
+        <div class="bar-chart" style="justify-content:center">
+          <div class="bar-group">
+            <div class="bar-pair">
+              <div class="bar original" style="height:${origH}px">
+                <span class="bar-value">${fmtNum(origMean)}</span>
+              </div>
+              ${modelBars}
+            </div>
           </div>
-          ${modelBars}
         </div>
-        <div class="bar-label">${formatCondition(cond)}</div>
       </div>
     `;
   }).join('');
 
-  const chart = `${legend}<div class="bar-chart">${barGroups}</div>`;
+  const chart = `${legend}<div class="dist-grid">${barCards}</div>`;
 
   // Per-model tables with tabs
   const tabs = comparisons.length > 1 ? `
@@ -608,7 +611,7 @@ function renderComparisonTable(comp) {
       * p &lt; 0.05 indicates the replicated mean differs significantly from the original.
       Non-significant = closer replication.
       W\u2081 = Wasserstein-1 distance (lower = closer distributions).
-      Fidelity F = 1 &minus; EMD(sim,real)/EMD(random,real); 1 = perfect, 0 = random, &lt;0 = worse than random.
+      Fidelity F = 1 &minus; W\u2081(sim,real)/W\u2081(random,real); 1 = perfect, 0 = random, &lt;0 = worse than random.
     </p>
   `;
 }
@@ -671,7 +674,7 @@ function renderPaperTests(comparisons) {
   });
 
   return `
-    <div class="detail-section" style="border-left:3px solid #2563eb">
+    <div class="detail-section">
       <h3>Paper-Level Statistical Tests</h3>
       <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem">
         Same tests as reported in the original paper, applied to simulated data.

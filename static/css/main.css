@@ -262,9 +262,9 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   display: flex;
   align-items: flex-end;
   gap: 1.5rem;
-  height: 180px;
-  padding: 1rem 0;
-  margin-top: 0.5rem;
+  height: 160px;
+  padding: 1.2rem 0 0.5rem;
+  margin-top: 0;
 }
 .bar-group {
   display: flex;
@@ -276,7 +276,7 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   display: flex;
   align-items: flex-end;
   gap: 4px;
-  height: 140px;
+  height: 130px;
 }
 .bar {
   width: 28px;
