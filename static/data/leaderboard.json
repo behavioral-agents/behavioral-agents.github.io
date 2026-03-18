@@ -23,8 +23,8 @@
   {
     "model": "claude-sonnet-4-6",
     "n_papers": 8,
-    "mean_wasserstein": 13.0573,
-    "mean_fidelity": -1.4472,
-    "nonsig_rate": 0.3125
+    "mean_wasserstein": 13.8443,
+    "mean_fidelity": -1.3085,
+    "nonsig_rate": 0.1927
   }
 ]
