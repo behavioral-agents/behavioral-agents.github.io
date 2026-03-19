@@ -113,45 +113,68 @@ function filterPapers() {
 // Model leaderboard
 // ---------------------------------------------------------------------------
 function renderLeaderboard(leaderboard) {
-  if (!leaderboard || leaderboard.length === 0) return;
-
   const container = document.getElementById('leaderboard');
   if (!container) return;
 
-  const rows = leaderboard.map((entry, i) => {
-    const mc = getModelColor(entry.model);
-    const rank = i + 1;
-    const medal = rank === 1 ? '1' : rank === 2 ? '2' : rank === 3 ? '3' : rank;
-    const fid = entry.mean_fidelity != null ? entry.mean_fidelity.toFixed(3) : '\u2014';
-    const w = entry.mean_wasserstein != null ? entry.mean_wasserstein.toFixed(2) : '\u2014';
-    const nonsig = entry.nonsig_rate != null ? (entry.nonsig_rate * 100).toFixed(0) + '%' : '\u2014';
+  // Support both old flat array and new {text: [...], visual: [...]} format
+  let sections;
+  if (Array.isArray(leaderboard)) {
+    sections = { text: leaderboard };
+  } else {
+    sections = leaderboard;
+  }
+
+  const MODALITY_LABELS = { text: 'Text-Based Experiments', visual: 'Visual Experiments' };
+  const modalities = Object.keys(sections).filter(k => sections[k] && sections[k].length > 0);
+  if (modalities.length === 0) return;
+
+  const showHeaders = modalities.length > 1;
+
+  const tablesHtml = modalities.map(modality => {
+    const entries = sections[modality];
+    const header = showHeaders
+      ? `<h3 style="font-size:1rem;font-weight:600;margin:1.2rem 0 0.5rem">${MODALITY_LABELS[modality] || modality}</h3>`
+      : '';
+
+    const rows = entries.map((entry, i) => {
+      const mc = getModelColor(entry.model);
+      const rank = i + 1;
+      const fid = entry.mean_fidelity != null ? entry.mean_fidelity.toFixed(3) : '\u2014';
+      const w = entry.mean_wasserstein != null ? entry.mean_wasserstein.toFixed(2) : '\u2014';
+      const nonsig = entry.nonsig_rate != null ? (entry.nonsig_rate * 100).toFixed(0) + '%' : '\u2014';
+
+      return `
+        <tr>
+          <td class="num" style="font-weight:700">${rank}</td>
+          <td style="font-weight:600;color:${mc.stroke}">${mc.label || entry.model}</td>
+          <td class="num" style="font-weight:600">${fid}</td>
+          <td class="num">${w}</td>
+          <td class="num">${nonsig}</td>
+          <td class="num">${entry.n_papers}</td>
+        </tr>
+      `;
+    }).join('');
 
     return `
-      <tr>
-        <td class="num" style="font-weight:700">${medal}</td>
-        <td style="font-weight:600;color:${mc.stroke}">${mc.label || entry.model}</td>
-        <td class="num" style="font-weight:600">${fid}</td>
-        <td class="num">${w}</td>
-        <td class="num">${nonsig}</td>
-        <td class="num">${entry.n_papers}</td>
-      </tr>
+      ${header}
+      <table class="results-table leaderboard-table">
+        <thead>
+          <tr>
+            <th class="num">Rank</th>
+            <th>Model</th>
+            <th class="num">Fidelity</th>
+            <th class="num">Mean W\u2081</th>
+            <th class="num">Non-sig Rate</th>
+            <th class="num">Papers</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
     `;
   }).join('');
 
   container.innerHTML = `
-    <table class="results-table leaderboard-table">
-      <thead>
-        <tr>
-          <th class="num">Rank</th>
-          <th>Model</th>
-          <th class="num">Fidelity</th>
-          <th class="num">Mean W\u2081</th>
-          <th class="num">Non-sig Rate</th>
-          <th class="num">Papers</th>
-        </tr>
-      </thead>
-      <tbody>${rows}</tbody>
-    </table>
+    ${tablesHtml}
     <p style="font-size:0.78rem;color:#888;margin-top:0.5rem">
       Ranked by Fidelity Score F = 1 \u2212 EMD(sim,real)/EMD(random,real). F=1 is perfect replication, F=0 is no better than random.
       W\u2081 = Wasserstein-1 distance (lower = better). Non-sig Rate = fraction of conditions where replicated mean is not significantly different from original.
@@ -274,9 +297,12 @@ function renderExperiment(paper, resetModels = true) {
   // Reset to default models when entering a new paper/experiment.
   // Skip reset when re-rendering after a model toggle (resetModels=false).
   if (resetModels && hasComps) {
-    const availableModels = paper.comparisons.map(c => c.model);
-    visibleModels = DEFAULT_VISIBLE_MODELS.filter(m => availableModels.includes(m));
-    if (visibleModels.length === 0) visibleModels = availableModels.slice(0, MAX_VISIBLE_MODELS);
+    const availableKeys = paper.comparisons.map(c => compKey(c));
+    // Match defaults by model name prefix (so "gpt-4o" matches "gpt-4o" and "gpt-4o_visual")
+    visibleModels = DEFAULT_VISIBLE_MODELS
+      .flatMap(m => availableKeys.filter(k => k === m || k.startsWith(m + '_')))
+      .slice(0, MAX_VISIBLE_MODELS);
+    if (visibleModels.length === 0) visibleModels = availableKeys.slice(0, MAX_VISIBLE_MODELS);
   }
 
   const filteredComps = getVisibleComparisons(paper.comparisons);
@@ -335,17 +361,25 @@ function goBack() {
 // ---------------------------------------------------------------------------
 function renderModelSelector(comparisons) {
   if (!comparisons || comparisons.length <= 1) return '';
-  const allModels = comparisons.map(c => c.model);
 
-  const items = allModels.map(m => {
-    const mc = getModelColor(m);
-    const checked = visibleModels.includes(m) ? 'checked' : '';
-    const disabled = !visibleModels.includes(m) && visibleModels.length >= MAX_VISIBLE_MODELS ? 'disabled' : '';
+  // Show modality suffix when a model appears in multiple modalities
+  const hasMultiModality = comparisons.some((c, i) =>
+    comparisons.some((c2, j) => i !== j && c2.model === c.model && c2.modality !== c.modality)
+  );
+
+  const items = comparisons.map(c => {
+    const mc = getModelColor(c.model);
+    const key = compKey(c);
+    const label = hasMultiModality
+      ? `${mc.label || c.model} (${c.modality || 'text'})`
+      : (mc.label || c.model);
+    const checked = visibleModels.includes(key) ? 'checked' : '';
+    const disabled = !visibleModels.includes(key) && visibleModels.length >= MAX_VISIBLE_MODELS ? 'disabled' : '';
     return `<label class="model-selector-item ${disabled ? 'disabled' : ''}">
-      <input type="checkbox" value="${m}" ${checked} ${disabled}
-             onchange="toggleModelVisibility('${m}', this.checked)"/>
+      <input type="checkbox" value="${key}" ${checked} ${disabled}
+             onchange="toggleModelVisibility('${key}', this.checked)"/>
       <span class="model-selector-swatch" style="background:${mc.stroke}"></span>
-      ${mc.label || m}
+      ${label}
     </label>`;
   }).join('');
 
@@ -382,9 +416,16 @@ function refreshExperimentView() {
   }
 }
 
+/** Unique key for a comparison entry: model name + modality suffix when non-text. */
+function compKey(comp) {
+  return comp.modality && comp.modality !== 'text'
+    ? `${comp.model}_${comp.modality}`
+    : comp.model;
+}
+
 function getVisibleComparisons(comparisons) {
   if (!comparisons) return [];
-  return comparisons.filter(c => visibleModels.includes(c.model));
+  return comparisons.filter(c => visibleModels.includes(compKey(c)));
 }
 
 // ---------------------------------------------------------------------------
@@ -546,13 +587,19 @@ function renderAllModels(comparisons, paper) {
   const chart = `${legend}<div class="bar-chart">${barGroups}</div>`;
 
   // Per-model tables with tabs
+  const hasMultiMod = comparisons.some((c, i) =>
+    comparisons.some((c2, j) => i !== j && c2.model === c.model && c2.modality !== c.modality)
+  );
   const tabs = comparisons.length > 1 ? `
     <div class="model-tabs">
       ${comparisons.map((c, i) => {
         const mc = getModelColor(c.model);
+        const tabLabel = hasMultiMod
+          ? `${mc.label || c.model} (${c.modality || 'text'})`
+          : (mc.label || c.model);
         return `<button class="model-tab ${i === 0 ? 'active' : ''}"
                 style="border-bottom-color:${i === 0 ? mc.stroke : 'transparent'}"
-                onclick="switchModel(${i})">${mc.label || c.model}</button>`;
+                onclick="switchModel(${i})">${tabLabel}</button>`;
       }).join('')}
     </div>
   ` : '';
@@ -563,7 +610,9 @@ function renderAllModels(comparisons, paper) {
   const xAxisLabel = paper?.design_summary?.outcome_variables?.[0]?.name || '';
   const distPlots = renderAllModelDistributions(comparisons, conditionNames, xAxisLabel);
 
-  return distPlots + chart + tabs +
+  const meansHeader = `<h4 style="font-size:0.95rem;font-weight:600;margin-top:1.5rem;margin-bottom:0.75rem">Statistical Comparison</h4>`;
+
+  return distPlots + meansHeader + chart + tabs +
     `<div id="comparison-content">${tableContent}</div>`;
 }
 
