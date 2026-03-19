@@ -151,7 +151,7 @@ function renderLeaderboard(leaderboard) {
       <tbody>${rows}</tbody>
     </table>
     <p style="font-size:0.78rem;color:#888;margin-top:0.5rem">
-      Ranked by Fidelity Score F = 1 \u2212 W\u2081(sim,real)/W\u2081(random,real). F=1 is perfect replication, F=0 is no better than random.
+      Ranked by Fidelity Score F = 1 \u2212 EMD(sim,real)/EMD(random,real). F=1 is perfect replication, F=0 is no better than random.
       W\u2081 = Wasserstein-1 distance (lower = better). Non-sig Rate = fraction of conditions where replicated mean is not significantly different from original.
       All means are paper-weighted: first averaged within each paper, then across papers (each paper counts equally).
     </p>
@@ -261,16 +261,11 @@ function renderExperiment(paper) {
   const hasComps = paper.comparisons && paper.comparisons.length > 0;
   window._comparisons = paper.comparisons || [];
 
-  // Init visible models: keep current selection if models overlap, else use defaults
+  // Always start from default models for each paper — no state leaking between papers
   if (hasComps) {
     const availableModels = paper.comparisons.map(c => c.model);
-    const stillValid = visibleModels.filter(m => availableModels.includes(m));
-    if (stillValid.length === 0) {
-      visibleModels = availableModels.filter(m => DEFAULT_VISIBLE_MODELS.includes(m));
-      if (visibleModels.length === 0) visibleModels = availableModels.slice(0, MAX_VISIBLE_MODELS);
-    } else {
-      visibleModels = stillValid.slice(0, MAX_VISIBLE_MODELS);
-    }
+    visibleModels = DEFAULT_VISIBLE_MODELS.filter(m => availableModels.includes(m));
+    if (visibleModels.length === 0) visibleModels = availableModels.slice(0, MAX_VISIBLE_MODELS);
   }
 
   const filteredComps = getVisibleComparisons(paper.comparisons);
@@ -287,6 +282,11 @@ function renderExperiment(paper) {
       </div>
       <p>${paper.description}</p>
       ${renderDesignSummary(paper.design_summary, paper.original_results)}
+    </div>
+
+    <div class="detail-section">
+      <h3>Original Results</h3>
+      ${renderOriginalResults(paper.original_results)}
     </div>
 
     ${hasComps ? `
@@ -488,45 +488,42 @@ function renderAllModels(comparisons, paper) {
     </div>
   `;
 
-  // Per-condition bar charts — each box scales independently
-  const barCards = conditionNames.map(cond => {
+  // Combined bar chart
+  const allVals = comparisons.flatMap(comp =>
+    comp.conditions.map(c => Math.abs(parseFloat(c.original_mean || 0)))
+  ).concat(comparisons.flatMap(comp =>
+    comp.conditions.map(c => Math.abs(parseFloat(c.replicated_mean || 0)))
+  ));
+  const maxVal = Math.max(...allVals) * 1.2 || 1;
+
+  const barGroups = conditionNames.map(cond => {
     const origMean = parseFloat(comparisons[0].conditions.find(c => c.condition === cond)?.original_mean || 0);
-    const condVals = [Math.abs(origMean)];
-    comparisons.forEach(comp => {
-      const repMean = parseFloat(comp.conditions.find(c => c.condition === cond)?.replicated_mean || 0);
-      condVals.push(Math.abs(repMean));
-    });
-    const condMax = Math.max(...condVals) * 1.2 || 1;
-    const origH = (Math.abs(origMean) / condMax) * 130;
+    const origH = (Math.abs(origMean) / maxVal) * 140;
 
     const modelBars = comparisons.map(comp => {
       const mc = getModelColor(comp.model);
       const condData = comp.conditions.find(c => c.condition === cond);
       const repMean = parseFloat(condData?.replicated_mean || 0);
-      const repH = (Math.abs(repMean) / condMax) * 130;
+      const repH = (Math.abs(repMean) / maxVal) * 140;
       return `<div class="bar" style="height:${repH}px;background:${mc.fill};opacity:0.7">
         <span class="bar-value">${fmtNum(repMean)}</span>
       </div>`;
     }).join('');
 
     return `
-      <div class="dist-plot">
-        <div class="dist-plot-title">${formatCondition(cond)}</div>
-        <div class="bar-chart" style="justify-content:center">
-          <div class="bar-group">
-            <div class="bar-pair">
-              <div class="bar original" style="height:${origH}px">
-                <span class="bar-value">${fmtNum(origMean)}</span>
-              </div>
-              ${modelBars}
-            </div>
+      <div class="bar-group">
+        <div class="bar-pair">
+          <div class="bar original" style="height:${origH}px">
+            <span class="bar-value">${fmtNum(origMean)}</span>
           </div>
+          ${modelBars}
         </div>
+        <div class="bar-label">${formatCondition(cond)}</div>
       </div>
     `;
   }).join('');
 
-  const chart = `${legend}<div class="dist-grid">${barCards}</div>`;
+  const chart = `${legend}<div class="bar-chart">${barGroups}</div>`;
 
   // Per-model tables with tabs
   const tabs = comparisons.length > 1 ? `
@@ -546,9 +543,7 @@ function renderAllModels(comparisons, paper) {
   const xAxisLabel = paper?.design_summary?.outcome_variables?.[0]?.name || '';
   const distPlots = renderAllModelDistributions(comparisons, conditionNames, xAxisLabel);
 
-  const meansHeader = `<h4 style="font-size:0.95rem;font-weight:600;margin-top:1.5rem;margin-bottom:0.75rem">Statistical Comparison</h4>`;
-
-  return distPlots + meansHeader + chart + tabs +
+  return distPlots + chart + tabs +
     `<div id="comparison-content">${tableContent}</div>`;
 }
 
@@ -568,20 +563,16 @@ function renderComparisonTable(comp) {
   const modelName = comp.model;
   const mc = getModelColor(modelName);
 
-  const origResults = window._currentExperiment?.original_results || {};
-
   const rows = conditions.map(c => {
     const pval = parseFloat(c.p_value);
     const isSig = pval < 0.05;
     const hasW = c.wasserstein != null;
     const hasF = c.fidelity != null;
-    const n = origResults[c.condition]?.n;
     return `
       <tr>
         <td>${formatCondition(c.condition)}</td>
         <td class="num">${fmtNum(c.original_mean)}</td>
         <td class="num">${fmtNum(c.replicated_mean)}</td>
-        <td class="num">${n != null ? n : '\u2014'}</td>
         <td class="num ${isSig ? 'sig' : 'ns'}">${fmtNum(c.p_value)}${isSig ? ' *' : ''}</td>
         <td class="num">${hasW ? fmtNum(c.wasserstein) : '\u2014'}</td>
         <td class="num">${hasF ? fmtNum(c.fidelity) : '\u2014'}</td>
@@ -599,7 +590,6 @@ function renderComparisonTable(comp) {
           <th>Condition</th>
           <th class="num">Original Mean</th>
           <th class="num">Replicated Mean</th>
-          <th class="num">N</th>
           <th class="num">p-value</th>
           <th class="num">W\u2081 Distance</th>
           <th class="num">Fidelity</th>
@@ -611,7 +601,7 @@ function renderComparisonTable(comp) {
       * p &lt; 0.05 indicates the replicated mean differs significantly from the original.
       Non-significant = closer replication.
       W\u2081 = Wasserstein-1 distance (lower = closer distributions).
-      Fidelity F = 1 &minus; W\u2081(sim,real)/W\u2081(random,real); 1 = perfect, 0 = random, &lt;0 = worse than random.
+      Fidelity F = 1 &minus; EMD(sim,real)/EMD(random,real); 1 = perfect, 0 = random, &lt;0 = worse than random.
     </p>
   `;
 }
@@ -674,7 +664,7 @@ function renderPaperTests(comparisons) {
   });
 
   return `
-    <div class="detail-section">
+    <div class="detail-section" style="border-left:3px solid #2563eb">
       <h3>Paper-Level Statistical Tests</h3>
       <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem">
         Same tests as reported in the original paper, applied to simulated data.
@@ -756,7 +746,7 @@ function renderAllModelDistributions(comparisons, conditionNames, xAxisLabel) {
 function niceAxisTicks(lo, hi, binCenters, nTarget = 6) {
   // Check if data looks discrete (few unique non-zero-density bins)
   const unique = [...new Set(binCenters.map(v => +v.toFixed(6)))];
-  if (unique.length > 0 && unique.length <= 15) return unique;
+  if (unique.length <= 15) return unique;
 
   const range = hi - lo;
   if (range <= 0) return [lo];
@@ -774,8 +764,8 @@ function niceAxisTicks(lo, hi, binCenters, nTarget = 6) {
 }
 
 function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
-  const W = 380, H = 220;
-  const pad = {top: 10, right: 15, bottom: 50, left: 45};
+  const W = 380, H = 210;
+  const pad = {top: 10, right: 15, bottom: 50, left: 15};
   const plotW = W - pad.left - pad.right;
   const plotH = H - pad.top - pad.bottom;
 
@@ -787,18 +777,18 @@ function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
 
   const refDist = modelDists[0].dist;
   const centers = refDist.bin_centers;
-  const origCounts = refDist.original_counts;
+  const origDensity = refDist.original_density;
 
   const xMin = centers[0] - refDist.bin_width / 2;
   const xMax = centers[centers.length - 1] + refDist.bin_width / 2;
-  let yMax = Math.max(...origCounts);
+  let yMax = Math.max(...origDensity);
   modelDists.forEach(md => {
-    yMax = Math.max(yMax, ...md.dist.replicated_counts);
+    yMax = Math.max(yMax, ...md.dist.replicated_density);
   });
-  yMax = Math.ceil(yMax * 1.15) || 1;
+  yMax *= 1.15;
 
   const xScale = (v) => pad.left + ((v - xMin) / (xMax - xMin)) * plotW;
-  const yScale = (v) => pad.top + plotH - (v / yMax) * plotH;
+  const yScaleGlobal = (v) => pad.top + plotH - (v / yMax) * plotH;
   const barW = (refDist.bin_width / (xMax - xMin)) * plotW;
 
   // Original distribution layer (red)
@@ -807,12 +797,12 @@ function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
   if (isEmpirical) {
     origLayer = centers.map((c, i) => {
       const x = xScale(c) - barW / 2;
-      const h = (origCounts[i] / yMax) * plotH;
+      const h = (origDensity[i] / yMax) * plotH;
       const y = pad.top + plotH - h;
       return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" fill="#dc2626" opacity="0.3"/>`;
     }).join('');
   } else {
-    const origPoints = centers.map((c, i) => `${xScale(c).toFixed(1)},${yScale(origCounts[i]).toFixed(1)}`).join(' ');
+    const origPoints = centers.map((c, i) => `${xScale(c).toFixed(1)},${yScaleGlobal(origDensity[i]).toFixed(1)}`).join(' ');
     origLayer = `<polyline points="${origPoints}" fill="none" stroke="#dc2626" stroke-width="2.5"/>`;
   }
 
@@ -820,7 +810,7 @@ function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
   const modelLayers = modelDists.map(md => {
     const mc = getModelColor(md.model);
     const points = centers.map((c, i) =>
-      `${xScale(c).toFixed(1)},${yScale(md.dist.replicated_counts[i]).toFixed(1)}`
+      `${xScale(c).toFixed(1)},${yScaleGlobal(md.dist.replicated_density[i]).toFixed(1)}`
     ).join(' ');
     const firstX = xScale(centers[0]).toFixed(1);
     const lastX = xScale(centers[centers.length - 1]).toFixed(1);
@@ -832,46 +822,34 @@ function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
     `;
   }).join('');
 
-  // X-axis ticks
-  const xTickVals = niceAxisTicks(xMin, xMax, centers);
-  const allXIntegers = xTickVals.every(v => Number.isInteger(v));
-  const formatXTick = (v) => allXIntegers ? String(v) : (Number.isInteger(v) ? String(v) : v.toFixed(2).replace(/0+$/, '').replace(/\.$/, ''));
+  // X-axis ticks — computed from actual data range
+  const tickVals = niceAxisTicks(xMin, xMax, centers);
+  const allIntegers = tickVals.every(v => Number.isInteger(v));
+  const formatTick = (v) => allIntegers ? String(v) : (Number.isInteger(v) ? String(v) : v.toFixed(2).replace(/0+$/, '').replace(/\.$/, ''));
 
   let xTicksSvg = '';
-  for (const val of xTickVals) {
+  for (const val of tickVals) {
     const x = xScale(val);
     xTicksSvg += `<line x1="${x.toFixed(1)}" y1="${pad.top + plotH}" x2="${x.toFixed(1)}" y2="${pad.top + plotH + 4}" stroke="#999"/>`;
-    xTicksSvg += `<text x="${x.toFixed(1)}" y="${pad.top + plotH + 16}" text-anchor="middle" font-size="10" fill="#666">${formatXTick(val)}</text>`;
-  }
-
-  // Y-axis ticks
-  const yTickVals = niceAxisTicks(0, yMax, [], 4);
-  let yTicksSvg = '';
-  for (const val of yTickVals) {
-    const y = yScale(val);
-    yTicksSvg += `<line x1="${pad.left - 4}" y1="${y.toFixed(1)}" x2="${pad.left}" y2="${y.toFixed(1)}" stroke="#999"/>`;
-    yTicksSvg += `<text x="${pad.left - 7}" y="${(y + 3).toFixed(1)}" text-anchor="end" font-size="10" fill="#666">${Math.round(val)}</text>`;
+    xTicksSvg += `<text x="${x.toFixed(1)}" y="${pad.top + plotH + 16}" text-anchor="middle" font-size="10" fill="#666">${formatTick(val)}</text>`;
   }
 
   const baseLine = `<line x1="${pad.left}" y1="${pad.top + plotH}" x2="${pad.left + plotW}" y2="${pad.top + plotH}" stroke="#ccc"/>`;
-  const yAxisLine = `<line x1="${pad.left}" y1="${pad.top}" x2="${pad.left}" y2="${pad.top + plotH}" stroke="#ccc"/>`;
 
   // Axis labels
   const xLabel = xAxisLabel
     ? `<text x="${pad.left + plotW / 2}" y="${H - 4}" text-anchor="middle" font-size="11" fill="#555">${xAxisLabel}</text>`
     : '';
-  const yLabel = `<text transform="rotate(-90)" x="${-(pad.top + plotH / 2)}" y="13" text-anchor="middle" font-size="11" fill="#555">Count</text>`;
+  const yLabel = `<text x="${pad.left + 2}" y="${pad.top - 2}" text-anchor="start" font-size="10" fill="#888">Density</text>`;
 
   return `
     <div class="dist-plot">
       <div class="dist-plot-title">${formatCondition(condition)}</div>
       <svg width="${W}" height="${H}" style="display:block">
         ${baseLine}
-        ${yAxisLine}
         ${origLayer}
         ${modelLayers}
         ${xTicksSvg}
-        ${yTicksSvg}
         ${xLabel}
         ${yLabel}
       </svg>
