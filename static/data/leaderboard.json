@@ -1,5 +1,12 @@
 [
   {
+    "model": "claude-sonnet-4-6_visual",
+    "n_papers": 1,
+    "mean_wasserstein": 7.464,
+    "mean_fidelity": 0.473,
+    "nonsig_rate": 0.2083
+  },
+  {
     "model": "gpt-4o",
     "n_papers": 8,
     "mean_wasserstein": 8.3543,
@@ -22,9 +29,9 @@
   },
   {
     "model": "claude-sonnet-4-6",
-    "n_papers": 8,
-    "mean_wasserstein": 13.8443,
-    "mean_fidelity": -1.3085,
-    "nonsig_rate": 0.1927
+    "n_papers": 9,
+    "mean_wasserstein": 12.342,
+    "mean_fidelity": -1.2264,
+    "nonsig_rate": 0.2824
   }
 ]
