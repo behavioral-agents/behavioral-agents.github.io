@@ -722,8 +722,10 @@ function renderAllModelDistributions(comparisons, conditionNames, xAxisLabel) {
   if (!hasAnyDist) return '';
 
   const firstWithDist = comparisons.find(comp => comp.distributions && Object.keys(comp.distributions).length > 0);
-  const firstDist = firstWithDist?.distributions[Object.keys(firstWithDist.distributions)[0]];
-  const origLabel = firstDist?.original_type === 'empirical' ? 'Original (empirical)' : 'Original (Normal approx.)';
+  if (!firstWithDist) return '';
+  const firstDist = firstWithDist.distributions[Object.keys(firstWithDist.distributions)[0]];
+  if (!firstDist) return '';
+  const origLabel = firstDist.original_type === 'empirical' ? 'Original (empirical)' : 'Original (Normal approx.)';
 
   const modelLegend = comparisons.map(comp => {
     const mc = getModelColor(comp.model);
@@ -797,13 +799,25 @@ function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
 
   const refDist = modelDists[0].dist;
   const centers = refDist.bin_centers;
-  const origDensity = refDist.original_density;
+  if (!centers || centers.length === 0) return '';
 
-  const xMin = centers[0] - refDist.bin_width / 2;
-  const xMax = centers[centers.length - 1] + refDist.bin_width / 2;
+  // Support both density and counts formats — normalize to density
+  function toDensity(arr, binWidth) {
+    if (!arr || arr.length === 0) return centers.map(() => 0);
+    const total = arr.reduce((s, v) => s + v, 0);
+    if (total === 0) return arr;
+    return arr.map(v => v / (total * binWidth));
+  }
+
+  const bw = refDist.bin_width || 1;
+  const origDensity = refDist.original_density || toDensity(refDist.original_counts, bw);
+
+  const xMin = centers[0] - bw / 2;
+  const xMax = centers[centers.length - 1] + bw / 2;
   let yMax = Math.max(...origDensity);
   modelDists.forEach(md => {
-    yMax = Math.max(yMax, ...md.dist.replicated_density);
+    const repDensity = md.dist.replicated_density || toDensity(md.dist.replicated_counts, md.dist.bin_width || bw);
+    yMax = Math.max(yMax, ...repDensity);
   });
   yMax *= 1.15;
 
@@ -829,8 +843,9 @@ function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
   // Replicated distribution layers — one curve per model
   const modelLayers = modelDists.map(md => {
     const mc = getModelColor(md.model);
+    const repDensity = md.dist.replicated_density || toDensity(md.dist.replicated_counts, md.dist.bin_width || bw);
     const points = centers.map((c, i) =>
-      `${xScale(c).toFixed(1)},${yScaleGlobal(md.dist.replicated_density[i]).toFixed(1)}`
+      `${xScale(c).toFixed(1)},${yScaleGlobal(repDensity[i]).toFixed(1)}`
     ).join(' ');
     const firstX = xScale(centers[0]).toFixed(1);
     const lastX = xScale(centers[centers.length - 1]).toFixed(1);
