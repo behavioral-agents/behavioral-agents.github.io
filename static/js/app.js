@@ -246,6 +246,16 @@ function showPaperByDoi(doi) {
           ${group.authors.join(', ')} (${group.year})
           &middot; <a href="https://doi.org/${group.doi}" target="_blank">DOI</a>
           ${group.replication_url ? `&middot; <a href="${group.replication_url}" target="_blank">Replication data</a>` : ''}
+          ${(() => {
+            const repro = [];
+            group.experiments.forEach(exp => {
+              if (exp.has_reproduce_text) repro.push({ id: exp.id, modality: 'text' });
+              if (exp.has_reproduce_visual) repro.push({ id: exp.id, modality: 'visual' });
+            });
+            return repro.map(r =>
+              `&middot; <a href="#" class="repro-link" onclick="event.preventDefault();showReproduction('${r.id}','${r.modality}')">Reproduce (${r.modality})</a>`
+            ).join('\n            ');
+          })()}
         </div>
       </div>
 
@@ -939,6 +949,175 @@ function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
       </svg>
     </div>
   `;
+}
+
+// ---------------------------------------------------------------------------
+// Reproduction package viewer
+// ---------------------------------------------------------------------------
+async function showReproduction(paperId, modality) {
+  const detail = document.getElementById('paper-detail');
+  const basePath = `static/data/reproduce/${paperId}_${modality}`;
+
+  // Files to fetch
+  const files = [
+    { name: 'reproduce.py', lang: 'python' },
+    { name: 'survey.json', lang: 'json' },
+    { name: 'agents.json', lang: 'json' },
+    { name: 'scenarios.json', lang: 'json' },
+  ];
+
+  const screenNote = modality === 'visual'
+    ? ' In visual mode, the LLM sees screenshot images of the original decision screens instead of text descriptions.'
+    : '';
+
+  detail.innerHTML = `
+    <span class="back-link" onclick="showPaperByDoi(allPapers.find(p=>p.id==='${paperId}')?.doi)">&larr; Back to paper</span>
+    <div class="detail-header">
+      <h2>Reproduction Package: ${paperId} (${modality})</h2>
+      <div class="repro-instructions">
+        <p>This package contains everything needed to replicate the ${modality}-mode simulation for this paper.${screenNote}</p>
+        <p style="margin-top:0.4rem"><strong>How to run:</strong></p>
+        <ol class="repro-steps">
+          <li>Install the EDSL framework: <code>pip install edsl</code></li>
+          <li>Download all files below into a single directory${modality === 'visual' ? ' (keep the <code>screens/</code> subfolder intact)' : ''}</li>
+          <li>Run: <code>python reproduce.py</code></li>
+          <li>Results will be saved to <code>results_${modality}.csv</code></li>
+        </ol>
+        <p style="margin-top:0.4rem"><strong>Files:</strong></p>
+        <ul class="repro-file-desc">
+          <li><code>reproduce.py</code> — Main script that loads the serialized objects and runs the simulation via EDSL</li>
+          <li><code>survey.json</code> — The survey instrument (questions, answer options, instructions shown to the LLM)</li>
+          <li><code>agents.json</code> — Simulated participant profiles with demographic traits matching the original sample</li>
+          <li><code>scenarios.json</code> — Experimental conditions (treatments) presented to each agent${modality === 'visual' ? ', including references to the decision screen images' : ''}</li>
+          ${modality === 'visual' ? '<li><code>screens/</code> — PNG screenshots of the original experiment decision screens shown to the LLM</li>' : ''}
+        </ul>
+      </div>
+    </div>
+    <div id="repro-files"><p style="color:#888">Loading files...</p></div>
+  `;
+
+  const container = document.getElementById('repro-files');
+  const loaded = [];
+
+  for (const file of files) {
+    try {
+      const res = await fetch(`${basePath}/${file.name}?${CACHE_BUST}`, { method: 'HEAD' });
+      if (!res.ok) continue;
+      loaded.push(file);
+    } catch (e) {
+      // skip missing files
+    }
+  }
+
+  // Check for screen images in visual mode
+  let screens = [];
+  if (modality === 'visual') {
+    try {
+      // Try to read scenario file to discover screen filenames
+      const scenRes = await fetch(`${basePath}/scenarios.json?${CACHE_BUST}`);
+      if (scenRes.ok) {
+        const scenData = await scenRes.json();
+        const scenList = scenData.scenarios || scenData.data || [];
+        const screenPaths = new Set();
+        for (const s of scenList) {
+          for (const [k, v] of Object.entries(s)) {
+            if (typeof v === 'object' && v && v.path) {
+              screenPaths.add(v.path);
+            }
+          }
+        }
+        screens = [...screenPaths].sort();
+      }
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  if (loaded.length === 0) {
+    container.innerHTML = '<p style="color:#dc2626">No reproduction files found.</p>';
+    return;
+  }
+
+  let html = `<div class="repro-actions">
+    <button class="repro-download-btn" onclick="downloadReproduction('${paperId}','${modality}')">Download all files</button>
+  </div>`;
+
+  for (const file of loaded) {
+    html += `
+      <div class="repro-file-row">
+        <span class="repro-filename">${file.name}</span>
+        <button class="repro-download-single-btn" onclick="downloadSingleFile('${basePath}/${file.name}','${file.name}')">Download</button>
+      </div>
+    `;
+  }
+
+  if (screens.length > 0) {
+    html += `
+      <div class="repro-screens-header">
+        <span class="repro-filename">screens/ (${screens.length} decision screen images)</span>
+        <button class="repro-download-single-btn" onclick="downloadAllScreens('${basePath}', ${JSON.stringify(screens)})">Download all screens</button>
+      </div>
+      <div class="repro-screens-grid">
+        ${screens.map(s => {
+          const fname = s.split('/').pop();
+          return `<div class="repro-screen-item">
+            <img src="${basePath}/${s}?${CACHE_BUST}" alt="${fname}">
+            <div class="repro-screen-label">${fname}</div>
+            <button class="repro-download-single-btn" onclick="downloadSingleFile('${basePath}/${s}','${fname}')">Download</button>
+          </div>`;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
+}
+
+function downloadSingleFile(url, filename) {
+  const a = document.createElement('a');
+  a.href = `${url}?${CACHE_BUST}`;
+  a.download = filename;
+  a.click();
+}
+
+async function downloadAllScreens(basePath, screenPaths) {
+  for (const s of screenPaths) {
+    const fname = s.split('/').pop();
+    downloadSingleFile(`${basePath}/${s}`, fname);
+    await new Promise(r => setTimeout(r, 200));
+  }
+}
+
+async function downloadReproduction(paperId, modality) {
+  const basePath = `static/data/reproduce/${paperId}_${modality}`;
+  const fileNames = ['reproduce.py', 'survey.json', 'agents.json', 'scenarios.json'];
+
+  // Collect all file contents
+  const files = [];
+  for (const name of fileNames) {
+    try {
+      const res = await fetch(`${basePath}/${name}?${CACHE_BUST}`);
+      if (res.ok) {
+        const blob = await res.blob();
+        files.push({ name, blob });
+      }
+    } catch (e) { /* skip */ }
+  }
+
+  if (files.length === 0) return;
+
+  // If only one file, download directly; otherwise create a simple concatenated download
+  // For a proper zip we'd need a library, so we download files individually
+  for (const file of files) {
+    const url = URL.createObjectURL(file.blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = file.name;
+    a.click();
+    URL.revokeObjectURL(url);
+    // Small delay between downloads so browser doesn't block them
+    await new Promise(r => setTimeout(r, 200));
+  }
 }
 
 // ---------------------------------------------------------------------------

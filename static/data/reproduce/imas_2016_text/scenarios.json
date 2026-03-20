@@ -1,0 +1,18 @@
+{
+  "scenarios": [
+    {
+      "condition": "realized_loss",
+      "treatment_description": "Your losses from the first 3 rounds have been REALIZED: you physically handed over the money you lost in cash to the experimenter. That money is gone from your envelope. You are now making a fresh investment decision for the final round.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "paper_loss",
+      "treatment_description": "Your losses from the first 3 rounds remain ON PAPER: you have been shown your accumulated balance on screen, but no money has changed hands. Your total earnings (including these losses) will be settled at the end of the experiment.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "ScenarioList"
+}

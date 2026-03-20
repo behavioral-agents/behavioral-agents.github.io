@@ -1,0 +1,172 @@
+{
+  "questions": [
+    {
+      "question_name": "round1_investment",
+      "question_text": "You are participating in an investment experiment at a university. You have been given $8 in an envelope. You will make 4 rounds of investment decisions. In each round, you decide how much of $2.00 (in increments of $0.25) to invest in a lottery.\n\nThe lottery works as follows: you are assigned a 'success number' between 1 and 6. A six-sided die is rolled. If the die matches your success number (1/6 chance), you win 7 times the amount you invested. If it does not match (5/6 chance), you lose the amount you invested.\n\nROUND 1 of 4.\nYour success number is 3.\n\nHow much of $2.00 would you like to invest in the lottery?\nEach unit = $0.25. (0 = $0.00, 8 = $2.00)",
+      "question_options": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "option_labels": {
+        "0": "$0.00",
+        "4": "$1.00",
+        "8": "$2.00"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "round2_investment",
+      "question_text": "ROUND 1 RESULT: The die came up 5. Your success number was 3. The lottery FAILED. You lost the amount you invested.\n\nROUND 2 of 4.\nYour success number is 1.\n\nHow much of $2.00 would you like to invest in the lottery?\nEach unit = $0.25. (0 = $0.00, 8 = $2.00)",
+      "question_options": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "option_labels": {
+        "0": "$0.00",
+        "4": "$1.00",
+        "8": "$2.00"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "round3_investment",
+      "question_text": "ROUND 2 RESULT: The die came up 4. Your success number was 1. The lottery FAILED. You lost the amount you invested.\n\nROUND 3 of 4.\nYour success number is 6.\n\nHow much of $2.00 would you like to invest in the lottery?\nEach unit = $0.25. (0 = $0.00, 8 = $2.00)",
+      "question_options": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "option_labels": {
+        "0": "$0.00",
+        "4": "$1.00",
+        "8": "$2.00"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "round4_investment",
+      "question_text": "ROUND 3 RESULT: The die came up 2. Your success number was 6. The lottery FAILED. You lost the amount you invested.\n\nYou have now lost the lottery in all 3 rounds.\n\n{{ treatment_description }}\n\nROUND 4 of 4 (final round).\nYour success number is 4.\n\nHow much of $2.00 would you like to invest in the lottery?\nEach unit = $0.25. (0 = $0.00, 8 = $2.00)",
+      "question_options": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "option_labels": {
+        "0": "$0.00",
+        "4": "$1.00",
+        "8": "$2.00"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "round1_investment",
+      "round2_investment",
+      "round3_investment",
+      "round4_investment"
+    ],
+    "survey_question_texts": [
+      "You are participating in an investment experiment at a university. You have been given $8 in an envelope. You will make 4 rounds of investment decisions. In each round, you decide how much of $2.00 (in increments of $0.25) to invest in a lottery.\n\nThe lottery works as follows: you are assigned a 'success number' between 1 and 6. A six-sided die is rolled. If the die matches your success number (1/6 chance), you win 7 times the amount you invested. If it does not match (5/6 chance), you lose the amount you invested.\n\nROUND 1 of 4.\nYour success number is 3.\n\nHow much of $2.00 would you like to invest in the lottery?\nEach unit = $0.25. (0 = $0.00, 8 = $2.00)",
+      "ROUND 1 RESULT: The die came up 5. Your success number was 3. The lottery FAILED. You lost the amount you invested.\n\nROUND 2 of 4.\nYour success number is 1.\n\nHow much of $2.00 would you like to invest in the lottery?\nEach unit = $0.25. (0 = $0.00, 8 = $2.00)",
+      "ROUND 2 RESULT: The die came up 4. Your success number was 1. The lottery FAILED. You lost the amount you invested.\n\nROUND 3 of 4.\nYour success number is 6.\n\nHow much of $2.00 would you like to invest in the lottery?\nEach unit = $0.25. (0 = $0.00, 8 = $2.00)",
+      "ROUND 3 RESULT: The die came up 2. Your success number was 6. The lottery FAILED. You lost the amount you invested.\n\nYou have now lost the lottery in all 3 rounds.\n\n{{ treatment_description }}\n\nROUND 4 of 4 (final round).\nYour success number is 4.\n\nHow much of $2.00 would you like to invest in the lottery?\nEach unit = $0.25. (0 = $0.00, 8 = $2.00)"
+    ],
+    "data": {
+      "round2_investment": {
+        "prior_questions": [
+          "round1_investment"
+        ]
+      },
+      "round3_investment": {
+        "prior_questions": [
+          "round1_investment",
+          "round2_investment"
+        ]
+      },
+      "round4_investment": {
+        "prior_questions": [
+          "round1_investment",
+          "round2_investment",
+          "round3_investment"
+        ]
+      }
+    }
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "round1_investment": 0,
+      "round2_investment": 1,
+      "round3_investment": 2,
+      "round4_investment": 3
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 4
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

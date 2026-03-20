@@ -30,13 +30,15 @@
             "condition": "paper_loss",
             "original_mean": 0.9417,
             "original_se": 0.1138,
-            "replicated_mean": 0.9,
-            "replicated_se": 0.0557,
-            "delta": -0.0417,
-            "z_stat": -0.3291,
-            "p_value": 0.7421,
-            "wasserstein": 0.4083,
-            "fidelity": -1.5358
+            "replicated_mean": 0.9333,
+            "replicated_se": 0.0645,
+            "delta": -0.0084,
+            "z_stat": -0.064,
+            "p_value": 0.949,
+            "wasserstein": 0.2929,
+            "fidelity": -1.2412,
+            "conclusion": "correct_significant",
+            "paper_test": "OLS"
           },
           {
             "condition": "realized_loss",
@@ -47,8 +49,10 @@
             "delta": -0.0251,
             "z_stat": -0.2983,
             "p_value": 0.7655,
-            "wasserstein": 0.2867,
-            "fidelity": 0.2061
+            "wasserstein": 0.2335,
+            "fidelity": 0.3947,
+            "conclusion": "correct_significant",
+            "paper_test": "OLS"
           }
         ],
         "distributions": {
@@ -256,25 +260,25 @@
         "paper_tests": [
           {
             "test_name": "OLS",
-            "effect": 0.30625,
-            "se": 0.066342,
-            "t_stat": 4.616215,
-            "p_value": 2.6e-05,
+            "effect": 0.339583,
+            "se": 0.075653,
+            "t_stat": 4.488684,
+            "p_value": 4e-05,
             "n_treatment": 30,
             "n_control": 24,
             "original_effect": 0.3229,
-            "description": "OLS: paper_loss vs realized_loss = 0.3063 (p=0.0000)",
+            "description": "OLS: paper_loss vs realized_loss = 0.3396 (p=0.0000)",
             "test_index": 0,
             "result_description": "Participants who realized their losses decreased investment in round 4, while those with paper losses increased investment.",
             "conclusion": "correct_significant"
           },
           {
             "test_name": "Mann-Whitney U",
-            "effect": 0.30625,
-            "u_stat": 615.0,
+            "effect": 0.339583,
+            "u_stat": 616.5,
             "p_value": 2e-06,
             "original_effect": 0.3229,
-            "description": "Mann-Whitney U: paper_loss vs realized_loss = 0.3063 (p=0.0000)",
+            "description": "Mann-Whitney U: paper_loss vs realized_loss = 0.3396 (p=0.0000)",
             "test_index": 1,
             "result_description": "Non-parametric confirmation: paper loss group invests significantly more than realized loss group in round 4.",
             "conclusion": "correct_significant"
@@ -289,25 +293,25 @@
             "condition": "paper_loss",
             "original_mean": 0.9417,
             "original_se": 0.1138,
-            "replicated_mean": 0.5333,
-            "replicated_se": 0.0158,
-            "delta": -0.4084,
-            "z_stat": -3.5544,
-            "p_value": 0.0004,
-            "wasserstein": 0.5917,
-            "fidelity": -2.6744
+            "replicated_mean": 0.5,
+            "replicated_se": 0.0268,
+            "delta": -0.4417,
+            "z_stat": -3.778,
+            "p_value": 0.0002,
+            "wasserstein": 0.5504,
+            "fidelity": -3.2108
           },
           {
             "condition": "realized_loss",
             "original_mean": 0.6188,
             "original_se": 0.0801,
-            "replicated_mean": 0.5938,
-            "replicated_se": 0.0294,
-            "delta": -0.0251,
-            "z_stat": -0.2936,
-            "p_value": 0.7691,
-            "wasserstein": 0.2785,
-            "fidelity": 0.2286
+            "replicated_mean": 0.5729,
+            "replicated_se": 0.0352,
+            "delta": -0.0459,
+            "z_stat": -0.5244,
+            "p_value": 0.6,
+            "wasserstein": 0.1946,
+            "fidelity": 0.4957
           }
         ],
         "distributions": {
@@ -1316,7 +1320,9 @@
         "message": "Discarded 1 observation(s) from 'realized_loss' condition not on $0.25 grid: [0.1]. Likely data entry error in original Excel file.",
         "source": "extract_original"
       }
-    ]
+    ],
+    "has_reproduce_text": true,
+    "has_reproduce_visual": true
   },
   {
     "id": "enke_2020",
@@ -4212,7 +4218,9 @@
         }
       ]
     },
-    "notes": []
+    "notes": [],
+    "has_reproduce_text": false,
+    "has_reproduce_visual": false
   },
   {
     "id": "enke_graeber_2023",
@@ -7105,7 +7113,9 @@
         }
       ]
     },
-    "notes": []
+    "notes": [],
+    "has_reproduce_text": false,
+    "has_reproduce_visual": false
   },
   {
     "id": "enke_graeber_2023_beliefs",
@@ -8642,7 +8652,9 @@
         }
       ]
     },
-    "notes": []
+    "notes": [],
+    "has_reproduce_text": false,
+    "has_reproduce_visual": false
   },
   {
     "id": "exley_kessler_2024",
@@ -9719,7 +9731,9 @@
         }
       ]
     },
-    "notes": []
+    "notes": [],
+    "has_reproduce_text": false,
+    "has_reproduce_visual": false
   },
   {
     "id": "exley_kessler_2024_correlation",
@@ -11266,7 +11280,9 @@
         }
       ]
     },
-    "notes": []
+    "notes": [],
+    "has_reproduce_text": false,
+    "has_reproduce_visual": false
   },
   {
     "id": "exley_kessler_2024_anchoring_a",
@@ -12813,7 +12829,9 @@
         }
       ]
     },
-    "notes": []
+    "notes": [],
+    "has_reproduce_text": false,
+    "has_reproduce_visual": false
   },
   {
     "id": "exley_kessler_2024_anchoring_b",
@@ -14360,7 +14378,9 @@
         }
       ]
     },
-    "notes": []
+    "notes": [],
+    "has_reproduce_text": false,
+    "has_reproduce_visual": false
   },
   {
     "id": "oprea_2024",
@@ -19984,6 +20004,8 @@
         }
       ]
     },
-    "notes": []
+    "notes": [],
+    "has_reproduce_text": false,
+    "has_reproduce_visual": false
   }
 ]

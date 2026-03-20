@@ -488,5 +488,112 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   border-radius: 2px;
 }
 
+/* === Reproduction package === */
+.repro-instructions {
+  font-size: 0.88rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+.repro-instructions code {
+  background: #f1f5f9;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.82rem;
+}
+.repro-steps, .repro-file-desc {
+  margin: 0.3rem 0 0 1.2rem;
+  font-size: 0.88rem;
+  color: #555;
+}
+.repro-steps li, .repro-file-desc li {
+  margin-bottom: 0.25rem;
+}
+.repro-actions {
+  margin-bottom: 1rem;
+}
+.repro-download-btn {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  color: #2563eb;
+  transition: background 0.15s, border-color 0.15s;
+}
+.repro-download-btn:hover {
+  background: #eef2ff;
+  border-color: #a5b4fc;
+}
+.repro-file-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e2e5eb;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+.repro-filename {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.85rem;
+}
+.repro-download-single-btn {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  color: #555;
+  transition: border-color 0.15s;
+}
+.repro-download-single-btn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+.repro-screens-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e2e5eb;
+  border-radius: 8px 8px 0 0;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+.repro-screens-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #e2e5eb;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 0.5rem;
+}
+.repro-screen-item {
+  text-align: center;
+}
+.repro-screen-item img {
+  max-width: 260px;
+  border: 1px solid #e2e5eb;
+  border-radius: 4px;
+}
+.repro-screen-label {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 0.3rem 0 0.25rem;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+.repro-link {
+  font-weight: 500;
+}
+
 /* === Utility === */
 .hidden { display: none; }
