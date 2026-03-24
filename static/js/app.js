@@ -751,7 +751,7 @@ function renderPaperTests(comparisons) {
   });
 
   return `
-    <div class="detail-section" style="border-left:3px solid #2563eb">
+    <div class="detail-section">
       <h3>Paper-Level Statistical Tests</h3>
       <p style="font-size:0.78rem;color:#888;margin-bottom:0.5rem">
         Same tests as reported in the original paper, applied to simulated data.
