@@ -996,24 +996,41 @@ function showReproductionHub(baseId) {
     byExp[c.id].push(c.modality);
   });
 
+  const singleExp = Object.keys(byExp).length === 1;
+  const modalityDesc = {
+    text: 'Agents receive written descriptions of the experimental task and respond based on text instructions alone.',
+    visual: 'Agents see screenshot images of the original decision screens, replicating the visual experience participants had.',
+  };
+
+  const renderModalities = (expId, modalities) => modalities.map(mod =>
+    `<a href="#" class="repro-hub-modality" onclick="event.preventDefault();showReproduction('${expId}','${mod}','${baseId}')">
+      <div class="repro-hub-modality-name">${mod.charAt(0).toUpperCase() + mod.slice(1)}</div>
+      <div class="repro-hub-modality-desc">${modalityDesc[mod]}</div>
+    </a>`
+  ).join('');
+
   detail.innerHTML = `
     <span class="back-link" onclick="showPaperByDoi('${group.doi}')">&larr; Back to paper</span>
     <div class="detail-header">
       <h2>Reproduction Package: ${group.title}</h2>
-      <p class="paper-brief">Download and run the exact same simulations locally. Each experiment has its own self-contained package with serialized survey, agent profiles, and scenarios.</p>
+      <p class="paper-brief">Download and run the exact same simulations locally. Each package contains a self-contained script with serialized survey, agent profiles, and scenarios.</p>
     </div>
-    <div class="repro-hub-grid">
-      ${Object.entries(byExp).map(([expId, modalities]) => `
-        <div class="repro-hub-card">
-          <div class="repro-hub-card-title">${expLabels[expId] || expId}</div>
-          <div class="repro-hub-card-links">
-            ${modalities.map(mod =>
-              `<a href="#" class="repro-hub-link" onclick="event.preventDefault();showReproduction('${expId}','${mod}','${baseId}')">${mod}</a>`
-            ).join('')}
+    ${singleExp ? `
+      <div class="repro-hub-modalities">
+        ${renderModalities(Object.keys(byExp)[0], Object.values(byExp)[0])}
+      </div>
+    ` : `
+      <div class="repro-hub-grid">
+        ${Object.entries(byExp).map(([expId, modalities]) => `
+          <div class="repro-hub-card">
+            <div class="repro-hub-card-title">${expLabels[expId] || expId}</div>
+            <div class="repro-hub-modalities">
+              ${renderModalities(expId, modalities)}
+            </div>
           </div>
-        </div>
-      `).join('')}
-    </div>
+        `).join('')}
+      </div>
+    `}
   `;
 }
 

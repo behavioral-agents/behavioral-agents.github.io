@@ -623,7 +623,7 @@ header .subtitle { color: #555; font-size: 0.95rem; }
 /* === Reproduction hub (paper-level picker) === */
 .repro-hub-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -641,25 +641,37 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   margin-bottom: 0.6rem;
   color: #1a1a1a;
 }
-.repro-hub-card-links {
+.repro-hub-modalities {
   display: flex;
+  flex-direction: column;
   gap: 0.6rem;
+  margin-top: 0.4rem;
 }
-.repro-hub-link {
-  display: inline-block;
-  padding: 0.35rem 0.8rem;
+.repro-hub-modality {
+  display: block;
+  padding: 0.7rem 1rem;
   border: 1px solid #d1d5db;
-  border-radius: 5px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #374151;
+  border-radius: 6px;
   text-decoration: none;
   transition: all 0.15s;
 }
-.repro-hub-link:hover {
+.repro-hub-modality:hover {
   border-color: #2563eb;
-  color: #2563eb;
   background: #f0f5ff;
+}
+.repro-hub-modality-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  margin-bottom: 0.2rem;
+}
+.repro-hub-modality:hover .repro-hub-modality-name {
+  color: #2563eb;
+}
+.repro-hub-modality-desc {
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.4;
 }
 
 /* === Screen Comparison (original vs generated) === */
