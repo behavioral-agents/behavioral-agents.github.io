@@ -1,0 +1,486 @@
+{
+  "questions": [
+    {
+      "question_name": "belief1_prob",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief1_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 75% red balls and 25% blue balls. Bag B contains 25% red balls and 75% blue balls.\n\nThere was a 30% chance Bag A was selected and a 70% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief1_cu",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief1_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief2_prob",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief2_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 90% red balls and 10% blue balls. Bag B contains 10% red balls and 90% blue balls.\n\nThere was a 10% chance Bag A was selected and a 90% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief2_cu",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief2_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief3_prob",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief3_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 65% red balls and 35% blue balls. Bag B contains 35% red balls and 65% blue balls.\n\nThere was a 70% chance Bag A was selected and a 30% chance Bag B was selected. 3 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief3_cu",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief3_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief4_prob",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief4_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 75% red balls and 25% blue balls. Bag B contains 25% red balls and 75% blue balls.\n\nThere was a 50% chance Bag A was selected and a 50% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief4_cu",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief4_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief5_prob",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief5_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 90% red balls and 10% blue balls. Bag B contains 10% red balls and 90% blue balls.\n\nThere was a 90% chance Bag A was selected and a 10% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief5_cu",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief5_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief6_prob",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief6_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 65% red balls and 35% blue balls. Bag B contains 35% red balls and 65% blue balls.\n\nThere was a 5% chance Bag A was selected and a 95% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "belief6_cu",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_belief6_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "belief1_prob",
+      "belief1_cu",
+      "belief2_prob",
+      "belief2_cu",
+      "belief3_prob",
+      "belief3_cu",
+      "belief4_prob",
+      "belief4_cu",
+      "belief5_prob",
+      "belief5_cu",
+      "belief6_prob",
+      "belief6_cu"
+    ],
+    "survey_question_texts": [
+      "Look at the decision screen below:\n{{ decision_screen_belief1_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 75% red balls and 25% blue balls. Bag B contains 25% red balls and 75% blue balls.\n\nThere was a 30% chance Bag A was selected and a 70% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "Look at the decision screen below:\n{{ decision_screen_belief1_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "Look at the decision screen below:\n{{ decision_screen_belief2_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 90% red balls and 10% blue balls. Bag B contains 10% red balls and 90% blue balls.\n\nThere was a 10% chance Bag A was selected and a 90% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "Look at the decision screen below:\n{{ decision_screen_belief2_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "Look at the decision screen below:\n{{ decision_screen_belief3_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 65% red balls and 35% blue balls. Bag B contains 35% red balls and 65% blue balls.\n\nThere was a 70% chance Bag A was selected and a 30% chance Bag B was selected. 3 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "Look at the decision screen below:\n{{ decision_screen_belief3_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "Look at the decision screen below:\n{{ decision_screen_belief4_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 75% red balls and 25% blue balls. Bag B contains 25% red balls and 75% blue balls.\n\nThere was a 50% chance Bag A was selected and a 50% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "Look at the decision screen below:\n{{ decision_screen_belief4_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "Look at the decision screen below:\n{{ decision_screen_belief5_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 90% red balls and 10% blue balls. Bag B contains 10% red balls and 90% blue balls.\n\nThere was a 90% chance Bag A was selected and a 10% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "Look at the decision screen below:\n{{ decision_screen_belief5_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "Look at the decision screen below:\n{{ decision_screen_belief6_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 65% red balls and 35% blue balls. Bag B contains 35% red balls and 65% blue balls.\n\nThere was a 5% chance Bag A was selected and a 95% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
+      "Look at the decision screen below:\n{{ decision_screen_belief6_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%."
+    ],
+    "data": {
+      "belief2_prob": {
+        "prior_questions": [
+          "belief1_prob"
+        ]
+      },
+      "belief2_cu": {
+        "prior_questions": [
+          "belief1_cu",
+          "belief2_prob"
+        ]
+      },
+      "belief3_prob": {
+        "prior_questions": [
+          "belief1_prob",
+          "belief2_prob"
+        ]
+      },
+      "belief3_cu": {
+        "prior_questions": [
+          "belief1_cu",
+          "belief2_cu",
+          "belief3_prob"
+        ]
+      },
+      "belief4_prob": {
+        "prior_questions": [
+          "belief1_prob",
+          "belief2_prob",
+          "belief3_prob"
+        ]
+      },
+      "belief4_cu": {
+        "prior_questions": [
+          "belief1_cu",
+          "belief2_cu",
+          "belief3_cu",
+          "belief4_prob"
+        ]
+      },
+      "belief5_prob": {
+        "prior_questions": [
+          "belief1_prob",
+          "belief2_prob",
+          "belief3_prob",
+          "belief4_prob"
+        ]
+      },
+      "belief5_cu": {
+        "prior_questions": [
+          "belief1_cu",
+          "belief2_cu",
+          "belief3_cu",
+          "belief4_cu",
+          "belief5_prob"
+        ]
+      },
+      "belief6_prob": {
+        "prior_questions": [
+          "belief1_prob",
+          "belief2_prob",
+          "belief3_prob",
+          "belief4_prob",
+          "belief5_prob"
+        ]
+      },
+      "belief6_cu": {
+        "prior_questions": [
+          "belief1_cu",
+          "belief2_cu",
+          "belief3_cu",
+          "belief4_cu",
+          "belief5_cu",
+          "belief6_prob"
+        ]
+      },
+      "belief1_cu": {
+        "prior_questions": [
+          "belief1_prob"
+        ]
+      }
+    }
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "belief1_prob": 0,
+      "belief1_cu": 1,
+      "belief2_prob": 2,
+      "belief2_cu": 3,
+      "belief3_prob": 4,
+      "belief3_cu": 5,
+      "belief4_prob": 6,
+      "belief4_cu": 7,
+      "belief5_prob": 8,
+      "belief5_cu": 9,
+      "belief6_prob": 10,
+      "belief6_cu": 11
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 4,
+        "expression": "True",
+        "next_q": 5,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 5,
+        "expression": "True",
+        "next_q": 6,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 6,
+        "expression": "True",
+        "next_q": 7,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 7,
+        "expression": "True",
+        "next_q": 8,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 8,
+        "expression": "True",
+        "next_q": 9,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 9,
+        "expression": "True",
+        "next_q": 10,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 10,
+        "expression": "True",
+        "next_q": 11,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 11,
+        "expression": "True",
+        "next_q": 12,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 12
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

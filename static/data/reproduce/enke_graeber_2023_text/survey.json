@@ -1,0 +1,486 @@
+{
+  "questions": [
+    {
+      "question_name": "lottery1_ce",
+      "question_text": "You are participating in a decision-making experiment. You will see a series of lotteries. Each lottery gives you a chance of winning some money, and otherwise you get nothing.\n\nFor each lottery, please state the safe dollar amount that makes you indifferent between receiving that amount for certain and playing the lottery. This is your 'certainty equivalent' for the lottery.\n\nLOTTERY 1 of 6.\n\nThis lottery pays $20 with a 5% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $20.",
+      "min_value": 0,
+      "max_value": 20,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery1_cu",
+      "question_text": "You just indicated your valuation of the lottery that pays $20 with a 5% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery2_ce",
+      "question_text": "LOTTERY 2 of 6.\n\nThis lottery pays $18 with a 10% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $18.",
+      "min_value": 0,
+      "max_value": 18,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery2_cu",
+      "question_text": "You just indicated your valuation of the lottery that pays $18 with a 10% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery3_ce",
+      "question_text": "LOTTERY 3 of 6.\n\nThis lottery pays $22 with a 25% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $22.",
+      "min_value": 0,
+      "max_value": 22,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery3_cu",
+      "question_text": "You just indicated your valuation of the lottery that pays $22 with a 25% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery4_ce",
+      "question_text": "LOTTERY 4 of 6.\n\nThis lottery pays $20 with a 50% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $20.",
+      "min_value": 0,
+      "max_value": 20,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery4_cu",
+      "question_text": "You just indicated your valuation of the lottery that pays $20 with a 50% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery5_ce",
+      "question_text": "LOTTERY 5 of 6.\n\nThis lottery pays $19 with a 75% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $19.",
+      "min_value": 0,
+      "max_value": 19,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery5_cu",
+      "question_text": "You just indicated your valuation of the lottery that pays $19 with a 75% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery6_ce",
+      "question_text": "LOTTERY 6 of 6.\n\nThis lottery pays $21 with a 95% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $21.",
+      "min_value": 0,
+      "max_value": 21,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "lottery6_cu",
+      "question_text": "You just indicated your valuation of the lottery that pays $21 with a 95% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "question_options": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "option_labels": {
+        "0": "0% (not at all certain)",
+        "50": "50%",
+        "100": "100% (completely certain)"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "lottery1_ce",
+      "lottery1_cu",
+      "lottery2_ce",
+      "lottery2_cu",
+      "lottery3_ce",
+      "lottery3_cu",
+      "lottery4_ce",
+      "lottery4_cu",
+      "lottery5_ce",
+      "lottery5_cu",
+      "lottery6_ce",
+      "lottery6_cu"
+    ],
+    "survey_question_texts": [
+      "You are participating in a decision-making experiment. You will see a series of lotteries. Each lottery gives you a chance of winning some money, and otherwise you get nothing.\n\nFor each lottery, please state the safe dollar amount that makes you indifferent between receiving that amount for certain and playing the lottery. This is your 'certainty equivalent' for the lottery.\n\nLOTTERY 1 of 6.\n\nThis lottery pays $20 with a 5% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $20.",
+      "You just indicated your valuation of the lottery that pays $20 with a 5% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "LOTTERY 2 of 6.\n\nThis lottery pays $18 with a 10% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $18.",
+      "You just indicated your valuation of the lottery that pays $18 with a 10% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "LOTTERY 3 of 6.\n\nThis lottery pays $22 with a 25% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $22.",
+      "You just indicated your valuation of the lottery that pays $22 with a 25% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "LOTTERY 4 of 6.\n\nThis lottery pays $20 with a 50% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $20.",
+      "You just indicated your valuation of the lottery that pays $20 with a 50% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "LOTTERY 5 of 6.\n\nThis lottery pays $19 with a 75% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $19.",
+      "You just indicated your valuation of the lottery that pays $19 with a 75% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
+      "LOTTERY 6 of 6.\n\nThis lottery pays $21 with a 95% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $21.",
+      "You just indicated your valuation of the lottery that pays $21 with a 95% chance.\n\nHow certain are you that your true valuation of this lottery is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%."
+    ],
+    "data": {
+      "lottery2_ce": {
+        "prior_questions": [
+          "lottery1_ce"
+        ]
+      },
+      "lottery2_cu": {
+        "prior_questions": [
+          "lottery1_cu",
+          "lottery2_ce"
+        ]
+      },
+      "lottery3_ce": {
+        "prior_questions": [
+          "lottery1_ce",
+          "lottery2_ce"
+        ]
+      },
+      "lottery3_cu": {
+        "prior_questions": [
+          "lottery1_cu",
+          "lottery2_cu",
+          "lottery3_ce"
+        ]
+      },
+      "lottery4_ce": {
+        "prior_questions": [
+          "lottery1_ce",
+          "lottery2_ce",
+          "lottery3_ce"
+        ]
+      },
+      "lottery4_cu": {
+        "prior_questions": [
+          "lottery1_cu",
+          "lottery2_cu",
+          "lottery3_cu",
+          "lottery4_ce"
+        ]
+      },
+      "lottery5_ce": {
+        "prior_questions": [
+          "lottery1_ce",
+          "lottery2_ce",
+          "lottery3_ce",
+          "lottery4_ce"
+        ]
+      },
+      "lottery5_cu": {
+        "prior_questions": [
+          "lottery1_cu",
+          "lottery2_cu",
+          "lottery3_cu",
+          "lottery4_cu",
+          "lottery5_ce"
+        ]
+      },
+      "lottery6_ce": {
+        "prior_questions": [
+          "lottery1_ce",
+          "lottery2_ce",
+          "lottery3_ce",
+          "lottery4_ce",
+          "lottery5_ce"
+        ]
+      },
+      "lottery6_cu": {
+        "prior_questions": [
+          "lottery1_cu",
+          "lottery2_cu",
+          "lottery3_cu",
+          "lottery4_cu",
+          "lottery5_cu",
+          "lottery6_ce"
+        ]
+      },
+      "lottery1_cu": {
+        "prior_questions": [
+          "lottery1_ce"
+        ]
+      }
+    }
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "lottery1_ce": 0,
+      "lottery1_cu": 1,
+      "lottery2_ce": 2,
+      "lottery2_cu": 3,
+      "lottery3_ce": 4,
+      "lottery3_cu": 5,
+      "lottery4_ce": 6,
+      "lottery4_cu": 7,
+      "lottery5_ce": 8,
+      "lottery5_cu": 9,
+      "lottery6_ce": 10,
+      "lottery6_cu": 11
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 4,
+        "expression": "True",
+        "next_q": 5,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 5,
+        "expression": "True",
+        "next_q": 6,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 6,
+        "expression": "True",
+        "next_q": 7,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 7,
+        "expression": "True",
+        "next_q": 8,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 8,
+        "expression": "True",
+        "next_q": 9,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 9,
+        "expression": "True",
+        "next_q": 10,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 10,
+        "expression": "True",
+        "next_q": 11,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 11,
+        "expression": "True",
+        "next_q": 12,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 12
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}
