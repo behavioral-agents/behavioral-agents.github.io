@@ -21,6 +21,8 @@
         "n": 30
       }
     },
+    "paper_brief": "Examines how realizing versus keeping paper losses affects subsequent risk-taking, finding that people take less risk after realized losses but more risk after paper losses.",
+    "is_main_experiment": true,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -1294,22 +1296,6 @@
     ],
     "has_results": true,
     "description": "Imas (2016) investigates the \"realization effect\" \u2014 whether people take more or less risk after losses depending on whether those losses have been formally realized. Participants receive an endowment and play multiple rounds of a lottery investment game, choosing how much to allocate to a positively skewed gamble in each round. The key manipulation occurs after participants experience a loss: in the *paper loss* condition, losses remain on paper and the game continues seamlessly, while in the *realized loss* condition, losses are closed out and participants receive a new endowment before continuing. The outcome is the investment level in the round following the loss, which captures how the framing of a loss \u2014 as merely on paper versus locked in \u2014 shapes subsequent willingness to take risk. The original study finds that participants with paper losses significantly *increase* their risk-taking, consistent with a \"gambling to break even\" motive, while those whose losses were realized significantly *decrease* their investments \u2014 a divergence that challenges standard models predicting uniform responses to equivalent financial positions.",
-    "design_summary": {
-      "sample_type": "university students",
-      "sample_size": 128,
-      "total_observations": 54,
-      "decision_type": "Investment Allocation",
-      "conditions": [
-        "realized_loss",
-        "paper_loss"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Investment Level After Loss",
-          "scale": "$0.00-$2.00 in $0.25 increments"
-        }
-      ]
-    },
     "notes": [
       {
         "category": "data",
@@ -1363,6 +1349,8 @@
         "n": 75
       }
     },
+    "paper_brief": "Demonstrates that people neglect the selection process behind the information they observe, leading to systematically biased beliefs even when the selection rule is explicitly described.",
+    "is_main_experiment": true,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -4195,26 +4183,6 @@
     ],
     "has_results": true,
     "description": "Enke (2020) investigates whether people neglect the selection process behind the information they receive \u2014 a phenomenon he calls \"correlation neglect\" or \"WYSIATI\" (What You See Is All There Is). Participants observe signals drawn from an unknown distribution and are asked to estimate a hidden state after receiving additional information from a source whose selection process varies across conditions. In the Selected treatment, the information source strategically chooses which signals to reveal \u2014 introducing a correlation between the signals that a rational Bayesian updater would account for \u2014 while in the Control treatment, signals are drawn independently, requiring no such adjustment. The outcome is a naivete parameter that captures how much each participant's belief update deviates from the Bayesian benchmark \u2014 where zero indicates perfectly rational updating and higher values indicate greater neglect of the selection process. The original study finds that participants in the Selected treatment exhibit substantial correlation neglect \u2014 updating their beliefs as if strategically chosen signals were independent \u2014 while Control participants update in a near-Bayesian manner, confirming that people systematically fail to account for how information is generated.",
-    "design_summary": {
-      "sample_type": "online panel",
-      "sample_size": 634,
-      "total_observations": 409,
-      "decision_type": "Belief Estimation",
-      "conditions": [
-        "selected",
-        "control",
-        "complex",
-        "simple",
-        "nudge",
-        "selected_replication"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Belief Updating Bias",
-          "scale": "continuous belief about theta in [50, 150]"
-        }
-      ]
-    },
     "notes": [],
     "has_reproduce_text": false,
     "has_reproduce_visual": false,
@@ -4263,6 +4231,8 @@
         "n": 500
       }
     },
+    "paper_brief": "Investigates how cognitive uncertainty -- people's subjective confidence in their own judgments -- systematically distorts economic decisions, producing canonical behavioral biases in both risk preferences and probabilistic beliefs.",
+    "is_main_experiment": true,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -7772,26 +7742,6 @@
     ],
     "has_results": true,
     "description": "Enke and Graeber (2023) investigate how cognitive uncertainty \u2014 the difficulty people have in determining their own valuations \u2014 shapes decisions under risk. Participants on Prolific are presented with a series of binary lotteries that pay a dollar amount with some probability and nothing otherwise, and they state the minimum sure payment they would accept in place of each lottery \u2014 their certainty equivalent. The key manipulation varies the probability of winning across lotteries, ranging from very low to very high, allowing the authors to trace out how valuations deviate from expected value across the probability spectrum. The outcome is the normalized certainty equivalent \u2014 the stated valuation divided by the lottery's prize \u2014 which captures the degree to which people overweight or underweight probabilities relative to their objective values. The original study finds a classic probability-weighting pattern: at low probabilities, participants' valuations substantially exceed the actuarially fair benchmark, while at high probabilities, valuations fall well below it \u2014 consistent with the fourfold pattern of risk attitudes predicted by prospect theory, which the authors link to higher cognitive uncertainty at extreme probabilities.",
-    "design_summary": {
-      "sample_type": "Prolific workers",
-      "sample_size": 500,
-      "total_observations": 3000,
-      "decision_type": "Willingness to Pay",
-      "conditions": [
-        "p05",
-        "p10",
-        "p25",
-        "p50",
-        "p75",
-        "p95"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Normalized Certainty Equivalent",
-          "scale": "$0.00-$25.00 continuous"
-        }
-      ]
-    },
     "notes": [],
     "has_reproduce_text": true,
     "has_reproduce_visual": true,
@@ -7831,6 +7781,8 @@
         "label": "Posterior 70-100%"
       }
     },
+    "paper_brief": "Investigates how cognitive uncertainty -- people's subjective confidence in their own judgments -- systematically distorts economic decisions, producing canonical behavioral biases in both risk preferences and probabilistic beliefs.",
+    "is_main_experiment": false,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -9660,23 +9612,6 @@
     ],
     "has_results": true,
     "description": "Enke and Graeber (2023) investigate whether people's probabilistic beliefs systematically deviate from Bayesian benchmarks due to cognitive uncertainty \u2014 the subjective sense of not knowing the correct answer. Participants on Prolific complete a classic balls-and-urns updating task: two bags each contain a known mix of red and blue balls, the computer randomly selects one bag according to a stated base rate, draws a sample of balls, and participants report their belief that a specific bag was selected. The key manipulation varies the difficulty of the inference problem, producing trials where the Bayesian posterior is either low (near 15%) or high (near 85%), allowing the authors to test whether stated beliefs compress toward 50%. The outcome is the stated posterior belief, which captures whether people anchor toward maximum uncertainty rather than updating fully to the normative benchmark. The original study finds strong evidence of this compression: at low posteriors, participants substantially overestimate the probability, while at high posteriors, they substantially underestimate it \u2014 a pattern consistent with cognitive uncertainty pulling beliefs toward a 50-50 prior.",
-    "design_summary": {
-      "sample_type": "Prolific workers",
-      "sample_size": 500,
-      "total_observations": 1500,
-      "decision_type": "Belief Estimation",
-      "conditions": [
-        "low_posterior",
-        "medium_posterior",
-        "high_posterior"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Stated Posterior Belief",
-          "scale": "0-100% continuous"
-        }
-      ]
-    },
     "notes": [],
     "has_reproduce_text": false,
     "has_reproduce_visual": true,
@@ -9705,6 +9640,8 @@
         "n": 401
       }
     },
+    "paper_brief": "Tests whether observed biases in economic decisions reflect genuine errors or are 'motivated' -- selectively triggered when they serve the decision-maker's self-interest at the expense of charitable giving.",
+    "is_main_experiment": true,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -10741,22 +10678,6 @@
     ],
     "has_results": true,
     "description": "Exley and Kessler (2024) investigate whether people make systematic errors in evaluating charitable giving when they have a self-interested reason to do so \u2014 a phenomenon they call \"motivated reasoning.\" Participants on Amazon Mechanical Turk make a series of binary choices between an outside option and a \"bundle\" \u2014 a sum of several small amounts donated to the Make-A-Wish Foundation. The key manipulation is simple but revealing: some bundles have a zero added as an extra summand, which should not change the bundle's value but might give motivated reasoners an excuse to reject it. Critically, the study compares two conditions \u2014 Self/Charity, where the outside option is money for the participant (creating a selfish motive to reject the bundle), and Charity/Charity, where both options benefit charity (removing any selfish motive). The outcome is the \"zero effect\" \u2014 the change in bundle choice rate when a zero is added \u2014 which captures whether people exploit irrelevant information to justify self-serving decisions. The original study finds that adding a zero significantly reduces bundle choice in the Self/Charity condition but has no effect in the Charity/Charity condition, confirming that the errors are driven by motivated reasoning rather than genuine confusion.",
-    "design_summary": {
-      "sample_type": "MTurk workers",
-      "sample_size": 1769,
-      "total_observations": 1567,
-      "decision_type": "Binary Choice",
-      "conditions": [
-        "self_charity",
-        "charity_charity"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Bundle Choice Change When Zero Added",
-          "scale": "binary: bundle vs outside option"
-        }
-      ]
-    },
     "notes": [],
     "has_reproduce_text": false,
     "has_reproduce_visual": false,
@@ -10790,6 +10711,8 @@
         "n": 400
       }
     },
+    "paper_brief": "Tests whether observed biases in economic decisions reflect genuine errors or are 'motivated' -- selectively triggered when they serve the decision-maker's self-interest at the expense of charitable giving.",
+    "is_main_experiment": false,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -12290,23 +12213,6 @@
     ],
     "has_results": true,
     "description": "Exley and Kessler (2024) investigate whether people make systematically biased predictions when they have a directional motivation to over- or underestimate a quantity. Participants receive a set of correlated information sources \u2014 news channels whose values all share a common component \u2014 and must predict an underlying average. The key manipulation is incentive framing: in the overestimate condition, participants earn a bonus if their prediction exceeds the true value, while in the underestimate condition the bonus rewards predictions below the true value, and in the control condition there is no directional incentive. Because the information sources are correlated, a rational forecaster should partially discount redundant signals, but motivated participants can exploit this correlation neglect \u2014 weighting the shared component more or less heavily \u2014 to justify predictions that serve their incentive. The outcome is mean estimation error, which captures how far and in which direction participants' predictions deviate from the correct answer, revealing whether motivated reasoning amplifies a known cognitive bias. The original study finds a striking asymmetry: participants in the overestimate condition show significantly larger negative errors than control \u2014 consistent with over-weighting the common signal when it helps \u2014 while those in the underestimate condition shift in the opposite direction, confirming that directional incentives systematically distort how people process correlated information.",
-    "design_summary": {
-      "sample_type": "MTurk workers",
-      "sample_size": 1200,
-      "total_observations": 1200,
-      "decision_type": "Numerical Estimation",
-      "conditions": [
-        "control",
-        "overestimate",
-        "underestimate"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Mean Estimation Error",
-          "scale": "continuous numerical estimate"
-        }
-      ]
-    },
     "notes": [],
     "has_reproduce_text": false,
     "has_reproduce_visual": false,
@@ -12340,6 +12246,8 @@
         "n": 399
       }
     },
+    "paper_brief": "Tests whether observed biases in economic decisions reflect genuine errors or are 'motivated' -- selectively triggered when they serve the decision-maker's self-interest at the expense of charitable giving.",
+    "is_main_experiment": false,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -13840,23 +13748,6 @@
     ],
     "has_results": true,
     "description": "Exley and Kessler (2024) investigate whether people anchor more on irrelevant numbers when they are financially motivated to err in the direction of the anchor. Participants on Amazon Mechanical Turk answer four trivia questions \u2014 such as the time for light to travel from the Sun to Jupiter or the population of Uzbekistan \u2014 after being shown a random anchor value before each question. The key manipulation is the incentive structure: one group is paid for accuracy (control), another is paid more when their answers overshoot the true value (overestimate), and a third is paid more when their answers undershoot it (underestimate). The outcome is the mean estimation error relative to the correct answer, which captures whether motivated reasoning amplifies the well-known anchoring bias \u2014 that is, whether people unconsciously \"lean into\" an irrelevant anchor when doing so also happens to be profitable. The original study finds a striking asymmetry: participants in the overestimate condition show significantly larger anchoring bias than control, while those in the underestimate condition show no meaningful difference from control, suggesting that motivated reasoning selectively magnifies bias in one direction.",
-    "design_summary": {
-      "sample_type": "MTurk workers",
-      "sample_size": 1195,
-      "total_observations": 1195,
-      "decision_type": "Numerical Estimation",
-      "conditions": [
-        "control",
-        "overestimate",
-        "underestimate"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Mean Estimation Error",
-          "scale": "0-100 continuous"
-        }
-      ]
-    },
     "notes": [],
     "has_reproduce_text": false,
     "has_reproduce_visual": false,
@@ -13890,6 +13781,8 @@
         "n": 399
       }
     },
+    "paper_brief": "Tests whether observed biases in economic decisions reflect genuine errors or are 'motivated' -- selectively triggered when they serve the decision-maker's self-interest at the expense of charitable giving.",
+    "is_main_experiment": false,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -15390,23 +15283,6 @@
     ],
     "has_results": true,
     "description": "Exley and Kessler (2024) investigate whether anchoring bias in numerical estimation is partly driven by motivated reasoning \u2014 that is, whether people anchor more when doing so serves their self-interest. Participants answer trivia questions after being shown an anchor number, first guessing whether the true answer is above or below the anchor before entering their numerical estimate \u2014 a design intended to reduce mechanical anchoring. In the control condition, anchoring bias carries no financial consequence, while in the overestimate and underestimate conditions, participants earn a bonus when their errors happen to fall in a particular direction, creating a selfish incentive to bias their guesses. The outcome is mean estimation error, which captures how much participants' answers are pulled toward the anchor \u2014 and whether that pull intensifies when financially rewarded. The original study finds that the motivated-errors pattern persists even under this more conservative design: participants in the overestimate condition show significantly larger anchoring bias than control, while those in the underestimate condition show less bias, consistent with self-serving distortion of judgments.",
-    "design_summary": {
-      "sample_type": "MTurk workers",
-      "sample_size": 1195,
-      "total_observations": 1195,
-      "decision_type": "Numerical Estimation",
-      "conditions": [
-        "control",
-        "overestimate",
-        "underestimate"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Mean Estimation Error",
-          "scale": "0-100 continuous"
-        }
-      ]
-    },
     "notes": [],
     "has_reproduce_text": false,
     "has_reproduce_visual": false,
@@ -15544,6 +15420,8 @@
         "n": 184
       }
     },
+    "paper_brief": "Shows that classic anomalies in risky choice -- probability weighting and loss aversion -- arise with similar strength in deterministic settings, suggesting they reflect complexity-driven mistakes rather than true risk preferences.",
+    "is_main_experiment": true,
     "comparisons": [
       {
         "model": "claude-sonnet-4-6",
@@ -20984,56 +20862,6 @@
     ],
     "has_results": true,
     "description": "Oprea (2024) investigates whether classic patterns in risky decision-making \u2014 such as probability weighting and loss aversion \u2014 actually stem from risk itself or from the cognitive complexity of evaluating uncertain prospects. Participants value a series of lotteries and their \"deterministic mirrors\" using multiple price lists; lotteries pay a prize with some probability, while mirrors pay the exact expected value with certainty, removing all risk but preserving the same mathematical structure. The key manipulation is this lottery-versus-mirror contrast: if behavioral anomalies like overvaluing long shots and undervaluing near-sure things arise from how people feel about risk, they should vanish in the riskless mirrors, but if they arise from the complexity of computing value, they should persist. The outcome is each participant's deviation from expected value \u2014 the gap between what a prospect is actually worth and what the participant demands for it \u2014 which captures systematic biases in valuation. The original study finds that the \"fourfold pattern\" of risk attitudes appears almost identically in deterministic mirrors as in true lotteries, with anomalies roughly 97% as strong, and the median participant makes identical choices across lottery and mirror versions of every task. These results suggest that what economists have long attributed to risk preferences may instead reflect the difficulty of thinking through even simple gambles.",
-    "design_summary": {
-      "sample_type": "Prolific online participants",
-      "sample_size": 184,
-      "total_observations": 4416,
-      "decision_type": "Valuation",
-      "conditions": [
-        "A10_lottery",
-        "A10_mirror",
-        "A15_lottery",
-        "A15_mirror",
-        "G10_lottery",
-        "G10_mirror",
-        "G25_lottery",
-        "G25_mirror",
-        "G50_lottery",
-        "G50_mirror",
-        "G75_lottery",
-        "G75_mirror",
-        "G90_lottery",
-        "G90_mirror",
-        "L10_lottery",
-        "L10_mirror",
-        "L25_lottery",
-        "L25_mirror",
-        "L50_lottery",
-        "L50_mirror",
-        "L75_lottery",
-        "L75_mirror",
-        "L90_lottery",
-        "L90_mirror"
-      ],
-      "outcome_variables": [
-        {
-          "name": "Deviation From Expected Value",
-          "scale": "MPL switching point ($0-$25 for gains, -$25-$0 for losses, $1 steps, midpoint used)"
-        },
-        {
-          "name": "Implied Loss Aversion",
-          "scale": "MPL switching point: sure $0 vs mixed lottery/mirror (0.5;$X,$Y), X increases by $2"
-        },
-        {
-          "name": "Pattern-Consistent Deviation From Expected Value",
-          "scale": "all tasks"
-        },
-        {
-          "name": "Lottery vs Mirror Valuation Gap",
-          "scale": "all tasks"
-        }
-      ]
-    },
     "notes": [],
     "has_reproduce_text": false,
     "has_reproduce_visual": false,

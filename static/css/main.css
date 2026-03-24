@@ -595,6 +595,71 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   font-weight: 500;
 }
 
+/* === Paper brief description === */
+.paper-brief {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-top: 0.6rem;
+}
+
+/* === Main experiment badge === */
+.main-badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
+/* === Reproduction hub (paper-level picker) === */
+.repro-hub-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.repro-hub-card {
+  border: 1px solid #e2e5eb;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  background: #fff;
+  min-width: 220px;
+  flex: 1;
+}
+.repro-hub-card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  color: #1a1a1a;
+}
+.repro-hub-card-links {
+  display: flex;
+  gap: 0.6rem;
+}
+.repro-hub-link {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.repro-hub-link:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: #f0f5ff;
+}
+
 /* === Screen Comparison (original vs generated) === */
 .repro-comparison-note {
   font-size: 0.85rem;

@@ -87,7 +87,18 @@ function groupByDoi(papers) {
     }
     map[p.doi].experiments.push(p);
   });
-  return Object.values(map);
+  // Sort experiments: main experiment first, then alphabetical
+  const groups = Object.values(map);
+  groups.forEach(g => {
+    g.experiments.sort((a, b) => {
+      if (a.is_main_experiment && !b.is_main_experiment) return -1;
+      if (!a.is_main_experiment && b.is_main_experiment) return 1;
+      return a.id.localeCompare(b.id);
+    });
+    // Use paper_brief from any experiment (they share the same value)
+    g.paper_brief = g.experiments.find(e => e.paper_brief)?.paper_brief || '';
+  });
+  return groups;
 }
 
 // ---------------------------------------------------------------------------
@@ -212,7 +223,7 @@ function renderPaperList(papers) {
           &middot; <a href="https://doi.org/${p.doi}" target="_blank" onclick="event.stopPropagation()">DOI</a>
           &middot; ${numExp} experiment${numExp > 1 ? 's' : ''}
         </div>
-        <div class="description">${p.experiments[0].description}</div>
+        <div class="description">${p.paper_brief || p.experiments[0].description}</div>
         <span class="status ${allReplicated ? 'replicated' : (noneReplicated ? 'pending' : 'partial')}">
           ${allReplicated ? 'Replicated' : (noneReplicated ? 'Pending' : `${numReplicated}/${numExp} Replicated`)}
         </span>
@@ -236,6 +247,10 @@ function showPaperByDoi(doi) {
 
     const experiments = group.experiments;
 
+    // Check if any experiment has a reproduction package
+    const hasRepro = experiments.some(e => e.has_reproduce_text || e.has_reproduce_visual);
+    const baseId = experiments.reduce((a, b) => a.id.length <= b.id.length ? a : b).id;
+
     detail.innerHTML = `
       <span class="back-link" onclick="goBack()">&larr; Back to papers</span>
 
@@ -246,17 +261,9 @@ function showPaperByDoi(doi) {
           ${group.authors.join(', ')} (${group.year})
           &middot; <a href="https://doi.org/${group.doi}" target="_blank">DOI</a>
           ${group.replication_url ? `&middot; <a href="${group.replication_url}" target="_blank">Replication data</a>` : ''}
-          ${(() => {
-            const repro = [];
-            group.experiments.forEach(exp => {
-              if (exp.has_reproduce_text) repro.push({ id: exp.id, modality: 'text' });
-              if (exp.has_reproduce_visual) repro.push({ id: exp.id, modality: 'visual' });
-            });
-            return repro.map(r =>
-              `&middot; <a href="#" class="repro-link" onclick="event.preventDefault();showReproduction('${r.id}','${r.modality}')">Reproduce (${r.modality})</a>`
-            ).join('\n            ');
-          })()}
+          ${hasRepro ? `&middot; <a href="#" class="repro-link" onclick="event.preventDefault();showReproductionHub('${baseId}')">Reproduction package</a>` : ''}
         </div>
+        ${group.paper_brief ? `<p class="paper-brief">${group.paper_brief}</p>` : ''}
       </div>
 
       ${experiments.length > 1 ? `
@@ -264,9 +271,10 @@ function showPaperByDoi(doi) {
         <div class="experiment-list-label">Experiments</div>
         ${experiments.map((exp, i) => {
           const expLabel = exp.title.includes('\u2014') ? exp.title.split('\u2014').pop().trim() : exp.title;
+          const mainBadge = exp.is_main_experiment && experiments.length > 1 ? '<span class="main-badge">Main</span>' : '';
           return `
           <div class="experiment-card ${i === 0 ? 'active' : ''}" onclick="showExperiment('${exp.id}', this)">
-            <div class="experiment-card-number">Experiment ${i + 1}</div>
+            <div class="experiment-card-number">Experiment ${i + 1} ${mainBadge}</div>
             <div class="experiment-card-title">${expLabel}</div>
             <span class="status ${exp.has_results ? 'replicated' : 'pending'}">
               ${exp.has_results ? 'Replicated' : 'Pending'}
@@ -952,11 +960,78 @@ function renderMultiModelDistPlot(condition, comparisons, xAxisLabel) {
 }
 
 // ---------------------------------------------------------------------------
-// Reproduction package viewer
+// Reproduction package hub (paper-level entry point)
 // ---------------------------------------------------------------------------
-async function showReproduction(paperId, modality) {
+function showReproductionHub(baseId) {
   const detail = document.getElementById('paper-detail');
-  const basePath = `static/data/reproduce/${paperId}_${modality}`;
+  const group = groupedPapers.find(g =>
+    g.experiments.some(e => e.id === baseId)
+  );
+  if (!group) return;
+
+  // Collect all available experiment+modality combos
+  const combos = [];
+  group.experiments.forEach(exp => {
+    if (exp.has_reproduce_text) combos.push({ id: exp.id, modality: 'text', title: exp.title });
+    if (exp.has_reproduce_visual) combos.push({ id: exp.id, modality: 'visual', title: exp.title });
+  });
+
+  if (combos.length === 0) {
+    detail.innerHTML = `
+      <span class="back-link" onclick="showPaperByDoi('${group.doi}')">&larr; Back to paper</span>
+      <p style="color:#888;margin-top:2rem">No reproduction packages available for this paper.</p>`;
+    return;
+  }
+
+  // Build experiment labels
+  const expLabels = {};
+  group.experiments.forEach(exp => {
+    expLabels[exp.id] = exp.title.includes('\u2014') ? exp.title.split('\u2014').pop().trim() : exp.title;
+  });
+
+  // Group combos by experiment
+  const byExp = {};
+  combos.forEach(c => {
+    if (!byExp[c.id]) byExp[c.id] = [];
+    byExp[c.id].push(c.modality);
+  });
+
+  detail.innerHTML = `
+    <span class="back-link" onclick="showPaperByDoi('${group.doi}')">&larr; Back to paper</span>
+    <div class="detail-header">
+      <h2>Reproduction Package: ${group.title}</h2>
+      <p class="paper-brief">Download and run the exact same simulations locally. Each experiment has its own self-contained package with serialized survey, agent profiles, and scenarios.</p>
+    </div>
+    <div class="repro-hub-grid">
+      ${Object.entries(byExp).map(([expId, modalities]) => `
+        <div class="repro-hub-card">
+          <div class="repro-hub-card-title">${expLabels[expId] || expId}</div>
+          <div class="repro-hub-card-links">
+            ${modalities.map(mod =>
+              `<a href="#" class="repro-hub-link" onclick="event.preventDefault();showReproduction('${expId}','${mod}','${baseId}')">${mod}</a>`
+            ).join('')}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+// ---------------------------------------------------------------------------
+// Reproduction package viewer (single experiment)
+// ---------------------------------------------------------------------------
+async function showReproduction(paperId, modality, baseId) {
+  const detail = document.getElementById('paper-detail');
+  // Determine base paper ID for URL structure
+  const effectiveBaseId = baseId || paperId;
+  // Try new structure first, fall back to legacy
+  let basePath = `static/data/reproduce/${effectiveBaseId}/${modality}/${paperId}`;
+  try {
+    const probe = await fetch(`${basePath}/reproduce.py?${CACHE_BUST}`, { method: 'HEAD' });
+    if (!probe.ok) basePath = `static/data/reproduce/${paperId}_${modality}`;
+  } catch (e) {
+    basePath = `static/data/reproduce/${paperId}_${modality}`;
+  }
 
   // Files to fetch
   const files = [
@@ -971,7 +1046,7 @@ async function showReproduction(paperId, modality) {
     : '';
 
   detail.innerHTML = `
-    <span class="back-link" onclick="showPaperByDoi(allPapers.find(p=>p.id==='${paperId}')?.doi)">&larr; Back to paper</span>
+    <span class="back-link" onclick="showReproductionHub('${effectiveBaseId}')">&larr; Back to reproduction packages</span>
     <div class="detail-header">
       <h2>Reproduction Package: ${paperId} (${modality})</h2>
       <div class="repro-instructions">
