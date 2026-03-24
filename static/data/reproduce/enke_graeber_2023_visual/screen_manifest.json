@@ -1,0 +1,89 @@
+{
+  "paper_id": "enke_graeber_2023",
+  "mappings": [
+    {
+      "generated": "lottery1_ce_default.png",
+      "task_label": "Lottery 1 - Certainty Equivalent",
+      "original_pages": [
+        "page_033.png"
+      ]
+    },
+    {
+      "generated": "lottery1_cu_default.png",
+      "task_label": "Lottery 1 - Cognitive Uncertainty",
+      "original_pages": [
+        "page_034.png"
+      ]
+    },
+    {
+      "generated": "lottery2_ce_default.png",
+      "task_label": "Lottery 2 - Certainty Equivalent",
+      "original_pages": [
+        "page_035.png"
+      ]
+    },
+    {
+      "generated": "lottery2_cu_default.png",
+      "task_label": "Lottery 2 - Cognitive Uncertainty",
+      "original_pages": [
+        "page_036.png"
+      ]
+    },
+    {
+      "generated": "lottery3_ce_default.png",
+      "task_label": "Lottery 3 - Certainty Equivalent",
+      "original_pages": [
+        "page_037.png"
+      ]
+    },
+    {
+      "generated": "lottery3_cu_default.png",
+      "task_label": "Lottery 3 - Cognitive Uncertainty",
+      "original_pages": [
+        "page_038.png"
+      ]
+    },
+    {
+      "generated": "lottery4_ce_default.png",
+      "task_label": "Lottery 4 - Certainty Equivalent",
+      "original_pages": [
+        "page_039.png"
+      ]
+    },
+    {
+      "generated": "lottery4_cu_default.png",
+      "task_label": "Lottery 4 - Cognitive Uncertainty",
+      "original_pages": [
+        "page_040.png"
+      ]
+    },
+    {
+      "generated": "lottery5_ce_default.png",
+      "task_label": "Lottery 5 - Certainty Equivalent",
+      "original_pages": [
+        "page_041.png"
+      ]
+    },
+    {
+      "generated": "lottery5_cu_default.png",
+      "task_label": "Lottery 5 - Cognitive Uncertainty",
+      "original_pages": [
+        "page_042.png"
+      ]
+    },
+    {
+      "generated": "lottery6_ce_default.png",
+      "task_label": "Lottery 6 - Certainty Equivalent",
+      "original_pages": [
+        "page_043.png"
+      ]
+    },
+    {
+      "generated": "lottery6_cu_default.png",
+      "task_label": "Lottery 6 - Cognitive Uncertainty",
+      "original_pages": [
+        "page_044.png"
+      ]
+    }
+  ]
+}

@@ -595,5 +595,65 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   font-weight: 500;
 }
 
+/* === Screen Comparison (original vs generated) === */
+.repro-comparison-note {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0.5rem 0 1rem;
+  line-height: 1.5;
+}
+.repro-comparison-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.repro-comparison-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border: 1px solid #e2e5eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+}
+.repro-comparison-item {
+  text-align: center;
+}
+.repro-comparison-item img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  object-fit: contain;
+}
+.repro-comparison-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.repro-comparison-caption {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 0.25rem;
+}
+.repro-no-original {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  background: #f9fafb;
+  color: #9ca3af;
+  border: 1px dashed #d1d5db;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
 /* === Utility === */
 .hidden { display: none; }

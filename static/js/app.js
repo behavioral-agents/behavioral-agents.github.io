@@ -1051,7 +1051,47 @@ async function showReproduction(paperId, modality) {
     `;
   }
 
-  if (screens.length > 0) {
+  // Check for screen manifest (original vs generated comparison)
+  let manifest = null;
+  if (modality === 'visual') {
+    try {
+      const manRes = await fetch(`${basePath}/screen_manifest.json?${CACHE_BUST}`);
+      if (manRes.ok) manifest = await manRes.json();
+    } catch (e) { /* no manifest */ }
+  }
+
+  if (manifest && manifest.mappings && manifest.mappings.some(m => m.original_pages && m.original_pages.length > 0)) {
+    // Side-by-side comparison view
+    html += `
+      <div class="repro-screens-header">
+        <span class="repro-filename">Decision Screen Comparison (${manifest.mappings.length} screens)</span>
+        <button class="repro-download-single-btn" onclick="downloadAllScreens('${basePath}', ${JSON.stringify(screens)})">Download generated screens</button>
+      </div>
+      <p class="repro-comparison-note">Original screenshots are full PDF appendix pages from the paper. Generated screens are per-task images shown to the LLM during simulation.</p>
+      <div class="repro-comparison-grid">
+        ${manifest.mappings.map(m => {
+          const origSrc = m.original_pages && m.original_pages[0]
+            ? `${basePath}/original_screens/${m.original_pages[0]}`
+            : null;
+          const genSrc = `${basePath}/screens/${m.generated}`;
+          return `<div class="repro-comparison-pair">
+            <div class="repro-comparison-item">
+              <div class="repro-comparison-label">Original (paper appendix)</div>
+              ${origSrc
+                ? `<img src="${origSrc}?${CACHE_BUST}" alt="Original">`
+                : '<div class="repro-no-original">No original available</div>'}
+            </div>
+            <div class="repro-comparison-item">
+              <div class="repro-comparison-label">Generated (shown to LLM)</div>
+              <img src="${genSrc}?${CACHE_BUST}" alt="Generated">
+            </div>
+            <div class="repro-comparison-caption">${m.task_label || m.generated}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    `;
+  } else if (screens.length > 0) {
+    // Generated-only grid (no originals available)
     html += `
       <div class="repro-screens-header">
         <span class="repro-filename">screens/ (${screens.length} decision screen images)</span>

@@ -1318,7 +1318,8 @@
       }
     ],
     "has_reproduce_text": true,
-    "has_reproduce_visual": true
+    "has_reproduce_visual": true,
+    "has_original_screens": false
   },
   {
     "id": "enke_2020",
@@ -4216,7 +4217,8 @@
     },
     "notes": [],
     "has_reproduce_text": false,
-    "has_reproduce_visual": false
+    "has_reproduce_visual": false,
+    "has_original_screens": false
   },
   {
     "id": "enke_graeber_2023",
@@ -7792,7 +7794,8 @@
     },
     "notes": [],
     "has_reproduce_text": true,
-    "has_reproduce_visual": true
+    "has_reproduce_visual": true,
+    "has_original_screens": true
   },
   {
     "id": "enke_graeber_2023_beliefs",
@@ -9676,7 +9679,8 @@
     },
     "notes": [],
     "has_reproduce_text": false,
-    "has_reproduce_visual": true
+    "has_reproduce_visual": true,
+    "has_original_screens": false
   },
   {
     "id": "exley_kessler_2024",
@@ -10755,7 +10759,8 @@
     },
     "notes": [],
     "has_reproduce_text": false,
-    "has_reproduce_visual": false
+    "has_reproduce_visual": false,
+    "has_original_screens": false
   },
   {
     "id": "exley_kessler_2024_correlation",
@@ -12304,7 +12309,8 @@
     },
     "notes": [],
     "has_reproduce_text": false,
-    "has_reproduce_visual": false
+    "has_reproduce_visual": false,
+    "has_original_screens": false
   },
   {
     "id": "exley_kessler_2024_anchoring_a",
@@ -13853,7 +13859,8 @@
     },
     "notes": [],
     "has_reproduce_text": false,
-    "has_reproduce_visual": false
+    "has_reproduce_visual": false,
+    "has_original_screens": false
   },
   {
     "id": "exley_kessler_2024_anchoring_b",
@@ -15402,7 +15409,8 @@
     },
     "notes": [],
     "has_reproduce_text": false,
-    "has_reproduce_visual": false
+    "has_reproduce_visual": false,
+    "has_original_screens": false
   },
   {
     "id": "oprea_2024",
@@ -21028,6 +21036,7 @@
     },
     "notes": [],
     "has_reproduce_text": false,
-    "has_reproduce_visual": false
+    "has_reproduce_visual": false,
+    "has_original_screens": false
   }
 ]
