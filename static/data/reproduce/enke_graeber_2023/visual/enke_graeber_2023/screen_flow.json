@@ -1,11 +1,24 @@
 {
   "experiment_section": "G.1 Treatment Risk Main",
-  "instruction_pages": [
-    "page_033",
-    "page_034"
-  ],
-  "comprehension_pages": [
-    "page_035"
+  "instructions": [
+    {
+      "page": "page_033",
+      "screen_position": "full",
+      "description": "Instructions (1/3): Explains lottery format, CE elicitation procedure, and decision screen 1 with 1800 questions table",
+      "sequence_order": 1
+    },
+    {
+      "page": "page_034",
+      "screen_position": "top",
+      "description": "Instructions (2/3): Example CE input screen with lottery (35% chance of $18)",
+      "sequence_order": 2
+    },
+    {
+      "page": "page_034",
+      "screen_position": "bottom",
+      "description": "Instructions (3/3): Explains cognitive uncertainty rating about CE value within +/-$0.50 with example",
+      "sequence_order": 3
+    }
   ],
   "trials": [
     {
@@ -31,8 +44,8 @@
           "description": "Cognitive uncertainty rating for CE of lottery (65% chance of $22), asking certainty between $0.50 and $1.50",
           "depends_on": "lottery1_ce",
           "parameters": {
-            "window_lower": 0.5,
-            "window_upper": 1.5
+            "lower_bound": 0.5,
+            "upper_bound": 1.5
           }
         }
       ]

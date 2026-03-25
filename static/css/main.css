@@ -734,5 +734,51 @@ header .subtitle { color: #555; font-size: 0.95rem; }
   font-size: 0.85rem;
 }
 
+/* === Original Participant Flow === */
+.repro-flow-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+.repro-flow-item {
+  background: #fff;
+  border: 1px solid #e2e5eb;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+.repro-flow-item img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  margin-top: 0.4rem;
+}
+.repro-flow-label {
+  font-size: 0.82rem;
+  color: #555;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+.flow-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.flow-badge-instruction {
+  background: #fef3c7;
+  color: #92400e;
+}
+.flow-badge-decision {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
 /* === Utility === */
 .hidden { display: none; }

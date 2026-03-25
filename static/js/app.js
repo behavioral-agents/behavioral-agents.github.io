@@ -1143,51 +1143,167 @@ async function showReproduction(paperId, modality, baseId) {
     `;
   }
 
-  // Check for screen manifest (original vs generated comparison)
-  let manifest = null;
+  // Build unified survey flow: instructions + decision screens in chronological order
   if (modality === 'visual') {
+    let flowData = null;
+    let manifest = null;
+    try {
+      const flowRes = await fetch(`${basePath}/screen_flow.json?${CACHE_BUST}`);
+      if (flowRes.ok) flowData = await flowRes.json();
+    } catch (e) { /* no flow */ }
     try {
       const manRes = await fetch(`${basePath}/screen_manifest.json?${CACHE_BUST}`);
       if (manRes.ok) manifest = await manRes.json();
     } catch (e) { /* no manifest */ }
-  }
 
-  if (manifest && manifest.mappings && manifest.mappings.some(m => m.original_pages && m.original_pages.length > 0)) {
-    // Side-by-side comparison view
-    html += `
-      <div class="repro-screens-header">
-        <span class="repro-filename">Decision Screen Comparison (${manifest.mappings.length} screens)</span>
-        <button class="repro-download-single-btn" onclick="downloadAllScreens('${basePath}', ${JSON.stringify(screens)})">Download generated screens</button>
-      </div>
-      <p class="repro-comparison-note">Original screenshots are full PDF appendix pages from the paper. Generated screens are per-task images shown to the LLM during simulation.</p>
-      <div class="repro-comparison-grid">
-        ${manifest.mappings.map(m => {
-          const origSrc = m.original_pages && m.original_pages[0]
-            ? `${basePath}/original_screens/${m.original_pages[0]}`
-            : null;
-          const genSrc = `${basePath}/screens/${m.generated}`;
-          return `<div class="repro-comparison-pair">
-            <div class="repro-comparison-item">
-              <div class="repro-comparison-label">Original (paper appendix)</div>
-              ${origSrc
-                ? `<img src="${origSrc}?${CACHE_BUST}" alt="Original">`
-                : '<div class="repro-no-original">No original available</div>'}
-            </div>
-            <div class="repro-comparison-item">
-              <div class="repro-comparison-label">Generated (shown to LLM)</div>
-              <img src="${genSrc}?${CACHE_BUST}" alt="Generated">
-            </div>
-            <div class="repro-comparison-caption">${m.task_label || m.generated}</div>
-          </div>`;
-        }).join('')}
-      </div>
-    `;
+    // Build manifest lookup: generated filename -> original page(s)
+    const manifestMap = {};
+    if (manifest && manifest.mappings) {
+      for (const m of manifest.mappings) {
+        manifestMap[m.generated] = m;
+      }
+    }
+
+    // Build chronological flow items
+    const flowItems = [];
+
+    if (flowData) {
+      // Instructions (deduplicate by page — same page shown once to LLM)
+      // Combine descriptions from entries sharing the same page
+      const instrByPage = new Map();
+      for (const instr of (flowData.instructions || [])) {
+        if (!instr.page) continue;
+        if (!instrByPage.has(instr.page)) {
+          instrByPage.set(instr.page, {
+            page: instr.page,
+            descriptions: [],
+            sequence: instr.sequence_order || 0,
+          });
+        }
+        instrByPage.get(instr.page).descriptions.push(instr.description || 'Instruction');
+      }
+      for (const [page, info] of instrByPage) {
+        flowItems.push({
+          type: 'instruction',
+          label: info.descriptions.join(' · '),
+          originalPage: page,
+          generatedFile: null,
+          sequence: info.sequence,
+        });
+      }
+
+      // Decision screens from trials
+      for (const trial of (flowData.trials || [])) {
+        for (const screen of (trial.screens || [])) {
+          const qname = screen.question_name;
+          if (!qname) continue;
+          const genFile = `${qname}_default.png`;
+          const mEntry = manifestMap[genFile];
+          flowItems.push({
+            type: 'decision',
+            label: mEntry?.task_label || screen.description || qname,
+            originalPage: screen.page || (mEntry?.original_pages?.[0]?.replace('.png','')) || null,
+            generatedFile: genFile,
+            sequence: 100 + (trial.trial_number || 0) * 10 + (flowItems.length),
+          });
+        }
+      }
+    } else if (manifest && manifest.mappings) {
+      // Fallback: no flow data, use manifest only (decision screens)
+      for (const m of manifest.mappings) {
+        flowItems.push({
+          type: 'decision',
+          label: m.task_label || m.generated,
+          originalPage: m.original_pages?.[0]?.replace('.png','') || null,
+          generatedFile: m.generated,
+          sequence: flowItems.length,
+        });
+      }
+    }
+
+    if (flowItems.length > 0) {
+      const nInstr = flowItems.filter(f => f.type === 'instruction').length;
+      const nDecision = flowItems.filter(f => f.type === 'decision').length;
+      html += `
+        <div class="repro-screens-header">
+          <span class="repro-filename">Survey Flow (${flowItems.length} screens: ${nInstr} instruction, ${nDecision} decision)</span>
+          <button class="repro-download-single-btn" onclick="downloadAllScreens('${basePath}', ${JSON.stringify(screens)})">Download generated screens</button>
+        </div>
+        <p class="repro-comparison-note">The complete survey in chronological order — instructions first, then decision screens. Original pages are from the paper's appendix; generated screens are shown to the LLM agent.</p>
+        <div class="repro-comparison-grid">
+          ${flowItems.map(item => {
+            const badge = item.type === 'instruction'
+              ? '<span class="flow-badge flow-badge-instruction">Instruction</span> '
+              : '<span class="flow-badge flow-badge-decision">Decision</span> ';
+            const origSrc = item.originalPage
+              ? `${basePath}/original_screens/${item.originalPage}.png`
+              : null;
+            const genSrc = item.generatedFile
+              ? `${basePath}/screens/${item.generatedFile}`
+              : null;
+
+            if (item.type === 'instruction') {
+              // Instruction: show original on both sides (same image shown to LLM)
+              return `<div class="repro-comparison-pair">
+                <div class="repro-comparison-item">
+                  <div class="repro-comparison-label">Original (paper appendix)</div>
+                  ${origSrc
+                    ? `<img src="${origSrc}?${CACHE_BUST}" alt="Original">`
+                    : '<div class="repro-no-original">No original available</div>'}
+                </div>
+                <div class="repro-comparison-item">
+                  <div class="repro-comparison-label">Shown to LLM (same image)</div>
+                  ${origSrc
+                    ? `<img src="${origSrc}?${CACHE_BUST}" alt="Shown to LLM">`
+                    : '<div class="repro-no-original">No image</div>'}
+                </div>
+                <div class="repro-comparison-caption">${badge}${item.label}</div>
+              </div>`;
+            } else {
+              // Decision: show original vs generated side by side
+              return `<div class="repro-comparison-pair">
+                <div class="repro-comparison-item">
+                  <div class="repro-comparison-label">Original (paper appendix)</div>
+                  ${origSrc
+                    ? `<img src="${origSrc}?${CACHE_BUST}" alt="Original">`
+                    : '<div class="repro-no-original">No original available</div>'}
+                </div>
+                <div class="repro-comparison-item">
+                  <div class="repro-comparison-label">Generated (shown to LLM)</div>
+                  ${genSrc
+                    ? `<img src="${genSrc}?${CACHE_BUST}" alt="Generated">`
+                    : '<div class="repro-no-original">No generated screen</div>'}
+                </div>
+                <div class="repro-comparison-caption">${badge}${item.label}</div>
+              </div>`;
+            }
+          }).join('')}
+        </div>
+      `;
+    } else if (screens.length > 0) {
+      // No flow or manifest — just show generated screens
+      html += `
+        <div class="repro-screens-header">
+          <span class="repro-filename">screens/ (${screens.length} decision screen images)</span>
+          <button class="repro-download-single-btn" onclick="downloadAllScreens('${basePath}', ${JSON.stringify(screens)})">Download all screens</button>
+        </div>
+        <div class="repro-screens-grid">
+          ${screens.map(s => {
+            const fname = s.split('/').pop();
+            return `<div class="repro-screen-item">
+              <img src="${basePath}/${s}?${CACHE_BUST}" alt="${fname}">
+              <div class="repro-screen-label">${fname}</div>
+              <button class="repro-download-single-btn" onclick="downloadSingleFile('${basePath}/${s}','${fname}')">Download</button>
+            </div>`;
+          }).join('')}
+        </div>
+      `;
+    }
   } else if (screens.length > 0) {
-    // Generated-only grid (no originals available)
+    // Text mode with screens (unlikely but handle gracefully)
     html += `
       <div class="repro-screens-header">
-        <span class="repro-filename">screens/ (${screens.length} decision screen images)</span>
-        <button class="repro-download-single-btn" onclick="downloadAllScreens('${basePath}', ${JSON.stringify(screens)})">Download all screens</button>
+        <span class="repro-filename">screens/ (${screens.length} images)</span>
       </div>
       <div class="repro-screens-grid">
         ${screens.map(s => {
@@ -1195,7 +1311,6 @@ async function showReproduction(paperId, modality, baseId) {
           return `<div class="repro-screen-item">
             <img src="${basePath}/${s}?${CACHE_BUST}" alt="${fname}">
             <div class="repro-screen-label">${fname}</div>
-            <button class="repro-download-single-btn" onclick="downloadSingleFile('${basePath}/${s}','${fname}')">Download</button>
           </div>`;
         }).join('')}
       </div>

@@ -43,7 +43,7 @@ scenarios = ScenarioList(scenarios)
 models = ModelList([Model(m) for m in ["claude-sonnet-4-6"]])
 
 # Run per condition with matched sample sizes (as in original study)
-condition_ns = {"p05": 500, "p10": 500, "p25": 500, "p50": 500, "p75": 500, "p95": 500}
+condition_ns = {"p05": 5, "p10": 5, "p25": 5, "p50": 5, "p75": 5, "p95": 5}
 all_results = []
 for scenario in scenarios:
     cond = scenario.get("condition", None)

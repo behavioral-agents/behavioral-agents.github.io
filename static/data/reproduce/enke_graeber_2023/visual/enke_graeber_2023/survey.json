@@ -1,6 +1,20 @@
 {
   "questions": [
     {
+      "question_name": "_instruction_1",
+      "question_text": "Please carefully read the following experiment instructions (page 1 of 2: Instructions (1/3): Explains lottery format, CE elicitation procedure, and decision screen 1 with 1800 questions table).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_2",
+      "question_text": "Please carefully read the following experiment instructions (page 2 of 2: Instructions (2/3): Example CE input screen with lottery (35% chance of $18) | Instructions (3/3): Explains cognitive uncertainty rating about CE value within +/-$0.50 with example).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
       "question_name": "lottery1_ce",
       "question_text": "Look at the decision screen below:\n{{ decision_screen_lottery1_ce }}\n\nThe screen shows a lottery that pays $20 with a 5% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $20.",
       "min_value": 0,
@@ -267,6 +281,8 @@
   ],
   "memory_plan": {
     "survey_question_names": [
+      "_instruction_1",
+      "_instruction_2",
       "lottery1_ce",
       "lottery1_cu",
       "lottery2_ce",
@@ -281,6 +297,8 @@
       "lottery6_cu"
     ],
     "survey_question_texts": [
+      "Please carefully read the following experiment instructions (page 1 of 2: Instructions (1/3): Explains lottery format, CE elicitation procedure, and decision screen 1 with 1800 questions table).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 2 of 2: Instructions (2/3): Example CE input screen with lottery (35% chance of $18) | Instructions (3/3): Explains cognitive uncertainty rating about CE value within +/-$0.50 with example).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
       "Look at the decision screen below:\n{{ decision_screen_lottery1_ce }}\n\nThe screen shows a lottery that pays $20 with a 5% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $20.",
       "Look at the decision screen below:\n{{ decision_screen_lottery1_cu }}\n\nYou just indicated your valuation of the lottery. How certain are you that your true valuation is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
       "Look at the decision screen below:\n{{ decision_screen_lottery2_ce }}\n\nThe screen shows a lottery that pays $18 with a 10% chance, and $0 otherwise.\n\nWhat is your certainty equivalent for this lottery? Enter a dollar amount between $0 and $18.",
@@ -295,102 +313,30 @@
       "Look at the decision screen below:\n{{ decision_screen_lottery6_cu }}\n\nYou just indicated your valuation of the lottery. How certain are you that your true valuation is within $0.50 of the amount you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%."
     ],
     "data": {
-      "lottery2_ce": {
+      "lottery1_ce": {
         "prior_questions": [
-          "lottery1_ce"
-        ]
-      },
-      "lottery2_cu": {
-        "prior_questions": [
-          "lottery1_cu",
-          "lottery2_ce"
-        ]
-      },
-      "lottery3_ce": {
-        "prior_questions": [
-          "lottery1_ce",
-          "lottery2_ce"
-        ]
-      },
-      "lottery3_cu": {
-        "prior_questions": [
-          "lottery1_cu",
-          "lottery2_cu",
-          "lottery3_ce"
-        ]
-      },
-      "lottery4_ce": {
-        "prior_questions": [
-          "lottery1_ce",
-          "lottery2_ce",
-          "lottery3_ce"
-        ]
-      },
-      "lottery4_cu": {
-        "prior_questions": [
-          "lottery1_cu",
-          "lottery2_cu",
-          "lottery3_cu",
-          "lottery4_ce"
-        ]
-      },
-      "lottery5_ce": {
-        "prior_questions": [
-          "lottery1_ce",
-          "lottery2_ce",
-          "lottery3_ce",
-          "lottery4_ce"
-        ]
-      },
-      "lottery5_cu": {
-        "prior_questions": [
-          "lottery1_cu",
-          "lottery2_cu",
-          "lottery3_cu",
-          "lottery4_cu",
-          "lottery5_ce"
-        ]
-      },
-      "lottery6_ce": {
-        "prior_questions": [
-          "lottery1_ce",
-          "lottery2_ce",
-          "lottery3_ce",
-          "lottery4_ce",
-          "lottery5_ce"
-        ]
-      },
-      "lottery6_cu": {
-        "prior_questions": [
-          "lottery1_cu",
-          "lottery2_cu",
-          "lottery3_cu",
-          "lottery4_cu",
-          "lottery5_cu",
-          "lottery6_ce"
-        ]
-      },
-      "lottery1_cu": {
-        "prior_questions": [
-          "lottery1_ce"
+          "_instruction_1",
+          "_instruction_2"
         ]
       }
     }
   },
   "rule_collection": {
     "question_name_to_index": {
-      "lottery1_ce": 0,
-      "lottery1_cu": 1,
-      "lottery2_ce": 2,
-      "lottery2_cu": 3,
-      "lottery3_ce": 4,
-      "lottery3_cu": 5,
-      "lottery4_ce": 6,
-      "lottery4_cu": 7,
-      "lottery5_ce": 8,
-      "lottery5_cu": 9,
-      "lottery6_ce": 10,
-      "lottery6_cu": 11
+      "_instruction_1": 0,
+      "_instruction_2": 1,
+      "lottery1_ce": 2,
+      "lottery1_cu": 3,
+      "lottery2_ce": 4,
+      "lottery2_cu": 5,
+      "lottery3_ce": 6,
+      "lottery3_cu": 7,
+      "lottery4_ce": 8,
+      "lottery4_cu": 9,
+      "lottery5_ce": 10,
+      "lottery5_cu": 11,
+      "lottery6_ce": 12,
+      "lottery6_cu": 13
     },
     "rules": [
       {
@@ -476,9 +422,23 @@
         "next_q": 12,
         "priority": -1,
         "before_rule": false
+      },
+      {
+        "current_q": 12,
+        "expression": "True",
+        "next_q": 13,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 13,
+        "expression": "True",
+        "next_q": 14,
+        "priority": -1,
+        "before_rule": false
       }
     ],
-    "num_questions": 12
+    "num_questions": 14
   },
   "question_groups": {},
   "edsl_version": "1.0.6",

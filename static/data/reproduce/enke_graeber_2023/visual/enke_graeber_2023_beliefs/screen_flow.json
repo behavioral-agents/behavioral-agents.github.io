@@ -1,0 +1,206 @@
+{
+  "experiment_section": "G.2 Treatment Beliefs Main",
+  "instructions": [
+    {
+      "page": "page_037",
+      "screen_position": "full",
+      "description": "Instructions (1/4): Explains 12 guessing tasks with two bags, card deck, ball drawing procedure with diagram",
+      "sequence_order": 1
+    },
+    {
+      "page": "page_038",
+      "screen_position": "full",
+      "description": "Instructions (2/4): Example decision screen showing card deck (75 Bag A, 25 Bag B), bag compositions, drawn red ball, and probability guess input",
+      "sequence_order": 2
+    },
+    {
+      "page": "page_039",
+      "screen_position": "full",
+      "description": "Instructions (3/4): Explains optimal guess concept (Bayes' Law) and Decision screen 2 - certainty about guess with example scale for 80% guess",
+      "sequence_order": 3
+    },
+    {
+      "page": "page_040",
+      "screen_position": "full",
+      "description": "Instructions (4/4): Summary of sequence of events - Decision screens 1 and 2 description, payment rule for Part 1",
+      "sequence_order": 4
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "page_042",
+          "screen_position": "full",
+          "question_name": "belief1_prob",
+          "screen_type": "decision",
+          "description": "Task 1 of 12, Decision Screen (1/2): Beliefs elicitation - card deck (5 Bag A, 95 Bag B), bag compositions (65 red/35 blue vs 35 red/65 blue), one red ball drawn, enter probability Bag A selected",
+          "depends_on": null,
+          "parameters": {
+            "bag_a_cards": 5,
+            "bag_b_cards": 95,
+            "bag_a_red_balls": 65,
+            "bag_a_blue_balls": 35,
+            "bag_b_red_balls": 35,
+            "bag_b_blue_balls": 65,
+            "balls_drawn": [
+              {
+                "color": "red",
+                "count": 1
+              }
+            ]
+          }
+        },
+        {
+          "page": "page_043",
+          "screen_position": "full",
+          "question_name": "belief1_cu",
+          "screen_type": "decision",
+          "description": "Task 1 of 12, Decision Screen (2/2): Cognitive uncertainty rating for belief guess - how certain optimal guess is within \u00b11 percentage point of stated guess",
+          "depends_on": "belief1_prob",
+          "parameters": {
+            "certainty_scale_min": 0,
+            "certainty_scale_max": 100,
+            "certainty_scale_step": 5
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief2_prob",
+          "screen_type": "decision",
+          "description": "Task 2 of 12, Decision Screen (1/2): Beliefs elicitation - varying card deck and bag compositions, balls drawn",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief2_cu",
+          "screen_type": "decision",
+          "description": "Task 2 of 12, Decision Screen (2/2): Cognitive uncertainty rating for belief guess",
+          "depends_on": "belief2_prob",
+          "parameters": {
+            "certainty_scale_min": 0,
+            "certainty_scale_max": 100,
+            "certainty_scale_step": 5
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief3_prob",
+          "screen_type": "decision",
+          "description": "Task 3 of 12, Decision Screen (1/2): Beliefs elicitation - varying card deck and bag compositions, balls drawn",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief3_cu",
+          "screen_type": "decision",
+          "description": "Task 3 of 12, Decision Screen (2/2): Cognitive uncertainty rating for belief guess",
+          "depends_on": "belief3_prob",
+          "parameters": {
+            "certainty_scale_min": 0,
+            "certainty_scale_max": 100,
+            "certainty_scale_step": 5
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief4_prob",
+          "screen_type": "decision",
+          "description": "Task 4 of 12, Decision Screen (1/2): Beliefs elicitation - varying card deck and bag compositions, balls drawn",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief4_cu",
+          "screen_type": "decision",
+          "description": "Task 4 of 12, Decision Screen (2/2): Cognitive uncertainty rating for belief guess",
+          "depends_on": "belief4_prob",
+          "parameters": {
+            "certainty_scale_min": 0,
+            "certainty_scale_max": 100,
+            "certainty_scale_step": 5
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief5_prob",
+          "screen_type": "decision",
+          "description": "Task 5 of 12, Decision Screen (1/2): Beliefs elicitation - varying card deck and bag compositions, balls drawn",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief5_cu",
+          "screen_type": "decision",
+          "description": "Task 5 of 12, Decision Screen (2/2): Cognitive uncertainty rating for belief guess",
+          "depends_on": "belief5_prob",
+          "parameters": {
+            "certainty_scale_min": 0,
+            "certainty_scale_max": 100,
+            "certainty_scale_step": 5
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief6_prob",
+          "screen_type": "decision",
+          "description": "Task 6 of 12, Decision Screen (1/2): Beliefs elicitation - varying card deck and bag compositions, balls drawn",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "belief6_cu",
+          "screen_type": "decision",
+          "description": "Task 6 of 12, Decision Screen (2/2): Cognitive uncertainty rating for belief guess",
+          "depends_on": "belief6_prob",
+          "parameters": {
+            "certainty_scale_min": 0,
+            "certainty_scale_max": 100,
+            "certainty_scale_step": 5
+          }
+        }
+      ]
+    }
+  ]
+}

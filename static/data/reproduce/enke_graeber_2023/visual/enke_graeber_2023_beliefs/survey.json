@@ -1,6 +1,34 @@
 {
   "questions": [
     {
+      "question_name": "_instruction_1",
+      "question_text": "Please carefully read the following experiment instructions (page 1 of 4: Instructions (1/4): Explains 12 guessing tasks with two bags, card deck, ball drawing procedure with diagram).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_2",
+      "question_text": "Please carefully read the following experiment instructions (page 2 of 4: Instructions (2/4): Example decision screen showing card deck (75 Bag A, 25 Bag B), bag compositions, drawn red ball, and probability guess input).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_3",
+      "question_text": "Please carefully read the following experiment instructions (page 3 of 4: Instructions (3/4): Explains optimal guess concept (Bayes' Law) and Decision screen 2 - certainty about guess with example scale for 80% guess).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_4",
+      "question_text": "Please carefully read the following experiment instructions (page 4 of 4: Instructions (4/4): Summary of sequence of events - Decision screens 1 and 2 description, payment rule for Part 1).\n{{ instruction_screen_4 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
       "question_name": "belief1_prob",
       "question_text": "Look at the decision screen below:\n{{ decision_screen_belief1_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 75% red balls and 25% blue balls. Bag B contains 25% red balls and 75% blue balls.\n\nThere was a 30% chance Bag A was selected and a 70% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
       "min_value": 0,
@@ -267,6 +295,10 @@
   ],
   "memory_plan": {
     "survey_question_names": [
+      "_instruction_1",
+      "_instruction_2",
+      "_instruction_3",
+      "_instruction_4",
       "belief1_prob",
       "belief1_cu",
       "belief2_prob",
@@ -281,6 +313,10 @@
       "belief6_cu"
     ],
     "survey_question_texts": [
+      "Please carefully read the following experiment instructions (page 1 of 4: Instructions (1/4): Explains 12 guessing tasks with two bags, card deck, ball drawing procedure with diagram).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 2 of 4: Instructions (2/4): Example decision screen showing card deck (75 Bag A, 25 Bag B), bag compositions, drawn red ball, and probability guess input).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 3 of 4: Instructions (3/4): Explains optimal guess concept (Bayes' Law) and Decision screen 2 - certainty about guess with example scale for 80% guess).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 4 of 4: Instructions (4/4): Summary of sequence of events - Decision screens 1 and 2 description, payment rule for Part 1).\n{{ instruction_screen_4 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
       "Look at the decision screen below:\n{{ decision_screen_belief1_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 75% red balls and 25% blue balls. Bag B contains 25% red balls and 75% blue balls.\n\nThere was a 30% chance Bag A was selected and a 70% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
       "Look at the decision screen below:\n{{ decision_screen_belief1_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%.",
       "Look at the decision screen below:\n{{ decision_screen_belief2_prob }}\n\nThe screen shows a Bayesian updating task. Bag A contains 90% red balls and 10% blue balls. Bag B contains 10% red balls and 90% blue balls.\n\nThere was a 10% chance Bag A was selected and a 90% chance Bag B was selected. 1 red ball(s) were drawn.\n\nWhat do you think is the probability (in %) that Bag A was selected? Enter a number between 0 and 100.",
@@ -295,102 +331,34 @@
       "Look at the decision screen below:\n{{ decision_screen_belief6_cu }}\n\nYou just estimated the probability that Bag A was selected in the previous task.\n\nHow certain are you that the optimal guess is within 1 percentage point of the number you just stated?\n\nAnswer on a scale from 0% (not at all certain) to 100% (completely certain), in steps of 5%."
     ],
     "data": {
-      "belief2_prob": {
+      "belief1_prob": {
         "prior_questions": [
-          "belief1_prob"
-        ]
-      },
-      "belief2_cu": {
-        "prior_questions": [
-          "belief1_cu",
-          "belief2_prob"
-        ]
-      },
-      "belief3_prob": {
-        "prior_questions": [
-          "belief1_prob",
-          "belief2_prob"
-        ]
-      },
-      "belief3_cu": {
-        "prior_questions": [
-          "belief1_cu",
-          "belief2_cu",
-          "belief3_prob"
-        ]
-      },
-      "belief4_prob": {
-        "prior_questions": [
-          "belief1_prob",
-          "belief2_prob",
-          "belief3_prob"
-        ]
-      },
-      "belief4_cu": {
-        "prior_questions": [
-          "belief1_cu",
-          "belief2_cu",
-          "belief3_cu",
-          "belief4_prob"
-        ]
-      },
-      "belief5_prob": {
-        "prior_questions": [
-          "belief1_prob",
-          "belief2_prob",
-          "belief3_prob",
-          "belief4_prob"
-        ]
-      },
-      "belief5_cu": {
-        "prior_questions": [
-          "belief1_cu",
-          "belief2_cu",
-          "belief3_cu",
-          "belief4_cu",
-          "belief5_prob"
-        ]
-      },
-      "belief6_prob": {
-        "prior_questions": [
-          "belief1_prob",
-          "belief2_prob",
-          "belief3_prob",
-          "belief4_prob",
-          "belief5_prob"
-        ]
-      },
-      "belief6_cu": {
-        "prior_questions": [
-          "belief1_cu",
-          "belief2_cu",
-          "belief3_cu",
-          "belief4_cu",
-          "belief5_cu",
-          "belief6_prob"
-        ]
-      },
-      "belief1_cu": {
-        "prior_questions": [
-          "belief1_prob"
+          "_instruction_1",
+          "_instruction_2",
+          "_instruction_3",
+          "_instruction_4"
         ]
       }
     }
   },
   "rule_collection": {
     "question_name_to_index": {
-      "belief1_prob": 0,
-      "belief1_cu": 1,
-      "belief2_prob": 2,
-      "belief2_cu": 3,
-      "belief3_prob": 4,
-      "belief3_cu": 5,
-      "belief4_prob": 6,
-      "belief4_cu": 7,
-      "belief5_prob": 8,
-      "belief5_cu": 9,
-      "belief6_prob": 10,
-      "belief6_cu": 11
+      "_instruction_1": 0,
+      "_instruction_2": 1,
+      "_instruction_3": 2,
+      "_instruction_4": 3,
+      "belief1_prob": 4,
+      "belief1_cu": 5,
+      "belief2_prob": 6,
+      "belief2_cu": 7,
+      "belief3_prob": 8,
+      "belief3_cu": 9,
+      "belief4_prob": 10,
+      "belief4_cu": 11,
+      "belief5_prob": 12,
+      "belief5_cu": 13,
+      "belief6_prob": 14,
+      "belief6_cu": 15
     },
     "rules": [
       {
@@ -476,9 +444,37 @@
         "next_q": 12,
         "priority": -1,
         "before_rule": false
+      },
+      {
+        "current_q": 12,
+        "expression": "True",
+        "next_q": 13,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 13,
+        "expression": "True",
+        "next_q": 14,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 14,
+        "expression": "True",
+        "next_q": 15,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 15,
+        "expression": "True",
+        "next_q": 16,
+        "priority": -1,
+        "before_rule": false
       }
     ],
-    "num_questions": 12
+    "num_questions": 16
   },
   "question_groups": {},
   "edsl_version": "1.0.6",

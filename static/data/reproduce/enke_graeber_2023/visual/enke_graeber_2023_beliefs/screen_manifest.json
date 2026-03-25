@@ -1,0 +1,81 @@
+{
+  "paper_id": "enke_graeber_2023_beliefs",
+  "mappings": [
+    {
+      "generated": "belief1_prob_default.png",
+      "task_label": "Belief Task 1 - Probability Estimate",
+      "original_pages": [
+        "page_042.png"
+      ],
+      "screen_position": "full"
+    },
+    {
+      "generated": "belief1_cu_default.png",
+      "task_label": "Belief Task 1 - Cognitive Uncertainty",
+      "original_pages": [
+        "page_043.png"
+      ],
+      "screen_position": "full"
+    },
+    {
+      "generated": "belief2_prob_default.png",
+      "task_label": "Belief Task 2 - Probability Estimate",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief2_cu_default.png",
+      "task_label": "Belief Task 2 - Cognitive Uncertainty",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief3_prob_default.png",
+      "task_label": "Belief Task 3 - Probability Estimate",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief3_cu_default.png",
+      "task_label": "Belief Task 3 - Cognitive Uncertainty",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief4_prob_default.png",
+      "task_label": "Belief Task 4 - Probability Estimate",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief4_cu_default.png",
+      "task_label": "Belief Task 4 - Cognitive Uncertainty",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief5_prob_default.png",
+      "task_label": "Belief Task 5 - Probability Estimate",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief5_cu_default.png",
+      "task_label": "Belief Task 5 - Cognitive Uncertainty",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief6_prob_default.png",
+      "task_label": "Belief Task 6 - Probability Estimate",
+      "original_pages": [],
+      "screen_position": null
+    },
+    {
+      "generated": "belief6_cu_default.png",
+      "task_label": "Belief Task 6 - Cognitive Uncertainty",
+      "original_pages": [],
+      "screen_position": null
+    }
+  ]
+}
