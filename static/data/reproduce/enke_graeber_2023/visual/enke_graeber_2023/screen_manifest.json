@@ -5,85 +5,77 @@
       "generated": "lottery1_ce_default.png",
       "task_label": "Lottery 1 - Certainty Equivalent",
       "original_pages": [
-        "page_033.png"
-      ]
+        "page_036.png"
+      ],
+      "screen_position": "top"
     },
     {
       "generated": "lottery1_cu_default.png",
       "task_label": "Lottery 1 - Cognitive Uncertainty",
       "original_pages": [
-        "page_034.png"
-      ]
+        "page_036.png"
+      ],
+      "screen_position": "bottom"
     },
     {
       "generated": "lottery2_ce_default.png",
       "task_label": "Lottery 2 - Certainty Equivalent",
-      "original_pages": [
-        "page_035.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery2_cu_default.png",
       "task_label": "Lottery 2 - Cognitive Uncertainty",
-      "original_pages": [
-        "page_036.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery3_ce_default.png",
       "task_label": "Lottery 3 - Certainty Equivalent",
-      "original_pages": [
-        "page_037.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery3_cu_default.png",
       "task_label": "Lottery 3 - Cognitive Uncertainty",
-      "original_pages": [
-        "page_038.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery4_ce_default.png",
       "task_label": "Lottery 4 - Certainty Equivalent",
-      "original_pages": [
-        "page_039.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery4_cu_default.png",
       "task_label": "Lottery 4 - Cognitive Uncertainty",
-      "original_pages": [
-        "page_040.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery5_ce_default.png",
       "task_label": "Lottery 5 - Certainty Equivalent",
-      "original_pages": [
-        "page_041.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery5_cu_default.png",
       "task_label": "Lottery 5 - Cognitive Uncertainty",
-      "original_pages": [
-        "page_042.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery6_ce_default.png",
       "task_label": "Lottery 6 - Certainty Equivalent",
-      "original_pages": [
-        "page_043.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     },
     {
       "generated": "lottery6_cu_default.png",
       "task_label": "Lottery 6 - Cognitive Uncertainty",
-      "original_pages": [
-        "page_044.png"
-      ]
+      "original_pages": [],
+      "screen_position": null
     }
   ]
 }

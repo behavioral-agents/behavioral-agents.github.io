@@ -1,0 +1,156 @@
+{
+  "experiment_section": "G.1 Treatment Risk Main",
+  "instruction_pages": [
+    "page_033",
+    "page_034"
+  ],
+  "comprehension_pages": [
+    "page_035"
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "page_036",
+          "screen_position": "top",
+          "question_name": "lottery1_ce",
+          "screen_type": "decision",
+          "description": "CE elicitation for lottery (65% chance of $22, 35% chance of $0)",
+          "depends_on": null,
+          "parameters": {
+            "probability": 65,
+            "amount": 22
+          }
+        },
+        {
+          "page": "page_036",
+          "screen_position": "bottom",
+          "question_name": "lottery1_cu",
+          "screen_type": "decision",
+          "description": "Cognitive uncertainty rating for CE of lottery (65% chance of $22), asking certainty between $0.50 and $1.50",
+          "depends_on": "lottery1_ce",
+          "parameters": {
+            "window_lower": 0.5,
+            "window_upper": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery2_ce",
+          "screen_type": "decision",
+          "description": "CE elicitation for lottery 2 (probability p2, amount y2)",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery2_cu",
+          "screen_type": "decision",
+          "description": "Cognitive uncertainty rating for CE of lottery 2",
+          "depends_on": "lottery2_ce",
+          "parameters": {}
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery3_ce",
+          "screen_type": "decision",
+          "description": "CE elicitation for lottery 3 (probability p3, amount y3)",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery3_cu",
+          "screen_type": "decision",
+          "description": "Cognitive uncertainty rating for CE of lottery 3",
+          "depends_on": "lottery3_ce",
+          "parameters": {}
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery4_ce",
+          "screen_type": "decision",
+          "description": "CE elicitation for lottery 4 (probability p4, amount y4)",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery4_cu",
+          "screen_type": "decision",
+          "description": "Cognitive uncertainty rating for CE of lottery 4",
+          "depends_on": "lottery4_ce",
+          "parameters": {}
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery5_ce",
+          "screen_type": "decision",
+          "description": "CE elicitation for lottery 5 (probability p5, amount y5)",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery5_cu",
+          "screen_type": "decision",
+          "description": "Cognitive uncertainty rating for CE of lottery 5",
+          "depends_on": "lottery5_ce",
+          "parameters": {}
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery6_ce",
+          "screen_type": "decision",
+          "description": "CE elicitation for lottery 6 (probability p6, amount y6)",
+          "depends_on": null,
+          "parameters": {}
+        },
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "lottery6_cu",
+          "screen_type": "decision",
+          "description": "Cognitive uncertainty rating for CE of lottery 6",
+          "depends_on": "lottery6_ce",
+          "parameters": {}
+        }
+      ]
+    }
+  ]
+}
