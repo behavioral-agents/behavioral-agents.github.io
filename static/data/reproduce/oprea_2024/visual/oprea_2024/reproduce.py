@@ -43,7 +43,7 @@ scenarios = ScenarioList(scenarios)
 models = ModelList([Model(m) for m in ["claude-sonnet-4-6"]])
 
 # Run per condition with matched sample sizes (as in original study)
-condition_ns = {"A10_lottery": 50, "A10_mirror": 50, "A15_lottery": 50, "A15_mirror": 50, "G10_lottery": 50, "G10_mirror": 50, "G25_lottery": 50, "G25_mirror": 50, "G50_lottery": 50, "G50_mirror": 50, "G75_lottery": 50, "G75_mirror": 50, "G90_lottery": 50, "G90_mirror": 50, "L10_lottery": 50, "L10_mirror": 50, "L25_lottery": 50, "L25_mirror": 50, "L50_lottery": 50, "L50_mirror": 50, "L75_lottery": 50, "L75_mirror": 50, "L90_lottery": 50, "L90_mirror": 50}
+condition_ns = {"lottery_G10": 50, "mirror_G10": 50, "lottery_G25": 50, "mirror_G25": 50, "lottery_G50": 50, "mirror_G50": 50, "lottery_G75": 50, "mirror_G75": 50, "lottery_G90": 50, "mirror_G90": 50, "lottery_L10": 50, "mirror_L10": 50, "lottery_L25": 50, "mirror_L25": 50, "lottery_L50": 50, "mirror_L50": 50, "lottery_L75": 50, "mirror_L75": 50, "lottery_L90": 50, "mirror_L90": 50, "lottery_A10_lambda": 50, "mirror_A10_lambda": 50, "lottery_A15_lambda": 50, "mirror_A15_lambda": 50}
 all_results = []
 for scenario in scenarios:
     cond = scenario.get("condition", None)

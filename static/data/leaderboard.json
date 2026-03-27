@@ -2,17 +2,17 @@
   "text": [
     {
       "model": "gpt-4o",
-      "n_papers": 8,
-      "mean_wasserstein": 8.3543,
-      "mean_fidelity": -0.6372,
-      "nonsig_rate": 0.3125
+      "n_papers": 9,
+      "mean_wasserstein": 8.632,
+      "mean_fidelity": -0.5533,
+      "nonsig_rate": 0.2778
     },
     {
       "model": "gemini-2.5-flash",
-      "n_papers": 8,
-      "mean_wasserstein": 8.0147,
-      "mean_fidelity": -0.9066,
-      "nonsig_rate": 0.2292
+      "n_papers": 9,
+      "mean_wasserstein": 8.3155,
+      "mean_fidelity": -0.7929,
+      "nonsig_rate": 0.2037
     },
     {
       "model": "gpt-4o-mini",
@@ -24,18 +24,18 @@
     {
       "model": "claude-sonnet-4-6",
       "n_papers": 9,
-      "mean_wasserstein": 12.3419,
-      "mean_fidelity": -1.2197,
-      "nonsig_rate": 0.2824
+      "mean_wasserstein": 12.8546,
+      "mean_fidelity": -1.2742,
+      "nonsig_rate": 0.2778
     }
   ],
   "visual": [
     {
       "model": "claude-sonnet-4-6",
       "n_papers": 8,
-      "mean_wasserstein": 12.6881,
-      "mean_fidelity": -1.3732,
-      "nonsig_rate": 0.3125
+      "mean_wasserstein": 13.0508,
+      "mean_fidelity": -1.4264,
+      "nonsig_rate": 0.2917
     }
   ]
 }

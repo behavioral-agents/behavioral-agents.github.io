@@ -1,10 +1,40 @@
 {
   "questions": [
     {
-      "question_name": "switch_row",
-      "question_text": "You are participating in a behavioral economics experiment.\n\nLook at the decision table shown below:\n{{ decision_screen }}\n\nIn this table, each row is a different version of a choice between Set A (red) and Set B (blue). You must decide, for each row, whether you prefer Set A or Set B.\n\nYou can only switch from Set A to Set B at one point in the table (or choose the same set for all rows).\n\nAt which row (version number) would you switch from choosing Set A to choosing Set B?\nEnter 0 if you would choose Set A in every row.\nEnter 26 if you would choose Set B in every row.\nOtherwise enter the version number (1-25) where you switch to Set B.",
+      "question_name": "_instruction_1",
+      "question_text": "Please carefully read the following experiment instructions (page 1 of 3: Instructions: Explains the Decision Table format \u2014 how sets of boxes are described with counts and amounts, examples with positive and negative values, and how clicking highlights a set yellow to determine final earnings).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_2",
+      "question_text": "Please carefully read the following experiment instructions (page 2 of 3: Instructions: Explains 'The Average Box' payment rule \u2014 computer pays the average (sum/100) of all boxes in the chosen set, with examples of positive ($8) and negative (-$4) average payoffs).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_3",
+      "question_text": "Please carefully read the following experiment instructions (page 3 of 3: Instructions (Final Part): Explains that participants choose between Set A and Set B across multiple versions (rows) of the decision table, with an example 10-row table).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "valuation",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_valuation }}\n\nIn this task, you will value a set of 100 boxes, each containing some dollar amount.\n\nThe payoff rule: {{ payoff_rule_description }}.\n\nIn this set, {{ n_high_boxes }} boxes contain ${{ high_payoff_usd }} and {{ n_low_boxes }} boxes contain ${{ low_payoff_usd }}.\n\n{{ payoff_rule_example }}\n\nOption A: {{ option_a_label }}\nOption B: Receive a certain dollar amount\n\nYou start with an endowment of ${{ endowment_usd }}. Any gains or losses are added to or subtracted from this endowment.\n\nWhat is the certain dollar amount (Option B) at which you would be exactly indifferent between Option A and Option B? Please state a dollar value between ${{ min_value_usd }} and ${{ max_value_usd }}.",
+      "min_value": -25,
+      "max_value": 25,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "loss_aversion_threshold",
+      "question_text": "In this task you will choose between:\n- Option A: A sure payment of $0\n- Option B: {{ option_b_loss_aversion_description }}\n\n{{ payoff_rule_description_la }}\n\nThe loss amount is fixed at -${{ fixed_loss_abs_usd }}. The gain amount $X increases in ${{ gain_step_usd }} steps.\n\nYou start with an endowment of ${{ endowment_usd }}.\n\nWhat is the minimum value of $X at which you would prefer Option B over Option A (i.e., prefer the {{ task_type }} over the sure $0)? Please state a dollar value (must be a positive number).",
       "min_value": 0,
-      "max_value": 26,
+      "max_value": 100,
       "question_type": "numerical",
       "edsl_version": "1.0.6",
       "edsl_class_name": "QuestionBase"
@@ -12,16 +42,36 @@
   ],
   "memory_plan": {
     "survey_question_names": [
-      "switch_row"
+      "_instruction_1",
+      "_instruction_2",
+      "_instruction_3",
+      "valuation",
+      "loss_aversion_threshold"
     ],
     "survey_question_texts": [
-      "You are participating in a behavioral economics experiment.\n\nLook at the decision table shown below:\n{{ decision_screen }}\n\nIn this table, each row is a different version of a choice between Set A (red) and Set B (blue). You must decide, for each row, whether you prefer Set A or Set B.\n\nYou can only switch from Set A to Set B at one point in the table (or choose the same set for all rows).\n\nAt which row (version number) would you switch from choosing Set A to choosing Set B?\nEnter 0 if you would choose Set A in every row.\nEnter 26 if you would choose Set B in every row.\nOtherwise enter the version number (1-25) where you switch to Set B."
+      "Please carefully read the following experiment instructions (page 1 of 3: Instructions: Explains the Decision Table format \u2014 how sets of boxes are described with counts and amounts, examples with positive and negative values, and how clicking highlights a set yellow to determine final earnings).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 2 of 3: Instructions: Explains 'The Average Box' payment rule \u2014 computer pays the average (sum/100) of all boxes in the chosen set, with examples of positive ($8) and negative (-$4) average payoffs).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 3 of 3: Instructions (Final Part): Explains that participants choose between Set A and Set B across multiple versions (rows) of the decision table, with an example 10-row table).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Look at the decision screen below:\n{{ decision_screen_valuation }}\n\nIn this task, you will value a set of 100 boxes, each containing some dollar amount.\n\nThe payoff rule: {{ payoff_rule_description }}.\n\nIn this set, {{ n_high_boxes }} boxes contain ${{ high_payoff_usd }} and {{ n_low_boxes }} boxes contain ${{ low_payoff_usd }}.\n\n{{ payoff_rule_example }}\n\nOption A: {{ option_a_label }}\nOption B: Receive a certain dollar amount\n\nYou start with an endowment of ${{ endowment_usd }}. Any gains or losses are added to or subtracted from this endowment.\n\nWhat is the certain dollar amount (Option B) at which you would be exactly indifferent between Option A and Option B? Please state a dollar value between ${{ min_value_usd }} and ${{ max_value_usd }}.",
+      "In this task you will choose between:\n- Option A: A sure payment of $0\n- Option B: {{ option_b_loss_aversion_description }}\n\n{{ payoff_rule_description_la }}\n\nThe loss amount is fixed at -${{ fixed_loss_abs_usd }}. The gain amount $X increases in ${{ gain_step_usd }} steps.\n\nYou start with an endowment of ${{ endowment_usd }}.\n\nWhat is the minimum value of $X at which you would prefer Option B over Option A (i.e., prefer the {{ task_type }} over the sure $0)? Please state a dollar value (must be a positive number)."
     ],
-    "data": {}
+    "data": {
+      "valuation": {
+        "prior_questions": [
+          "_instruction_1",
+          "_instruction_2",
+          "_instruction_3"
+        ]
+      }
+    }
   },
   "rule_collection": {
     "question_name_to_index": {
-      "switch_row": 0
+      "_instruction_1": 0,
+      "_instruction_2": 1,
+      "_instruction_3": 2,
+      "valuation": 3,
+      "loss_aversion_threshold": 4
     },
     "rules": [
       {
@@ -30,9 +80,37 @@
         "next_q": 1,
         "priority": -1,
         "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 4,
+        "expression": "True",
+        "next_q": 5,
+        "priority": -1,
+        "before_rule": false
       }
     ],
-    "num_questions": 1
+    "num_questions": 5
   },
   "question_groups": {},
   "edsl_version": "1.0.6",

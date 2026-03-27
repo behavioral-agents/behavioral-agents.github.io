@@ -1,0 +1,59 @@
+{
+  "questions": [
+    {
+      "question_name": "valuation",
+      "question_text": "In this task, you will value a set of 100 boxes, each containing some dollar amount.\n\nThe payoff rule: {{ payoff_rule_description }}.\n\nIn this set, {{ n_high_boxes }} boxes contain ${{ high_payoff_usd }} and {{ n_low_boxes }} boxes contain ${{ low_payoff_usd }}.\n\n{{ payoff_rule_example }}\n\nOption A: {{ option_a_label }}\nOption B: Receive a certain dollar amount\n\nYou start with an endowment of ${{ endowment_usd }}. Any gains or losses are added to or subtracted from this endowment.\n\nWhat is the certain dollar amount (Option B) at which you would be exactly indifferent between Option A and Option B? Please state a dollar value between ${{ min_value_usd }} and ${{ max_value_usd }}.",
+      "min_value": -25,
+      "max_value": 25,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "loss_aversion_threshold",
+      "question_text": "In this task you will choose between:\n- Option A: A sure payment of $0\n- Option B: {{ option_b_loss_aversion_description }}\n\n{{ payoff_rule_description_la }}\n\nThe loss amount is fixed at -${{ fixed_loss_abs_usd }}. The gain amount $X increases in ${{ gain_step_usd }} steps.\n\nYou start with an endowment of ${{ endowment_usd }}.\n\nWhat is the minimum value of $X at which you would prefer Option B over Option A (i.e., prefer the {{ task_type }} over the sure $0)? Please state a dollar value (must be a positive number).",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "valuation",
+      "loss_aversion_threshold"
+    ],
+    "survey_question_texts": [
+      "In this task, you will value a set of 100 boxes, each containing some dollar amount.\n\nThe payoff rule: {{ payoff_rule_description }}.\n\nIn this set, {{ n_high_boxes }} boxes contain ${{ high_payoff_usd }} and {{ n_low_boxes }} boxes contain ${{ low_payoff_usd }}.\n\n{{ payoff_rule_example }}\n\nOption A: {{ option_a_label }}\nOption B: Receive a certain dollar amount\n\nYou start with an endowment of ${{ endowment_usd }}. Any gains or losses are added to or subtracted from this endowment.\n\nWhat is the certain dollar amount (Option B) at which you would be exactly indifferent between Option A and Option B? Please state a dollar value between ${{ min_value_usd }} and ${{ max_value_usd }}.",
+      "In this task you will choose between:\n- Option A: A sure payment of $0\n- Option B: {{ option_b_loss_aversion_description }}\n\n{{ payoff_rule_description_la }}\n\nThe loss amount is fixed at -${{ fixed_loss_abs_usd }}. The gain amount $X increases in ${{ gain_step_usd }} steps.\n\nYou start with an endowment of ${{ endowment_usd }}.\n\nWhat is the minimum value of $X at which you would prefer Option B over Option A (i.e., prefer the {{ task_type }} over the sure $0)? Please state a dollar value (must be a positive number)."
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "valuation": 0,
+      "loss_aversion_threshold": 1
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 2
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

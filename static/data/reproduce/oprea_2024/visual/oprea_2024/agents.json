@@ -2,700 +2,1050 @@
   "agent_list": [
     {
       "traits": {
-        "_subject_id": "1070416854",
-        "persona": "You are a male participant. Your field of study is Science/Engineering. Your economics background: Single university-level course. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Single university-level course",
-        "major": "Science/Engineering",
-        "sex": "Male",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1094386993",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: Single university-level course. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Single university-level course",
-        "major": "Science/Engineering",
+        "persona": "Gender: Female. Age: 55. Academic background: Other. Math experience: Two or more university-level courses. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: 10; Q3: 10,000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "55",
         "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1237904110",
-        "persona": "You are a male participant. Your field of study is Business/Economics. Your economics background: Single university-level course. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Single university-level course",
-        "major": "Business/Economics",
-        "sex": "Male",
-        "math": "Single university-level course"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1281944696",
-        "persona": "You are a male participant. Your field of study is Foreign Language. Your economics background: No course. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "major": "Other",
+        "CR1": "4 days",
+        "CR2": "10",
+        "CR3": "10,000",
         "economics": "No course",
-        "major": "Foreign Language",
-        "sex": "Male",
-        "math": "Single university-level course"
+        "math": "Two or more university-level courses",
+        "_subject_id": "8915153804"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "1285665697",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: High school. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "High school",
+        "persona": "Gender: Male. Age: 52. Academic background: Science/Engineering. Math experience: Two or more university-level courses. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: 10000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "52",
+        "sex": "Male",
         "major": "Science/Engineering",
-        "sex": "Female",
-        "math": "Single university-level course"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1301658746",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1315111442",
-        "persona": "You are a female participant. Your field of study is Government. Your economics background: Single university-level course. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Single university-level course",
-        "major": "Government",
-        "sex": "Female",
-        "math": "Single university-level course"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1588097997",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1786329554",
-        "persona": "You are a female participant. Your field of study is Business/Economics. Your economics background: Two or more university-level courses. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "10000",
         "economics": "Two or more university-level courses",
-        "major": "Business/Economics",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
+        "math": "Two or more university-level courses",
+        "_subject_id": "7376583164"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "1853395087",
-        "persona": "You are a male participant. Your field of study is Mathematics. Your economics background: Single university-level course. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "persona": "Gender: Female. Age: 33. Academic background: Other. Math experience: Two or more university-level courses. Economics experience: Single university-level course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 6 days; Q2: 30; Q3: 3000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "33",
+        "sex": "Female",
+        "major": "Other",
+        "CR1": "6 days",
+        "CR2": "30",
+        "CR3": "3000",
         "economics": "Single university-level course",
-        "major": "Mathematics",
-        "sex": "Male",
-        "math": "Single university-level course"
+        "math": "Two or more university-level courses",
+        "_subject_id": "9273349734"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "1891933594",
-        "persona": "You are a female participant. Your field of study is Government. Your economics background: Single university-level course. Your math background: High school.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Single university-level course",
-        "major": "Government",
+        "persona": "Gender: Female. Age: 31. Academic background: Other. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 3; Q2: 10; Q3: 10000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "31",
         "sex": "Female",
-        "math": "High school"
+        "major": "Other",
+        "CR1": "3",
+        "CR2": "10",
+        "CR3": "10000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "6701744585"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "1903130863",
-        "persona": "You are a male participant. Your field of study is Science/Engineering. Your economics background: High school. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "High school",
-        "major": "Science/Engineering",
+        "persona": "Gender: Male. Age: 58. Academic background: History. Math experience: Single university-level course. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 0; Q3: lost money.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "58",
         "sex": "Male",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1911939359",
-        "persona": "You are a female participant. Your field of study is Mathematics. Your economics background: High school. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "High school",
-        "major": "Mathematics",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "1978631921",
-        "persona": "You are a female participant. Your field of study is History. Your economics background: Two or more university-level courses. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Two or more university-level courses",
         "major": "History",
-        "sex": "Female",
-        "math": "Single university-level course"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2167559234",
-        "persona": "You are a male participant. Your field of study is Science/Engineering. Your economics background: Two or more university-level courses. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Two or more university-level courses",
-        "major": "Science/Engineering",
-        "sex": "Male",
-        "math": "Single university-level course"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2198139007",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: High school. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "High school",
-        "major": "Science/Engineering",
-        "sex": "Female",
-        "math": "Single university-level course"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2245702835",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2268376525",
-        "persona": "You are a female participant. Your field of study is Foreign Language. Your economics background: No course. Your math background: High school.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "CR1": "4",
+        "CR2": "0",
+        "CR3": "lost money",
         "economics": "No course",
-        "major": "Foreign Language",
+        "math": "Single university-level course",
+        "_subject_id": "7658735447"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 36. Academic background: English/Writing/Literature. Math experience: Two or more university-level courses. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "36",
         "sex": "Female",
-        "math": "High school"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2326942552",
-        "persona": "You are a female participant. Your field of study is Government. Your economics background: Two or more university-level courses. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Two or more university-level courses",
-        "major": "Government",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2353804389",
-        "persona": "You are a male participant. Your field of study is Mathematics. Your economics background: Single university-level course. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Single university-level course",
-        "major": "Mathematics",
-        "sex": "Male",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2496673541",
-        "persona": "You are a male participant. Your field of study is English/Writing/Literature. Your economics background: No course. Your math background: High school.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "No course",
         "major": "English/Writing/Literature",
-        "sex": "Male",
-        "math": "High school"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2533614586",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2547461226",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2559708821",
-        "persona": "You are a female participant. Your field of study is Business/Economics. Your economics background: Two or more university-level courses. Your math background: High school.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Two or more university-level courses",
-        "major": "Business/Economics",
-        "sex": "Female",
-        "math": "High school"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2563321111",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2610382997",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: High school. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "High school",
-        "major": "Science/Engineering",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2618697648",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: Single university-level course. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Single university-level course",
-        "major": "Science/Engineering",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2640526831",
-        "persona": "You are a female participant. Your field of study is Art/Music. Your economics background: No course. Your math background: High school.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "CR1": "4 days",
+        "CR2": "10",
+        "CR3": "7000",
         "economics": "No course",
+        "math": "Two or more university-level courses",
+        "_subject_id": "7192936799"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 40. Academic background: Business/Economics. Math experience: Single university-level course. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "40",
+        "sex": "Male",
+        "major": "Business/Economics",
+        "CR1": "4",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "Two or more university-level courses",
+        "math": "Single university-level course",
+        "_subject_id": "5710066081"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 32. Academic background: Science/Engineering. Math experience: Single university-level course. Economics experience: Single university-level course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 9 days; Q2: 20; Q3: $4,000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "32",
+        "sex": "Female",
+        "major": "Science/Engineering",
+        "CR1": "9 days",
+        "CR2": "20",
+        "CR3": "$4,000",
+        "economics": "Single university-level course",
+        "math": "Single university-level course",
+        "_subject_id": "1091586843"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 71+. Academic background: Science/Engineering. Math experience: Single university-level course. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 20; Q3: 3000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "71+",
+        "sex": "Female",
+        "major": "Science/Engineering",
+        "CR1": "4",
+        "CR2": "20",
+        "CR3": "3000",
+        "economics": "Two or more university-level courses",
+        "math": "Single university-level course",
+        "_subject_id": "4924206022"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 32. Academic background: Other. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "32",
+        "sex": "Male",
+        "major": "Other",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "7432423518"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 48. Academic background: Business/Economics. Math experience: Single university-level course. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: lost money.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "48",
+        "sex": "Female",
+        "major": "Business/Economics",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "lost money",
+        "economics": "Two or more university-level courses",
+        "math": "Single university-level course",
+        "_subject_id": "9174752575"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 29. Academic background: Other. Math experience: Single university-level course. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 3; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "29",
+        "sex": "Male",
+        "major": "Other",
+        "CR1": "3",
+        "CR2": "10",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "Single university-level course",
+        "_subject_id": "6086003600"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 30. Academic background: Science/Engineering. Math experience: Two or more university-level courses. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: Lost $1000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "30",
+        "sex": "Male",
+        "major": "Science/Engineering",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "Lost $1000",
+        "economics": "Two or more university-level courses",
+        "math": "Two or more university-level courses",
+        "_subject_id": "6804509038"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 41. Academic background: Science/Engineering. Math experience: Two or more university-level courses. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "41",
+        "sex": "Male",
+        "major": "Science/Engineering",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "Two or more university-level courses",
+        "_subject_id": "8029481806"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 29. Academic background: Science/Engineering. Math experience: Single university-level course. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "29",
+        "sex": "Female",
+        "major": "Science/Engineering",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "Single university-level course",
+        "_subject_id": "6988613143"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 34. Academic background: Other. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 6 days; Q2: 0; Q3: 5000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "34",
+        "sex": "Female",
+        "major": "Other",
+        "CR1": "6 days",
+        "CR2": "0",
+        "CR3": "5000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "7046777547"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 39. Academic background: Business/Economics. Math experience: Two or more university-level courses. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "39",
+        "sex": "Female",
+        "major": "Business/Economics",
+        "CR1": "4 days",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "Two or more university-level courses",
+        "math": "Two or more university-level courses",
+        "_subject_id": "2048225800"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 60. Academic background: Business/Economics. Math experience: Two or more university-level courses. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: 10; Q3: 3000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "60",
+        "sex": "Female",
+        "major": "Business/Economics",
+        "CR1": "4 days",
+        "CR2": "10",
+        "CR3": "3000",
+        "economics": "Two or more university-level courses",
+        "math": "Two or more university-level courses",
+        "_subject_id": "7107898404"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 32. Academic background: English/Writing/Literature. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days?; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "32",
+        "sex": "Male",
+        "major": "English/Writing/Literature",
+        "CR1": "4 days?",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "1379517930"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 38. Academic background: Business/Economics. Math experience: Single university-level course. Economics experience: Single university-level course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: 6000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "38",
+        "sex": "Male",
+        "major": "Business/Economics",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "6000",
+        "economics": "Single university-level course",
+        "math": "Single university-level course",
+        "_subject_id": "4414611619"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 30. Academic background: Other. Math experience: High school. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: 20 dollars; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "30",
+        "sex": "Male",
+        "major": "Other",
+        "CR1": "4 days",
+        "CR2": "20 dollars",
+        "CR3": "7000",
+        "economics": "No course",
+        "math": "High school",
+        "_subject_id": "8561068194"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 60. Academic background: Other. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 8; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "60",
+        "sex": "Female",
+        "major": "Other",
+        "CR1": "8",
+        "CR2": "10",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "5915781408"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Other / Prefer not to tell. Age: 60. Academic background: Other. Math experience: Two or more university-level courses. Economics experience: Single university-level course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 18; Q2: 90; Q3: 125.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "60",
+        "sex": "Other / Prefer not to tell",
+        "major": "Other",
+        "CR1": "18",
+        "CR2": "90",
+        "CR3": "125",
+        "economics": "Single university-level course",
+        "math": "Two or more university-level courses",
+        "_subject_id": "6668355905"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 30. Academic background: Other. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: made 25%.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "30",
+        "sex": "Male",
+        "major": "Other",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "made 25%",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "9058440628"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 42. Academic background: Science/Engineering. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 9 days; Q2: 0; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "42",
+        "sex": "Male",
+        "major": "Science/Engineering",
+        "CR1": "9 days",
+        "CR2": "0",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "7261191092"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 42. Academic background: Other. Math experience: Single university-level course. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "42",
+        "sex": "Female",
+        "major": "Other",
+        "CR1": "4",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "Single university-level course",
+        "_subject_id": "1580598481"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 36. Academic background: Science/Engineering. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 9 days; Q2: 0; Q3: 1000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "36",
+        "sex": "Male",
+        "major": "Science/Engineering",
+        "CR1": "9 days",
+        "CR2": "0",
+        "CR3": "1000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "3129498744"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 36. Academic background: Other. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 6 days; Q2: 20; Q3: 14,000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "36",
+        "sex": "Female",
+        "major": "Other",
+        "CR1": "6 days",
+        "CR2": "20",
+        "CR3": "14,000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "6323543664"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 30. Academic background: Science/Engineering. Math experience: Single university-level course. Economics experience: Single university-level course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: 6000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "30",
+        "sex": "Female",
+        "major": "Science/Engineering",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "6000",
+        "economics": "Single university-level course",
+        "math": "Single university-level course",
+        "_subject_id": "2989152918"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 48. Academic background: English/Writing/Literature. Math experience: High school. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: $10; Q3: Lost 25%.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "48",
+        "sex": "Female",
+        "major": "English/Writing/Literature",
+        "CR1": "4 days",
+        "CR2": "$10",
+        "CR3": "Lost 25%",
+        "economics": "No course",
+        "math": "High school",
+        "_subject_id": "3461474639"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 34. Academic background: Other. Math experience: High school. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: 30; Q3: 7750.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "34",
+        "sex": "Male",
+        "major": "Other",
+        "CR1": "4 days",
+        "CR2": "30",
+        "CR3": "7750",
+        "economics": "No course",
+        "math": "High school",
+        "_subject_id": "8662981775"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 44. Academic background: Science/Engineering. Math experience: Two or more university-level courses. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 6 days; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "44",
+        "sex": "Male",
+        "major": "Science/Engineering",
+        "CR1": "6 days",
+        "CR2": "10",
+        "CR3": "7000",
+        "economics": "No course",
+        "math": "Two or more university-level courses",
+        "_subject_id": "1938705062"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 37. Academic background: Art/Music. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 8; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "37",
+        "sex": "Male",
         "major": "Art/Music",
-        "sex": "Female",
-        "math": "High school"
+        "CR1": "8",
+        "CR2": "10",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "6264929235"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "2676110944",
-        "persona": "You are a female participant. Your field of study is Business/Economics. Your economics background: Two or more university-level courses. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Two or more university-level courses",
+        "persona": "Gender: Female. Age: 47. Academic background: Business/Economics. Math experience: Single university-level course. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 1 day; Q2: 10; Q3: 8500.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "47",
+        "sex": "Female",
         "major": "Business/Economics",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2686540504",
-        "persona": "You are a female participant. Your field of study is Other. Your economics background: No course. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "No course",
-        "major": "Other",
-        "sex": "Female",
-        "math": "Single university-level course"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2759728607",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "2843819003",
-        "persona": "You are a female participant. Your field of study is Other. Your economics background: No course. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "No course",
-        "major": "Other",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3025756532",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3135461703",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3191326443",
-        "persona": "You are a female participant. Your field of study is Other. Your economics background: High school. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "CR1": "1 day",
+        "CR2": "10",
+        "CR3": "8500",
         "economics": "High school",
-        "major": "Other",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
+        "math": "Single university-level course",
+        "_subject_id": "2033154317"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "3200531889",
-        "persona": "You are a female participant. Your field of study is History. Your economics background: No course. Your math background: High school.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "No course",
+        "persona": "Gender: Male. Age: 47. Academic background: History. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 0; Q3: 10000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "47",
+        "sex": "Male",
         "major": "History",
-        "sex": "Female",
-        "math": "High school"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3374184835",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: High school. Your math background: High school.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "CR1": "4",
+        "CR2": "0",
+        "CR3": "10000",
         "economics": "High school",
-        "major": "Science/Engineering",
+        "math": "High school",
+        "_subject_id": "8228879644"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 35. Academic background: Other. Math experience: Single university-level course. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 3 days; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "35",
         "sex": "Female",
-        "math": "High school"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3515044260",
-        "persona": "You are a male participant. Your field of study is Science/Engineering. Your economics background: High school. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "High school",
-        "major": "Science/Engineering",
-        "sex": "Male",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3525771328",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3559966702",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: No course. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "No course",
-        "major": "Science/Engineering",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3575124479",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: No course. Your math background: Single university-level course.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "No course",
-        "major": "Science/Engineering",
-        "sex": "Female",
-        "math": "Single university-level course"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3593221751",
-        "persona": "You are a female participant. Your field of study is Science/Engineering. Your economics background: High school. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "High school",
-        "major": "Science/Engineering",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3636472236",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3689826712",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3697053285",
-        "persona": "You are a female participant. Your field of study is Other. Your economics background: High school. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "High school",
         "major": "Other",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
+        "CR1": "3 days",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "Single university-level course",
+        "_subject_id": "3963528622"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "3755970267",
-        "persona": "You are a female participant. Your field of study is Mathematics. Your economics background: Two or more university-level courses. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "persona": "Gender: Female. Age: 55. Academic background: English/Writing/Literature. Math experience: Single university-level course. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 12 days; Q2: 0; Q3: lost money.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "55",
+        "sex": "Female",
+        "major": "English/Writing/Literature",
+        "CR1": "12 days",
+        "CR2": "0",
+        "CR3": "lost money",
+        "economics": "No course",
+        "math": "Single university-level course",
+        "_subject_id": "5134534722"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 59. Academic background: Other. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 18; Q2: 10; Q3: 8750.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "59",
+        "sex": "Female",
+        "major": "Other",
+        "CR1": "18",
+        "CR2": "10",
+        "CR3": "8750",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "1081169998"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 34. Academic background: Other. Math experience: Single university-level course. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 9; Q2: 20; Q3: lost money.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "34",
+        "sex": "Male",
+        "major": "Other",
+        "CR1": "9",
+        "CR2": "20",
+        "CR3": "lost money",
+        "economics": "No course",
+        "math": "Single university-level course",
+        "_subject_id": "8788034410"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 42. Academic background: Other. Math experience: Two or more university-level courses. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 18; Q2: 90; Q3: 3000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "42",
+        "sex": "Female",
+        "major": "Other",
+        "CR1": "18",
+        "CR2": "90",
+        "CR3": "3000",
         "economics": "Two or more university-level courses",
-        "major": "Mathematics",
-        "sex": "Female",
-        "math": "Two or more university-level courses"
+        "math": "Two or more university-level courses",
+        "_subject_id": "9134344924"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "3785080366",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3985107737",
-        "persona": "You are a participant.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "unknown",
-        "major": "unknown",
-        "sex": "unknown",
-        "math": "unknown"
-      },
-      "edsl_version": "1.0.6",
-      "edsl_class_name": "Agent"
-    },
-    {
-      "traits": {
-        "_subject_id": "3988353273",
-        "persona": "You are a male participant. Your field of study is Science/Engineering. Your economics background: Single university-level course. Your math background: Two or more university-level courses.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
-        "economics": "Single university-level course",
-        "major": "Science/Engineering",
+        "persona": "Gender: Male. Age: 36. Academic background: Science/Engineering. Math experience: No course. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "36",
         "sex": "Male",
-        "math": "Two or more university-level courses"
+        "major": "Science/Engineering",
+        "CR1": "4",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "No course",
+        "math": "No course",
+        "_subject_id": "1795436632"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"
     },
     {
       "traits": {
-        "_subject_id": "3990401806",
-        "persona": "You are a female participant. Your field of study is Other. Your economics background: High school. Your math background: High school.",
-        "UserLanguage": "unknown",
-        "age": "unknown",
+        "persona": "Gender: Male. Age: 36. Academic background: Science/Engineering. Math experience: Two or more university-level courses. Economics experience: Single university-level course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 20; Q3: $7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "36",
+        "sex": "Male",
+        "major": "Science/Engineering",
+        "CR1": "4",
+        "CR2": "20",
+        "CR3": "$7000",
+        "economics": "Single university-level course",
+        "math": "Two or more university-level courses",
+        "_subject_id": "2293349477"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 27. Academic background: Business/Economics. Math experience: Single university-level course. Economics experience: Single university-level course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 7; Q2: 20; Q3: 10000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "27",
+        "sex": "Male",
+        "major": "Business/Economics",
+        "CR1": "7",
+        "CR2": "20",
+        "CR3": "10000",
+        "economics": "Single university-level course",
+        "math": "Single university-level course",
+        "_subject_id": "3191544764"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 24. Academic background: Science/Engineering. Math experience: Two or more university-level courses. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "24",
+        "sex": "Male",
+        "major": "Science/Engineering",
+        "CR1": "4 days",
+        "CR2": "20",
+        "CR3": "7000",
         "economics": "High school",
-        "major": "Other",
+        "math": "Two or more university-level courses",
+        "_subject_id": "7520000732"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 30. Academic background: Business/Economics. Math experience: Two or more university-level courses. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "30",
+        "sex": "Male",
+        "major": "Business/Economics",
+        "CR1": "4",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "Two or more university-level courses",
+        "math": "Two or more university-level courses",
+        "_subject_id": "1639818624"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 62. Academic background: Other. Math experience: High school. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 9 days; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "62",
         "sex": "Female",
-        "math": "High school"
+        "major": "Other",
+        "CR1": "9 days",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "No course",
+        "math": "High school",
+        "_subject_id": "3128345109"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 45. Academic background: Business/Economics. Math experience: Two or more university-level courses. Economics experience: Two or more university-level courses. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4; Q2: 10; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "45",
+        "sex": "Male",
+        "major": "Business/Economics",
+        "CR1": "4",
+        "CR2": "10",
+        "CR3": "7000",
+        "economics": "Two or more university-level courses",
+        "math": "Two or more university-level courses",
+        "_subject_id": "6641975407"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 42. Academic background: Business/Economics. Math experience: Single university-level course. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 3; Q2: 20; Q3: increased value.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "42",
+        "sex": "Female",
+        "major": "Business/Economics",
+        "CR1": "3",
+        "CR2": "20",
+        "CR3": "increased value",
+        "economics": "High school",
+        "math": "Single university-level course",
+        "_subject_id": "2530225011"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Female. Age: 46. Academic background: Science/Engineering. Math experience: Two or more university-level courses. Economics experience: No course. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 4 days; Q2: 20; Q3: $7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "46",
+        "sex": "Female",
+        "major": "Science/Engineering",
+        "CR1": "4 days",
+        "CR2": "20",
+        "CR3": "$7000",
+        "economics": "No course",
+        "math": "Two or more university-level courses",
+        "_subject_id": "4327384648"
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "Gender: Male. Age: 29. Academic background: Other. Math experience: High school. Economics experience: High school. Language: EN. Cognitive Reflection Test responses \u2014 Q1: 3; Q2: 20; Q3: 7000.",
+        "Name": null,
+        "RecipientEmail": null,
+        "RecipientFirstName": null,
+        "RecipientLastName": null,
+        "UserLanguage": "EN",
+        "age": "29",
+        "sex": "Male",
+        "major": "Other",
+        "CR1": "3",
+        "CR2": "20",
+        "CR3": "7000",
+        "economics": "High school",
+        "math": "High school",
+        "_subject_id": "3817834176"
       },
       "edsl_version": "1.0.6",
       "edsl_class_name": "Agent"

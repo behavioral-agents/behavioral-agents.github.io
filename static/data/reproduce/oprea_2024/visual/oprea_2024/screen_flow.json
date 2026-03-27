@@ -1,0 +1,60 @@
+{
+  "experiment_section": "Main MPL Treatment \u2014 Oprea (2024)",
+  "instructions": [
+    {
+      "page": "page_025",
+      "screen_position": "full",
+      "description": "Instructions: Explains the Decision Table format \u2014 how sets of boxes are described with counts and amounts, examples with positive and negative values, and how clicking highlights a set yellow to determine final earnings",
+      "sequence_order": 1
+    },
+    {
+      "page": "page_027",
+      "screen_position": "full",
+      "description": "Instructions: Explains 'The Average Box' payment rule \u2014 computer pays the average (sum/100) of all boxes in the chosen set, with examples of positive ($8) and negative (-$4) average payoffs",
+      "sequence_order": 2
+    },
+    {
+      "page": "page_029",
+      "screen_position": "full",
+      "description": "Instructions (Final Part): Explains that participants choose between Set A and Set B across multiple versions (rows) of the decision table, with an example 10-row table",
+      "sequence_order": 3
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "page_022",
+          "screen_position": "full",
+          "question_name": "valuation",
+          "screen_type": "decision",
+          "description": "MPL decision table for task G10 (Mirror treatment): Set A = 100 boxes all containing $X (decreasing from $25 to $1 across rows) vs Set B = 10 boxes containing $25 + 90 boxes containing $0. Participant selects preferred set for each of 25 rows.",
+          "depends_on": null,
+          "parameters": {
+            "task_name": "G10",
+            "treatment": "Mirror (MPL)",
+            "set_A": {
+              "n_boxes": 100,
+              "amount_per_box": "varies ($25 down to $1 in $1 steps)"
+            },
+            "set_B": {
+              "group_1": {
+                "n_boxes": 10,
+                "amount": 25
+              },
+              "group_2": {
+                "n_boxes": 90,
+                "amount": 0
+              }
+            },
+            "n_versions": 25,
+            "initial_money": 5.0,
+            "payment_rule": "average of all 100 boxes (sum/100)",
+            "probability_equivalent": 0.1
+          }
+        }
+      ]
+    }
+  ]
+}

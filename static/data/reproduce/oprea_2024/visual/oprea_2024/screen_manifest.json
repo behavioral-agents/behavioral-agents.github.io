@@ -1,0 +1,13 @@
+{
+  "paper_id": "oprea_2024",
+  "mappings": [
+    {
+      "generated": "valuation_default.png",
+      "task_label": "Valuation Default",
+      "original_pages": [
+        "page_022.png"
+      ],
+      "screen_position": "full"
+    }
+  ]
+}
