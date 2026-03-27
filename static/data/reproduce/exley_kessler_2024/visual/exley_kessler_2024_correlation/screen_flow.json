@@ -1,0 +1,214 @@
+{
+  "experiment_section": "Correlation Neglect Study in Motivated Errors",
+  "instructions": [
+    {
+      "page": "Q4.2",
+      "screen_position": "full",
+      "description": "Overview: Explains the experiment structure \u2014 two parts, understanding questions, instructions to read carefully.",
+      "sequence_order": 1,
+      "html_content": "Overview : Throughout this study, you will be provided with instructions.&nbsp; Please carefully read all instructions.&nbsp; Sometimes, you will be asked understanding questions about the instructions.&nbsp; You must answer these understanding questions correctly before proceeding.&nbsp; Your payment will depend on your decisions in this study."
+    },
+    {
+      "page": "Q4.4",
+      "screen_position": "full",
+      "description": "Payment overview: Explains the two-part structure, minimum payment, and that one part will be randomly selected as the part-that-counts.",
+      "sequence_order": 2,
+      "html_content": "Your Payment: This study involves two&nbsp;parts &mdash; Part 1 and Part 2&nbsp;&mdash; followed by a short survey. For completing this study, you will receive a minimum payment of ${e://Field/showup}&nbsp;cents. In addition, one of the two parts will be randomly selected as the part-that-counts, and your bonus payment will be determined by your decisions in that part."
+    },
+    {
+      "page": "Q5.2",
+      "screen_position": "full",
+      "description": "Part 1 Instructions: Explains the list-based decision task in Part 1 \u2014 each row presents two payment options, participants choose when to switch from left to right option.",
+      "sequence_order": 3,
+      "html_content": "Part 1 Instructions &nbsp; In Part 1, you will have to make several decisions by completing one list. &nbsp;Each row of the list will present two payment options. &nbsp; - The payment option on the left will be the same in every row. &nbsp; - The payment option on the right will change across rows. &nbsp; You will be asked to indicate which payment option you prefer on each row."
+    },
+    {
+      "page": "Q6.2",
+      "screen_position": "full",
+      "description": "Part 1 Instructions continued: Explains how to indicate switching preference in the list (click the row where you switch from left to right option). Notes that all rows above the switch row will be left, all below will be right.",
+      "sequence_order": 4,
+      "html_content": "Please indicate which payment option you prefer on each row by clicking on the row where you would like to switch from choosing the option on the left to choosing the option on the right. &nbsp; (Note: All rows above the row you click will be assigned to the option on the left, and all rows at or below the row you click will be assigned to the option on the right.)"
+    },
+    {
+      "page": "Q84",
+      "screen_position": "full",
+      "description": "Part 2 Instructions Page 1 of 2: Introduces Part 2 \u2014 participants will be asked a number of questions, each requiring a guess of a number. Explains the general payment structure for guesses.",
+      "sequence_order": 5,
+      "html_content": "Instructions for Part 2&nbsp;(Page 1 out of 2): &nbsp; In Part 2, you&nbsp;will be asked ${e://Field/main_decisions}&nbsp;questions.&nbsp; In each of these questions, you will be asked to guess a number between 0 and 100. &nbsp; If Part 2&nbsp;is randomly selected as the part-that-counts, one question from this part will be randomly selected. Then, the payment&nbsp;that is allocated in that question will be distributed."
+    },
+    {
+      "page": "Q91",
+      "screen_position": "full",
+      "description": "Part 2 Instructions Page 2 of 2: Explains the information structure \u2014 participants are told Estimate 1 directly and receive three channel reports, each being the average of Estimate 1 and one other estimate.",
+      "sequence_order": 6,
+      "html_content": "Instructions for Part 2&nbsp;(Page ${e://Field/page}&nbsp;out of 2): &nbsp; When you are asked to report the number in a question, you will be provided with the following information:&nbsp;"
+    },
+    {
+      "page": "corr_text",
+      "screen_position": "full",
+      "description": "Core task explanation: The number equals the average of four estimates. Participant is told Estimate 1 directly and sees three correlated channel reports (each channel = average of Est 1 and one other estimate). Explains the correlation structure.",
+      "sequence_order": 7,
+      "html_content": "In this question, the number equals the average of four estimates: Estimate 1, Estimate 2, Estimate 3, and Estimate 4. You will be directly informed of Estimate 1. You will also be informed of the reports from three news channels: Channel 1 News reports the average of Estimate 1 and Estimate 2. Channel 2 News reports the average of Estimate 1 and Estimate 3. Channel 3 News reports the average of Estimate 1 and Estimate 4."
+    },
+    {
+      "page": "Q93",
+      "screen_position": "full",
+      "description": "Alternative/additional core task explanation: Same structure as corr_text \u2014 number equals average of four estimates, Estimate 1 given directly, three channel reports each averaging Estimate 1 with one other estimate.",
+      "sequence_order": 8,
+      "html_content": "In this question, the number equals the average of four estimates: Estimate 1, Estimate 2, Estimate 3, and Estimate 4. You will be directly informed of Estimate 1. You will also be informed of reports from three news channels: Channel 1 News reports the average of Estimate 1 and Estimate 2. Channel 2 News reports the average of Estimate 1 and Estimate 3. Channel 3 News reports the average of Estimate 1 and Estimate 4."
+    },
+    {
+      "page": "Q95",
+      "screen_position": "full",
+      "description": "Worked example for Part 2: Shows a concrete numerical example (Est 1=81, Est 2=13, Est 3=100, Est 4=94) illustrating what the channel reports would look like.",
+      "sequence_order": 9,
+      "html_content": "For example, suppose that&nbsp;Estimate 1 is 81, Estimate 2 is 13, Estimate 3 is 100, and Estimate 4 is 94. Then, you would be provided with the following information:&nbsp; Estimate 1 is 81. Channel 1 News reports (81+13)/2 = 47. Channel 2 News reports (81+100)/2 = 90.5. Channel 3 News reports (81+94)/2 = 87.5."
+    },
+    {
+      "page": "Q74",
+      "screen_position": "full",
+      "description": "Payment selection rule for Part 2: If Part 2 is the part-that-counts, one question is randomly selected and the payment allocated in that question is distributed.",
+      "sequence_order": 10,
+      "html_content": "If Part 2&nbsp;is randomly selected as the part-that-counts, one question from this part will be randomly selected. Then, the payment&nbsp;that is allocated in that question will be distributed.&nbsp;"
+    },
+    {
+      "page": "Q75",
+      "screen_position": "full",
+      "description": "Control treatment payment rule: Explains that a bonus of X cents is allocated to the participant if their guess is correct (guess range contains the right number), and no bonus otherwise.",
+      "sequence_order": 11,
+      "html_content": "Please provide your guess of the number in this question. The following payments will be allocated according to your guess:&nbsp;&nbsp; a&nbsp;bonus payment of ${e://Field/xnorm}&nbsp;cents for you&nbsp;if your guess is right because the right number falls within the range you select."
+    },
+    {
+      "page": "Q76",
+      "screen_position": "full",
+      "description": "Overestimate treatment payment rule: Explains that X cents go to self if guess is too high, 150 cents go to charity if guess is too low, and X cents go to self if guess is correct.",
+      "sequence_order": 12,
+      "html_content": "Please provide your guess of the number in this question. The following payments will be allocated according to your guess:&nbsp;&nbsp; a&nbsp;bonus payment of ${e://Field/xnorm}&nbsp;cents for you&nbsp;if your guess is too high because all numbers in your range are larger than the right number; a donation of 150 cents to ${e://Field/charityA_name} if your guess is too low because all numbers in your range are smaller than the right number; and a bonus of ${e://Field/xnorm} cents for you if your guess is right."
+    },
+    {
+      "page": "Q83",
+      "screen_position": "full",
+      "description": "Underestimate treatment payment rule: Explains that 150 cents go to charity if guess is too high, X cents go to self if guess is too low, and X cents go to self if guess is correct.",
+      "sequence_order": 13,
+      "html_content": "Please provide your guess of the number in this question. The following payments will be allocated according to your guess:&nbsp;&nbsp; a&nbsp;bonus payment of ${e://Field/xnorm}&nbsp;cents for you&nbsp;if your guess is too low because all numbers in your range are smaller than the right number; a donation of 150 cents to ${e://Field/charityA_name} if your guess is too high because all numbers in your range are larger than the right number; and a bonus of ${e://Field/xnorm} cents for you if your guess is right."
+    },
+    {
+      "page": "Q88",
+      "screen_position": "full",
+      "description": "Overestimate treatment charity payment detail: If guess is too high, charity receives a donation of a specified amount.",
+      "sequence_order": 14,
+      "html_content": "If your guess is too&nbsp;high &nbsp;because all of the numbers in the range you select are larger than the right number,&nbsp;${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/charity_high}&nbsp;cents."
+    },
+    {
+      "page": "Q86",
+      "screen_position": "full",
+      "description": "Overestimate treatment charity payment detail: If guess is too low, charity receives a donation of a specified amount.",
+      "sequence_order": 15,
+      "html_content": "If your guess is too&nbsp;low &nbsp;because all of the numbers in the range you select are smaller than the right number,&nbsp;${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/charity_low}&nbsp;cents."
+    },
+    {
+      "page": "Q81",
+      "screen_position": "full",
+      "description": "Underestimate treatment charity payment detail: If guess is too low, charity receives a donation of a specified amount.",
+      "sequence_order": 16,
+      "html_content": "If your guess is too&nbsp;low &nbsp;because all of the numbers in the range you select are smaller than the right number, ${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/charity_low}&nbsp;cents."
+    },
+    {
+      "page": "Q9.2",
+      "screen_position": "full",
+      "description": "Pre-decision transition screen: Tells participant they are about to answer question N out of the total Part 2 questions.",
+      "sequence_order": 17,
+      "html_content": "On the next screen, please answer question ${e://Field/decision} out of the ${e://Field/main_decisions}&nbsp;questions in Part 2."
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "corr_q1",
+          "screen_position": "full",
+          "question_name": "corr_q1",
+          "screen_type": "decision",
+          "description": "Decision question 1 (Low Est 1 scenario): Participant sees Estimate 1 and three correlated channel reports, then provides a guess of the number using a slider (0\u2013100).",
+          "depends_on": null,
+          "parameters": {
+            "question_index": 1,
+            "est1_type": "Low Est 1",
+            "input_type": "slider",
+            "range": [
+              0,
+              100
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": "corr_q2",
+          "screen_position": "full",
+          "question_name": "corr_q2",
+          "screen_type": "decision",
+          "description": "Decision question 2 (Low Est 1 scenario): Participant sees Estimate 1 and three correlated channel reports, then provides a guess of the number using a slider (0\u2013100).",
+          "depends_on": null,
+          "parameters": {
+            "question_index": 2,
+            "est1_type": "Low Est 1",
+            "input_type": "slider",
+            "range": [
+              0,
+              100
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "screens": [
+        {
+          "page": "corr_q5",
+          "screen_position": "full",
+          "question_name": "corr_q5",
+          "screen_type": "decision",
+          "description": "Decision question 3 (High Est 1 scenario): Participant sees Estimate 1 and three correlated channel reports, then provides a guess of the number using a slider (0\u2013100).",
+          "depends_on": null,
+          "parameters": {
+            "question_index": 3,
+            "est1_type": "High Est 1",
+            "input_type": "slider",
+            "range": [
+              0,
+              100
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "screens": [
+        {
+          "page": "corr_q6",
+          "screen_position": "full",
+          "question_name": "corr_q6",
+          "screen_type": "decision",
+          "description": "Decision question 4 (High Est 1 scenario): Participant sees Estimate 1 and three correlated channel reports, then provides a guess of the number using a slider (0\u2013100).",
+          "depends_on": null,
+          "parameters": {
+            "question_index": 4,
+            "est1_type": "High Est 1",
+            "input_type": "slider",
+            "range": [
+              0,
+              100
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -43,7 +43,7 @@ scenarios = ScenarioList(scenarios)
 models = ModelList([Model(m) for m in ["claude-sonnet-4-6"]])
 
 # Run per condition with matched sample sizes (as in original study)
-condition_ns = {"realized_loss": 24, "paper_loss": 30}
+condition_ns = {"realized_loss": 5, "paper_loss": 5}
 all_results = []
 for scenario in scenarios:
     cond = scenario.get("condition", None)
@@ -51,7 +51,7 @@ for scenario in scenarios:
     cond_agents = AgentList(list(agents)[:cond_n])
     print(f"Running condition '{cond}': {len(cond_agents)} agents")
     job = survey.by(cond_agents).by(models).by(ScenarioList([scenario]))
-    results = job.run()
+    results = job.run(cache=False, disable_remote_cache=True)
     all_results.append(results.to_pandas())
 
 import pandas as pd

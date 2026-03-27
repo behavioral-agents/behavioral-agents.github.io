@@ -1,0 +1,461 @@
+{
+  "experiment_section": "Adding Study in Motivated Errors (Exley & Kessler 2024 Replication)",
+  "instructions": [
+    {
+      "page": "Q2.2",
+      "screen_position": "full",
+      "description": "Consent / Information Sheet: Study by Christine Exley from Harvard University, explaining participation involves completing a survey.",
+      "sequence_order": 1,
+      "html_content": "Information Sheet You are being asked to take part in a research study being done by Christine Exley from Harvard University. &nbsp; If you choose to be in the study, you will complete a survey. This "
+    },
+    {
+      "page": "Q3.2",
+      "screen_position": "full",
+      "description": "Overview Instructions: Throughout this study, you will be provided with instructions. Please carefully read all instructions. Sometimes, you will be asked understanding questions about the instructions.",
+      "sequence_order": 2,
+      "html_content": "Overview : Throughout this study, you will be provided with instructions.&nbsp; Please carefully read all instructions.&nbsp; Sometimes, you will be asked understanding questions about the instructions."
+    },
+    {
+      "page": "Q3.4",
+      "screen_position": "full",
+      "description": "Payment Overview: Study involves Part 1 and Part 2 followed by a short survey. Minimum payment of $[showup] within 24 hours. Explains payment structure.",
+      "sequence_order": 3,
+      "html_content": "Your Payment: This study involves two Parts -- Part 1 and Part 2 -- followed by a short survey. For completing this study, you will receive a minimum payment of $${e://Field/showup} within 24 hours. &"
+    },
+    {
+      "page": "Q4.2",
+      "screen_position": "full",
+      "description": "Part 1 Instructions: In Part 1, you will make several decisions by completing one list. Each row presents two payment options. The left option always involves a fixed amount.",
+      "sequence_order": 4,
+      "html_content": "Part 1 Instructions In Part 1, you will have to make several decisions by completing one list. &nbsp;Each row of the list will present two payment options. The payment option on the left will always i"
+    },
+    {
+      "page": "Q6.2",
+      "screen_position": "full",
+      "description": "Transition: You have successfully completed Part 1. Please proceed to read instructions about Part 2.",
+      "sequence_order": 5,
+      "html_content": "You have successfully completed Part 1. Please proceed to read instructions about Part 2.&nbsp;"
+    },
+    {
+      "page": "Q6.4",
+      "screen_position": "full",
+      "description": "Part 2 Instructions (Self/Charity variant A): In Part 2, you will face 48 decisions. In each decision, choose between Option A and Option B. Option A involves amounts for Make-A-Wish Foundation.",
+      "sequence_order": 6,
+      "html_content": "Part 2 Instructions &nbsp; In Part 2, you will face 48 decisions. In each decision, you may choose between two payment options, Option A and Option B, which are as follows:&nbsp; -&nbsp; Option A:&nbs"
+    },
+    {
+      "page": "Q6.5",
+      "screen_position": "full",
+      "description": "Part 2 Instructions (Self/Charity variant B): In Part 2, you will face 48 decisions. Option A and Option B described with amounts for self or charity.",
+      "sequence_order": 7,
+      "html_content": "Part 2 Instructions &nbsp; In Part 2, you will face 48 decisions. In each decision, you may choose between two payment options, Option A and Option B, that are as follows:&nbsp; - Option A:&nbsp;&nbsp"
+    },
+    {
+      "page": "Q6.6",
+      "screen_position": "full",
+      "description": "Part 2 Instructions (Charity/Charity variant): In Part 2, you will face 48 decisions. Option A and Option B described with amounts for charity.",
+      "sequence_order": 8,
+      "html_content": "Part 2 Instructions &nbsp; In Part 2, you will face 48 decisions. In each decision, you may choose between two payment options, Option A and Option B, that are as follows:&nbsp; - Option A:&nbsp;&nbsp"
+    },
+    {
+      "page": "Q6.15",
+      "screen_position": "full",
+      "description": "Part 2 Instructions Continued (Charity/Charity): Choosing Option A results in Make-A-Wish Foundation receiving the sum of donation amounts shown in Option A. Across decisions, this sum may vary.",
+      "sequence_order": 9,
+      "html_content": "Part 2 Instructions Continued . . . &nbsp; In each decision in Part 2, choosing Option A will result in Make-A-Wish Foundation receiving the sum of the donation amounts shown in Option A.&nbsp;&nbsp;A"
+    },
+    {
+      "page": "Q6.16",
+      "screen_position": "full",
+      "description": "Part 2 Instructions Continued (Self/Charity): Choosing Option A results in you receiving the sum of the amounts shown in Option A. Across decisions, this sum may vary.",
+      "sequence_order": 10,
+      "html_content": "Part 2 Instructions Continued . . . &nbsp; In each decision in Part 2, choosing Option A will result in you receiving the sum of the amounts shown in Option A.&nbsp;&nbsp;Across decisions, this sum ma"
+    },
+    {
+      "page": "Q6.17",
+      "screen_position": "full",
+      "description": "Part 2 Instructions: Prior to each decision, you will always have the opportunity to learn all amounts in Option A. You may choose to use this information or not.",
+      "sequence_order": 11,
+      "html_content": "Prior to making each decision in Part 2, you will always have the opportunity to learn all of the amounts in Option A. While you will have the opportunity to learn this information, you may choose to "
+    },
+    {
+      "page": "Q6.18",
+      "screen_position": "full",
+      "description": "Part 2 Instructions: Prior to each decision, you will always have the opportunity to learn all amounts in Option A. You cannot make a decision without learning this information \u2014 the button is locked until all amounts are revealed.",
+      "sequence_order": 12,
+      "html_content": "Prior to making each decision in Part 2, you will always have the opportunity to learn all of the amounts in Option A.&nbsp;You cannot make a decision without learning this information, as the button "
+    },
+    {
+      "page": "Q6.22",
+      "screen_position": "full",
+      "description": "Transition: You have successfully completed the previous understanding question. To gain experience with how to learn the donation amounts in Option A, please answer the additional three understanding questions.",
+      "sequence_order": 13,
+      "html_content": "You have successfully completed the previous understanding question. To gain experience with how to learn the donation amounts in Option A, please answer&nbsp;the additional three understanding questi"
+    },
+    {
+      "page": "Q6.26",
+      "screen_position": "full",
+      "description": "Example instruction: Note that the first amount in Option A is shown and to learn the remaining amounts you may click on the relevant headers.",
+      "sequence_order": 14,
+      "html_content": "Note that the first amount in Option A is shown and to learn the remaining amounts you may click on the relevant headers."
+    },
+    {
+      "page": "Q6.27",
+      "screen_position": "full",
+      "description": "Example instruction: Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all of the amounts before proceeding.",
+      "sequence_order": 15,
+      "html_content": "Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all of the amounts b"
+    },
+    {
+      "page": "Q6.31",
+      "screen_position": "full",
+      "description": "Transition: You have successfully completed the previous understanding question. Please proceed to answer the understanding question about the 2nd (out of 3) example set of amounts for Option A.",
+      "sequence_order": 16,
+      "html_content": "You have successfully completed the previous understanding question.&nbsp;&nbsp;Please proceed to answer the understanding question about the 2nd (out of 3) example set of amounts for Option A.&nbsp;"
+    },
+    {
+      "page": "Q6.35",
+      "screen_position": "full",
+      "description": "Example instruction (2nd set): Note that the first amount in Option A is shown, and to learn the remaining amounts, you may click on the relevant headers.",
+      "sequence_order": 17,
+      "html_content": "Note that the first amount in Option A is shown, and to learn the remaining amounts, you may click on the relevant headers."
+    },
+    {
+      "page": "Q6.36",
+      "screen_position": "full",
+      "description": "Example instruction (2nd set, must-click variant): Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all amounts before proceeding.",
+      "sequence_order": 18,
+      "html_content": "Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all of the amounts b"
+    },
+    {
+      "page": "Q6.40",
+      "screen_position": "full",
+      "description": "Transition: You have successfully completed the previous understanding question. Please proceed to answer the understanding question about the 3rd (out of 3) example set of amounts for Option A.",
+      "sequence_order": 19,
+      "html_content": "You have successfully completed the previous understanding question.&nbsp;&nbsp;Please proceed to answer the understanding question about the 3rd (out of 3) example set of amounts for Option A.&nbsp;"
+    },
+    {
+      "page": "Q6.44",
+      "screen_position": "full",
+      "description": "Example instruction (3rd set): Note that the first amount in Option A is shown, and to learn the remaining amounts, you may click on the relevant headers.",
+      "sequence_order": 20,
+      "html_content": "Note that the first amount in Option A is shown, and to learn the remaining amounts, you may click on the relevant headers."
+    },
+    {
+      "page": "Q6.45",
+      "screen_position": "full",
+      "description": "Example instruction (3rd set, must-click variant): Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all amounts before proceeding.",
+      "sequence_order": 21,
+      "html_content": "Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all of the amounts b"
+    },
+    {
+      "page": "Q6.49",
+      "screen_position": "full",
+      "description": "Transition: You have successfully completed the previous understanding question. Please proceed to make your 48 decisions in Part 2.",
+      "sequence_order": 22,
+      "html_content": "You have successfully completed the previous understanding question.&nbsp;&nbsp;Please proceed to make your 48 decisions in Part 2."
+    },
+    {
+      "page": "Q7.2",
+      "screen_position": "full",
+      "description": "4-bundle intro: In each of the next 24 decisions, you will be presented with 4 amounts for Option A.",
+      "sequence_order": 23,
+      "html_content": "In each of the next 24 decisions, you will be presented with 4 amounts for Option A.&nbsp;"
+    },
+    {
+      "page": "Q9.2",
+      "screen_position": "full",
+      "description": "5-bundle intro: In each of the next 24 decisions, you will be presented with 5 amounts for Option A.",
+      "sequence_order": 24,
+      "html_content": "In each of the next 24 decisions, you will be presented with 5 amounts for Option A.&nbsp;"
+    },
+    {
+      "page": "Q8.2",
+      "screen_position": "full",
+      "description": "Pre-decision transition (4-bundle block): On the next screen, please make decision [decision] out of the 48 decisions in Part 2.",
+      "sequence_order": 25,
+      "html_content": "On the next screen, please make decision ${e://Field/decision} out of the 48 decisions in Part 2."
+    },
+    {
+      "page": "Q10.2",
+      "screen_position": "full",
+      "description": "Pre-decision transition (5-bundle block): On the next screen, please make decision [decision] out of the 48 decisions in Part 2.",
+      "sequence_order": 26,
+      "html_content": "On the next screen, please make decision ${e://Field/decision} out of the 48 decisions in Part 2."
+    },
+    {
+      "page": "Q8.3",
+      "screen_position": "full",
+      "description": "Pre-decision summary (4-bundle, charity): On the next screen, please make decision [decision] out of the 48 decisions in Part 2. In that decision, Option A will involve Make-A-Wish Foundation receiving a donation equal to the sum of the amounts shown.",
+      "sequence_order": 27,
+      "html_content": "On the next screen, please make decision ${e://Field/decision} out of the 48 decisions in Part 2. In that decision, Option A will involve Make-A-Wish Foundation receiving a donation equal to the sum o"
+    },
+    {
+      "page": "Q10.3",
+      "screen_position": "full",
+      "description": "Pre-decision summary (5-bundle, charity): On the next screen, please make decision [decision] out of the 48 decisions in Part 2. In that decision, Option A will involve Make-A-Wish Foundation receiving a donation equal to the sum of the amounts shown.",
+      "sequence_order": 28,
+      "html_content": "On the next screen, please make decision ${e://Field/decision} out of the 48 decisions in Part 2. In that decisoin, Option A will involve Make-A-Wish Foundation receiving a donation equal to the sum o"
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "Q8.5",
+          "screen_position": "full",
+          "question_name": "decision_b4_n2_d55",
+          "screen_type": "decision",
+          "description": "4-summand bundle decision: Binary choice between outside option and charitable bundle. Bundle has n=2 nonzero summands of value d=55\u00a2 (4-summand presentation). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "4_summand",
+            "n_nonzero": 2,
+            "d_cents": 55,
+            "bundle_total_cents": 110,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": "Q8.5",
+          "screen_position": "full",
+          "question_name": "decision_b4_n3_d53",
+          "screen_type": "decision",
+          "description": "4-summand bundle decision: Binary choice between outside option and charitable bundle. Bundle has n=3 nonzero summands of value d=53\u00a2 (4-summand presentation). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "4_summand",
+            "n_nonzero": 3,
+            "d_cents": 53,
+            "bundle_total_cents": 159,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "screens": [
+        {
+          "page": "Q8.5",
+          "screen_position": "full",
+          "question_name": "decision_b4_n4_d52",
+          "screen_type": "decision",
+          "description": "4-summand bundle decision: Binary choice between outside option and charitable bundle. Bundle has n=4 nonzero summands of value d=52\u00a2 (4-summand presentation). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "4_summand",
+            "n_nonzero": 4,
+            "d_cents": 52,
+            "bundle_total_cents": 208,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "screens": [
+        {
+          "page": "Q8.5",
+          "screen_position": "full",
+          "question_name": "decision_b4_n2_d57",
+          "screen_type": "decision",
+          "description": "4-summand bundle decision: Binary choice between outside option and charitable bundle. Bundle has n=2 nonzero summands of value d=57\u00a2 (4-summand presentation). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "4_summand",
+            "n_nonzero": 2,
+            "d_cents": 57,
+            "bundle_total_cents": 114,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "screens": [
+        {
+          "page": "Q8.5",
+          "screen_position": "full",
+          "question_name": "decision_b4_n3_d56",
+          "screen_type": "decision",
+          "description": "4-summand bundle decision: Binary choice between outside option and charitable bundle. Bundle has n=3 nonzero summands of value d=56\u00a2 (4-summand presentation). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "4_summand",
+            "n_nonzero": 3,
+            "d_cents": 56,
+            "bundle_total_cents": 168,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "screens": [
+        {
+          "page": "Q8.5",
+          "screen_position": "full",
+          "question_name": "decision_b4_n4_d54",
+          "screen_type": "decision",
+          "description": "4-summand bundle decision: Binary choice between outside option and charitable bundle. Bundle has n=4 nonzero summands of value d=54\u00a2 (4-summand presentation). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "4_summand",
+            "n_nonzero": 4,
+            "d_cents": 54,
+            "bundle_total_cents": 216,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "screens": [
+        {
+          "page": "Q10.5",
+          "screen_position": "full",
+          "question_name": "decision_b5_n2_d55",
+          "screen_type": "decision",
+          "description": "5-summand bundle decision (zero added): Binary choice between outside option and charitable bundle. Bundle has n=2 nonzero summands of value d=55\u00a2 plus one zero summand (5-summand presentation, same total as 4-summand counterpart). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "5_summand",
+            "n_nonzero": 2,
+            "d_cents": 55,
+            "bundle_total_cents": 110,
+            "zero_added": true,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "screens": [
+        {
+          "page": "Q10.5",
+          "screen_position": "full",
+          "question_name": "decision_b5_n3_d53",
+          "screen_type": "decision",
+          "description": "5-summand bundle decision (zero added): Binary choice between outside option and charitable bundle. Bundle has n=3 nonzero summands of value d=53\u00a2 plus one zero summand (5-summand presentation, same total as 4-summand counterpart). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "5_summand",
+            "n_nonzero": 3,
+            "d_cents": 53,
+            "bundle_total_cents": 159,
+            "zero_added": true,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "screens": [
+        {
+          "page": "Q10.5",
+          "screen_position": "full",
+          "question_name": "decision_b5_n4_d52",
+          "screen_type": "decision",
+          "description": "5-summand bundle decision (zero added): Binary choice between outside option and charitable bundle. Bundle has n=4 nonzero summands of value d=52\u00a2 plus one zero summand (5-summand presentation, same total as 4-summand counterpart). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "5_summand",
+            "n_nonzero": 4,
+            "d_cents": 52,
+            "bundle_total_cents": 208,
+            "zero_added": true,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "screens": [
+        {
+          "page": "Q10.5",
+          "screen_position": "full",
+          "question_name": "decision_b5_n2_d57",
+          "screen_type": "decision",
+          "description": "5-summand bundle decision (zero added): Binary choice between outside option and charitable bundle. Bundle has n=2 nonzero summands of value d=57\u00a2 plus one zero summand (5-summand presentation, same total as 4-summand counterpart). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "5_summand",
+            "n_nonzero": 2,
+            "d_cents": 57,
+            "bundle_total_cents": 114,
+            "zero_added": true,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "screens": [
+        {
+          "page": "Q10.5",
+          "screen_position": "full",
+          "question_name": "decision_b5_n3_d56",
+          "screen_type": "decision",
+          "description": "5-summand bundle decision (zero added): Binary choice between outside option and charitable bundle. Bundle has n=3 nonzero summands of value d=56\u00a2 plus one zero summand (5-summand presentation, same total as 4-summand counterpart). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "5_summand",
+            "n_nonzero": 3,
+            "d_cents": 56,
+            "bundle_total_cents": 168,
+            "zero_added": true,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "screens": [
+        {
+          "page": "Q10.5",
+          "screen_position": "full",
+          "question_name": "decision_b5_n4_d54",
+          "screen_type": "decision",
+          "description": "5-summand bundle decision (zero added): Binary choice between outside option and charitable bundle. Bundle has n=4 nonzero summands of value d=54\u00a2 plus one zero summand (5-summand presentation, same total as 4-summand counterpart). Participant must reveal all amounts before deciding.",
+          "depends_on": null,
+          "parameters": {
+            "bundle_type": "5_summand",
+            "n_nonzero": 4,
+            "d_cents": 54,
+            "bundle_total_cents": 216,
+            "zero_added": true,
+            "treatment": "self_charity_or_charity_charity",
+            "reveal_required": true
+          }
+        }
+      ]
+    }
+  ]
+}

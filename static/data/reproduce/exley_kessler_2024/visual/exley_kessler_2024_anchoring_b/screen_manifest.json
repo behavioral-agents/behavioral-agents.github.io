@@ -1,0 +1,53 @@
+{
+  "paper_id": "exley_kessler_2024_anchoring_b",
+  "mappings": [
+    {
+      "generated": "anchor_b_ab_light_jupiter_default.png",
+      "task_label": "Anchor B Ab Light Jupiter Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "anchor_b_light_jupiter_default.png",
+      "task_label": "Anchor B Light Jupiter Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "anchor_b_ab_airplane_trip_default.png",
+      "task_label": "Anchor B Ab Airplane Trip Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "anchor_b_airplane_trip_default.png",
+      "task_label": "Anchor B Airplane Trip Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "anchor_b_ab_uzbekistan_pop_default.png",
+      "task_label": "Anchor B Ab Uzbekistan Pop Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "anchor_b_uzbekistan_pop_default.png",
+      "task_label": "Anchor B Uzbekistan Pop Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "anchor_b_ab_eiffel_weight_default.png",
+      "task_label": "Anchor B Ab Eiffel Weight Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "anchor_b_eiffel_weight_default.png",
+      "task_label": "Anchor B Eiffel Weight Default",
+      "original_pages": [],
+      "screen_position": "full"
+    }
+  ]
+}

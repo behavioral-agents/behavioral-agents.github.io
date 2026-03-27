@@ -1,0 +1,218 @@
+{
+  "experiment_section": "Anchoring Study B in Motivated Errors",
+  "instructions": [
+    {
+      "page": "Q4.2",
+      "screen_position": "full",
+      "description": "Overview: Explains the experiment structure \u2014 two parts, understanding questions, careful reading required.",
+      "sequence_order": 1,
+      "html_content": "Overview : Throughout this study, you will be provided with instructions.&nbsp; Please carefully read all instructions.&nbsp; Sometimes, you will be asked understanding questions about the instructions to make sure you understand them before proceeding."
+    },
+    {
+      "page": "Q4.4",
+      "screen_position": "full",
+      "description": "Payment overview: Explains the two-part structure and minimum payment, with part-that-counts mechanism.",
+      "sequence_order": 2,
+      "html_content": "Your Payment: This study involves two&nbsp;parts &mdash; Part 1 and Part 2&nbsp;&mdash; followed by a short survey. For completing this study, you will receive a minimum payment of ${e://Field/showup} cents. In addition, one of the two parts will be randomly selected as the &ldquo;part-that-counts.&rdquo; The payment allocated in the part-that-counts will be added to your minimum payment."
+    },
+    {
+      "page": "Q5.2",
+      "screen_position": "full",
+      "description": "Part 1 Instructions: Explains the list-based decision task \u2014 two payment options per row, switching from left to right.",
+      "sequence_order": 3,
+      "html_content": "Part 1 Instructions &nbsp; In Part 1, you will have to make several decisions by completing one list. &nbsp;Each row of the list will present two payment options. &nbsp; - The payment option on the left will be the same in every row. &nbsp; - The payment option on the right will change from row to row. &nbsp; You will be asked to choose between the two payment options in each row."
+    },
+    {
+      "page": "Q6.2",
+      "screen_position": "full",
+      "description": "Part 1 Instructions continued: Explains how to indicate preference by clicking the row where participant switches from left to right option.",
+      "sequence_order": 4,
+      "html_content": "Please indicate which payment option you prefer on each row by clicking on the row where you would like to switch from choosing the option on the left to choosing the option on the right. &nbsp; (Note: You can only switch once from the left option to the right option.)"
+    },
+    {
+      "page": "Q84",
+      "screen_position": "full",
+      "description": "Part 2 Instructions: Explains that participants will guess answers to trivia questions, first indicating above/below anchor, then providing numerical guess via slider starting at 50.",
+      "sequence_order": 5,
+      "html_content": "Instructions for Part 2: &nbsp; In Part 2, you&nbsp;will be asked to guess the answer to ${e://Field/main_decisions} main questions.&nbsp;Prior to answering each main question, you will first be asked whether the answer is above or below a reference number. Then, you will provide your numerical guess using a slider. The slider will start at 50. There is no time limit for answering these questions."
+    },
+    {
+      "page": "Q74",
+      "screen_position": "full",
+      "description": "Part 2 payment rule: Explains that if Part 2 is the part-that-counts, one main question is randomly selected and the payment allocated in that question is distributed.",
+      "sequence_order": 6,
+      "html_content": "If Part 2&nbsp;is randomly selected as the part-that-counts, one main question from this part will be randomly selected. Then, the payment&nbsp;that is allocated in that question will be distributed."
+    },
+    {
+      "page": "Q88",
+      "screen_position": "full",
+      "description": "Part 2 payment rule (Treatment High / too high): If guess is too high (3 or more above actual), charity receives donation; if guess is right or too low, participant receives bonus.",
+      "sequence_order": 7,
+      "html_content": "If your guess is too&nbsp;high &nbsp;because it is 3&nbsp;or more above the actual number, ${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/stake} cents .&nbsp; If your guess is right (within 2 of the actual number) or too low (3 or more below the actual number), you will be allocated a bonus payment of ${e://Field/xnorm} cents."
+    },
+    {
+      "page": "Q86",
+      "screen_position": "full",
+      "description": "Part 2 payment rule (too low variant): If guess is too low (3 or more below actual), charity receives donation; if guess is right or too high, participant receives bonus.",
+      "sequence_order": 8,
+      "html_content": "If your guess is too&nbsp;low &nbsp;because it is 3&nbsp;or more below the actual number, ${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/stake} cents.&nbsp; If your guess is right (within 2 of the actual number) or too high (3 or more above the actual number), you will be allocated a bonus payment of ${e://Field/xnorm} cents."
+    },
+    {
+      "page": "Q81",
+      "screen_position": "full",
+      "description": "Part 2 payment rule (Treatment Low / too low variant B): If guess is too low (3 or more below actual), charity receives donation; otherwise participant receives bonus.",
+      "sequence_order": 9,
+      "html_content": "If your guess is too&nbsp;low &nbsp;because it is 3&nbsp;or more below the actual number, ${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/stake} cents .&nbsp; If your guess is right (within 2 of the actual number) or too high (3 or more above the actual number), you will be allocated a bonus payment of ${e://Field/xnorm} cents."
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "display_20",
+          "screen_position": "full",
+          "question_name": "anchor_b_ab_light_jupiter",
+          "screen_type": "decision",
+          "description": "Question 1 above/below: Is the time (in minutes) for light to travel from Sun to Jupiter more than or less than 20 minutes? (anchor = 20)",
+          "depends_on": null,
+          "parameters": {
+            "question_number": 1,
+            "topic": "light_jupiter",
+            "anchor": 20,
+            "question_type": "above_below"
+          }
+        },
+        {
+          "page": "Guess_1",
+          "screen_position": "full",
+          "question_name": "anchor_b_light_jupiter",
+          "screen_type": "decision",
+          "description": "Question 1 numerical guess: Slider (0\u2013100, default 50) \u2014 How many minutes does it take light to travel from the Sun to Jupiter?",
+          "depends_on": "anchor_b_ab_light_jupiter",
+          "parameters": {
+            "question_number": 1,
+            "topic": "light_jupiter",
+            "anchor": 20,
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 50,
+            "correct_answer": 43,
+            "question_type": "numerical_guess"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": "Q449",
+          "screen_position": "full",
+          "question_name": "anchor_b_ab_airplane_trip",
+          "screen_type": "decision",
+          "description": "Question 2 above/below: Is the number of days Rodgers took to complete the first airplane trip across the U.S. more than or less than 20 days? (anchor = 20)",
+          "depends_on": null,
+          "parameters": {
+            "question_number": 2,
+            "topic": "airplane_trip",
+            "anchor": 20,
+            "question_type": "above_below"
+          }
+        },
+        {
+          "page": "Q454",
+          "screen_position": "full",
+          "question_name": "anchor_b_airplane_trip",
+          "screen_type": "decision",
+          "description": "Question 2 numerical guess: Slider (0\u2013100, default 50) \u2014 How many days did it take Rodgers to complete the trip?",
+          "depends_on": "anchor_b_ab_airplane_trip",
+          "parameters": {
+            "question_number": 2,
+            "topic": "airplane_trip",
+            "anchor": 20,
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 50,
+            "correct_answer": 49,
+            "question_type": "numerical_guess"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "screens": [
+        {
+          "page": "Q458",
+          "screen_position": "full",
+          "question_name": "anchor_b_ab_uzbekistan_pop",
+          "screen_type": "decision",
+          "description": "Question 3 above/below: Is the population of Uzbekistan as of 2018 greater than or less than 20 million? (anchor = 20)",
+          "depends_on": null,
+          "parameters": {
+            "question_number": 3,
+            "topic": "uzbekistan_pop",
+            "anchor": 20,
+            "question_type": "above_below"
+          }
+        },
+        {
+          "page": "Q463",
+          "screen_position": "full",
+          "question_name": "anchor_b_uzbekistan_pop",
+          "screen_type": "decision",
+          "description": "Question 3 numerical guess: Slider (0\u2013100, default 50) \u2014 What is the population of Uzbekistan in millions as of 2018?",
+          "depends_on": "anchor_b_ab_uzbekistan_pop",
+          "parameters": {
+            "question_number": 3,
+            "topic": "uzbekistan_pop",
+            "anchor": 20,
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 50,
+            "correct_answer": 32,
+            "question_type": "numerical_guess"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "screens": [
+        {
+          "page": "Q467",
+          "screen_position": "full",
+          "question_name": "anchor_b_ab_eiffel_weight",
+          "screen_type": "decision",
+          "description": "Question 4 above/below: Is the weight (in hundreds of tons) of the Eiffel Tower's metal structure more than or less than 20 hundred tons? (anchor = 20)",
+          "depends_on": null,
+          "parameters": {
+            "question_number": 4,
+            "topic": "eiffel_weight",
+            "anchor": 20,
+            "question_type": "above_below"
+          }
+        },
+        {
+          "page": "Q472",
+          "screen_position": "full",
+          "question_name": "anchor_b_eiffel_weight",
+          "screen_type": "decision",
+          "description": "Question 4 numerical guess: Slider (0\u2013100, default 50) \u2014 What is the weight (in hundreds of tons) of the Eiffel Tower's metal structure?",
+          "depends_on": "anchor_b_ab_eiffel_weight",
+          "parameters": {
+            "question_number": 4,
+            "topic": "eiffel_weight",
+            "anchor": 20,
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 50,
+            "correct_answer": 73,
+            "question_type": "numerical_guess"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1105,7 +1105,7 @@ async function showReproduction(paperId, modality, baseId) {
   let screens = [];
   if (modality === 'visual') {
     try {
-      // Try to read scenario file to discover screen filenames
+      // Discover screens from ALL scenarios (not just the first condition)
       const scenRes = await fetch(`${basePath}/scenarios.json?${CACHE_BUST}`);
       if (scenRes.ok) {
         const scenData = await scenRes.json();
@@ -1118,6 +1118,38 @@ async function showReproduction(paperId, modality, baseId) {
             }
           }
         }
+
+        // Also probe for per-condition variants by checking common suffixes
+        // Extract question names from screen paths and check for variants
+        const conditions = new Set();
+        for (const s of scenList) {
+          if (s.condition) conditions.add(s.condition);
+        }
+        if (conditions.size > 0) {
+          const baseNames = new Set();
+          for (const p of screenPaths) {
+            // Extract base question name: screens/round4_investment_realized_loss.png -> round4_investment
+            const fname = p.split('/').pop().replace('.png', '');
+            for (const cond of conditions) {
+              if (fname.endsWith('_' + cond)) {
+                baseNames.add(fname.slice(0, -(cond.length + 1)));
+              }
+            }
+          }
+          // Probe for each base name × condition combination
+          for (const base of baseNames) {
+            for (const cond of conditions) {
+              const variantPath = `screens/${base}_${cond}.png`;
+              if (!screenPaths.has(variantPath)) {
+                try {
+                  const probe = await fetch(`${basePath}/${variantPath}?${CACHE_BUST}`, { method: 'HEAD' });
+                  if (probe.ok) screenPaths.add(variantPath);
+                } catch (e) { /* skip */ }
+              }
+            }
+          }
+        }
+
         screens = [...screenPaths].sort();
       }
     } catch (e) {
@@ -1182,30 +1214,86 @@ async function showReproduction(paperId, modality, baseId) {
         }
         instrByPage.get(instr.page).descriptions.push(instr.description || 'Instruction');
       }
+      let instrIdx = 0;
       for (const [page, info] of instrByPage) {
+        instrIdx++;
         flowItems.push({
           type: 'instruction',
           label: info.descriptions.join(' · '),
           originalPage: page,
-          generatedFile: null,
+          generatedFile: `_instruction_${instrIdx}_default.png`,
           sequence: info.sequence,
         });
       }
 
-      // Decision screens from trials
+      // Decision screens from trials — include per-condition variants
+      // Discover all screen PNGs by probing for known patterns
+      // First collect all known screen filenames from scenarios.json
+      const allScreenFiles = new Set(screens.map(s => s.split('/').pop()));
+
       for (const trial of (flowData.trials || [])) {
         for (const screen of (trial.screens || [])) {
           const qname = screen.question_name;
           if (!qname) continue;
-          const genFile = `${qname}_default.png`;
-          const mEntry = manifestMap[genFile];
-          flowItems.push({
-            type: 'decision',
-            label: mEntry?.task_label || screen.description || qname,
-            originalPage: screen.page || (mEntry?.original_pages?.[0]?.replace('.png','')) || null,
-            generatedFile: genFile,
-            sequence: 100 + (trial.trial_number || 0) * 10 + (flowItems.length),
+
+          // Probe for per-condition variants by trying common suffixes
+          // Check: {qname}_default.png, {qname}_{condition}.png for each condition in scenarios
+          const probeSuffixes = ['default'];
+          // Get conditions from scenarios.json
+          try {
+            const scenRes2 = await fetch(`${basePath}/scenarios.json?${CACHE_BUST}`);
+            if (scenRes2.ok) {
+              const sd = await scenRes2.json();
+              const sl = sd.scenarios || sd.data || [];
+              for (const s of sl) {
+                if (s.condition && !probeSuffixes.includes(s.condition)) {
+                  probeSuffixes.push(s.condition);
+                }
+              }
+            }
+          } catch (e) { /* ignore */ }
+
+          // Also try to discover variants by probing common condition names from screen_flow
+          // (the flow's trial screens may reference conditions not in scenarios.json)
+          const variants = [];
+          for (const suffix of probeSuffixes) {
+            const fname = `${qname}_${suffix}.png`;
+            if (allScreenFiles.has(`screens/${fname}`) || allScreenFiles.has(fname)) {
+              variants.push({ file: fname, condition: suffix });
+            } else {
+              // Probe the server
+              try {
+                const probe = await fetch(`${basePath}/screens/${fname}?${CACHE_BUST}`, { method: 'HEAD' });
+                if (probe.ok) {
+                  variants.push({ file: fname, condition: suffix });
+                  allScreenFiles.add(fname);
+                }
+              } catch (e) { /* skip */ }
+            }
+          }
+
+          // Sort: default first, then alphabetical
+          variants.sort((a, b) => {
+            if (a.condition === 'default') return -1;
+            if (b.condition === 'default') return 1;
+            return a.condition.localeCompare(b.condition);
           });
+
+          // If condition-specific variants exist, skip default (it has unresolved placeholders)
+          const nonDefault = variants.filter(v => v.condition !== 'default');
+          const toShow = nonDefault.length > 0 ? nonDefault : variants;
+
+          for (const v of toShow) {
+            const mEntry = manifestMap[v.file];
+            const condLabel = v.condition === 'default' ? '' : ` [${v.condition.replace(/_/g, ' ')}]`;
+            flowItems.push({
+              type: 'decision',
+              label: (mEntry?.task_label || screen.description || qname) + condLabel,
+              originalPage: screen.page || (mEntry?.original_pages?.[0]?.replace('.png','')) || null,
+              generatedFile: v.file,
+              sequence: 100 + (trial.trial_number || 0) * 10 + (flowItems.length),
+            });
+          }
         }
       }
     } else if (manifest && manifest.mappings) {
@@ -1224,13 +1312,29 @@ async function showReproduction(paperId, modality, baseId) {
     if (flowItems.length > 0) {
       const nInstr = flowItems.filter(f => f.type === 'instruction').length;
       const nDecision = flowItems.filter(f => f.type === 'decision').length;
+      // Check if original_screens/ directory actually exists by probing for a file
+      let hasAnyOriginals = false;
+      try {
+        const probeItem = flowItems.find(f => f.originalPage);
+        if (probeItem) {
+          const probeRes = await fetch(`${basePath}/original_screens/${probeItem.originalPage}.png?${CACHE_BUST}`, { method: 'HEAD' });
+          hasAnyOriginals = probeRes.ok;
+        }
+      } catch (e) { /* no originals */ }
+
       html += `
         <div class="repro-screens-header">
           <span class="repro-filename">Survey Flow (${flowItems.length} screens: ${nInstr} instruction, ${nDecision} decision)</span>
           <button class="repro-download-single-btn" onclick="downloadAllScreens('${basePath}', ${JSON.stringify(screens)})">Download generated screens</button>
         </div>
-        <p class="repro-comparison-note">The complete survey in chronological order — instructions first, then decision screens. Original pages are from the paper's appendix; generated screens are shown to the LLM agent.</p>
-        <div class="repro-comparison-grid">
+        <p class="repro-comparison-note">${hasAnyOriginals
+          ? 'The complete survey in chronological order. Original pages from the paper\'s appendix are shown alongside the generated screens shown to the LLM.'
+          : 'The complete survey in chronological order as shown to the LLM agent. Screens are generated from the experiment\'s survey file.'
+        }</p>`;
+
+      if (hasAnyOriginals) {
+        // Side-by-side comparison layout (PDF source — has originals)
+        html += `<div class="repro-comparison-grid">
           ${flowItems.map(item => {
             const badge = item.type === 'instruction'
               ? '<span class="flow-badge flow-badge-instruction">Instruction</span> '
@@ -1242,25 +1346,21 @@ async function showReproduction(paperId, modality, baseId) {
               ? `${basePath}/screens/${item.generatedFile}`
               : null;
 
-            if (item.type === 'instruction') {
-              // Instruction: show original on both sides (same image shown to LLM)
+            if (item.type === 'instruction' && origSrc) {
+              // PDF instruction: same original shown to LLM
               return `<div class="repro-comparison-pair">
                 <div class="repro-comparison-item">
                   <div class="repro-comparison-label">Original (paper appendix)</div>
-                  ${origSrc
-                    ? `<img src="${origSrc}?${CACHE_BUST}" alt="Original">`
-                    : '<div class="repro-no-original">No original available</div>'}
+                  <img src="${origSrc}?${CACHE_BUST}" alt="Original">
                 </div>
                 <div class="repro-comparison-item">
                   <div class="repro-comparison-label">Shown to LLM (same image)</div>
-                  ${origSrc
-                    ? `<img src="${origSrc}?${CACHE_BUST}" alt="Shown to LLM">`
-                    : '<div class="repro-no-original">No image</div>'}
+                  <img src="${origSrc}?${CACHE_BUST}" alt="Shown to LLM">
                 </div>
                 <div class="repro-comparison-caption">${badge}${item.label}</div>
               </div>`;
             } else {
-              // Decision: show original vs generated side by side
+              // Decision or instruction without original
               return `<div class="repro-comparison-pair">
                 <div class="repro-comparison-item">
                   <div class="repro-comparison-label">Original (paper appendix)</div>
@@ -1280,6 +1380,27 @@ async function showReproduction(paperId, modality, baseId) {
           }).join('')}
         </div>
       `;
+      } else {
+        // Single-column layout (QSF source — no originals to compare)
+        html += `<div class="repro-flow-grid">
+          ${flowItems.map(item => {
+            const badge = item.type === 'instruction'
+              ? '<span class="flow-badge flow-badge-instruction">Instruction</span>'
+              : '<span class="flow-badge flow-badge-decision">Decision</span>';
+            const imgSrc = item.generatedFile
+              ? `${basePath}/screens/${item.generatedFile}`
+              : null;
+            return `<div class="repro-flow-item">
+              ${badge}
+              ${imgSrc
+                ? `<img src="${imgSrc}?${CACHE_BUST}" alt="${item.label}">`
+                : '<div class="repro-no-original">No image</div>'}
+              <div class="repro-flow-label">${item.label}</div>
+            </div>`;
+          }).join('')}
+        </div>
+      `;
+      }
     } else if (screens.length > 0) {
       // No flow or manifest — just show generated screens
       html += `

@@ -1,0 +1,782 @@
+{
+  "questions": [
+    {
+      "question_name": "_instruction_1",
+      "question_text": "Please carefully read the following experiment instructions (page 1 of 28: Consent / Information Sheet: Study by Christine Exley from Harvard University, explaining participation involves completing a survey.).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_2",
+      "question_text": "Please carefully read the following experiment instructions (page 2 of 28: Overview Instructions: Throughout this study, you will be provided with instructions. Please carefully read all instructions. Sometimes, you will be asked understanding questions about the instructions.).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_3",
+      "question_text": "Please carefully read the following experiment instructions (page 3 of 28: Payment Overview: Study involves Part 1 and Part 2 followed by a short survey. Minimum payment of $[showup] within 24 hours. Explains payment structure.).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_4",
+      "question_text": "Please carefully read the following experiment instructions (page 4 of 28: Part 1 Instructions: In Part 1, you will make several decisions by completing one list. Each row presents two payment options. The left option always involves a fixed amount.).\n{{ instruction_screen_4 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_5",
+      "question_text": "Please carefully read the following experiment instructions (page 5 of 28: Transition: You have successfully completed Part 1. Please proceed to read instructions about Part 2.).\n{{ instruction_screen_5 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_6",
+      "question_text": "Please carefully read the following experiment instructions (page 6 of 28: Part 2 Instructions (Self/Charity variant A): In Part 2, you will face 48 decisions. In each decision, choose between Option A and Option B. Option A involves amounts for Make-A-Wish Foundation.).\n{{ instruction_screen_6 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_7",
+      "question_text": "Please carefully read the following experiment instructions (page 7 of 28: Part 2 Instructions (Self/Charity variant B): In Part 2, you will face 48 decisions. Option A and Option B described with amounts for self or charity.).\n{{ instruction_screen_7 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_8",
+      "question_text": "Please carefully read the following experiment instructions (page 8 of 28: Part 2 Instructions (Charity/Charity variant): In Part 2, you will face 48 decisions. Option A and Option B described with amounts for charity.).\n{{ instruction_screen_8 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_9",
+      "question_text": "Please carefully read the following experiment instructions (page 9 of 28: Part 2 Instructions Continued (Charity/Charity): Choosing Option A results in Make-A-Wish Foundation receiving the sum of donation amounts shown in Option A. Across decisions, this sum may vary.).\n{{ instruction_screen_9 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_10",
+      "question_text": "Please carefully read the following experiment instructions (page 10 of 28: Part 2 Instructions Continued (Self/Charity): Choosing Option A results in you receiving the sum of the amounts shown in Option A. Across decisions, this sum may vary.).\n{{ instruction_screen_10 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_11",
+      "question_text": "Please carefully read the following experiment instructions (page 11 of 28: Part 2 Instructions: Prior to each decision, you will always have the opportunity to learn all amounts in Option A. You may choose to use this information or not.).\n{{ instruction_screen_11 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_12",
+      "question_text": "Please carefully read the following experiment instructions (page 12 of 28: Part 2 Instructions: Prior to each decision, you will always have the opportunity to learn all amounts in Option A. You cannot make a decision without learning this information \u2014 the button is locked until all amounts are revealed.).\n{{ instruction_screen_12 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_13",
+      "question_text": "Please carefully read the following experiment instructions (page 13 of 28: Transition: You have successfully completed the previous understanding question. To gain experience with how to learn the donation amounts in Option A, please answer the additional three understanding questions.).\n{{ instruction_screen_13 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_14",
+      "question_text": "Please carefully read the following experiment instructions (page 14 of 28: Example instruction: Note that the first amount in Option A is shown and to learn the remaining amounts you may click on the relevant headers.).\n{{ instruction_screen_14 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_15",
+      "question_text": "Please carefully read the following experiment instructions (page 15 of 28: Example instruction: Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all of the amounts before proceeding.).\n{{ instruction_screen_15 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_16",
+      "question_text": "Please carefully read the following experiment instructions (page 16 of 28: Transition: You have successfully completed the previous understanding question. Please proceed to answer the understanding question about the 2nd (out of 3) example set of amounts for Option A.).\n{{ instruction_screen_16 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_17",
+      "question_text": "Please carefully read the following experiment instructions (page 17 of 28: Example instruction (2nd set): Note that the first amount in Option A is shown, and to learn the remaining amounts, you may click on the relevant headers.).\n{{ instruction_screen_17 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_18",
+      "question_text": "Please carefully read the following experiment instructions (page 18 of 28: Example instruction (2nd set, must-click variant): Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all amounts before proceeding.).\n{{ instruction_screen_18 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_19",
+      "question_text": "Please carefully read the following experiment instructions (page 19 of 28: Transition: You have successfully completed the previous understanding question. Please proceed to answer the understanding question about the 3rd (out of 3) example set of amounts for Option A.).\n{{ instruction_screen_19 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_20",
+      "question_text": "Please carefully read the following experiment instructions (page 20 of 28: Example instruction (3rd set): Note that the first amount in Option A is shown, and to learn the remaining amounts, you may click on the relevant headers.).\n{{ instruction_screen_20 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_21",
+      "question_text": "Please carefully read the following experiment instructions (page 21 of 28: Example instruction (3rd set, must-click variant): Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all amounts before proceeding.).\n{{ instruction_screen_21 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_22",
+      "question_text": "Please carefully read the following experiment instructions (page 22 of 28: Transition: You have successfully completed the previous understanding question. Please proceed to make your 48 decisions in Part 2.).\n{{ instruction_screen_22 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_23",
+      "question_text": "Please carefully read the following experiment instructions (page 23 of 28: 4-bundle intro: In each of the next 24 decisions, you will be presented with 4 amounts for Option A.).\n{{ instruction_screen_23 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_24",
+      "question_text": "Please carefully read the following experiment instructions (page 24 of 28: 5-bundle intro: In each of the next 24 decisions, you will be presented with 5 amounts for Option A.).\n{{ instruction_screen_24 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_25",
+      "question_text": "Please carefully read the following experiment instructions (page 25 of 28: Pre-decision transition (4-bundle block): On the next screen, please make decision [decision] out of the 48 decisions in Part 2.).\n{{ instruction_screen_25 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_26",
+      "question_text": "Please carefully read the following experiment instructions (page 26 of 28: Pre-decision transition (5-bundle block): On the next screen, please make decision [decision] out of the 48 decisions in Part 2.).\n{{ instruction_screen_26 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_27",
+      "question_text": "Please carefully read the following experiment instructions (page 27 of 28: Pre-decision summary (4-bundle, charity): On the next screen, please make decision [decision] out of the 48 decisions in Part 2. In that decision, Option A will involve Make-A-Wish Foundation receiving a donation equal to the sum of the amounts shown.).\n{{ instruction_screen_27 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_28",
+      "question_text": "Please carefully read the following experiment instructions (page 28 of 28: Pre-decision summary (5-bundle, charity): On the next screen, please make decision [decision] out of the 48 decisions in Part 2. In that decision, Option A will involve Make-A-Wish Foundation receiving a donation equal to the sum of the amounts shown.).\n{{ instruction_screen_28 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b4_n2_d55",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b4_n2_d55 }}\n\nYou are participating in a decision-making experiment on Amazon Mechanical Turk. You will make a series of choices between two options.\n\n{{ treatment_intro }}\n\nPlease choose carefully. One of your decisions will be randomly selected and implemented for real payment.\n\nDECISION 1 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 55 + 0 + 55 + 0 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b4_n3_d53",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b4_n3_d53 }}\n\nDECISION 2 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 53 + 0 + 53 + 53 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b4_n4_d52",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b4_n4_d52 }}\n\nDECISION 3 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 52 + 52 + 52 + 52 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b4_n2_d57",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b4_n2_d57 }}\n\nDECISION 4 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 57 + 0 + 57 + 0 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b4_n3_d56",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b4_n3_d56 }}\n\nDECISION 5 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 56 + 0 + 56 + 56 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b4_n4_d54",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b4_n4_d54 }}\n\nDECISION 6 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 54 + 54 + 54 + 54 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b5_n2_d55",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b5_n2_d55 }}\n\nDECISION 7 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 55 + 0 + 55 + 0 + 0 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b5_n3_d53",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b5_n3_d53 }}\n\nDECISION 8 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 53 + 0 + 53 + 0 + 53 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b5_n4_d52",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b5_n4_d52 }}\n\nDECISION 9 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 52 + 0 + 52 + 52 + 52 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b5_n2_d57",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b5_n2_d57 }}\n\nDECISION 10 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 57 + 0 + 57 + 0 + 0 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b5_n3_d56",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b5_n3_d56 }}\n\nDECISION 11 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 56 + 0 + 56 + 0 + 56 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "decision_b5_n4_d54",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_decision_b5_n4_d54 }}\n\nDECISION 12 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 54 + 0 + 54 + 54 + 54 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "question_options": [
+        "Option A",
+        "Option B"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "_instruction_1",
+      "_instruction_2",
+      "_instruction_3",
+      "_instruction_4",
+      "_instruction_5",
+      "_instruction_6",
+      "_instruction_7",
+      "_instruction_8",
+      "_instruction_9",
+      "_instruction_10",
+      "_instruction_11",
+      "_instruction_12",
+      "_instruction_13",
+      "_instruction_14",
+      "_instruction_15",
+      "_instruction_16",
+      "_instruction_17",
+      "_instruction_18",
+      "_instruction_19",
+      "_instruction_20",
+      "_instruction_21",
+      "_instruction_22",
+      "_instruction_23",
+      "_instruction_24",
+      "_instruction_25",
+      "_instruction_26",
+      "_instruction_27",
+      "_instruction_28",
+      "decision_b4_n2_d55",
+      "decision_b4_n3_d53",
+      "decision_b4_n4_d52",
+      "decision_b4_n2_d57",
+      "decision_b4_n3_d56",
+      "decision_b4_n4_d54",
+      "decision_b5_n2_d55",
+      "decision_b5_n3_d53",
+      "decision_b5_n4_d52",
+      "decision_b5_n2_d57",
+      "decision_b5_n3_d56",
+      "decision_b5_n4_d54"
+    ],
+    "survey_question_texts": [
+      "Please carefully read the following experiment instructions (page 1 of 28: Consent / Information Sheet: Study by Christine Exley from Harvard University, explaining participation involves completing a survey.).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 2 of 28: Overview Instructions: Throughout this study, you will be provided with instructions. Please carefully read all instructions. Sometimes, you will be asked understanding questions about the instructions.).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 3 of 28: Payment Overview: Study involves Part 1 and Part 2 followed by a short survey. Minimum payment of $[showup] within 24 hours. Explains payment structure.).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 4 of 28: Part 1 Instructions: In Part 1, you will make several decisions by completing one list. Each row presents two payment options. The left option always involves a fixed amount.).\n{{ instruction_screen_4 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 5 of 28: Transition: You have successfully completed Part 1. Please proceed to read instructions about Part 2.).\n{{ instruction_screen_5 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 6 of 28: Part 2 Instructions (Self/Charity variant A): In Part 2, you will face 48 decisions. In each decision, choose between Option A and Option B. Option A involves amounts for Make-A-Wish Foundation.).\n{{ instruction_screen_6 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 7 of 28: Part 2 Instructions (Self/Charity variant B): In Part 2, you will face 48 decisions. Option A and Option B described with amounts for self or charity.).\n{{ instruction_screen_7 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 8 of 28: Part 2 Instructions (Charity/Charity variant): In Part 2, you will face 48 decisions. Option A and Option B described with amounts for charity.).\n{{ instruction_screen_8 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 9 of 28: Part 2 Instructions Continued (Charity/Charity): Choosing Option A results in Make-A-Wish Foundation receiving the sum of donation amounts shown in Option A. Across decisions, this sum may vary.).\n{{ instruction_screen_9 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 10 of 28: Part 2 Instructions Continued (Self/Charity): Choosing Option A results in you receiving the sum of the amounts shown in Option A. Across decisions, this sum may vary.).\n{{ instruction_screen_10 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 11 of 28: Part 2 Instructions: Prior to each decision, you will always have the opportunity to learn all amounts in Option A. You may choose to use this information or not.).\n{{ instruction_screen_11 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 12 of 28: Part 2 Instructions: Prior to each decision, you will always have the opportunity to learn all amounts in Option A. You cannot make a decision without learning this information \u2014 the button is locked until all amounts are revealed.).\n{{ instruction_screen_12 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 13 of 28: Transition: You have successfully completed the previous understanding question. To gain experience with how to learn the donation amounts in Option A, please answer the additional three understanding questions.).\n{{ instruction_screen_13 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 14 of 28: Example instruction: Note that the first amount in Option A is shown and to learn the remaining amounts you may click on the relevant headers.).\n{{ instruction_screen_14 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 15 of 28: Example instruction: Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all of the amounts before proceeding.).\n{{ instruction_screen_15 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 16 of 28: Transition: You have successfully completed the previous understanding question. Please proceed to answer the understanding question about the 2nd (out of 3) example set of amounts for Option A.).\n{{ instruction_screen_16 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 17 of 28: Example instruction (2nd set): Note that the first amount in Option A is shown, and to learn the remaining amounts, you may click on the relevant headers.).\n{{ instruction_screen_17 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 18 of 28: Example instruction (2nd set, must-click variant): Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all amounts before proceeding.).\n{{ instruction_screen_18 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 19 of 28: Transition: You have successfully completed the previous understanding question. Please proceed to answer the understanding question about the 3rd (out of 3) example set of amounts for Option A.).\n{{ instruction_screen_19 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 20 of 28: Example instruction (3rd set): Note that the first amount in Option A is shown, and to learn the remaining amounts, you may click on the relevant headers.).\n{{ instruction_screen_20 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 21 of 28: Example instruction (3rd set, must-click variant): Note that the first amount in Option A is shown and to learn the remaining amounts you must click on the relevant headers. As in your decisions in Part 2, you must click to reveal all amounts before proceeding.).\n{{ instruction_screen_21 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 22 of 28: Transition: You have successfully completed the previous understanding question. Please proceed to make your 48 decisions in Part 2.).\n{{ instruction_screen_22 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 23 of 28: 4-bundle intro: In each of the next 24 decisions, you will be presented with 4 amounts for Option A.).\n{{ instruction_screen_23 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 24 of 28: 5-bundle intro: In each of the next 24 decisions, you will be presented with 5 amounts for Option A.).\n{{ instruction_screen_24 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 25 of 28: Pre-decision transition (4-bundle block): On the next screen, please make decision [decision] out of the 48 decisions in Part 2.).\n{{ instruction_screen_25 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 26 of 28: Pre-decision transition (5-bundle block): On the next screen, please make decision [decision] out of the 48 decisions in Part 2.).\n{{ instruction_screen_26 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 27 of 28: Pre-decision summary (4-bundle, charity): On the next screen, please make decision [decision] out of the 48 decisions in Part 2. In that decision, Option A will involve Make-A-Wish Foundation receiving a donation equal to the sum of the amounts shown.).\n{{ instruction_screen_27 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 28 of 28: Pre-decision summary (5-bundle, charity): On the next screen, please make decision [decision] out of the 48 decisions in Part 2. In that decision, Option A will involve Make-A-Wish Foundation receiving a donation equal to the sum of the amounts shown.).\n{{ instruction_screen_28 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b4_n2_d55 }}\n\nYou are participating in a decision-making experiment on Amazon Mechanical Turk. You will make a series of choices between two options.\n\n{{ treatment_intro }}\n\nPlease choose carefully. One of your decisions will be randomly selected and implemented for real payment.\n\nDECISION 1 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 55 + 0 + 55 + 0 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b4_n3_d53 }}\n\nDECISION 2 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 53 + 0 + 53 + 53 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b4_n4_d52 }}\n\nDECISION 3 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 52 + 52 + 52 + 52 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b4_n2_d57 }}\n\nDECISION 4 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 57 + 0 + 57 + 0 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b4_n3_d56 }}\n\nDECISION 5 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 56 + 0 + 56 + 56 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b4_n4_d54 }}\n\nDECISION 6 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 54 + 54 + 54 + 54 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b5_n2_d55 }}\n\nDECISION 7 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 55 + 0 + 55 + 0 + 0 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b5_n3_d53 }}\n\nDECISION 8 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 53 + 0 + 53 + 0 + 53 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b5_n4_d52 }}\n\nDECISION 9 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 52 + 0 + 52 + 52 + 52 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b5_n2_d57 }}\n\nDECISION 10 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 57 + 0 + 57 + 0 + 0 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b5_n3_d56 }}\n\nDECISION 11 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 56 + 0 + 56 + 0 + 56 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?",
+      "Look at the decision screen below:\n{{ decision_screen_decision_b5_n4_d54 }}\n\nDECISION 12 of 12.\n\nOption A: {{ outside_option_desc }}\nOption B: 54 + 0 + 54 + 54 + 54 cents for the Make-A-Wish Foundation (the sum of these amounts)\n\nWhich option do you choose?"
+    ],
+    "data": {
+      "decision_b4_n2_d55": {
+        "prior_questions": [
+          "_instruction_1",
+          "_instruction_2",
+          "_instruction_3",
+          "_instruction_4",
+          "_instruction_5",
+          "_instruction_6",
+          "_instruction_7",
+          "_instruction_8",
+          "_instruction_9",
+          "_instruction_10",
+          "_instruction_11",
+          "_instruction_12",
+          "_instruction_13",
+          "_instruction_14",
+          "_instruction_15",
+          "_instruction_16",
+          "_instruction_17",
+          "_instruction_18",
+          "_instruction_19",
+          "_instruction_20",
+          "_instruction_21",
+          "_instruction_22",
+          "_instruction_23",
+          "_instruction_24",
+          "_instruction_25",
+          "_instruction_26",
+          "_instruction_27",
+          "_instruction_28"
+        ]
+      }
+    }
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "_instruction_1": 0,
+      "_instruction_2": 1,
+      "_instruction_3": 2,
+      "_instruction_4": 3,
+      "_instruction_5": 4,
+      "_instruction_6": 5,
+      "_instruction_7": 6,
+      "_instruction_8": 7,
+      "_instruction_9": 8,
+      "_instruction_10": 9,
+      "_instruction_11": 10,
+      "_instruction_12": 11,
+      "_instruction_13": 12,
+      "_instruction_14": 13,
+      "_instruction_15": 14,
+      "_instruction_16": 15,
+      "_instruction_17": 16,
+      "_instruction_18": 17,
+      "_instruction_19": 18,
+      "_instruction_20": 19,
+      "_instruction_21": 20,
+      "_instruction_22": 21,
+      "_instruction_23": 22,
+      "_instruction_24": 23,
+      "_instruction_25": 24,
+      "_instruction_26": 25,
+      "_instruction_27": 26,
+      "_instruction_28": 27,
+      "decision_b4_n2_d55": 28,
+      "decision_b4_n3_d53": 29,
+      "decision_b4_n4_d52": 30,
+      "decision_b4_n2_d57": 31,
+      "decision_b4_n3_d56": 32,
+      "decision_b4_n4_d54": 33,
+      "decision_b5_n2_d55": 34,
+      "decision_b5_n3_d53": 35,
+      "decision_b5_n4_d52": 36,
+      "decision_b5_n2_d57": 37,
+      "decision_b5_n3_d56": 38,
+      "decision_b5_n4_d54": 39
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 4,
+        "expression": "True",
+        "next_q": 5,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 5,
+        "expression": "True",
+        "next_q": 6,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 6,
+        "expression": "True",
+        "next_q": 7,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 7,
+        "expression": "True",
+        "next_q": 8,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 8,
+        "expression": "True",
+        "next_q": 9,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 9,
+        "expression": "True",
+        "next_q": 10,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 10,
+        "expression": "True",
+        "next_q": 11,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 11,
+        "expression": "True",
+        "next_q": 12,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 12,
+        "expression": "True",
+        "next_q": 13,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 13,
+        "expression": "True",
+        "next_q": 14,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 14,
+        "expression": "True",
+        "next_q": 15,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 15,
+        "expression": "True",
+        "next_q": 16,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 16,
+        "expression": "True",
+        "next_q": 17,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 17,
+        "expression": "True",
+        "next_q": 18,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 18,
+        "expression": "True",
+        "next_q": 19,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 19,
+        "expression": "True",
+        "next_q": 20,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 20,
+        "expression": "True",
+        "next_q": 21,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 21,
+        "expression": "True",
+        "next_q": 22,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 22,
+        "expression": "True",
+        "next_q": 23,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 23,
+        "expression": "True",
+        "next_q": 24,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 24,
+        "expression": "True",
+        "next_q": 25,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 25,
+        "expression": "True",
+        "next_q": 26,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 26,
+        "expression": "True",
+        "next_q": 27,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 27,
+        "expression": "True",
+        "next_q": 28,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 28,
+        "expression": "True",
+        "next_q": 29,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 29,
+        "expression": "True",
+        "next_q": 30,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 30,
+        "expression": "True",
+        "next_q": 31,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 31,
+        "expression": "True",
+        "next_q": 32,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 32,
+        "expression": "True",
+        "next_q": 33,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 33,
+        "expression": "True",
+        "next_q": 34,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 34,
+        "expression": "True",
+        "next_q": 35,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 35,
+        "expression": "True",
+        "next_q": 36,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 36,
+        "expression": "True",
+        "next_q": 37,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 37,
+        "expression": "True",
+        "next_q": 38,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 38,
+        "expression": "True",
+        "next_q": 39,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 39,
+        "expression": "True",
+        "next_q": 40,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 40
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

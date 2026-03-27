@@ -1,0 +1,348 @@
+{
+  "questions": [
+    {
+      "question_name": "_instruction_1",
+      "question_text": "Please carefully read the following experiment instructions (page 1 of 9: Overview: Explains the experiment structure \u2014 two parts, understanding questions, careful reading required.).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_2",
+      "question_text": "Please carefully read the following experiment instructions (page 2 of 9: Payment overview: Explains the two-part structure and minimum payment, with part-that-counts mechanism.).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_3",
+      "question_text": "Please carefully read the following experiment instructions (page 3 of 9: Part 1 Instructions: Explains the list-based decision task \u2014 two payment options per row, switching from left to right.).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_4",
+      "question_text": "Please carefully read the following experiment instructions (page 4 of 9: Part 1 Instructions continued: Explains how to indicate preference by clicking the row where participant switches from left to right option.).\n{{ instruction_screen_4 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_5",
+      "question_text": "Please carefully read the following experiment instructions (page 5 of 9: Part 2 Instructions: Explains that participants will guess answers to trivia questions, first indicating above/below anchor, then providing numerical guess via slider starting at 50.).\n{{ instruction_screen_5 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_6",
+      "question_text": "Please carefully read the following experiment instructions (page 6 of 9: Part 2 payment rule: Explains that if Part 2 is the part-that-counts, one main question is randomly selected and the payment allocated in that question is distributed.).\n{{ instruction_screen_6 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_7",
+      "question_text": "Please carefully read the following experiment instructions (page 7 of 9: Part 2 payment rule (Treatment High / too high): If guess is too high (3 or more above actual), charity receives donation; if guess is right or too low, participant receives bonus.).\n{{ instruction_screen_7 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_8",
+      "question_text": "Please carefully read the following experiment instructions (page 8 of 9: Part 2 payment rule (too low variant): If guess is too low (3 or more below actual), charity receives donation; if guess is right or too high, participant receives bonus.).\n{{ instruction_screen_8 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_9",
+      "question_text": "Please carefully read the following experiment instructions (page 9 of 9: Part 2 payment rule (Treatment Low / too low variant B): If guess is too low (3 or more below actual), charity receives donation; otherwise participant receives bonus.).\n{{ instruction_screen_9 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "anchor_b_ab_light_jupiter",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_anchor_b_ab_light_jupiter }}\n\nYou are participating in a trivia study. {{ treatment_intro }}\n\nHere is a randomly generated number: 20\n\nHow many minutes does it take for light to travel from the Sun to Jupiter?\n\nDo you think the answer is above or below 20?",
+      "question_options": [
+        "Above",
+        "Below"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "anchor_b_light_jupiter",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_anchor_b_light_jupiter }}\n\nNow provide your numerical answer to the question:\n\nHow many minutes does it take for light to travel from the Sun to Jupiter?\n\nThe randomly generated number was 20. Please provide your answer on a scale from 0 to 100. The slider starts at 50.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "anchor_b_ab_airplane_trip",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_anchor_b_ab_airplane_trip }}\n\n{{ treatment_intro }}\n\nHere is a randomly generated number: 20\n\nHow many days did it take for the first airplane trip across the United States?\n\nDo you think the answer is above or below 20?",
+      "question_options": [
+        "Above",
+        "Below"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "anchor_b_airplane_trip",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_anchor_b_airplane_trip }}\n\nNow provide your numerical answer to the question:\n\nHow many days did it take for the first airplane trip across the United States?\n\nThe randomly generated number was 20. Please provide your answer on a scale from 0 to 100. The slider starts at 50.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "anchor_b_ab_uzbekistan_pop",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_anchor_b_ab_uzbekistan_pop }}\n\n{{ treatment_intro }}\n\nHere is a randomly generated number: 20\n\nWhat is the population of Uzbekistan in millions of people?\n\nDo you think the answer is above or below 20?",
+      "question_options": [
+        "Above",
+        "Below"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "anchor_b_uzbekistan_pop",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_anchor_b_uzbekistan_pop }}\n\nNow provide your numerical answer to the question:\n\nWhat is the population of Uzbekistan in millions of people?\n\nThe randomly generated number was 20. Please provide your answer on a scale from 0 to 100. The slider starts at 50.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "anchor_b_ab_eiffel_weight",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_anchor_b_ab_eiffel_weight }}\n\n{{ treatment_intro }}\n\nHere is a randomly generated number: 20\n\nWhat is the weight of the Eiffel Tower in hundreds of tons?\n\nDo you think the answer is above or below 20?",
+      "question_options": [
+        "Above",
+        "Below"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "anchor_b_eiffel_weight",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_anchor_b_eiffel_weight }}\n\nNow provide your numerical answer to the question:\n\nWhat is the weight of the Eiffel Tower in hundreds of tons?\n\nThe randomly generated number was 20. Please provide your answer on a scale from 0 to 100. The slider starts at 50.",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "_instruction_1",
+      "_instruction_2",
+      "_instruction_3",
+      "_instruction_4",
+      "_instruction_5",
+      "_instruction_6",
+      "_instruction_7",
+      "_instruction_8",
+      "_instruction_9",
+      "anchor_b_ab_light_jupiter",
+      "anchor_b_light_jupiter",
+      "anchor_b_ab_airplane_trip",
+      "anchor_b_airplane_trip",
+      "anchor_b_ab_uzbekistan_pop",
+      "anchor_b_uzbekistan_pop",
+      "anchor_b_ab_eiffel_weight",
+      "anchor_b_eiffel_weight"
+    ],
+    "survey_question_texts": [
+      "Please carefully read the following experiment instructions (page 1 of 9: Overview: Explains the experiment structure \u2014 two parts, understanding questions, careful reading required.).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 2 of 9: Payment overview: Explains the two-part structure and minimum payment, with part-that-counts mechanism.).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 3 of 9: Part 1 Instructions: Explains the list-based decision task \u2014 two payment options per row, switching from left to right.).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 4 of 9: Part 1 Instructions continued: Explains how to indicate preference by clicking the row where participant switches from left to right option.).\n{{ instruction_screen_4 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 5 of 9: Part 2 Instructions: Explains that participants will guess answers to trivia questions, first indicating above/below anchor, then providing numerical guess via slider starting at 50.).\n{{ instruction_screen_5 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 6 of 9: Part 2 payment rule: Explains that if Part 2 is the part-that-counts, one main question is randomly selected and the payment allocated in that question is distributed.).\n{{ instruction_screen_6 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 7 of 9: Part 2 payment rule (Treatment High / too high): If guess is too high (3 or more above actual), charity receives donation; if guess is right or too low, participant receives bonus.).\n{{ instruction_screen_7 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 8 of 9: Part 2 payment rule (too low variant): If guess is too low (3 or more below actual), charity receives donation; if guess is right or too high, participant receives bonus.).\n{{ instruction_screen_8 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 9 of 9: Part 2 payment rule (Treatment Low / too low variant B): If guess is too low (3 or more below actual), charity receives donation; otherwise participant receives bonus.).\n{{ instruction_screen_9 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Look at the decision screen below:\n{{ decision_screen_anchor_b_ab_light_jupiter }}\n\nYou are participating in a trivia study. {{ treatment_intro }}\n\nHere is a randomly generated number: 20\n\nHow many minutes does it take for light to travel from the Sun to Jupiter?\n\nDo you think the answer is above or below 20?",
+      "Look at the decision screen below:\n{{ decision_screen_anchor_b_light_jupiter }}\n\nNow provide your numerical answer to the question:\n\nHow many minutes does it take for light to travel from the Sun to Jupiter?\n\nThe randomly generated number was 20. Please provide your answer on a scale from 0 to 100. The slider starts at 50.",
+      "Look at the decision screen below:\n{{ decision_screen_anchor_b_ab_airplane_trip }}\n\n{{ treatment_intro }}\n\nHere is a randomly generated number: 20\n\nHow many days did it take for the first airplane trip across the United States?\n\nDo you think the answer is above or below 20?",
+      "Look at the decision screen below:\n{{ decision_screen_anchor_b_airplane_trip }}\n\nNow provide your numerical answer to the question:\n\nHow many days did it take for the first airplane trip across the United States?\n\nThe randomly generated number was 20. Please provide your answer on a scale from 0 to 100. The slider starts at 50.",
+      "Look at the decision screen below:\n{{ decision_screen_anchor_b_ab_uzbekistan_pop }}\n\n{{ treatment_intro }}\n\nHere is a randomly generated number: 20\n\nWhat is the population of Uzbekistan in millions of people?\n\nDo you think the answer is above or below 20?",
+      "Look at the decision screen below:\n{{ decision_screen_anchor_b_uzbekistan_pop }}\n\nNow provide your numerical answer to the question:\n\nWhat is the population of Uzbekistan in millions of people?\n\nThe randomly generated number was 20. Please provide your answer on a scale from 0 to 100. The slider starts at 50.",
+      "Look at the decision screen below:\n{{ decision_screen_anchor_b_ab_eiffel_weight }}\n\n{{ treatment_intro }}\n\nHere is a randomly generated number: 20\n\nWhat is the weight of the Eiffel Tower in hundreds of tons?\n\nDo you think the answer is above or below 20?",
+      "Look at the decision screen below:\n{{ decision_screen_anchor_b_eiffel_weight }}\n\nNow provide your numerical answer to the question:\n\nWhat is the weight of the Eiffel Tower in hundreds of tons?\n\nThe randomly generated number was 20. Please provide your answer on a scale from 0 to 100. The slider starts at 50."
+    ],
+    "data": {
+      "anchor_b_ab_light_jupiter": {
+        "prior_questions": [
+          "_instruction_1",
+          "_instruction_2",
+          "_instruction_3",
+          "_instruction_4",
+          "_instruction_5",
+          "_instruction_6",
+          "_instruction_7",
+          "_instruction_8",
+          "_instruction_9"
+        ]
+      }
+    }
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "_instruction_1": 0,
+      "_instruction_2": 1,
+      "_instruction_3": 2,
+      "_instruction_4": 3,
+      "_instruction_5": 4,
+      "_instruction_6": 5,
+      "_instruction_7": 6,
+      "_instruction_8": 7,
+      "_instruction_9": 8,
+      "anchor_b_ab_light_jupiter": 9,
+      "anchor_b_light_jupiter": 10,
+      "anchor_b_ab_airplane_trip": 11,
+      "anchor_b_airplane_trip": 12,
+      "anchor_b_ab_uzbekistan_pop": 13,
+      "anchor_b_uzbekistan_pop": 14,
+      "anchor_b_ab_eiffel_weight": 15,
+      "anchor_b_eiffel_weight": 16
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 4,
+        "expression": "True",
+        "next_q": 5,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 5,
+        "expression": "True",
+        "next_q": 6,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 6,
+        "expression": "True",
+        "next_q": 7,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 7,
+        "expression": "True",
+        "next_q": 8,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 8,
+        "expression": "True",
+        "next_q": 9,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 9,
+        "expression": "True",
+        "next_q": 10,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 10,
+        "expression": "True",
+        "next_q": 11,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 11,
+        "expression": "True",
+        "next_q": 12,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 12,
+        "expression": "True",
+        "next_q": 13,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 13,
+        "expression": "True",
+        "next_q": 14,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 14,
+        "expression": "True",
+        "next_q": 15,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 15,
+        "expression": "True",
+        "next_q": 16,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 16,
+        "expression": "True",
+        "next_q": 17,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 17
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

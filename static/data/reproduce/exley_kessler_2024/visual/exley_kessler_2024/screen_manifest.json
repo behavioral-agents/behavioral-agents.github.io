@@ -1,0 +1,77 @@
+{
+  "paper_id": "exley_kessler_2024",
+  "mappings": [
+    {
+      "generated": "decision_b4_n2_d55_default.png",
+      "task_label": "Decision B4 N2 D55 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b4_n3_d53_default.png",
+      "task_label": "Decision B4 N3 D53 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b4_n4_d52_default.png",
+      "task_label": "Decision B4 N4 D52 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b4_n2_d57_default.png",
+      "task_label": "Decision B4 N2 D57 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b4_n3_d56_default.png",
+      "task_label": "Decision B4 N3 D56 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b4_n4_d54_default.png",
+      "task_label": "Decision B4 N4 D54 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b5_n2_d55_default.png",
+      "task_label": "Decision B5 N2 D55 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b5_n3_d53_default.png",
+      "task_label": "Decision B5 N3 D53 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b5_n4_d52_default.png",
+      "task_label": "Decision B5 N4 D52 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b5_n2_d57_default.png",
+      "task_label": "Decision B5 N2 D57 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b5_n3_d56_default.png",
+      "task_label": "Decision B5 N3 D56 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "decision_b5_n4_d54_default.png",
+      "task_label": "Decision B5 N4 D54 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_name": "switch_row",
+      "question_text": "You are participating in a behavioral economics experiment.\n\nLook at the decision table shown below:\n{{ decision_screen }}\n\nIn this table, each row is a different version of a choice between Set A (red) and Set B (blue). You must decide, for each row, whether you prefer Set A or Set B.\n\nYou can only switch from Set A to Set B at one point in the table (or choose the same set for all rows).\n\nAt which row (version number) would you switch from choosing Set A to choosing Set B?\nEnter 0 if you would choose Set A in every row.\nEnter 26 if you would choose Set B in every row.\nOtherwise enter the version number (1-25) where you switch to Set B.",
+      "min_value": 0,
+      "max_value": 26,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "switch_row"
+    ],
+    "survey_question_texts": [
+      "You are participating in a behavioral economics experiment.\n\nLook at the decision table shown below:\n{{ decision_screen }}\n\nIn this table, each row is a different version of a choice between Set A (red) and Set B (blue). You must decide, for each row, whether you prefer Set A or Set B.\n\nYou can only switch from Set A to Set B at one point in the table (or choose the same set for all rows).\n\nAt which row (version number) would you switch from choosing Set A to choosing Set B?\nEnter 0 if you would choose Set A in every row.\nEnter 26 if you would choose Set B in every row.\nOtherwise enter the version number (1-25) where you switch to Set B."
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "switch_row": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

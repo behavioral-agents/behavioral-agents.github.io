@@ -1,0 +1,111 @@
+{
+  "experiment_section": "Risk-taking (Realized) \u2014 Imas (2016) Study 1 Replication",
+  "instructions": [
+    {
+      "page": "intro_real2",
+      "screen_position": "full",
+      "description": "Welcome and introduction: Explains the experiment structure, duration, compensation, and the lottery investment task rules including payoff structure, endowment, and how the die determines outcomes.",
+      "sequence_order": 1,
+      "html_content": "Introduction&nbsp; Welcome to our study of decision-making. The study will last about 7 minutes. All the money you earn is yours to keep. You will be compensated $0.30 for the successful completion of this study. <br><br>In this study, you will play an investment game over several rounds. At the start of the study, you will be given an $8.00 endowment. In each round, you will have $2.00 available to invest in a lottery. You may invest any amount from $0 to $2.00 (in $0.25 increments).<br><br>The lottery works as follows: Before each round, you will be assigned a \"success number\" between 1 and 6. A die will then be rolled. If the die matches your success number, you WIN 7 times your investment. If the die does not match your success number, you LOSE your investment. Any amount you do not invest is kept.<br><br>You will play multiple rounds. Your total earnings will include your $8.00 endowment plus any investment gains or minus any investment losses."
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "R1_invst",
+          "screen_position": "full",
+          "question_name": "round1_investment",
+          "screen_type": "decision",
+          "description": "Round 1: Participant chooses how much of $2.00 to invest in the lottery (slider, $0\u2013$2 in $0.25 increments).",
+          "depends_on": null,
+          "parameters": {
+            "round": 1,
+            "endowment": 2.0,
+            "max_investment": 2.0,
+            "min_investment": 0.0,
+            "increment": 0.25,
+            "win_multiplier": 7,
+            "win_probability": 0.1667,
+            "lose_probability": 0.8333
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": "R2_invst",
+          "screen_position": "full",
+          "question_name": "round2_investment",
+          "screen_type": "decision",
+          "description": "Round 2: Participant chooses how much of $2.00 to invest in the lottery (slider, $0\u2013$2 in $0.25 increments).",
+          "depends_on": null,
+          "parameters": {
+            "round": 2,
+            "endowment": 2.0,
+            "max_investment": 2.0,
+            "min_investment": 0.0,
+            "increment": 0.25,
+            "win_multiplier": 7,
+            "win_probability": 0.1667,
+            "lose_probability": 0.8333
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "screens": [
+        {
+          "page": "R3_invst",
+          "screen_position": "full",
+          "question_name": "round3_investment",
+          "screen_type": "decision",
+          "description": "Round 3: Participant chooses how much of $2.00 to invest in the lottery (slider, $0\u2013$2 in $0.25 increments). After this round, the treatment condition (realized_loss or paper_loss) is applied.",
+          "depends_on": null,
+          "parameters": {
+            "round": 3,
+            "endowment": 2.0,
+            "max_investment": 2.0,
+            "min_investment": 0.0,
+            "increment": 0.25,
+            "win_multiplier": 7,
+            "win_probability": 0.1667,
+            "lose_probability": 0.8333
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "screens": [
+        {
+          "page": "R4_invst",
+          "screen_position": "full",
+          "question_name": "round4_investment",
+          "screen_type": "decision",
+          "description": "Round 4 (final): Participant chooses how much of $2.00 to invest in the lottery after treatment condition has been applied. Key outcome measure: investment level and change from round 3.",
+          "depends_on": "round3_investment",
+          "parameters": {
+            "round": 4,
+            "endowment": 2.0,
+            "max_investment": 2.0,
+            "min_investment": 0.0,
+            "increment": 0.25,
+            "win_multiplier": 7,
+            "win_probability": 0.1667,
+            "lose_probability": 0.8333,
+            "treatment_applied": true,
+            "treatment_conditions": [
+              "realized_loss",
+              "paper_loss"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

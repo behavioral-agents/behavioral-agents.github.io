@@ -1,0 +1,29 @@
+{
+  "paper_id": "exley_kessler_2024_correlation",
+  "mappings": [
+    {
+      "generated": "corr_q1_default.png",
+      "task_label": "Corr Q1 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "corr_q2_default.png",
+      "task_label": "Corr Q2 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "corr_q5_default.png",
+      "task_label": "Corr Q5 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "corr_q6_default.png",
+      "task_label": "Corr Q6 Default",
+      "original_pages": [],
+      "screen_position": "full"
+    }
+  ]
+}

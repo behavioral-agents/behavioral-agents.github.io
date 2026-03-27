@@ -1,0 +1,29 @@
+{
+  "paper_id": "imas_2016",
+  "mappings": [
+    {
+      "generated": "round1_investment_default.png",
+      "task_label": "Round1 Investment Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "round2_investment_default.png",
+      "task_label": "Round2 Investment Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "round3_investment_default.png",
+      "task_label": "Round3 Investment Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "round4_investment_default.png",
+      "task_label": "Round4 Investment Default",
+      "original_pages": [],
+      "screen_position": "full"
+    }
+  ]
+}

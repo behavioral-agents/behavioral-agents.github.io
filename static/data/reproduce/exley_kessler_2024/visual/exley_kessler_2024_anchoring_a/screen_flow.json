@@ -1,0 +1,226 @@
+{
+  "experiment_section": "Anchoring Study A in Motivated Errors",
+  "instructions": [
+    {
+      "page": "Q4.2",
+      "screen_position": "full",
+      "description": "Overview: Explains the experiment structure \u2014 two parts, understanding questions, part-that-counts payment mechanism.",
+      "sequence_order": 1,
+      "html_content": "Overview : Throughout this study, you will be provided with instructions.&nbsp; Please carefully read all instructions.&nbsp; Sometimes, you will be asked understanding questions about the instructions to make sure you understand them before proceeding."
+    },
+    {
+      "page": "Q4.4",
+      "screen_position": "full",
+      "description": "Payment overview: Explains the two-part structure, show-up fee, and that one part will be randomly selected as the part-that-counts.",
+      "sequence_order": 2,
+      "html_content": "Your Payment: This study involves two&nbsp;parts &mdash; Part 1 and Part 2&nbsp;&mdash; followed by a short survey. For completing this study, you will receive a minimum payment of ${e://Field/showup}"
+    },
+    {
+      "page": "Q5.2",
+      "screen_position": "full",
+      "description": "Part 1 Instructions: Explains the list-based decision task in Part 1 \u2014 each row presents two payment options, participant switches from left to right at their preferred row.",
+      "sequence_order": 3,
+      "html_content": "Part 1 Instructions &nbsp; In Part 1, you will have to make several decisions by completing one list. &nbsp;Each row of the list will present two payment options. &nbsp; - The payment option on the left..."
+    },
+    {
+      "page": "Q84",
+      "screen_position": "full",
+      "description": "Part 2 Instructions: Explains that participants will guess answers to trivia questions, that each question is preceded by an anchor comparison question, and that they have 15 seconds per main question.",
+      "sequence_order": 4,
+      "html_content": "Instructions for Part 2: &nbsp; In Part 2, you&nbsp;will be asked to guess the answer to ${e://Field/main_decisions} main questions.&nbsp;Prior to answering each main question, you will first be asked..."
+    },
+    {
+      "page": "Q74",
+      "screen_position": "full",
+      "description": "Part 2 payment rule: Explains that if Part 2 is the part-that-counts, one main question is randomly selected and the payment allocated in that question is distributed.",
+      "sequence_order": 5,
+      "html_content": "If Part 2&nbsp;is randomly selected as the part-that-counts, one main question from this part will be randomly selected. Then, the payment&nbsp;that is allocated in that question will be distributed.&"
+    },
+    {
+      "page": "Q88",
+      "screen_position": "full",
+      "description": "Treatment instruction (Overestimate / too-high incentive): If guess is too high (\u22653 above actual), charity gets stake cents; describes the payment rule for the overestimate treatment.",
+      "sequence_order": 6,
+      "html_content": "If your guess is too&nbsp;high &nbsp;because it is 3&nbsp;or more above the actual number, ${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/stake} cents .&nbsp; If your"
+    },
+    {
+      "page": "Q86",
+      "screen_position": "full",
+      "description": "Treatment instruction (Underestimate / too-low incentive for charity): If guess is too low (\u22653 below actual), charity gets stake cents; describes the payment rule for the underestimate treatment.",
+      "sequence_order": 7,
+      "html_content": "If your guess is too&nbsp;low &nbsp;because it is 3&nbsp;or more below the actual number, ${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/stake} cents.&nbsp; If your g"
+    },
+    {
+      "page": "Q81",
+      "screen_position": "full",
+      "description": "Treatment instruction (alternative too-low incentive variant): If guess is too low (\u22653 below actual), charity gets stake cents; variant of the underestimate payment rule screen.",
+      "sequence_order": 8,
+      "html_content": "If your guess is too&nbsp;low &nbsp;because it is 3&nbsp;or more below the actual number, ${e://Field/charityA_name}&nbsp;will be allocated a donation of&nbsp;${e://Field/stake} cents .&nbsp; If your "
+    },
+    {
+      "page": "Q98",
+      "screen_position": "full",
+      "description": "Comprehension check passed confirmation: Tells participant they answered the understanding question correctly and reminds them they have 15 seconds per main question in Part 2.",
+      "sequence_order": 9,
+      "html_content": "That&#39;s correct!&nbsp; Please proceed to read begin answering the main questions in Part 2.&nbsp; Recall that you will only have 15 seconds to answer each main question.&nbsp;&nbsp;"
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "display_20",
+          "screen_position": "full",
+          "question_name": "anchor_a_light_jupiter",
+          "screen_type": "decision",
+          "description": "Question 1 (low anchor = 20): Anchor comparison \u2014 is light travel time from Sun to Jupiter more or less than 20 minutes? Then slider guess on 0\u2013100 scale.",
+          "depends_on": null,
+          "parameters": {
+            "question_topic": "Minutes for light to travel from Sun to Jupiter",
+            "anchor": 20,
+            "anchor_type": "low",
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 20,
+            "correct_answer": 43,
+            "scale_unit": "minutes"
+          }
+        },
+        {
+          "page": "Guess_1_low",
+          "screen_position": "full",
+          "question_name": "anchor_a_light_jupiter",
+          "screen_type": "decision",
+          "description": "Question 1 slider response (low anchor): Participant moves slider (0\u2013100, default=20) to enter their guess for light travel time Sun to Jupiter.",
+          "depends_on": "display_20",
+          "parameters": {
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 20,
+            "decimals": 0,
+            "gridlines": 10,
+            "anchor": 20
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": "Q449",
+          "screen_position": "full",
+          "question_name": "anchor_a_airplane_trip",
+          "screen_type": "decision",
+          "description": "Question 2 (low anchor = 20): Anchor comparison \u2014 did the first airplane trip across the US take more or less than 20 days? Then slider guess on 0\u2013100 scale.",
+          "depends_on": null,
+          "parameters": {
+            "question_topic": "Days for first airplane trip across the continental US (Calbraith Perry Rodgers, 1911)",
+            "anchor": 20,
+            "anchor_type": "low",
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 20,
+            "correct_answer": 49,
+            "scale_unit": "days"
+          }
+        },
+        {
+          "page": "Q454",
+          "screen_position": "full",
+          "question_name": "anchor_a_airplane_trip",
+          "screen_type": "decision",
+          "description": "Question 2 slider response (low anchor): Participant moves slider (0\u2013100, default=20) to enter their guess for days of first US airplane trip.",
+          "depends_on": "Q449",
+          "parameters": {
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 20,
+            "decimals": 0,
+            "gridlines": 10,
+            "anchor": 20
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "screens": [
+        {
+          "page": "Q458",
+          "screen_position": "full",
+          "question_name": "anchor_a_uzbekistan_pop",
+          "screen_type": "decision",
+          "description": "Question 3 (low anchor = 20): Anchor comparison \u2014 is the population of Uzbekistan (2018) more or less than 20 million? Then slider guess on 0\u2013100 scale.",
+          "depends_on": null,
+          "parameters": {
+            "question_topic": "Population of Uzbekistan in millions (as of 2018)",
+            "anchor": 20,
+            "anchor_type": "low",
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 20,
+            "correct_answer": 33,
+            "scale_unit": "millions"
+          }
+        },
+        {
+          "page": "Q463",
+          "screen_position": "full",
+          "question_name": "anchor_a_uzbekistan_pop",
+          "screen_type": "decision",
+          "description": "Question 3 slider response (low anchor): Participant moves slider (0\u2013100, default=20) to enter their guess for Uzbekistan population in millions.",
+          "depends_on": "Q458",
+          "parameters": {
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 20,
+            "decimals": 0,
+            "gridlines": 10,
+            "anchor": 20
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "screens": [
+        {
+          "page": "Q467",
+          "screen_position": "full",
+          "question_name": "anchor_a_eiffel_weight",
+          "screen_type": "decision",
+          "description": "Question 4 (low anchor = 20): Anchor comparison \u2014 is the weight of the Eiffel Tower's metal structure more or less than 20 hundred tons? Then slider guess on 0\u2013100 scale.",
+          "depends_on": null,
+          "parameters": {
+            "question_topic": "Weight of the Eiffel Tower metal structure in hundreds of tons",
+            "anchor": 20,
+            "anchor_type": "low",
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 20,
+            "correct_answer": 73,
+            "scale_unit": "hundreds of tons"
+          }
+        },
+        {
+          "page": "Q472",
+          "screen_position": "full",
+          "question_name": "anchor_a_eiffel_weight",
+          "screen_type": "decision",
+          "description": "Question 4 slider response (low anchor): Participant moves slider (0\u2013100, default=20) to enter their guess for Eiffel Tower weight in hundreds of tons.",
+          "depends_on": "Q467",
+          "parameters": {
+            "slider_min": 0,
+            "slider_max": 100,
+            "slider_default": 20,
+            "decimals": 0,
+            "gridlines": 10,
+            "anchor": 20
+          }
+        }
+      ]
+    }
+  ]
+}

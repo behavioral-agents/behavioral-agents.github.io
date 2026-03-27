@@ -32,10 +32,10 @@
   "visual": [
     {
       "model": "claude-sonnet-4-6",
-      "n_papers": 4,
-      "mean_wasserstein": 1.9554,
-      "mean_fidelity": -1.4048,
-      "nonsig_rate": 0.2188
+      "n_papers": 8,
+      "mean_wasserstein": 12.6881,
+      "mean_fidelity": -1.3732,
+      "nonsig_rate": 0.3125
     }
   ]
 }
