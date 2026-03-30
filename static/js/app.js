@@ -1198,6 +1198,7 @@ async function showReproduction(paperId, modality, baseId) {
 
     // Build chronological flow items
     const flowItems = [];
+    const shownOriginals = new Set();  // each original page shown at most once
 
     if (flowData) {
       // Instructions (deduplicate by page — same page shown once to LLM)
@@ -1217,10 +1218,12 @@ async function showReproduction(paperId, modality, baseId) {
       let instrIdx = 0;
       for (const [page, info] of instrByPage) {
         instrIdx++;
+        const origPage = (page && !shownOriginals.has(page)) ? page : null;
+        if (origPage) shownOriginals.add(origPage);
         flowItems.push({
           type: 'instruction',
           label: info.descriptions.join(' · '),
-          originalPage: page,
+          originalPage: origPage,
           generatedFile: `_instruction_${instrIdx}_default.png`,
           sequence: info.sequence,
         });
@@ -1286,10 +1289,13 @@ async function showReproduction(paperId, modality, baseId) {
           for (const v of toShow) {
             const mEntry = manifestMap[v.file];
             const condLabel = v.condition === 'default' ? '' : ` [${v.condition.replace(/_/g, ' ')}]`;
+            const rawOrig = screen.page || (mEntry?.original_pages?.[0]?.replace('.png','')) || null;
+            const origPage = (rawOrig && !shownOriginals.has(rawOrig)) ? rawOrig : null;
+            if (origPage) shownOriginals.add(origPage);
             flowItems.push({
               type: 'decision',
               label: (mEntry?.task_label || screen.description || qname) + condLabel,
-              originalPage: screen.page || (mEntry?.original_pages?.[0]?.replace('.png','')) || null,
+              originalPage: origPage,
               generatedFile: v.file,
               sequence: 100 + (trial.trial_number || 0) * 10 + (flowItems.length),
             });
@@ -1299,10 +1305,13 @@ async function showReproduction(paperId, modality, baseId) {
     } else if (manifest && manifest.mappings) {
       // Fallback: no flow data, use manifest only (decision screens)
       for (const m of manifest.mappings) {
+        const rawOrig = m.original_pages?.[0]?.replace('.png','') || null;
+        const origPage = (rawOrig && !shownOriginals.has(rawOrig)) ? rawOrig : null;
+        if (origPage) shownOriginals.add(origPage);
         flowItems.push({
           type: 'decision',
           label: m.task_label || m.generated,
-          originalPage: m.original_pages?.[0]?.replace('.png','') || null,
+          originalPage: origPage,
           generatedFile: m.generated,
           sequence: flowItems.length,
         });
