@@ -23,19 +23,19 @@
     },
     {
       "model": "claude-sonnet-4-6",
-      "n_papers": 9,
-      "mean_wasserstein": 12.8546,
-      "mean_fidelity": -1.2742,
-      "nonsig_rate": 0.2778
+      "n_papers": 12,
+      "mean_wasserstein": 10.614,
+      "mean_fidelity": -1.0682,
+      "nonsig_rate": 0.2083
     }
   ],
   "visual": [
     {
       "model": "claude-sonnet-4-6",
-      "n_papers": 8,
-      "mean_wasserstein": 13.0508,
-      "mean_fidelity": -1.4264,
-      "nonsig_rate": 0.2917
+      "n_papers": 11,
+      "mean_wasserstein": 10.5399,
+      "mean_fidelity": -1.1401,
+      "nonsig_rate": 0.2303
     }
   ]
 }

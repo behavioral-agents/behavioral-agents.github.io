@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_name": "classify_number",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_classify_number }}\n\nYou will be shown a number. Your task is to quickly decide whether the number is LARGER or SMALLER than 65.\n\nThe number is: {{ stimulus_value }}\n\nIs this number LARGER than 65 or SMALLER than 65?",
+      "question_options": [
+        "LARGER",
+        "SMALLER"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "classify_number"
+    ],
+    "survey_question_texts": [
+      "Look at the decision screen below:\n{{ decision_screen_classify_number }}\n\nYou will be shown a number. Your task is to quickly decide whether the number is LARGER or SMALLER than 65.\n\nThe number is: {{ stimulus_value }}\n\nIs this number LARGER than 65 or SMALLER than 65?"
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "classify_number": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

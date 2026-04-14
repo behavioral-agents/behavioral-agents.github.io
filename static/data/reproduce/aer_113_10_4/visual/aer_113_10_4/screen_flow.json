@@ -1,0 +1,137 @@
+{
+  "experiment_section": "Experiment 1: Intrinsic Information Preferences and Skewness",
+  "instructions": [
+    {
+      "page": "page_002",
+      "screen_position": "top",
+      "description": "General study instructions: rules of conduct, overview of Study 1 (pen vs postcard) and Study 2 (lottery), payment info, and random number generator explanation",
+      "sequence_order": 1
+    },
+    {
+      "page": "page_002",
+      "screen_position": "bottom",
+      "description": "Practice round (A1): elicitation of preference between pen and postcard \u2014 practice for the main choice task",
+      "sequence_order": 2
+    },
+    {
+      "page": "page_003",
+      "screen_position": "top",
+      "description": "Practice round (A2): elicitation of preference strength for pen vs postcard \u2014 practice for preference intensity rating",
+      "sequence_order": 3
+    },
+    {
+      "page": "page_003",
+      "screen_position": "bottom",
+      "description": "Willingness to Switch Elicitation: transcription of video instructions explaining the 10-question switching task and incentive mechanism",
+      "sequence_order": 4
+    },
+    {
+      "page": "page_004",
+      "screen_position": "full",
+      "description": "Practice round (A3): willingness to switch elicitation (10 questions, 1\u201350 cents compensation) for pen vs postcard \u2014 practice for the main switching task",
+      "sequence_order": 5
+    },
+    {
+      "page": "page_010",
+      "screen_position": "full",
+      "description": "Overview of checks and ancillary questions: comprehension questions, attention checks, confusion prompt, demographics, happiness questionnaire, and filler task instructions",
+      "sequence_order": 6
+    },
+    {
+      "page": "page_013",
+      "screen_position": "bottom",
+      "description": "Screenshot A6 \u2014 Preamble to willingness to switch elicitation: displays chosen option graphically and explains the switching mechanism and random question selection",
+      "sequence_order": 9
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "page_012",
+          "screen_position": "full",
+          "question_name": "infochoice",
+          "screen_type": "decision",
+          "description": "Screenshot A4 \u2014 Choice page for T3: participant chooses between Option 1 (positively skewed: 20% red/80% black overall; red\u219275% win, black\u219244% win) and Option 2 (negatively skewed: 80% red/20% black overall; red\u219256% win, black\u219225% win)",
+          "depends_on": null,
+          "parameters": {
+            "lottery_win_probability": 0.5,
+            "option1": {
+              "label": "Option 1 (positively skewed)",
+              "box_if_won": {
+                "red": 30,
+                "black": 70
+              },
+              "box_if_lost": {
+                "red": 10,
+                "black": 90
+              },
+              "overall_red_probability": 0.2,
+              "overall_black_probability": 0.8,
+              "posterior_win_given_red": 0.75,
+              "posterior_win_given_black": 0.44
+            },
+            "option2": {
+              "label": "Option 2 (negatively skewed)",
+              "box_if_won": {
+                "red": 90,
+                "black": 10
+              },
+              "box_if_lost": {
+                "red": 70,
+                "black": 30
+              },
+              "overall_red_probability": 0.8,
+              "overall_black_probability": 0.2,
+              "posterior_win_given_red": 0.56,
+              "posterior_win_given_black": 0.25
+            }
+          }
+        },
+        {
+          "page": "page_013",
+          "screen_position": "top",
+          "question_name": "preference_intensity",
+          "screen_type": "decision",
+          "description": "Screenshot A5 \u2014 Preference strength elicitation: 0\u201310 scale rating how strongly participant preferred their chosen option over the alternative",
+          "depends_on": "infochoice",
+          "parameters": {
+            "scale_min": 0,
+            "scale_min_label": "Completely indifferent between the two options",
+            "scale_max": 10,
+            "scale_max_label": "Very strong preference for chosen option"
+          }
+        },
+        {
+          "page": "page_014",
+          "screen_position": "top",
+          "question_name": "min_compensation_to_switch",
+          "screen_type": "decision",
+          "description": "Screenshot A7 \u2014 Willingness to switch elicitation: 10 questions asking if participant would change their information structure choice for monetary compensation ranging from 1 to 50 cents",
+          "depends_on": "infochoice",
+          "parameters": {
+            "num_questions": 10,
+            "compensation_amounts_cents": [
+              1,
+              5,
+              10,
+              15,
+              20,
+              25,
+              30,
+              35,
+              40,
+              50
+            ],
+            "response_options": [
+              "No",
+              "Yes"
+            ],
+            "randomly_selected_question_determines_payment": true
+          }
+        }
+      ]
+    }
+  ]
+}

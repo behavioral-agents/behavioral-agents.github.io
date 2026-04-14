@@ -1,0 +1,62 @@
+{
+  "questions": [
+    {
+      "question_name": "comprehension_da_mechanism",
+      "question_text": "In this Paris high school admissions process, suppose your academic grade score is 12.5, and last year's admission cutoff for School A was 14.0. If you list School A as your top choice, what is most likely to happen?",
+      "question_options": [
+        "You will definitely be admitted to School A since it is your top choice",
+        "You are unlikely to be admitted to School A, because students with higher scores than yours will take the available seats first",
+        "Listing School A first guarantees you a spot if there are any empty seats",
+        "Your chance at School A is equal to every other applicant regardless of score",
+        "You will be assigned School A only if no other students list it"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "school_ranking",
+      "question_text": "{{ context }}\n\nPlease provide your rank-order list of schools from most preferred (#1) to least preferred. You may list between 1 and 8 schools out of the 11 available. Write your answer as a comma-separated list of school numbers in order from most to least preferred. Example: '3, 1, 7, 5' means you prefer School 3 most, then School 1, then School 7, then School 5.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "comprehension_da_mechanism",
+      "school_ranking"
+    ],
+    "survey_question_texts": [
+      "In this Paris high school admissions process, suppose your academic grade score is 12.5, and last year's admission cutoff for School A was 14.0. If you list School A as your top choice, what is most likely to happen?",
+      "{{ context }}\n\nPlease provide your rank-order list of schools from most preferred (#1) to least preferred. You may list between 1 and 8 schools out of the 11 available. Write your answer as a comma-separated list of school numbers in order from most to least preferred. Example: '3, 1, 7, 5' means you prefer School 3 most, then School 1, then School 7, then School 5."
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "comprehension_da_mechanism": 0,
+      "school_ranking": 1
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 2
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}
