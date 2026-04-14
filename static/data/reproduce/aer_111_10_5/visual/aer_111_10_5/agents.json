@@ -1,0 +1,406 @@
+{
+  "agent_list": [
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 0
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 1
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 2
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 3
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 4
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 5
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 6
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 7
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 8
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 9
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 10
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 11
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 12
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 13
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 14
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 15
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 16
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 17
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 18
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 19
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 20
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 21
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 22
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 23
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 24
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 25
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 26
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 27
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 28
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 29
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 30
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 31
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 32
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 33
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 34
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 35
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 36
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 37
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 38
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 39
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 40
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 41
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 42
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 43
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 44
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 45
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 46
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 47
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 48
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "persona": "You are a participant in a psychological experiment involving rapid number classification.",
+        "_subject_id": 49
+      },
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "AgentList"
+}

@@ -1,0 +1,17 @@
+{
+  "paper_id": "aer_111_10_5",
+  "mappings": [
+    {
+      "generated": "comprehension_threshold_default.png",
+      "task_label": "Comprehension Threshold Default",
+      "original_pages": [],
+      "screen_position": "full"
+    },
+    {
+      "generated": "classify_number_default.png",
+      "task_label": "Classify Number Default",
+      "original_pages": [],
+      "screen_position": "full"
+    }
+  ]
+}

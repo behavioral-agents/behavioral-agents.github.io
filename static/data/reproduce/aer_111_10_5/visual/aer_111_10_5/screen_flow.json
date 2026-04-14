@@ -1,0 +1,94 @@
+{
+  "experiment_section": "Text-reconstructed (unknown)",
+  "instructions": [],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": "full",
+          "question_name": "comprehension_threshold",
+          "screen_type": "decision",
+          "description": "Decision screen for comprehension_threshold",
+          "depends_on": null,
+          "parameters": {
+            "threshold": 65,
+            "stimulus_levels": [
+              35,
+              45,
+              55,
+              65,
+              75,
+              85,
+              95
+            ],
+            "n_stimulus_levels": 7,
+            "lower_response_asymptote": 0.04,
+            "upper_response_asymptote": 0.96,
+            "logistic_scale_parameter": 10.0,
+            "binary_actions": [
+              "larger",
+              "smaller"
+            ],
+            "payoff_correct": 1,
+            "payoff_incorrect": 0,
+            "regime_game_transaction_cost_example": 0.3,
+            "regime_game_threshold_example": 0.5,
+            "motion_coherence_range_min": -1.0,
+            "motion_coherence_range_max": 1.0,
+            "information_cost_weight_theta": 1.0,
+            "mutual_information_prediction": "step_function_at_threshold",
+            "neighborhood_cost_prediction": "smooth_sigmoid_psychometric_function",
+            "regime_change_equilibrium_mutual_info": "multiple_equilibria",
+            "regime_change_equilibrium_neighborhood_cost": "unique_monotone_equilibrium"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": "full",
+          "question_name": "classify_number",
+          "screen_type": "decision",
+          "description": "Decision screen for classify_number",
+          "depends_on": null,
+          "parameters": {
+            "threshold": 65,
+            "stimulus_levels": [
+              35,
+              45,
+              55,
+              65,
+              75,
+              85,
+              95
+            ],
+            "n_stimulus_levels": 7,
+            "lower_response_asymptote": 0.04,
+            "upper_response_asymptote": 0.96,
+            "logistic_scale_parameter": 10.0,
+            "binary_actions": [
+              "larger",
+              "smaller"
+            ],
+            "payoff_correct": 1,
+            "payoff_incorrect": 0,
+            "regime_game_transaction_cost_example": 0.3,
+            "regime_game_threshold_example": 0.5,
+            "motion_coherence_range_min": -1.0,
+            "motion_coherence_range_max": 1.0,
+            "information_cost_weight_theta": 1.0,
+            "mutual_information_prediction": "step_function_at_threshold",
+            "neighborhood_cost_prediction": "smooth_sigmoid_psychometric_function",
+            "regime_change_equilibrium_mutual_info": "multiple_equilibria",
+            "regime_change_equilibrium_neighborhood_cost": "unique_monotone_equilibrium"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "scenarios": [
+    {
+      "condition": "stim_35",
+      "stimulus_value": 35,
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "stim_45",
+      "stimulus_value": 45,
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "stim_55",
+      "stimulus_value": 55,
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "stim_65",
+      "stimulus_value": 65,
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "stim_75",
+      "stimulus_value": 75,
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "stim_85",
+      "stimulus_value": 85,
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "stim_95",
+      "stimulus_value": 95,
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "ScenarioList"
+}

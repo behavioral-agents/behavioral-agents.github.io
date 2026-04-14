@@ -1,0 +1,95 @@
+{
+  "questions": [
+    {
+      "question_name": "infochoice",
+      "question_text": "['Example \u2014 Treatment 3: (0.3, 0.9) vs (0.9, 0.3)]\\n\\nOption 1:\\n  Box 1 (if you WON): {{ option1_box1_red }} red balls, {{ option1_box1_black }} black balls\\n  Box 2 (if you LOST): {{ option1_box2_red }} red balls, {{ option1_box2_black }} black balls\\n  Overall: {{ option1_overall_red_pct }} percent red, {{ option1_overall_black_pct }} percent black\\n  If red ball drawn: {{ option1_posterior_red_pct }}% chance you won | If black ball drawn: {{ option1_posterior_black_pct }}% chance you won\\n\\nOption 2:\\n  Box 1 (if you WON): {{ option2_box1_red }} red balls, {{ option2_box1_black }} black balls\\n  Box 2 (if you LOST): {{ option2_box2_red }} red balls, {{ option2_box2_black }} black balls\\n  Overall: {{ option2_overall_red_pct }} percent red, {{ option2_overall_black_pct }} percent black\\n  If red ball drawn: {{ option2_posterior_red_pct }}% chance you won | If black ball drawn: {{ option2_posterior_black_pct }}% chance you won\\n\\nWhich option do you prefer? You must choose one option even if one of them provides no information.\\n\\nAfter choosing, you will indicate your preference strength on a scale from 0 (completely indifferent) to 10 (extremely strong preference for chosen option). You will also be asked: what is the minimum amount in cents (between 1 and 50 cents) you would need to receive to switch from your preferred option to the other option?\\n```']",
+      "question_options": [
+        "Option 1",
+        "Option 2"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "preference_intensity",
+      "question_text": "After choosing, you will indicate your preference strength on a scale from 0 (completely indifferent) to 10 (extremely strong preference for chosen option). You will also be asked: what is the minimum amount in cents (between 1 and 50 cents) you would need to receive to switch from your preferred option to the other option?",
+      "question_options": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "option_labels": {
+        "0": "completely indifferent",
+        "10": "extremely strong preference for chosen option"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "minimum_compensation",
+      "question_text": "What is the minimum amount in cents (between 1 and 50 cents) you would need to receive to switch from your preferred option to the other option?",
+      "min_value": 1,
+      "max_value": 50,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "infochoice",
+      "preference_intensity",
+      "minimum_compensation"
+    ],
+    "survey_question_texts": [
+      "['Example \u2014 Treatment 3: (0.3, 0.9) vs (0.9, 0.3)]\\n\\nOption 1:\\n  Box 1 (if you WON): {{ option1_box1_red }} red balls, {{ option1_box1_black }} black balls\\n  Box 2 (if you LOST): {{ option1_box2_red }} red balls, {{ option1_box2_black }} black balls\\n  Overall: {{ option1_overall_red_pct }} percent red, {{ option1_overall_black_pct }} percent black\\n  If red ball drawn: {{ option1_posterior_red_pct }}% chance you won | If black ball drawn: {{ option1_posterior_black_pct }}% chance you won\\n\\nOption 2:\\n  Box 1 (if you WON): {{ option2_box1_red }} red balls, {{ option2_box1_black }} black balls\\n  Box 2 (if you LOST): {{ option2_box2_red }} red balls, {{ option2_box2_black }} black balls\\n  Overall: {{ option2_overall_red_pct }} percent red, {{ option2_overall_black_pct }} percent black\\n  If red ball drawn: {{ option2_posterior_red_pct }}% chance you won | If black ball drawn: {{ option2_posterior_black_pct }}% chance you won\\n\\nWhich option do you prefer? You must choose one option even if one of them provides no information.\\n\\nAfter choosing, you will indicate your preference strength on a scale from 0 (completely indifferent) to 10 (extremely strong preference for chosen option). You will also be asked: what is the minimum amount in cents (between 1 and 50 cents) you would need to receive to switch from your preferred option to the other option?\\n```']",
+      "After choosing, you will indicate your preference strength on a scale from 0 (completely indifferent) to 10 (extremely strong preference for chosen option). You will also be asked: what is the minimum amount in cents (between 1 and 50 cents) you would need to receive to switch from your preferred option to the other option?",
+      "What is the minimum amount in cents (between 1 and 50 cents) you would need to receive to switch from your preferred option to the other option?"
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "infochoice": 0,
+      "preference_intensity": 1,
+      "minimum_compensation": 2
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 3
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

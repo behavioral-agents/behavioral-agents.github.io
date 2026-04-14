@@ -1,0 +1,190 @@
+{
+  "questions": [
+    {
+      "question_name": "_instruction_1",
+      "question_text": "Please carefully read the following experiment instructions (page 1 of 5: General study instructions: rules of conduct, overview of Study 1 (pen vs postcard) and Study 2 (lottery), payment info, and random number generator explanation | Practice round (A1): elicitation of preference between pen and postcard \u2014 practice for the main choice task).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_2",
+      "question_text": "Please carefully read the following experiment instructions (page 2 of 5: Practice round (A2): elicitation of preference strength for pen vs postcard \u2014 practice for preference intensity rating | Willingness to Switch Elicitation: transcription of video instructions explaining the 10-question switching task and incentive mechanism).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_3",
+      "question_text": "Please carefully read the following experiment instructions (page 3 of 5: Practice round (A3): willingness to switch elicitation (10 questions, 1\u201350 cents compensation) for pen vs postcard \u2014 practice for the main switching task).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_4",
+      "question_text": "Please carefully read the following experiment instructions (page 4 of 5: Overview of checks and ancillary questions: comprehension questions, attention checks, confusion prompt, demographics, happiness questionnaire, and filler task instructions).\n{{ instruction_screen_4 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "_instruction_5",
+      "question_text": "Please carefully read the following experiment instructions (page 5 of 5: Screenshot A6 \u2014 Preamble to willingness to switch elicitation: displays chosen option graphically and explains the switching mechanism and random question selection).\n{{ instruction_screen_5 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "infochoice",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_infochoice }}\n\nYou are participating in an experiment. As you entered, you received a raffle ticket from a roll of tickets. The experimenter rolled a ten-sided die and covered it with a cup. You could see the die was rolled but could not see the outcome. Your computer program knows whether the last digit of your ticket number matches the die outcome. If both the die outcome and the last digit of your ticket are odd, or both are even, you won $10; otherwise, you did not win any additional money. There is a 50 percent chance that you have won.\n\nYou will now choose between two clue-generating options that will give you some information about whether or not you won. Each option uses two boxes, each containing 100 colored balls (red and black). The computer will draw one ball from Box 1 if you won and from Box 2 if you did not win. You will see the color of the ball but not which box it was drawn from.\n\nOption 1:\n  Box 1 (if you WON): {{ option1_box1_red }} red balls, {{ option1_box1_black }} black balls\n  Box 2 (if you LOST): {{ option1_box2_red }} red balls, {{ option1_box2_black }} black balls\n  Overall: {{ option1_overall_red_pct }} percent red, {{ option1_overall_black_pct }} percent black\n  If red ball drawn: {{ option1_posterior_red_pct }}% chance you won\n  If black ball drawn: {{ option1_posterior_black_pct }}% chance you won\n\nOption 2:\n  Box 1 (if you WON): {{ option2_box1_red }} red balls, {{ option2_box1_black }} black balls\n  Box 2 (if you LOST): {{ option2_box2_red }} red balls, {{ option2_box2_black }} black balls\n  Overall: {{ option2_overall_red_pct }} percent red, {{ option2_overall_black_pct }} percent black\n  If red ball drawn: {{ option2_posterior_red_pct }}% chance you won\n  If black ball drawn: {{ option2_posterior_black_pct }}% chance you won\n\nWhich option do you prefer? You must choose one option even if one of them provides no information.",
+      "question_options": [
+        "Option 1",
+        "Option 2"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "preference_intensity",
+      "question_text": "Look at the decision screen below:\n{{ decision_screen_preference_intensity }}\n\nPlease indicate your preference strength on a scale from 0 (completely indifferent) to 10 (extremely strong preference for chosen option).",
+      "question_options": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "option_labels": {
+        "0": "completely indifferent",
+        "10": "extremely strong preference for chosen option"
+      },
+      "question_type": "linear_scale",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "minimum_compensation",
+      "question_text": "What is the minimum amount in cents (between 1 and 50 cents) you would need to receive to switch from your preferred option to the other option?",
+      "min_value": 1,
+      "max_value": 50,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "_instruction_1",
+      "_instruction_2",
+      "_instruction_3",
+      "_instruction_4",
+      "_instruction_5",
+      "infochoice",
+      "preference_intensity",
+      "minimum_compensation"
+    ],
+    "survey_question_texts": [
+      "Please carefully read the following experiment instructions (page 1 of 5: General study instructions: rules of conduct, overview of Study 1 (pen vs postcard) and Study 2 (lottery), payment info, and random number generator explanation | Practice round (A1): elicitation of preference between pen and postcard \u2014 practice for the main choice task).\n{{ instruction_screen_1 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 2 of 5: Practice round (A2): elicitation of preference strength for pen vs postcard \u2014 practice for preference intensity rating | Willingness to Switch Elicitation: transcription of video instructions explaining the 10-question switching task and incentive mechanism).\n{{ instruction_screen_2 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 3 of 5: Practice round (A3): willingness to switch elicitation (10 questions, 1\u201350 cents compensation) for pen vs postcard \u2014 practice for the main switching task).\n{{ instruction_screen_3 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 4 of 5: Overview of checks and ancillary questions: comprehension questions, attention checks, confusion prompt, demographics, happiness questionnaire, and filler task instructions).\n{{ instruction_screen_4 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Please carefully read the following experiment instructions (page 5 of 5: Screenshot A6 \u2014 Preamble to willingness to switch elicitation: displays chosen option graphically and explains the switching mechanism and random question selection).\n{{ instruction_screen_5 }}\n\nType 'ok' to confirm you have read and understood these instructions.",
+      "Look at the decision screen below:\n{{ decision_screen_infochoice }}\n\nYou are participating in an experiment. As you entered, you received a raffle ticket from a roll of tickets. The experimenter rolled a ten-sided die and covered it with a cup. You could see the die was rolled but could not see the outcome. Your computer program knows whether the last digit of your ticket number matches the die outcome. If both the die outcome and the last digit of your ticket are odd, or both are even, you won $10; otherwise, you did not win any additional money. There is a 50 percent chance that you have won.\n\nYou will now choose between two clue-generating options that will give you some information about whether or not you won. Each option uses two boxes, each containing 100 colored balls (red and black). The computer will draw one ball from Box 1 if you won and from Box 2 if you did not win. You will see the color of the ball but not which box it was drawn from.\n\nOption 1:\n  Box 1 (if you WON): {{ option1_box1_red }} red balls, {{ option1_box1_black }} black balls\n  Box 2 (if you LOST): {{ option1_box2_red }} red balls, {{ option1_box2_black }} black balls\n  Overall: {{ option1_overall_red_pct }} percent red, {{ option1_overall_black_pct }} percent black\n  If red ball drawn: {{ option1_posterior_red_pct }}% chance you won\n  If black ball drawn: {{ option1_posterior_black_pct }}% chance you won\n\nOption 2:\n  Box 1 (if you WON): {{ option2_box1_red }} red balls, {{ option2_box1_black }} black balls\n  Box 2 (if you LOST): {{ option2_box2_red }} red balls, {{ option2_box2_black }} black balls\n  Overall: {{ option2_overall_red_pct }} percent red, {{ option2_overall_black_pct }} percent black\n  If red ball drawn: {{ option2_posterior_red_pct }}% chance you won\n  If black ball drawn: {{ option2_posterior_black_pct }}% chance you won\n\nWhich option do you prefer? You must choose one option even if one of them provides no information.",
+      "Look at the decision screen below:\n{{ decision_screen_preference_intensity }}\n\nPlease indicate your preference strength on a scale from 0 (completely indifferent) to 10 (extremely strong preference for chosen option).",
+      "What is the minimum amount in cents (between 1 and 50 cents) you would need to receive to switch from your preferred option to the other option?"
+    ],
+    "data": {
+      "infochoice": {
+        "prior_questions": [
+          "_instruction_1",
+          "_instruction_2",
+          "_instruction_3",
+          "_instruction_4",
+          "_instruction_5"
+        ]
+      }
+    }
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "_instruction_1": 0,
+      "_instruction_2": 1,
+      "_instruction_3": 2,
+      "_instruction_4": 3,
+      "_instruction_5": 4,
+      "infochoice": 5,
+      "preference_intensity": 6,
+      "minimum_compensation": 7
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 4,
+        "expression": "True",
+        "next_q": 5,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 5,
+        "expression": "True",
+        "next_q": 6,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 6,
+        "expression": "True",
+        "next_q": 7,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 7,
+        "expression": "True",
+        "next_q": 8,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 8
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

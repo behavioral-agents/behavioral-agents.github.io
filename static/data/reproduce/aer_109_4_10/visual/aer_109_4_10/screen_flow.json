@@ -1,0 +1,60 @@
+{
+  "experiment_section": "Text-reconstructed (unknown)",
+  "instructions": [],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": "full",
+          "question_name": "comprehension_da_mechanism",
+          "screen_type": "decision",
+          "description": "Decision screen for comprehension_da_mechanism",
+          "depends_on": null,
+          "parameters": {
+            "n_students": 1590,
+            "n_schools": 11,
+            "max_choices": 8,
+            "district": "southern district of Paris",
+            "education_level": "academic-track high school (lycee generale)",
+            "mechanism": "school-proposing deferred acceptance (DA)",
+            "priority_basis": "academic grade average with low-income priority",
+            "empirical_year": 2013,
+            "max_list_length_restriction": 8,
+            "test_truth_telling_vs_stability": "Hausman-type test rejects truth-telling in favor of stability",
+            "test_stability_vs_undominated": "stability not rejected against undominated strategies",
+            "stability_estimator_beats_tt": true
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": "full",
+          "question_name": "school_ranking",
+          "screen_type": "decision",
+          "description": "Decision screen for school_ranking",
+          "depends_on": null,
+          "parameters": {
+            "n_students": 1590,
+            "n_schools": 11,
+            "max_choices": 8,
+            "district": "southern district of Paris",
+            "education_level": "academic-track high school (lycee generale)",
+            "mechanism": "school-proposing deferred acceptance (DA)",
+            "priority_basis": "academic grade average with low-income priority",
+            "empirical_year": 2013,
+            "max_list_length_restriction": 8,
+            "test_truth_telling_vs_stability": "Hausman-type test rejects truth-telling in favor of stability",
+            "test_stability_vs_undominated": "stability not rejected against undominated strategies",
+            "stability_estimator_beats_tt": true
+          }
+        }
+      ]
+    }
+  ]
+}

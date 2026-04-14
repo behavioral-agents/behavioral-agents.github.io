@@ -1,0 +1,18 @@
+{
+  "scenarios": [
+    {
+      "condition": "priority_above_cutoff",
+      "context": "You are a middle school student in Paris applying to academic-track high schools (lyc\u00e9es) through the centralized admissions process. You must submit a rank-order list of the schools you wish to attend.\n\nYou may list between 1 and 8 schools, ranked from most preferred to least preferred. The Paris Education Authority will use your list and your academic grade score to assign you to a school through a deferred acceptance process. Schools admit students in order of their academic grade scores, giving extra priority to low-income students. Once the process is complete, you will be placed at the highest-ranked school on your list that has an available seat for a student with your score.\n\nYour academic grade average: 16.0\n\nLast year's admission cutoffs (minimum grade average admitted) for each school:\n  School 1 (most selective): 15.5\n  School 2: 14.5\n  School 3: 13.8\n  School 4: 13.0\n  School 5: 12.5\n  School 6: 12.0\n  School 7: 11.5\n  School 8: 11.0\n  School 9: 10.5\n  School 10: 10.0\n  School 11 (least selective): 9.0\n\nNote: If your grade average is below a school's cutoff, that school was fully subscribed last year at a score higher than yours, meaning students with higher scores took all available seats. Students who are not admitted to any listed school are assigned to their neighborhood school.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "priority_below_cutoff",
+      "context": "You are a middle school student in Paris applying to academic-track high schools (lyc\u00e9es) through the centralized admissions process. You must submit a rank-order list of the schools you wish to attend.\n\nYou may list between 1 and 8 schools, ranked from most preferred to least preferred. The Paris Education Authority will use your list and your academic grade score to assign you to a school through a deferred acceptance process. Schools admit students in order of their academic grade scores, giving extra priority to low-income students. Once the process is complete, you will be placed at the highest-ranked school on your list that has an available seat for a student with your score.\n\nYour academic grade average: 13.0\n\nLast year's admission cutoffs (minimum grade average admitted) for each school:\n  School 1 (most selective): 15.5\n  School 2: 14.5\n  School 3: 13.8\n  School 4: 13.0\n  School 5: 12.5\n  School 6: 12.0\n  School 7: 11.5\n  School 8: 11.0\n  School 9: 10.5\n  School 10: 10.0\n  School 11 (least selective): 9.0\n\nNote: If your grade average is below a school's cutoff, that school was fully subscribed last year at a score higher than yours, meaning students with higher scores took all available seats. Students who are not admitted to any listed school are assigned to their neighborhood school.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "ScenarioList"
+}

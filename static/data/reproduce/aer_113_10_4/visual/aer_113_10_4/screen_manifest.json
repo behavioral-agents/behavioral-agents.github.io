@@ -1,0 +1,29 @@
+{
+  "paper_id": "aer_113_10_4",
+  "mappings": [
+    {
+      "generated": "infochoice_default.png",
+      "task_label": "Infochoice Default",
+      "original_pages": [
+        "page_012.png"
+      ],
+      "screen_position": "full"
+    },
+    {
+      "generated": "preference_intensity_default.png",
+      "task_label": "Preference Intensity Default",
+      "original_pages": [
+        "page_013.png"
+      ],
+      "screen_position": "top"
+    },
+    {
+      "generated": "min_compensation_to_switch_default.png",
+      "task_label": "Min Compensation To Switch Default",
+      "original_pages": [
+        "page_014.png"
+      ],
+      "screen_position": "top"
+    }
+  ]
+}
