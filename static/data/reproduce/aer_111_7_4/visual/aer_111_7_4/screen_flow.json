@@ -1,0 +1,132 @@
+{
+  "experiment_section": "Adverse and Advantageous Selection - Uninformed Player (Bob) Voting Task",
+  "instructions": [],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "vote",
+          "screen_type": "decision",
+          "description": "Bob votes between Safe option ($12) and Risky option (50/50 lottery: $10 or $20) under negative correlation (adverse selection) \u2014 condition 12N",
+          "depends_on": null,
+          "parameters": {
+            "condition": "12N",
+            "safe_value": 12,
+            "risky_low": 10,
+            "risky_high": 20,
+            "correlation": "negative",
+            "selection_type": "adverse"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "vote",
+          "screen_type": "decision",
+          "description": "Bob votes between Safe option ($12) and Risky option (50/50 lottery: $10 or $20) under positive correlation (advantageous selection) \u2014 condition 12P",
+          "depends_on": null,
+          "parameters": {
+            "condition": "12P",
+            "safe_value": 12,
+            "risky_low": 10,
+            "risky_high": 20,
+            "correlation": "positive",
+            "selection_type": "advantageous"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "vote",
+          "screen_type": "decision",
+          "description": "Bob votes between Safe option ($16) and Risky option (50/50 lottery: $10 or $20) under negative correlation (adverse selection) \u2014 condition 16N",
+          "depends_on": null,
+          "parameters": {
+            "condition": "16N",
+            "safe_value": 16,
+            "risky_low": 10,
+            "risky_high": 20,
+            "correlation": "negative",
+            "selection_type": "adverse"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "vote",
+          "screen_type": "decision",
+          "description": "Bob votes between Safe option ($16) and Risky option (50/50 lottery: $10 or $20) under positive correlation (advantageous selection) \u2014 condition 16P",
+          "depends_on": null,
+          "parameters": {
+            "condition": "16P",
+            "safe_value": 16,
+            "risky_low": 10,
+            "risky_high": 20,
+            "correlation": "positive",
+            "selection_type": "advantageous"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "vote",
+          "screen_type": "decision",
+          "description": "Bob votes between Safe option ($12) and Risky option (50/50 lottery: $10 or $20) under symmetric information (both players uninformed) \u2014 condition SI-12",
+          "depends_on": null,
+          "parameters": {
+            "condition": "SI-12",
+            "safe_value": 12,
+            "risky_low": 10,
+            "risky_high": 20,
+            "correlation": "symmetric",
+            "selection_type": "none"
+          }
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": null,
+          "question_name": "vote",
+          "screen_type": "decision",
+          "description": "Bob votes between Safe option ($16) and Risky option (50/50 lottery: $10 or $20) under symmetric information (both players uninformed) \u2014 condition SI-16",
+          "depends_on": null,
+          "parameters": {
+            "condition": "SI-16",
+            "safe_value": 16,
+            "risky_low": 10,
+            "risky_high": 20,
+            "correlation": "symmetric",
+            "selection_type": "none"
+          }
+        }
+      ]
+    }
+  ]
+}
