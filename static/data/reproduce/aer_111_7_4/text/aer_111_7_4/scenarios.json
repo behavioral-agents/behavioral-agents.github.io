@@ -1,0 +1,70 @@
+{
+  "scenarios": [
+    {
+      "condition": "ai_12N",
+      "safe_value": 12,
+      "correlation_description": "Negatively correlated: If Heads, YOU receive $10 and your partner receives $20. If Tails, YOU receive $20 and your partner receives $10.",
+      "info_description": "Your partner (the informed player) knows the actual result of the coin toss for the Risky option. You do NOT know the coin toss result \u2014 you only know the correlation structure. Your partner will vote for the Risky option if and only if the Risky option gives her the high payoff ($20). She will vote for the Safe option if the Risky option gives her the low payoff ($10).",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "ai_12P",
+      "safe_value": 12,
+      "correlation_description": "Positively correlated: If Heads, you BOTH receive $10. If Tails, you BOTH receive $20.",
+      "info_description": "Your partner (the informed player) knows the actual result of the coin toss for the Risky option. You do NOT know the coin toss result \u2014 you only know the correlation structure. Your partner will vote for the Risky option if and only if the Risky option gives her the high payoff ($20). She will vote for the Safe option if the Risky option gives her the low payoff ($10).",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "ai_16N",
+      "safe_value": 16,
+      "correlation_description": "Negatively correlated: If Heads, YOU receive $10 and your partner receives $20. If Tails, YOU receive $20 and your partner receives $10.",
+      "info_description": "Your partner (the informed player) knows the actual result of the coin toss for the Risky option. You do NOT know the coin toss result \u2014 you only know the correlation structure. Your partner will vote for the Risky option if and only if the Risky option gives her the high payoff ($20). She will vote for the Safe option if the Risky option gives her the low payoff ($10).",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "ai_16P",
+      "safe_value": 16,
+      "correlation_description": "Positively correlated: If Heads, you BOTH receive $10. If Tails, you BOTH receive $20.",
+      "info_description": "Your partner (the informed player) knows the actual result of the coin toss for the Risky option. You do NOT know the coin toss result \u2014 you only know the correlation structure. Your partner will vote for the Risky option if and only if the Risky option gives her the high payoff ($20). She will vote for the Safe option if the Risky option gives her the low payoff ($10).",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "si_12N",
+      "safe_value": 12,
+      "correlation_description": "Negatively correlated: If Heads, YOU receive $10 and your partner receives $20. If Tails, YOU receive $20 and your partner receives $10.",
+      "info_description": "Neither you nor your partner know the actual result of the coin toss for the Risky option. You both only know the correlation structure described above.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "si_12P",
+      "safe_value": 12,
+      "correlation_description": "Positively correlated: If Heads, you BOTH receive $10. If Tails, you BOTH receive $20.",
+      "info_description": "Neither you nor your partner know the actual result of the coin toss for the Risky option. You both only know the correlation structure described above.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "si_16N",
+      "safe_value": 16,
+      "correlation_description": "Negatively correlated: If Heads, YOU receive $10 and your partner receives $20. If Tails, YOU receive $20 and your partner receives $10.",
+      "info_description": "Neither you nor your partner know the actual result of the coin toss for the Risky option. You both only know the correlation structure described above.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "si_16P",
+      "safe_value": 16,
+      "correlation_description": "Positively correlated: If Heads, you BOTH receive $10. If Tails, you BOTH receive $20.",
+      "info_description": "Neither you nor your partner know the actual result of the coin toss for the Risky option. You both only know the correlation structure described above.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "ScenarioList"
+}

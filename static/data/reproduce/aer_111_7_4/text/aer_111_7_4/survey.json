@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_name": "vote",
+      "question_text": "In this task, you and your partner will simultaneously vote between two options: a Safe option (S) and a Risky option (R).\n\nThe Safe option pays ${{ safe_value }} to both you and your partner.\n\nThe Risky option is a lottery. A fair coin is tossed, and the payoffs depend on the correlation type:\n{{ correlation_description }}\n\nThe Risky option is selected if and only if BOTH of you vote for it. If either of you votes for the Safe option, the Safe option is selected.\n\n{{ info_description }}\n\nPlease vote:",
+      "question_options": [
+        "Safe option (S)",
+        "Risky option (R)"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "vote"
+    ],
+    "survey_question_texts": [
+      "In this task, you and your partner will simultaneously vote between two options: a Safe option (S) and a Risky option (R).\n\nThe Safe option pays ${{ safe_value }} to both you and your partner.\n\nThe Risky option is a lottery. A fair coin is tossed, and the payoffs depend on the correlation type:\n{{ correlation_description }}\n\nThe Risky option is selected if and only if BOTH of you vote for it. If either of you votes for the Safe option, the Safe option is selected.\n\n{{ info_description }}\n\nPlease vote:"
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "vote": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}
