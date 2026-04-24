@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Papers — The Simulation Gap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/site.css?v=5" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="new.html">The Simulation Gap</a>
+      <nav class="site-nav">
+        <a href="new.html">Overview</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a href="papers.html">Papers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <div class="eyebrow">Papers</div>
+        <h1>Every paper we've simulated.</h1>
+        <p class="lede">
+          Published behavioral economics experiments, each run through the
+          simulation pipeline with leading AI models. Click any paper to see
+          the design, the human data, the AI-simulated data side by side,
+          and whether the paper's own scientific findings hold up.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:1rem; padding-bottom:5rem;">
+      <div class="container">
+        <div class="filters-bar">
+          <input id="paper-search" type="search" placeholder="Search title, authors, description…" />
+          <select id="journal-filter">
+            <option value="">All journals</option>
+            <option value="AER">AER</option>
+            <option value="QJE">QJE</option>
+            <option value="JPE">JPE</option>
+            <option value="REStud">REStud</option>
+            <option value="Econometrica">Econometrica</option>
+          </select>
+          <span id="paper-count" class="filters-count">—</span>
+        </div>
+
+        <div id="paper-list-root" class="paper-list">
+          <p class="loading">Loading papers…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>The Simulation Gap</strong> &middot;
+        <span class="muted">NOMIS Center for the Cognitive Foundations of Economics, University of Zurich.</span>
+      </div>
+      <div class="muted">
+        <a href="https://github.com/behavioral-agents/behavioral-agents.github.io" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/site.js?v=5"></script>
+  <script src="static/js/papers.js?v=5"></script>
+</body>
+</html>

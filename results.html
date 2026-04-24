@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results — The Simulation Gap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/site.css?v=5" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="new.html">The Simulation Gap</a>
+      <nav class="site-nav">
+        <a href="new.html">Overview</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a href="papers.html">Papers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-head">
+      <div class="container">
+        <div class="eyebrow">Results</div>
+        <h1>Where the simulation approach works &mdash; and where it fails.</h1>
+        <p class="lede">
+          Each paper gets two scores: how closely AI-agent decisions match
+          the human distribution (fidelity), and whether the paper's
+          scientific finding survives when its tests are rerun on AI data
+          (conclusion match). Below is what that looks like right now.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MAIN SCATTER — fidelity × conclusion match, paper-level
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="eyebrow">The big picture</div>
+        <h2 style="margin-bottom:0.75rem">Distribution fit vs. scientific agreement.</h2>
+        <p class="lede" style="margin-bottom:1.5rem; max-width:66ch">
+          One dot per paper, using the best result the approach produces
+          on that paper. Top-right papers are where the simulation
+          <em>works</em> — both in distribution and in conclusion. Bottom-left
+          is where it fails on both fronts.
+        </p>
+        <div id="scatter-root"><p class="loading">Loading scatter…</p></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BREAKDOWN: by decision type
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="breakdown-row">
+          <div>
+            <div class="eyebrow">By decision type</div>
+            <h2>What kinds of decisions simulate best?</h2>
+            <p>
+              The type of decision matters more than the journal or the
+              year. Some families of decisions reproduce cleanly; others
+              collapse no matter which AI model sits behind the agent.
+            </p>
+          </div>
+          <div id="dtype-root"><p class="loading">Loading…</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BREAKDOWN: by field / journal
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="breakdown-row">
+          <div>
+            <div class="eyebrow">By journal</div>
+            <h2>Does the field matter?</h2>
+            <p>
+              A different cut: group papers by the journal they were
+              published in. A rough proxy for sub-field. With 5 papers
+              across 2 journals, this is a small-sample picture — it'll
+              sharpen as more papers come in.
+            </p>
+          </div>
+          <div id="journal-root"><p class="loading">Loading…</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BREAKDOWN: by model generation (stub if not enough data)
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="breakdown-row">
+          <div>
+            <div class="eyebrow">Across AI model generations</div>
+            <h2>Are newer models closing the gap?</h2>
+            <p>
+              As each new generation of frontier AI models ships, does the
+              simulation gap get smaller? We track fidelity and conclusion
+              match over the release timeline.
+            </p>
+          </div>
+          <div id="modelgen-root"><p class="loading">Loading…</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BREAKDOWN: text vs visual modality
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="breakdown-row">
+          <div>
+            <div class="eyebrow">Text vs. visual stimuli</div>
+            <h2>Are visual experiments harder than text-only?</h2>
+            <p>
+              Some papers show the AI the actual screenshots of the
+              original decision screens; others describe the task in
+              text. Vision is strictly more information — does it help
+              the simulation, or add noise?
+            </p>
+          </div>
+          <div id="modality-root"><p class="loading">Loading…</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BREAKDOWN: does agentization pay off?
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="breakdown-row">
+          <div>
+            <div class="eyebrow">Is agentization helping?</div>
+            <h2>Individual matching vs. population-only matching.</h2>
+            <p>
+              The whole point of building one AI agent per specific human
+              is that the simulation can get that <em>specific</em> person
+              right — not just the average. The gap between
+              <strong>F_individual</strong> (per-subject) and
+              <strong>F_population</strong> (distribution-only) tells us
+              whether matching each real person with their own AI agent
+              is earning its keep.
+            </p>
+          </div>
+          <div>
+            <div class="breakdown-stub">
+              <strong>Coming soon.</strong> Requires the updated fidelity
+              pipeline (see the <a href="methodology.html">methodology</a>
+              for the spec) which stores paired and distributional
+              distances separately. Once in, this plot will compare the
+              two metrics side by side, per paper.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BREAKDOWN: sample-size scaling (stub — no data yet)
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="breakdown-row">
+          <div>
+            <div class="eyebrow">Does scale help?</div>
+            <h2>What if we simulate more AI agents per person?</h2>
+            <p>
+              The default run matches the original sample size 1:1. But
+              what happens as we scale up the number of AI draws per
+              person — 2×, 5×, 10× the human sample? Does the gap
+              shrink, or plateau?
+            </p>
+          </div>
+          <div>
+            <div class="breakdown-stub">
+              <strong>Coming soon.</strong> Running the sample-size
+              scaling grid takes a lot of compute. Once it lands, this
+              section will plot fidelity as a function of simulated
+              sample size, per paper.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>The Simulation Gap</strong> &middot;
+        <span class="muted">NOMIS Center for the Cognitive Foundations of Economics, University of Zurich.</span>
+      </div>
+      <div class="muted">
+        <a href="https://github.com/behavioral-agents/behavioral-agents.github.io" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/site.js?v=5"></script>
+  <script src="static/js/results.js?v=5"></script>
+</body>
+</html>

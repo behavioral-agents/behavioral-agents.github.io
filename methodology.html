@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methodology — The Simulation Gap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/site.css?v=5" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="new.html">The Simulation Gap</a>
+      <nav class="site-nav">
+        <a href="new.html">Overview</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a href="papers.html">Papers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-head">
+      <div class="container">
+        <div class="eyebrow">Methodology</div>
+        <h1>How we simulate specific humans with AI agents.</h1>
+        <p class="lede" style="max-width:68ch">
+          For every piece of information a real person had, we match it
+          into an AI agent. Same inputs, parallel paths, two datasets to
+          compare.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LEFT-TO-RIGHT PARALLEL PIPELINE
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="eyebrow">The core idea</div>
+        <h2 style="margin-bottom:2rem; max-width:26ch">A human dataset and an AI dataset, built step by step in parallel.</h2>
+
+        <div class="pipeline-diagram">
+          <div class="pipeline-flow">
+
+            <!-- ROW 1: HUMAN LABEL + 4 STEPS + HUMAN OUTPUT -->
+            <div class="pipeline-label human">Human</div>
+
+            <div class="pipeline-cell human">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+                </div>
+                <div class="pipeline-step-name">A real person</div>
+                <div class="pipeline-step-desc">Age, gender, education, sample pool</div>
+              </div>
+            </div>
+
+            <div class="pipeline-cell human">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">
+                  <svg viewBox="0 0 24 24"><path d="M7 3h9l4 4v14H7z"/><path d="M16 3v4h4"/><path d="M10 11h7M10 14h7M10 17h5"/></svg>
+                </div>
+                <div class="pipeline-step-name">Reads instructions</div>
+                <div class="pipeline-step-desc">The original study's exact wording</div>
+              </div>
+            </div>
+
+            <div class="pipeline-cell human">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 20h8M12 17v3"/><path d="M7 8h4M7 11h7M7 14h5"/></svg>
+                </div>
+                <div class="pipeline-step-name">Sees decision screen</div>
+                <div class="pipeline-step-desc">Lottery, slider, choice card</div>
+              </div>
+            </div>
+
+            <div class="pipeline-cell human">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">
+                  <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div class="pipeline-step-name">Makes a decision</div>
+                <div class="pipeline-step-desc">Picks, enters, allocates</div>
+              </div>
+            </div>
+
+            <div class="pipeline-cell pipeline-output-col human">
+              <div class="pipeline-output human">
+                <div class="pipeline-output-label">What we observe</div>
+                <div class="pipeline-output-title">Human dataset</div>
+              </div>
+            </div>
+
+            <!-- ROW 2 (middle): mirror connectors -->
+            <div class="pipeline-mirror-row">
+              <div class="pipeline-mirror">
+                <svg viewBox="0 0 24 24"><path d="M12 4v16M7 8l5-4 5 4M7 16l5 4 5-4"/></svg>
+                mirror
+              </div>
+              <div class="pipeline-mirror">
+                <svg viewBox="0 0 24 24"><path d="M12 4v16M7 8l5-4 5 4M7 16l5 4 5-4"/></svg>
+                mirror
+              </div>
+              <div class="pipeline-mirror">
+                <svg viewBox="0 0 24 24"><path d="M12 4v16M7 8l5-4 5 4M7 16l5 4 5-4"/></svg>
+                mirror
+              </div>
+              <div class="pipeline-mirror">
+                <svg viewBox="0 0 24 24"><path d="M12 4v16M7 8l5-4 5 4M7 16l5 4 5-4"/></svg>
+                mirror
+              </div>
+              <div class="pipeline-mirror">
+                <svg viewBox="0 0 24 24"><path d="M12 4v16M7 8l5-4 5 4M7 16l5 4 5-4"/></svg>
+                compare
+              </div>
+            </div>
+
+            <!-- ROW 3: AI LABEL + 4 STEPS + AI OUTPUT -->
+            <div class="pipeline-label ai">AI agent</div>
+
+            <div class="pipeline-cell ai">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">
+                  <svg viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="12" rx="2"/><circle cx="9" cy="12" r="1.2"/><circle cx="15" cy="12" r="1.2"/><path d="M12 3v3"/><path d="M10 18v2h4v-2"/></svg>
+                </div>
+                <div class="pipeline-step-name">AI agent</div>
+                <div class="pipeline-step-desc">Same demographics as persona</div>
+              </div>
+            </div>
+
+            <div class="pipeline-cell ai">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">
+                  <svg viewBox="0 0 24 24"><path d="M7 3h9l4 4v14H7z"/><path d="M16 3v4h4"/><path d="M10 11h7M10 14h7M10 17h5"/></svg>
+                </div>
+                <div class="pipeline-step-name">Reads the same</div>
+                <div class="pipeline-step-desc">Word-for-word, no paraphrase</div>
+              </div>
+            </div>
+
+            <div class="pipeline-cell ai">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 20h8M12 17v3"/><path d="M7 8h4M7 11h7M7 14h5"/></svg>
+                </div>
+                <div class="pipeline-step-name">Sees the same screen</div>
+                <div class="pipeline-step-desc">Screenshot or full rendering</div>
+              </div>
+            </div>
+
+            <div class="pipeline-cell ai">
+              <div class="pipeline-step">
+                <div class="pipeline-icon">
+                  <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <div class="pipeline-step-name">Makes a decision</div>
+                <div class="pipeline-step-desc">Same question, same format</div>
+              </div>
+            </div>
+
+            <div class="pipeline-cell pipeline-output-col ai">
+              <div class="pipeline-output ai">
+                <div class="pipeline-output-label">What we simulate</div>
+                <div class="pipeline-output-title">AI-simulated dataset</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pipeline-compare">
+            <strong>Compare the two datasets on two metrics</strong>
+            <div class="pc-metrics">
+              <span class="pc-chip">Fidelity</span>
+              <span class="pc-chip">Conclusion match</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TWO METRICS — with visual illustrations
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="eyebrow">The two metrics</div>
+        <h2 style="margin-bottom:2rem">Two different questions. Both matter.</h2>
+
+        <div class="metric-glossary">
+
+          <div class="glossary-card">
+            <div class="g-name">Metric 1 · Fidelity</div>
+            <h3>Do the AI's decisions look like the humans'?</h3>
+
+            <!-- Visual: two overlapping density curves with shaded gap -->
+            <div class="metric-illustration">
+              <svg viewBox="0 0 360 110" preserveAspectRatio="xMidYMid meet">
+                <line x1="10" y1="90" x2="350" y2="90" stroke="#cbd5e1" stroke-width="1"/>
+                <!-- Human curve -->
+                <path d="M 30,90 C 100,90 115,20 170,20 C 225,20 240,90 310,90 Z"
+                      fill="#dc2626" fill-opacity="0.15"/>
+                <path d="M 30,90 C 100,90 115,20 170,20 C 225,20 240,90 310,90"
+                      fill="none" stroke="#dc2626" stroke-width="2"/>
+                <!-- AI curve (shifted) -->
+                <path d="M 150,90 C 195,90 205,35 240,35 C 275,35 285,90 330,90 Z"
+                      fill="#7c3aed" fill-opacity="0.15"/>
+                <path d="M 150,90 C 195,90 205,35 240,35 C 275,35 285,90 330,90"
+                      fill="none" stroke="#7c3aed" stroke-width="2"/>
+                <text x="90"  y="14" fill="#991b1b" font-size="10" font-weight="700">Humans</text>
+                <text x="250" y="30" fill="#5b21b6" font-size="10" font-weight="700">AI</text>
+                <text x="180" y="105" text-anchor="middle" fill="#94a3b8" font-size="9">High fidelity = curves overlap tightly</text>
+              </svg>
+            </div>
+
+            <p>
+              Fidelity is a compass: <strong>0&nbsp;=&nbsp;random</strong>,
+              <strong>1&nbsp;=&nbsp;perfect match</strong>. Negative means
+              worse than random.
+            </p>
+            <p class="detail">
+              F&nbsp;=&nbsp;1&nbsp;−&nbsp;EMD(AI, human)&nbsp;/&nbsp;EMD(random, human),
+              where EMD is the Wasserstein-1 distance.
+            </p>
+          </div>
+
+          <div class="glossary-card">
+            <div class="g-name">Metric 2 · Conclusion match</div>
+            <h3>Would a researcher reach the same finding?</h3>
+
+            <!-- Visual: two arrows on a number line -->
+            <div class="metric-illustration">
+              <svg viewBox="0 0 360 110" preserveAspectRatio="xMidYMid meet">
+                <line x1="40" y1="85" x2="320" y2="85" stroke="#94a3b8" stroke-width="1"/>
+                <!-- Center tick (zero effect) -->
+                <line x1="180" y1="80" x2="180" y2="90" stroke="#64748b" stroke-width="1"/>
+                <text x="180" y="102" text-anchor="middle" fill="#94a3b8" font-size="9">no effect</text>
+                <!-- Human effect arrow (right) -->
+                <line x1="180" y1="45" x2="260" y2="45" stroke="#dc2626" stroke-width="2.5"/>
+                <polygon points="260,45 252,40 252,50" fill="#dc2626"/>
+                <text x="180" y="35" fill="#991b1b" font-size="10" font-weight="700">Human effect</text>
+                <!-- AI effect arrow (right, a bit shorter but same sign = match) -->
+                <line x1="180" y1="65" x2="240" y2="65" stroke="#7c3aed" stroke-width="2.5"/>
+                <polygon points="240,65 232,60 232,70" fill="#7c3aed"/>
+                <text x="180" y="60" fill="#5b21b6" font-size="10" font-weight="700">AI effect</text>
+                <!-- Match indicator -->
+                <g transform="translate(268 55)">
+                  <circle cx="8" cy="0" r="10" fill="#16a34a" fill-opacity="0.12"/>
+                  <path d="M3,0 l4,4 l7,-7" fill="none" stroke="#16a34a" stroke-width="2"/>
+                </g>
+              </svg>
+            </div>
+
+            <p>
+              We rerun the <strong>paper's own tests</strong> on AI data.
+              Same direction + same significance = the conclusion is
+              reproduced.
+            </p>
+            <p class="detail">
+              Classifications: <em>correct-significant</em>,
+              <em>correct-direction</em>, <em>null</em>, <em>wrong</em>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         THE FULL PIPELINE (7 numbered steps, with icons)
+         ============================================================ -->
+    <section>
+      <div class="container" style="max-width: 940px;">
+        <div class="eyebrow">The full pipeline</div>
+        <h2 style="margin-bottom:0.75rem">From published paper to benchmark number.</h2>
+        <p class="lede" style="margin-bottom:2rem; max-width:64ch">
+          Seven steps, run the same way for every paper. Every artifact on
+          GitHub. Any paper rerun with one command.
+        </p>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v5h5"/><path d="M8 13h8M8 17h6"/></svg>
+            </div>
+            <div>
+              <h3>Pick the paper</h3>
+              <p>From AER, QJE, JPE, REStud, Econometrica — enough public material to see exactly what participants saw.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16M12 4v16"/></svg>
+            </div>
+            <div>
+              <h3>Digitize the experiment</h3>
+              <p>Instructions, decision screens, conditions — converted to machine-readable form. Visuals kept intact.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 21v-2a5 5 0 0 1 5-5h0a5 5 0 0 1 5 5v2"/><path d="M15 21v-1.5a4 4 0 0 1 4-4h0a4 4 0 0 1 2 .6"/></svg>
+            </div>
+            <div>
+              <h3>Match the sample</h3>
+              <p>Each AI agent carries the original study's demographics. Sample size matches the human study.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+            </div>
+            <div>
+              <h3>Run the simulation</h3>
+              <p>Via <a href="https://www.expectedparrot.com" target="_blank" rel="noopener">edsl</a>, each agent walks the same survey flow as the humans. Across multiple frontier AI models.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20V14M22 20V8"/></svg>
+            </div>
+            <div>
+              <h3>Compare distributions</h3>
+              <p>Measure how close AI decisions are to human decisions. Gives us <strong>fidelity</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 3v5.5L4 17c-.6 1 0 2.5 1.5 2.5h13c1.5 0 2.1-1.5 1.5-2.5L15 8.5V3"/><path d="M7 3h10"/></svg>
+            </div>
+            <div>
+              <h3>Rerun the paper's own tests</h3>
+              <p>The authors' regressions and hypothesis tests, applied to AI data. Same direction + significance = <strong>conclusion match</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg>
+            </div>
+            <div>
+              <h3>Publish, open-source, iterate</h3>
+              <p>Every reproduction package lives on public GitHub. Rerun any result with one command.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Simulation vs bias
+         ============================================================ -->
+    <section>
+      <div class="container" style="max-width: 900px;">
+        <div class="eyebrow">An important distinction</div>
+        <h2 style="margin-bottom:1rem; max-width:32ch">Not "is AI biased?" but "can AI imitate a specific human?"</h2>
+        <div class="prose">
+          <p>
+            There's a much-discussed question about whether AI has biases,
+            whose views it defaults to, or how neutral it seems. That's not
+            our question.
+          </p>
+          <p>
+            <strong>Our question is the other one:</strong> given everything
+            we know about a particular person and the choice they face, can
+            AI produce a realistic version of what that person would do?
+            The AI isn't expressing its own views — it's being asked to
+            imitate someone specific.
+          </p>
+          <p>
+            That's why the experimental economics literature is such a
+            clean setting. These are studies where researchers <em>had to</em>
+            document exactly who participated, what they were told, and
+            what options they had. No ambiguity about what success would
+            look like.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>The Simulation Gap</strong> &middot;
+        <span class="muted">NOMIS Center for the Cognitive Foundations of Economics, University of Zurich.</span>
+      </div>
+      <div class="muted">
+        <a href="https://github.com/behavioral-agents/behavioral-agents.github.io" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/site.js?v=5"></script>
+</body>
+</html>
