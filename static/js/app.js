@@ -53,6 +53,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('searchInput').addEventListener('input', filterPapers);
   document.getElementById('journalFilter').addEventListener('change', filterPapers);
 
+  // Hash-based deep linking from the redesigned site (papers.html)
+  // Supported forms:
+  //   #repro-{baseId}    -> open reproduction-package hub for that paper
+  //   #paper-{doi}       -> open the paper detail (DOI may contain "/")
+  const handleHash = () => {
+    const raw = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+    if (!raw) return;
+    if (raw.startsWith('repro-')) {
+      const baseId = raw.slice('repro-'.length);
+      const group = groupedPapers.find(g => g.experiments.some(e => e.id === baseId));
+      if (group) {
+        showPaperByDoi(group.doi);
+        showReproductionHub(baseId);
+      }
+    } else if (raw.startsWith('paper-')) {
+      const doi = raw.slice('paper-'.length);
+      if (groupedPapers.some(g => g.doi === doi)) showPaperByDoi(doi);
+    }
+  };
+  handleHash();
+  window.addEventListener('hashchange', handleHash);
+
   // Close dropdowns when clicking outside
   document.addEventListener('click', (e) => {
     document.querySelectorAll('.model-selector.open').forEach(sel => {

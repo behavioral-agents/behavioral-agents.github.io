@@ -64,10 +64,13 @@
           journal: e.journal,
           year: e.year,
           paper_brief: e.paper_brief || "",
+          replication_url: e.replication_url || null,
           experiments: [],
         });
       }
-      m.get(e.doi).experiments.push(e);
+      const grp = m.get(e.doi);
+      if (!grp.replication_url && e.replication_url) grp.replication_url = e.replication_url;
+      grp.experiments.push(e);
     }
     const grps = [...m.values()];
     for (const g of grps) {
@@ -197,6 +200,9 @@
   function renderDetail(g) {
     const exp = g.experiments[0];
     const tabs = g.experiments.length > 1 ? renderExperimentTabs(g) : "";
+    const hasRepro = g.experiments.some((e) => e.has_reproduce_text || e.has_reproduce_visual);
+    // baseId = shortest experiment ID in the group, matching old/app.js convention
+    const baseId = g.experiments.reduce((a, b) => (a.id.length <= b.id.length ? a : b)).id;
     return `
       ${g.paper_brief ? `<p class="paper-brief">${escapeHtml(g.paper_brief)}</p>` : ""}
       ${tabs}
@@ -205,8 +211,10 @@
       </div>
       <div class="detail-actions">
         <a class="btn" href="https://doi.org/${encodeURIComponent(g.doi)}" target="_blank" rel="noopener">Original paper (DOI) &rarr;</a>
-        ${exp.has_reproduce_text || exp.has_reproduce_visual
-          ? `<a class="btn" href="old.html#${exp.id}" target="_blank">Reproduction package &rarr;</a>` : ""}
+        ${g.replication_url
+          ? `<a class="btn" href="${escapeHtml(g.replication_url)}" target="_blank" rel="noopener">Original human data &rarr;</a>` : ""}
+        ${hasRepro
+          ? `<a class="btn" href="old.html#repro-${encodeURIComponent(baseId)}" target="_blank" rel="noopener">Reproduction package (simulated data) &rarr;</a>` : ""}
       </div>
     `;
   }
