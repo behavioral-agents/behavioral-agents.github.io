@@ -206,7 +206,7 @@
       <div class="detail-actions">
         <a class="btn" href="https://doi.org/${encodeURIComponent(g.doi)}" target="_blank" rel="noopener">Original paper (DOI) &rarr;</a>
         ${exp.has_reproduce_text || exp.has_reproduce_visual
-          ? `<a class="btn" href="index.html#${exp.id}" target="_blank">Reproduction package &rarr;</a>` : ""}
+          ? `<a class="btn" href="old.html#${exp.id}" target="_blank">Reproduction package &rarr;</a>` : ""}
       </div>
     `;
   }

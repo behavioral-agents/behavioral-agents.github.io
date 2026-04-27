@@ -10,10 +10,10 @@
   const CACHE_BUST = `v=${Date.now()}`;
 
   // ---------- 1. Nav active state --------------------------------------
-  const current = location.pathname.split("/").pop() || "new.html";
+  const current = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".site-nav a").forEach((a) => {
     const href = a.getAttribute("href").split("/").pop();
-    if (href === current || (current === "" && href === "new.html")) {
+    if (href === current || (current === "" && href === "index.html")) {
       a.classList.add("is-active");
     }
   });
