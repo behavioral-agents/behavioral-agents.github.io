@@ -1,41 +1,10 @@
 {
   "text": [
     {
-      "model": "gpt-4o",
-      "n_papers": 9,
-      "mean_wasserstein": 8.632,
-      "mean_fidelity": -0.5533,
-      "nonsig_rate": 0.2778
-    },
-    {
-      "model": "gemini-2.5-flash",
-      "n_papers": 9,
-      "mean_wasserstein": 8.3155,
-      "mean_fidelity": -0.7929,
-      "nonsig_rate": 0.2037
-    },
-    {
-      "model": "gpt-4o-mini",
+      "model": "claude-sonnet-4-6",
       "n_papers": 8,
-      "mean_wasserstein": 9.1729,
-      "mean_fidelity": -0.9336,
-      "nonsig_rate": 0.2083
-    },
-    {
-      "model": "claude-sonnet-4-6",
-      "n_papers": 13,
-      "mean_wasserstein": 9.7659,
-      "mean_fidelity": -1.0018,
-      "nonsig_rate": 0.2212
-    }
-  ],
-  "visual": [
-    {
-      "model": "claude-sonnet-4-6",
-      "n_papers": 12,
-      "mean_wasserstein": 9.6243,
-      "mean_fidelity": -1.0589,
-      "nonsig_rate": 0.2319
+      "mean_fidelity": -1.4121,
+      "metric": "F_population"
     }
   ]
 }

@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_name": "pg_contribution",
+      "question_text": "Public goods provision \u2014 round {{ round_number }} (treatment round {{ treatment_round }}, entry stage {{ entry_stage }} of 3).\n\nMechanism: {{ condition }}.\n\nYour signal this period: {{ signal }}.\nPrivate project value if you go alone: P = {{ private_value }} (= D0 + D1 + D2 + D3, where D1={{ d1 }}, D2={{ d2 }}, D3={{ d3 }}).\nGroup project value: V = S1 + S2 + S3 (sum of all three members' signals); the observable component is {{ public_value }}.\n\nProvision rule: the GROUP PROJECT is implemented (and you receive V) only if at least 2 of the 3 group members choose the GROUP PROJECT. Otherwise you receive your PRIVATE PROJECT value P = {{ private_value }}.\n\nDo you choose the GROUP PROJECT?",
+      "question_options": [
+        "No",
+        "Yes"
+      ],
+      "question_type": "yes_no",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "pg_contribution"
+    ],
+    "survey_question_texts": [
+      "Public goods provision \u2014 round {{ round_number }} (treatment round {{ treatment_round }}, entry stage {{ entry_stage }} of 3).\n\nMechanism: {{ condition }}.\n\nYour signal this period: {{ signal }}.\nPrivate project value if you go alone: P = {{ private_value }} (= D0 + D1 + D2 + D3, where D1={{ d1 }}, D2={{ d2 }}, D3={{ d3 }}).\nGroup project value: V = S1 + S2 + S3 (sum of all three members' signals); the observable component is {{ public_value }}.\n\nProvision rule: the GROUP PROJECT is implemented (and you receive V) only if at least 2 of the 3 group members choose the GROUP PROJECT. Otherwise you receive your PRIVATE PROJECT value P = {{ private_value }}.\n\nDo you choose the GROUP PROJECT?"
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "pg_contribution": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

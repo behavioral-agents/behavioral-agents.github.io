@@ -214,7 +214,7 @@
         ${g.replication_url
           ? `<a class="btn" href="${escapeHtml(g.replication_url)}" target="_blank" rel="noopener">Original human data &rarr;</a>` : ""}
         ${hasRepro
-          ? `<a class="btn" href="old.html#repro-${encodeURIComponent(baseId)}" target="_blank" rel="noopener">Reproduction package (simulated data) &rarr;</a>` : ""}
+          ? `<a class="btn" href="reproduce.html?paper=${encodeURIComponent(baseId)}" target="_blank" rel="noopener">Reproduction package (simulated data) &rarr;</a>` : ""}
       </div>
     `;
   }
@@ -234,10 +234,86 @@
     return [
       renderDesignBlock(exp),
       renderCombinedComparisonBlock(exp),
+      renderFidelityBlock(exp),
       renderDistributionBlock(exp),
       renderConclusionTestsBlock(exp),
       renderNotesBlock(exp),
     ].join("");
+  }
+
+  // --- Per-condition fidelity table ------------------------------------
+  function renderFidelityBlock(exp) {
+    const comps = (exp.comparisons || []).filter((c) => !c.modality || c.modality === "text");
+    if (!comps.length) return "";
+    const rows = [];
+    for (const c of comps) {
+      for (const cond of (c.conditions || [])) {
+        if (cond.f_individual == null && cond.f_population == null) continue;
+        rows.push({
+          model: c.model,
+          condition: cond.condition,
+          f_ind: cond.f_individual,
+          f_pop: cond.f_population,
+        });
+      }
+    }
+    if (!rows.length) return "";
+
+    const fmt = (v) => v == null ? "—" : (v >= 0 ? "+" : "") + v.toFixed(3);
+    const cellColor = (v) => {
+      if (v == null) return "color:var(--muted-2)";
+      if (v >= 0.3) return "color:#15803d;font-weight:600";
+      if (v >= 0)   return "color:#1d4ed8";
+      if (v >= -1)  return "color:#b45309";
+      return "color:#b91c1c;font-weight:600";
+    };
+
+    const avgByModel = new Map();
+    for (const r of rows) {
+      if (!avgByModel.has(r.model)) avgByModel.set(r.model, { ind: [], pop: [] });
+      const m = avgByModel.get(r.model);
+      if (r.f_ind != null) m.ind.push(r.f_ind);
+      if (r.f_pop != null) m.pop.push(r.f_pop);
+    }
+    const avgRows = [...avgByModel.entries()].map(([model, m]) => ({
+      model,
+      condition: "Paper average",
+      f_ind: m.ind.length ? m.ind.reduce((a, b) => a + b, 0) / m.ind.length : null,
+      f_pop: m.pop.length ? m.pop.reduce((a, b) => a + b, 0) / m.pop.length : null,
+      isAvg: true,
+    }));
+
+    const showModelCol = avgByModel.size > 1;
+    const tableRows = [...rows, ...avgRows].map((r) => {
+      const tone = r.isAvg ? "background:var(--surface-2);font-weight:500" : "";
+      return `
+        <tr style="${tone}">
+          ${showModelCol ? `<td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${modelColor(r.model)};margin-right:6px"></span>${escapeHtml(modelLabel(r.model))}</td>` : ""}
+          <td>${escapeHtml(titleCase(r.condition))}</td>
+          <td class="num" style="${cellColor(r.f_ind)}">${fmt(r.f_ind)}</td>
+          <td class="num" style="${cellColor(r.f_pop)}">${fmt(r.f_pop)}</td>
+        </tr>
+      `;
+    }).join("");
+
+    return `
+      <div class="detail-block">
+        <h4>Fidelity scores per condition</h4>
+        <div style="overflow-x:auto">
+          <table class="data-table" style="font-size:0.88rem">
+            <thead>
+              <tr>
+                ${showModelCol ? "<th>Model</th>" : ""}
+                <th>Condition</th>
+                <th class="num">F<sub>individual</sub></th>
+                <th class="num">F<sub>population</sub></th>
+              </tr>
+            </thead>
+            <tbody>${tableRows}</tbody>
+          </table>
+        </div>
+      </div>
+    `;
   }
 
   // --- Design summary --------------------------------------------------
@@ -469,7 +545,7 @@
 
   function distPlot(cond, comps, xLabel) {
     const W = 360, H = 200;
-    const pad = { t: 14, r: 14, b: 34, l: 14 };
+    const pad = { t: 14, r: 14, b: 34, l: 44 };
     const plotW = W - pad.l - pad.r;
     const plotH = H - pad.t - pad.b;
     const dists = comps.filter((c) => c.distributions?.[cond]).map((c) => ({ model: c.model, dist: c.distributions[cond] }));
@@ -533,12 +609,25 @@
       `;
     }).join("");
     const axis = `<line x1="${pad.l}" y1="${pad.t + plotH}" x2="${pad.l + plotW}" y2="${pad.t + plotH}" stroke="#e5e7eb"/>`;
+    const yAxis = `<line x1="${pad.l}" y1="${pad.t}" x2="${pad.l}" y2="${pad.t + plotH}" stroke="#e5e7eb"/>`;
+    const yTickValues = [0, yMax * 0.25, yMax * 0.5, yMax * 0.75, yMax];
+    const fmtYTick = (v) => v === 0 ? "0" : (v >= 100 ? v.toFixed(0) : v >= 10 ? v.toFixed(1) : v.toFixed(2));
+    const yTickSvg = yTickValues.map((v) => {
+      const y = ys(v);
+      return `
+        <line x1="${pad.l - 4}" y1="${y.toFixed(1)}" x2="${pad.l}" y2="${y.toFixed(1)}" stroke="#cbd5e1"/>
+        <text x="${(pad.l - 6).toFixed(1)}" y="${(y + 3.5).toFixed(1)}" text-anchor="end" font-size="10" fill="#64748b">${fmtYTick(v)}</text>
+      `;
+    }).join("");
+    const yAxLabelX = 11;
+    const yAxLabelY = pad.t + plotH / 2;
+    const yAxLabel = `<text x="${yAxLabelX}" y="${yAxLabelY}" text-anchor="middle" font-size="10" fill="#94a3b8" transform="rotate(-90, ${yAxLabelX}, ${yAxLabelY})">Density</text>`;
     const xAxLabel = xLabel ? `<text x="${pad.l + plotW / 2}" y="${H - 2}" text-anchor="middle" font-size="10" fill="#94a3b8">${escapeHtml(xLabel)}</text>` : "";
     return `
       <div class="dist-plot">
         <div class="dist-plot-title">${titleCase(cond)}</div>
         <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">
-          ${axis}${origLayer}${modelLayers}${tickSvg}${xAxLabel}
+          ${axis}${yAxis}${origLayer}${modelLayers}${tickSvg}${yTickSvg}${yAxLabel}${xAxLabel}
         </svg>
       </div>
     `;

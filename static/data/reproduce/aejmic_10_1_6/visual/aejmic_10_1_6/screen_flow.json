@@ -1,0 +1,62 @@
+{
+  "experiment_section": "Voting Experiment with Transparency Treatments",
+  "instructions": [
+    {
+      "page": "page_007",
+      "screen_position": "full",
+      "description": "Instructions explaining observer's evaluation screen and pay-off structure for voters based on observer's belief about voter type (quadratic scoring rule, 2*X points)",
+      "sequence_order": 1
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "page_009",
+          "screen_position": "top",
+          "question_name": "stage1_signal_message",
+          "screen_type": "decision",
+          "description": "First screen of a committee member (voter): shown own type (L) and ball color (RED), then asked to report signal to other voter via straw-poll announcement (blue / red / abstain)",
+          "depends_on": null,
+          "parameters": {
+            "voter_type": "L",
+            "ball_color": "RED",
+            "options": [
+              "blue",
+              "red",
+              "abstain"
+            ]
+          }
+        },
+        {
+          "page": "page_009",
+          "screen_position": "bottom",
+          "question_name": "stage2_type_message",
+          "screen_type": "decision",
+          "description": "Second screen of a committee member (voter): free-form chat interface for type communication (\u03c3-chat) with the other voter; timer visible; other voter's indicated ball color shown",
+          "depends_on": "stage1_signal_message",
+          "parameters": {
+            "chat_timer_seconds": 72,
+            "other_voter_indicated_ball": "RED"
+          }
+        },
+        {
+          "page": "page_010",
+          "screen_position": "top",
+          "question_name": "final_vote",
+          "screen_type": "decision",
+          "description": "Third screen of a committee member (voter): review of chat transcript, then final simultaneous voting decision (blue / red) to keep status quo or overturn",
+          "depends_on": "stage2_type_message",
+          "parameters": {
+            "options": [
+              "blue",
+              "red"
+            ],
+            "chat_review": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "questions": [
+    {
+      "question_name": "rank_a",
+      "question_text": "{{ decision_screen_rank_a }}\n\nTask: {{ condition }}. Round {{ round }} of 10. Your priority score is {{ score }}. Four prizes are available this round: Prize A worth ${{ value_A }}, Prize B worth ${{ value_B }}, Prize C worth ${{ value_C }}, Prize D worth ${{ value_D }}. Rank the prizes in any order from 1 to 4 by typing a number next to each prize. (Each rank from 1 to 4 must be used exactly once.) The mechanism: players are ordered by priority score (highest first); each player in turn receives her top-ranked remaining prize. Ties in priority are broken at random. You have 90 seconds to submit.\n\nWhat rank (1, 2, 3, or 4) do you assign to Prize A (worth ${{ value_A }})?",
+      "min_value": 1,
+      "max_value": 4,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "rank_b",
+      "question_text": "{{ decision_screen_rank_b }}\n\nWhat rank (1, 2, 3, or 4) do you assign to Prize B (worth ${{ value_B }})? (Each rank from 1 to 4 must be used exactly once across all four prizes.)",
+      "min_value": 1,
+      "max_value": 4,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "rank_c",
+      "question_text": "{{ decision_screen_rank_c }}\n\nWhat rank (1, 2, 3, or 4) do you assign to Prize C (worth ${{ value_C }})? (Each rank from 1 to 4 must be used exactly once across all four prizes.)",
+      "min_value": 1,
+      "max_value": 4,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "rank_d",
+      "question_text": "{{ decision_screen_rank_d }}\n\nWhat rank (1, 2, 3, or 4) do you assign to Prize D (worth ${{ value_D }})? (Each rank from 1 to 4 must be used exactly once across all four prizes.)",
+      "min_value": 1,
+      "max_value": 4,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "rank_a",
+      "rank_b",
+      "rank_c",
+      "rank_d"
+    ],
+    "survey_question_texts": [
+      "{{ decision_screen_rank_a }}\n\nTask: {{ condition }}. Round {{ round }} of 10. Your priority score is {{ score }}. Four prizes are available this round: Prize A worth ${{ value_A }}, Prize B worth ${{ value_B }}, Prize C worth ${{ value_C }}, Prize D worth ${{ value_D }}. Rank the prizes in any order from 1 to 4 by typing a number next to each prize. (Each rank from 1 to 4 must be used exactly once.) The mechanism: players are ordered by priority score (highest first); each player in turn receives her top-ranked remaining prize. Ties in priority are broken at random. You have 90 seconds to submit.\n\nWhat rank (1, 2, 3, or 4) do you assign to Prize A (worth ${{ value_A }})?",
+      "{{ decision_screen_rank_b }}\n\nWhat rank (1, 2, 3, or 4) do you assign to Prize B (worth ${{ value_B }})? (Each rank from 1 to 4 must be used exactly once across all four prizes.)",
+      "{{ decision_screen_rank_c }}\n\nWhat rank (1, 2, 3, or 4) do you assign to Prize C (worth ${{ value_C }})? (Each rank from 1 to 4 must be used exactly once across all four prizes.)",
+      "{{ decision_screen_rank_d }}\n\nWhat rank (1, 2, 3, or 4) do you assign to Prize D (worth ${{ value_D }})? (Each rank from 1 to 4 must be used exactly once across all four prizes.)"
+    ],
+    "data": {
+      "rank_b": {
+        "prior_questions": [
+          "rank_a"
+        ]
+      },
+      "rank_c": {
+        "prior_questions": [
+          "rank_a",
+          "rank_b"
+        ]
+      },
+      "rank_d": {
+        "prior_questions": [
+          "rank_a",
+          "rank_b",
+          "rank_c"
+        ]
+      }
+    }
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "rank_a": 0,
+      "rank_b": 1,
+      "rank_c": 2,
+      "rank_d": 3
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 4
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

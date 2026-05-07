@@ -1,0 +1,43 @@
+{
+  "questions": [
+    {
+      "question_name": "choice",
+      "question_text": "You are now in the choice task (Part C). The three objects in this round (triplet {{ triplet_id }}) are:\n  Top:    {{ first_object }}\n  Middle: {{ second_object }}\n  Bottom: {{ third_object }}\n\nYour goal is to choose the same object as your paired counterpart. You will receive a positive payoff if you match, and 0 otherwise. Which object do you choose?",
+      "question_options": [
+        "top",
+        "middle",
+        "bottom"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "choice"
+    ],
+    "survey_question_texts": [
+      "You are now in the choice task (Part C). The three objects in this round (triplet {{ triplet_id }}) are:\n  Top:    {{ first_object }}\n  Middle: {{ second_object }}\n  Bottom: {{ third_object }}\n\nYour goal is to choose the same object as your paired counterpart. You will receive a positive payoff if you match, and 0 otherwise. Which object do you choose?"
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "choice": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

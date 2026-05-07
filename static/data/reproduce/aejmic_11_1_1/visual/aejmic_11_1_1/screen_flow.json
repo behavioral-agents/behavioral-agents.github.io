@@ -1,0 +1,53 @@
+{
+  "experiment_section": "Text-reconstructed (unknown)",
+  "instructions": [],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": null,
+          "screen_position": "full",
+          "question_name": "action",
+          "screen_type": "decision",
+          "description": "Decision screen for action",
+          "depends_on": null,
+          "parameters": {
+            "n_subjects_total": 206,
+            "n_sessions_total": 12,
+            "n_sessions_per_treatment": 4,
+            "n_subjects_by_condition": {
+              "perfect_monitoring": 66,
+              "public_monitoring": 68,
+              "private_monitoring": 72
+            },
+            "n_round_level_obs_last_4_supergames_by_condition": {
+              "perfect_monitoring": 3310,
+              "public_monitoring": 3394,
+              "private_monitoring": 3542
+            },
+            "continuation_probability_delta": 0.9,
+            "noise_epsilon": 0.1,
+            "stage_payoff_CC": 48,
+            "stage_payoff_DD": 25,
+            "stage_payoff_CD_cooperator": 12,
+            "stage_payoff_CD_defector": 50,
+            "supergames_per_session_range": [
+              11,
+              22
+            ],
+            "last_n_supergames_in_benchmark": 4,
+            "payoff_rate_perfect_usd_per_point": 0.01,
+            "payoff_rate_imperfect_usd_per_point": 0.0075,
+            "random_sequence_indicator_values": [
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

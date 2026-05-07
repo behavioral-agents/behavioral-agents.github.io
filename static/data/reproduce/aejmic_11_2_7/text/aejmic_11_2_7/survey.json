@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_name": "scale_vote",
+      "question_text": "End-of-block vote \u2014 you have just finished block {{ cycle }} of the experiment. Your treatment is: {{ condition }} (tokens_available = blue can give a ticket to red as a side payment; no_tokens_control = no tickets exist).\n\n{{ history_summary }}\n\nNow you must vote on the matching structure for the NEXT block. If 'fixed' wins by majority, you will be paired with a single partner for all periods of the next block. If 'random' wins, you will be re-matched each period from a group of {{ large_group_size }} participants.\n\nRecall the payoff structure (red, blue):\n  - Fixed pair: Y \u2192 (6, 3); Z \u2192 (0, 15)\n  - Random pair: Y \u2192 (6, 3); Z \u2192 (0, 18)\n\nWhich matching structure do you prefer? Your vote will not be revealed to others.",
+      "question_options": [
+        "Fixed pair (same partner all block)",
+        "Random partner from a larger group"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "scale_vote"
+    ],
+    "survey_question_texts": [
+      "End-of-block vote \u2014 you have just finished block {{ cycle }} of the experiment. Your treatment is: {{ condition }} (tokens_available = blue can give a ticket to red as a side payment; no_tokens_control = no tickets exist).\n\n{{ history_summary }}\n\nNow you must vote on the matching structure for the NEXT block. If 'fixed' wins by majority, you will be paired with a single partner for all periods of the next block. If 'random' wins, you will be re-matched each period from a group of {{ large_group_size }} participants.\n\nRecall the payoff structure (red, blue):\n  - Fixed pair: Y \u2192 (6, 3); Z \u2192 (0, 15)\n  - Random pair: Y \u2192 (6, 3); Z \u2192 (0, 18)\n\nWhich matching structure do you prefer? Your vote will not be revealed to others."
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "scale_vote": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

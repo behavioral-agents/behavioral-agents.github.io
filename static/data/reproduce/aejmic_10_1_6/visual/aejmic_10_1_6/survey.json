@@ -1,0 +1,122 @@
+{
+  "questions": [
+    {
+      "question_name": "context",
+      "question_text": "You are participating in a committee voting experiment. The true state of the jar this round is: {{ state }}. Your voter type is: {{ voter_type }}. Your private signal (ball color drawn) is: {{ signal }}. The other voter's type is: {{ other_voter_type }} and their signal is: {{ other_voter_signal }}. In the first deliberation stage (s-chat), you communicated: {{ ball_chat }}, and the other voter communicated: {{ other_voter_ball_chat }}. In the second deliberation stage (sigma-chat), you claimed to be high type: {{ claimed_high_type }}, and claimed to be low type: {{ claimed_low_type }}. The transparency condition is: {{ condition }}. Please briefly summarize the information you have before casting your vote.",
+      "question_type": "free_text",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "straw_poll",
+      "question_text": "During the first deliberation stage (s-chat), you sent the message: {{ ball_chat }}, and the other voter sent: {{ other_voter_ball_chat }}. Based on your private signal {{ signal }} and your voter type {{ voter_type }}, which color did you intend to signal in the straw poll?",
+      "question_options": [
+        "Blue (B)",
+        "Red (R)",
+        "Stay silent"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "type_chat",
+      "question_text": "During the second deliberation stage (sigma-chat), you claimed to be high type: {{ claimed_high_type }}, and claimed to be low type: {{ claimed_low_type }}. The other voter's type is {{ other_voter_type }} and their signal is {{ other_voter_signal }}. What did you communicate about your type in the sigma-chat?",
+      "question_options": [
+        "Claimed to be well informed (type G)",
+        "Claimed to be less well informed (type I)",
+        "Stayed silent"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    },
+    {
+      "question_name": "vote",
+      "question_text": "Now you must cast your final vote. Recall: the true state is {{ state }}, your type is {{ voter_type }}, your signal is {{ signal }}, the other voter's type is {{ other_voter_type }}, their signal is {{ other_voter_signal }}, your s-chat message was {{ ball_chat }}, the other voter's s-chat message was {{ other_voter_ball_chat }}, you claimed high type: {{ claimed_high_type }}, claimed low type: {{ claimed_low_type }}. The group decision is Red only if BOTH voters vote Red; otherwise the status quo Blue holds. Under the {{ condition }} treatment, the observer sees the information specified for that condition. Which color do you vote for?",
+      "question_options": [
+        "Blue (B)",
+        "Red (R)"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "context",
+      "straw_poll",
+      "type_chat",
+      "vote"
+    ],
+    "survey_question_texts": [
+      "You are participating in a committee voting experiment. The true state of the jar this round is: {{ state }}. Your voter type is: {{ voter_type }}. Your private signal (ball color drawn) is: {{ signal }}. The other voter's type is: {{ other_voter_type }} and their signal is: {{ other_voter_signal }}. In the first deliberation stage (s-chat), you communicated: {{ ball_chat }}, and the other voter communicated: {{ other_voter_ball_chat }}. In the second deliberation stage (sigma-chat), you claimed to be high type: {{ claimed_high_type }}, and claimed to be low type: {{ claimed_low_type }}. The transparency condition is: {{ condition }}. Please briefly summarize the information you have before casting your vote.",
+      "During the first deliberation stage (s-chat), you sent the message: {{ ball_chat }}, and the other voter sent: {{ other_voter_ball_chat }}. Based on your private signal {{ signal }} and your voter type {{ voter_type }}, which color did you intend to signal in the straw poll?",
+      "During the second deliberation stage (sigma-chat), you claimed to be high type: {{ claimed_high_type }}, and claimed to be low type: {{ claimed_low_type }}. The other voter's type is {{ other_voter_type }} and their signal is {{ other_voter_signal }}. What did you communicate about your type in the sigma-chat?",
+      "Now you must cast your final vote. Recall: the true state is {{ state }}, your type is {{ voter_type }}, your signal is {{ signal }}, the other voter's type is {{ other_voter_type }}, their signal is {{ other_voter_signal }}, your s-chat message was {{ ball_chat }}, the other voter's s-chat message was {{ other_voter_ball_chat }}, you claimed high type: {{ claimed_high_type }}, claimed low type: {{ claimed_low_type }}. The group decision is Red only if BOTH voters vote Red; otherwise the status quo Blue holds. Under the {{ condition }} treatment, the observer sees the information specified for that condition. Which color do you vote for?"
+    ],
+    "data": {
+      "straw_poll": {
+        "prior_questions": [
+          "context"
+        ]
+      },
+      "type_chat": {
+        "prior_questions": [
+          "context",
+          "straw_poll"
+        ]
+      },
+      "vote": {
+        "prior_questions": [
+          "context",
+          "straw_poll",
+          "type_chat"
+        ]
+      }
+    }
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "context": 0,
+      "straw_poll": 1,
+      "type_chat": 2,
+      "vote": 3
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 1,
+        "expression": "True",
+        "next_q": 2,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 2,
+        "expression": "True",
+        "next_q": 3,
+        "priority": -1,
+        "before_rule": false
+      },
+      {
+        "current_q": 3,
+        "expression": "True",
+        "next_q": 4,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 4
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

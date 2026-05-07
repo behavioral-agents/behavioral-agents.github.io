@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_name": "block_project",
+      "question_text": "Monitoring decision. Mechanism: {{ condition }}.\n\nYou are the reporter. The sender has submitted a project of {{ project_quality }} quality. The sender's punishment commitment (what they have credibly committed to do if you block their project): {{ sender_threat_committed }} (0 = will not reduce your profit; 1 = will reduce your profit by 200 points if blocked).\n\nDo you want to block the project? Yes = block, No = do not block.",
+      "question_options": [
+        "No",
+        "Yes"
+      ],
+      "question_type": "yes_no",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "block_project"
+    ],
+    "survey_question_texts": [
+      "Monitoring decision. Mechanism: {{ condition }}.\n\nYou are the reporter. The sender has submitted a project of {{ project_quality }} quality. The sender's punishment commitment (what they have credibly committed to do if you block their project): {{ sender_threat_committed }} (0 = will not reduce your profit; 1 = will reduce your profit by 200 points if blocked).\n\nDo you want to block the project? Yes = block, No = do not block."
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "block_project": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

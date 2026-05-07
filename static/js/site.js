@@ -151,8 +151,11 @@
         if (!fidByPM.has(key)) fidByPM.set(key, [0, 0]);
         const entry = fidByPM.get(key);
         for (const cond of c.conditions || []) {
-          if (cond.fidelity != null) {
-            entry[0] += +cond.fidelity;
+          // Use F_population for site-wide gauge (matches leaderboard.json).
+          // Fall back to legacy `fidelity` if F_pop is unavailable.
+          const v = cond.f_population != null ? cond.f_population : cond.fidelity;
+          if (v != null) {
+            entry[0] += +v;
             entry[1] += 1;
           }
         }

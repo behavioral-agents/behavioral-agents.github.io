@@ -1,0 +1,1086 @@
+{
+  "agent_list": [
+    {
+      "traits": {
+        "_subject_id": 201,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 202,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 203,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 204,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 301,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 302,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 303,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 304,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 701,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 702,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 703,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 704,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 801,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 802,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 803,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 804,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 901,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 902,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 903,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 904,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1001,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1002,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1003,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1004,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1101,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1102,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1103,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1104,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1201,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1202,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1203,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1204,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1301,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1302,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1303,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1304,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1401,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1402,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1403,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1404,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1501,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1502,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1503,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1504,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2701,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2702,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2703,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2704,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2801,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2802,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2803,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2804,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2901,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2902,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2903,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2904,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3201,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3202,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3203,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3204,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3401,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3402,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3403,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3404,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3501,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3502,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3503,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3504,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3601,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3602,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has not taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3603,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "not social science",
+        "stem": "STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3604,
+        "persona": "UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment.",
+        "econ": "not econ",
+        "gametheory": "has taken game theory",
+        "humanities": "not humanities",
+        "soc_sci": "social science",
+        "stem": "not STEM"
+      },
+      "instruction": "GAME 3\n\nYou will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.\n\nAt the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.\n\nThe game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.\n\nAfter all the lists have been submitted, we will assign prizes using the following rule:\n1. The player with the highest priority score will be assigned the top prize on his list.\n2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.\n4. The player with the lowest priority score will be assigned whatever prize remains.\n\nIf two players have the same priority score, we will break the tie randomly.\n\nYou will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says \"Confirm Choices\". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says \"Confirm Choices\".\n\nYour priority score is 5.\nRank the prizes in any order from 1 to 4.",
+      "traits_presentation_template": "\n\n{{ persona }}\n\nAbout you:\n- econ: {{ econ }}\n- gametheory: {{ gametheory }}\n- humanities: {{ humanities }}\n- soc_sci: {{ soc_sci }}\n- stem: {{ stem }}",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "AgentList"
+}

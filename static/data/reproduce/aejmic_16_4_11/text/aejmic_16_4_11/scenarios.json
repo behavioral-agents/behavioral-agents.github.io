@@ -1,0 +1,87 @@
+{
+  "scenarios": [
+    {
+      "condition": "DE_noinfo_bad_agent_reporting",
+      "agent_type": "BAD",
+      "commitment_text": "HAS COMMITTED to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Direct Elicitation (DE): Your report will be recorded exactly as you submit it. If you report the agent as bad and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "RR_noinfo_bad_agent_reporting",
+      "agent_type": "BAD",
+      "commitment_text": "HAS COMMITTED to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Randomized Response (RR): With probability 2/3, your report about the agent's type will be recorded directly. With probability 1/3, you will instead be asked: 'What is the color of the sky: blue or red?' A response of 'blue' will be recorded as a bad-agent report; 'red' as a not-bad report. If a bad-agent record is produced and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "HG_noinfo_bad_agent_reporting",
+      "agent_type": "BAD",
+      "commitment_text": "has NOT committed to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Hard Garbling (HG): If you report the agent as NOT bad, there is a 1/3 probability that the system will automatically change your report to 'bad'. This switching is random and independent of your intentions. If a report of 'bad' is recorded\u2014whether from your choice or the system switch\u2014and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "DE_noinfo_good_agent_reporting",
+      "agent_type": "GOOD",
+      "commitment_text": "has NOT committed to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Direct Elicitation (DE): Your report will be recorded exactly as you submit it. If you report the agent as bad and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "RR_noinfo_good_agent_reporting",
+      "agent_type": "GOOD",
+      "commitment_text": "has NOT committed to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Randomized Response (RR): With probability 2/3, your report about the agent's type will be recorded directly. With probability 1/3, you will instead be asked: 'What is the color of the sky: blue or red?' A response of 'blue' will be recorded as a bad-agent report; 'red' as a not-bad report. If a bad-agent record is produced and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "HG_noinfo_good_agent_reporting",
+      "agent_type": "GOOD",
+      "commitment_text": "has NOT committed to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Hard Garbling (HG): If you report the agent as NOT bad, there is a 1/3 probability that the system will automatically change your report to 'bad'. This switching is random and independent of your intentions. If a report of 'bad' is recorded\u2014whether from your choice or the system switch\u2014and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "DE_info_bad_agent_reporting",
+      "agent_type": "BAD",
+      "commitment_text": "HAS COMMITTED to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Direct Elicitation (DE): Your report will be recorded exactly as you submit it. If you report the agent as bad and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "SOCIAL LEARNING FEEDBACK: You have access to aggregated outcome data from many past participants using this same survey design. This feedback reflects the distribution of commitment and reporting decisions observed over many rounds, helping you form accurate beliefs about how rational players behave in this setting.\n\n",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "RR_info_bad_agent_reporting",
+      "agent_type": "BAD",
+      "commitment_text": "HAS COMMITTED to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Randomized Response (RR): With probability 2/3, your report about the agent's type will be recorded directly. With probability 1/3, you will instead be asked: 'What is the color of the sky: blue or red?' A response of 'blue' will be recorded as a bad-agent report; 'red' as a not-bad report. If a bad-agent record is produced and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "SOCIAL LEARNING FEEDBACK: You have access to aggregated outcome data from many past participants using this same survey design. This feedback reflects the distribution of commitment and reporting decisions observed over many rounds, helping you form accurate beliefs about how rational players behave in this setting.\n\n",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "condition": "HG_info_bad_agent_reporting",
+      "agent_type": "BAD",
+      "commitment_text": "has NOT committed to punish you",
+      "survey_mechanism": "SURVEY DESIGN \u2014 Hard Garbling (HG): If you report the agent as NOT bad, there is a 1/3 probability that the system will automatically change your report to 'bad'. This switching is random and independent of your intentions. If a report of 'bad' is recorded\u2014whether from your choice or the system switch\u2014and the agent committed to punish, you will incur a financial penalty.",
+      "info_context": "SOCIAL LEARNING FEEDBACK: You have access to aggregated outcome data from many past participants using this same survey design. This feedback reflects the distribution of commitment and reporting decisions observed over many rounds, helping you form accurate beliefs about how rational players behave in this setting.\n\n",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "ScenarioList"
+}

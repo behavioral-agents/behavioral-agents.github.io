@@ -1,0 +1,40 @@
+{
+  "questions": [
+    {
+      "question_name": "perc_kept",
+      "question_text": "Round {{ round_num }} of 20. You are an {{ condition }} participant in this experiment. The total pie to be divided is \u00a3{{ total_pie }}. Your correct answers: {{ self_answers }}; your pay rate: \u00a3{{ self_pay }} per correct answer; your total contribution: \u00a3{{ self_monetary_contribution }}. The other participant's correct answers: {{ other_answers }}; their pay rate: \u00a3{{ other_pay }} per correct answer; their total contribution: \u00a3{{ other_monetary_contribution }}. What percentage of the total pie (0 to 100) do you choose to keep for yourself?",
+      "min_value": 0,
+      "max_value": 100,
+      "question_type": "numerical",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "perc_kept"
+    ],
+    "survey_question_texts": [
+      "Round {{ round_num }} of 20. You are an {{ condition }} participant in this experiment. The total pie to be divided is \u00a3{{ total_pie }}. Your correct answers: {{ self_answers }}; your pay rate: \u00a3{{ self_pay }} per correct answer; your total contribution: \u00a3{{ self_monetary_contribution }}. The other participant's correct answers: {{ other_answers }}; their pay rate: \u00a3{{ other_pay }} per correct answer; their total contribution: \u00a3{{ other_monetary_contribution }}. What percentage of the total pie (0 to 100) do you choose to keep for yourself?"
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "perc_kept": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

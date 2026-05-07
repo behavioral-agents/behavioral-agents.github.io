@@ -1,0 +1,88 @@
+{
+  "experiment_section": "E Instructions (Reproduced From Li, 2017) \u2014 Game 3 / SP-RSD",
+  "instructions": [
+    {
+      "page": "page_011",
+      "screen_position": "full",
+      "description": "Instructions for Game 3 (SP-RSD): explains 10-round structure, 4 prizes (A/B/C/D) worth $0.00\u2013$1.25, priority score mechanism (random integer 1\u201310), prize assignment rules by priority order, tie-breaking, 90-second time limit, and example decision interface showing prizes with value inputs and Confirm Choices button",
+      "sequence_order": 1
+    },
+    {
+      "page": "page_012",
+      "screen_position": "full",
+      "description": "Continuation/duplicate of Game 3 instructions (SP-RSD): same content as page_011, repeating prize assignment rules and showing example decision interface with 4 prizes and Confirm Choices button",
+      "sequence_order": 2
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "page_011",
+          "screen_position": "full",
+          "question_name": "rank_a",
+          "screen_type": "decision",
+          "description": "Participant enters rank (1\u20134) for Prize A (value $0.75 in example) as part of submitting a rank-order list over 4 prizes",
+          "depends_on": null,
+          "parameters": {
+            "prize_label": "A",
+            "example_value": 0.75,
+            "rank_range": "1-4",
+            "num_prizes": 4,
+            "time_limit_seconds": 90,
+            "priority_score_example": 5
+          }
+        },
+        {
+          "page": "page_011",
+          "screen_position": "full",
+          "question_name": "rank_b",
+          "screen_type": "decision",
+          "description": "Participant enters rank (1\u20134) for Prize B (value $0.50 in example) as part of submitting a rank-order list over 4 prizes",
+          "depends_on": "rank_a",
+          "parameters": {
+            "prize_label": "B",
+            "example_value": 0.5,
+            "rank_range": "1-4",
+            "num_prizes": 4,
+            "time_limit_seconds": 90,
+            "priority_score_example": 5
+          }
+        },
+        {
+          "page": "page_011",
+          "screen_position": "full",
+          "question_name": "rank_c",
+          "screen_type": "decision",
+          "description": "Participant enters rank (1\u20134) for Prize C (value $1.25 in example) as part of submitting a rank-order list over 4 prizes",
+          "depends_on": "rank_a",
+          "parameters": {
+            "prize_label": "C",
+            "example_value": 1.25,
+            "rank_range": "1-4",
+            "num_prizes": 4,
+            "time_limit_seconds": 90,
+            "priority_score_example": 5
+          }
+        },
+        {
+          "page": "page_011",
+          "screen_position": "full",
+          "question_name": "rank_d",
+          "screen_type": "decision",
+          "description": "Participant enters rank (1\u20134) for Prize D (value $0.00 in example) as part of submitting a rank-order list over 4 prizes",
+          "depends_on": "rank_a",
+          "parameters": {
+            "prize_label": "D",
+            "example_value": 0.0,
+            "rank_range": "1-4",
+            "num_prizes": 4,
+            "time_limit_seconds": 90,
+            "priority_score_example": 5
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "experiment_section": "Randomized Response (RR) Treatment \u2013 Agent-Monitor Dyad Game",
+  "instructions": [
+    {
+      "page": "page_025",
+      "screen_position": "full",
+      "description": "Instructions explaining sender's decision screen (message to reporter: 'I will not reduce the profit' or 'I will reduce the profit if my project is blocked') and reporter's evaluation screen (block or not block project), with screenshots of both interfaces",
+      "sequence_order": 1
+    },
+    {
+      "page": "page_026",
+      "screen_position": "full",
+      "description": "Instructions explaining the unrelated question (randomized response technique, 25% probability of being asked 'do you see the word red?'), importance note about sender uncertainty regarding why project was blocked, and payoff consequences of implemented vs blocked good/bad projects",
+      "sequence_order": 2
+    },
+    {
+      "page": "page_032",
+      "screen_position": "full",
+      "description": "Instructions showing end-of-round feedback screen screenshot (summary of implemented/blocked projects, total return, sender and reporter profits) and a worked scenario (Case 1) with profit calculations for sender and reporter when bad project is implemented",
+      "sequence_order": 3
+    },
+    {
+      "page": "page_036",
+      "screen_position": "full",
+      "description": "Social learning additional section: explains conditional payoff information from previous participants (80 subjects), with screenshot of sender's screen showing average profit table by project quality (Bad/Good) and decision (reduce profit or not)",
+      "sequence_order": 4
+    },
+    {
+      "page": "page_037",
+      "screen_position": "full",
+      "description": "Social learning additional section continued: screenshot of reporter's conditional payoff information screen showing two cases (sender reduces profit or not) by project quality (Bad/Good) and blocking decision; remark that in RR treatment the conditional payoff information is displayed separately for the unrelated question case",
+      "sequence_order": 5
+    }
+  ],
+  "trials": [
+    {
+      "trial_number": 1,
+      "screens": [
+        {
+          "page": "page_025",
+          "screen_position": "bottom",
+          "question_name": "block_project",
+          "screen_type": "decision",
+          "description": "Reporter's evaluation screen: informed of project quality (Bad) and sender's message ('I will reduce the profit if my project is blocked'), then asked 'Would you like to block the project?' (Yes / No)",
+          "depends_on": null,
+          "parameters": {
+            "project_quality_shown": "Bad",
+            "sender_message_shown": "I will reduce the profit if my project is blocked",
+            "evaluation_probability": 0.75,
+            "unrelated_question_probability": 0.25,
+            "good_project_implemented_return": 400,
+            "bad_project_implemented_return": -400,
+            "good_project_blocked_return": 300,
+            "bad_project_blocked_return": -100
+          }
+        }
+      ]
+    }
+  ]
+}

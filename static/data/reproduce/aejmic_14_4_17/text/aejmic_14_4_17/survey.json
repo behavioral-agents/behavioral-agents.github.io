@@ -1,0 +1,46 @@
+{
+  "questions": [
+    {
+      "question_name": "rol",
+      "question_text": "Round context: Your priority score is {{ score }}. Four prizes are available this round: Prize A worth ${{ value_A }}, Prize B worth ${{ value_B }}, Prize C worth ${{ value_C }}, Prize D worth ${{ value_D }}. The mechanism: players are ordered by priority score (highest first); each player in turn receives her top-ranked remaining prize. Ties in priority are broken at random. Rank these four prizes from your top choice (most preferred) to your bottom choice (least preferred).",
+      "question_options": [
+        "Prize A",
+        "Prize B",
+        "Prize C",
+        "Prize D"
+      ],
+      "num_selections": 4,
+      "use_code": true,
+      "question_type": "rank",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "rol"
+    ],
+    "survey_question_texts": [
+      "Round context: Your priority score is {{ score }}. Four prizes are available this round: Prize A worth ${{ value_A }}, Prize B worth ${{ value_B }}, Prize C worth ${{ value_C }}, Prize D worth ${{ value_D }}. The mechanism: players are ordered by priority score (highest first); each player in turn receives her top-ranked remaining prize. Ties in priority are broken at random. Rank these four prizes from your top choice (most preferred) to your bottom choice (least preferred)."
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "rol": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

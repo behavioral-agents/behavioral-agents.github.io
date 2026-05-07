@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "question_name": "action",
+      "question_text": "{{ decision_screen_action }}\n\nRepeated prisoner's dilemma \u2014 supergame {{ supergame_index }}, round {{ round_in_match }}. Condition: {{ condition }}.\n\nPayoffs each round (yours, partner's): (C,C)\u2192(48,48); (D,D)\u2192(25,25); (D,C)\u2192(50,12); (C,D)\u2192(12,50). After each round there is a 90% chance the supergame continues, 10% it ends.\n\nInformation feedback by condition:\n  perfect_monitoring \u2192 you see your partner's exact last action.\n  public \u2192 both you and your partner see the same pair of noisy signals (each correct with prob 0.9) about both actions.\n  private \u2192 you see only a noisy signal about your partner's last action; they see only one about yours.\n\n{{ history_summary }}\n\nWhat is your choice for this round? (C or D)",
+      "question_options": [
+        "C",
+        "D"
+      ],
+      "question_type": "multiple_choice",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "QuestionBase"
+    }
+  ],
+  "memory_plan": {
+    "survey_question_names": [
+      "action"
+    ],
+    "survey_question_texts": [
+      "{{ decision_screen_action }}\n\nRepeated prisoner's dilemma \u2014 supergame {{ supergame_index }}, round {{ round_in_match }}. Condition: {{ condition }}.\n\nPayoffs each round (yours, partner's): (C,C)\u2192(48,48); (D,D)\u2192(25,25); (D,C)\u2192(50,12); (C,D)\u2192(12,50). After each round there is a 90% chance the supergame continues, 10% it ends.\n\nInformation feedback by condition:\n  perfect_monitoring \u2192 you see your partner's exact last action.\n  public \u2192 both you and your partner see the same pair of noisy signals (each correct with prob 0.9) about both actions.\n  private \u2192 you see only a noisy signal about your partner's last action; they see only one about yours.\n\n{{ history_summary }}\n\nWhat is your choice for this round? (C or D)"
+    ],
+    "data": {}
+  },
+  "rule_collection": {
+    "question_name_to_index": {
+      "action": 0
+    },
+    "rules": [
+      {
+        "current_q": 0,
+        "expression": "True",
+        "next_q": 1,
+        "priority": -1,
+        "before_rule": false
+      }
+    ],
+    "num_questions": 1
+  },
+  "question_groups": {},
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "Survey"
+}

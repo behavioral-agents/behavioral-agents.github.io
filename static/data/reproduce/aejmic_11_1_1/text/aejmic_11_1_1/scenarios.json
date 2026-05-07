@@ -1,0 +1,24 @@
+{
+  "scenarios": [
+    {
+      "supergame_index": 1,
+      "condition": "perfect_monitoring",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "supergame_index": 1,
+      "condition": "public",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    },
+    {
+      "supergame_index": 1,
+      "condition": "private",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Scenario"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "ScenarioList"
+}

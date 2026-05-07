@@ -1,0 +1,856 @@
+{
+  "agent_list": [
+    {
+      "traits": {
+        "_subject_id": 310,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.8, with background in social science, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.8,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 903,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 2.7, with no listed academic background, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 2.7,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3404,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 3.3, with background in social science, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 3.3,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1209,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.9, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3206,
+        "persona": "A UC Berkeley undergraduate student, older-aged, female, GPA 3.9, with no listed academic background, who has not taken game theory.",
+        "age": 1,
+        "gender": 1,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 306,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.8, with background in social science, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.8,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 705,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 3.6, with background in STEM, who has taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 3.6,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1109,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.6, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.6,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2704,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.9, with background in humanities, who has not taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 1,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2709,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.9, with background in humanities, who has not taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 1,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1404,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.2, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.2,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3410,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 3.3, with background in social science, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 3.3,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1110,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.6, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.6,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3203,
+        "persona": "A UC Berkeley undergraduate student, older-aged, female, GPA 3.9, with no listed academic background, who has not taken game theory.",
+        "age": 1,
+        "gender": 1,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 906,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 2.7, with no listed academic background, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 2.7,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 307,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.8, with background in social science, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.8,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1002,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.3, with no listed academic background, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.3,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2806,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.7, with background in STEM, who has not taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.7,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1407,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.2, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.2,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1007,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.3, with no listed academic background, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.3,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1408,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.2, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.2,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2801,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.7, with background in STEM, who has not taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.7,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3204,
+        "persona": "A UC Berkeley undergraduate student, older-aged, female, GPA 3.9, with no listed academic background, who has not taken game theory.",
+        "age": 1,
+        "gender": 1,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 801,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 3.1, with no listed academic background, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 3.1,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 210,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.0, with background in STEM and social science, who has not taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.0,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3603,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.8, with no listed academic background, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.8,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1101,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.6, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.6,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 309,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.8, with background in social science, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.8,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3209,
+        "persona": "A UC Berkeley undergraduate student, older-aged, female, GPA 3.9, with no listed academic background, who has not taken game theory.",
+        "age": 1,
+        "gender": 1,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3604,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.8, with no listed academic background, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.8,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1510,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.9, with background in STEM and social science, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1006,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.3, with no listed academic background, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.3,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3201,
+        "persona": "A UC Berkeley undergraduate student, older-aged, female, GPA 3.9, with no listed academic background, who has not taken game theory.",
+        "age": 1,
+        "gender": 1,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2807,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.7, with background in STEM, who has not taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.7,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1107,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.6, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.6,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 710,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 3.6, with background in STEM, who has taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 3.6,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2708,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.9, with background in humanities, who has not taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 1,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1106,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.6, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.6,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1108,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.6, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.6,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 802,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 3.1, with no listed academic background, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 3.1,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 303,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.8, with background in social science, who has taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.8,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 902,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 2.7, with no listed academic background, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 2.7,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2805,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.7, with background in STEM, who has not taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.7,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1501,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.9, with background in STEM and social science, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 1,
+        "stem": 1
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3502,
+        "persona": "A UC Berkeley undergraduate student, older-aged, female, GPA 3.4, with background in humanities, who has not taken game theory.",
+        "age": 1,
+        "gender": 1,
+        "GPA": 3.4,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 1,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2903,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 2.5, with no listed academic background, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 2.5,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 1401,
+        "persona": "A UC Berkeley undergraduate student, older-aged, male, GPA 3.2, with no listed academic background, who has taken game theory.",
+        "age": 1,
+        "gender": 0,
+        "GPA": 3.2,
+        "econ": 0,
+        "gametheory": 1,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 809,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, female, GPA 3.1, with no listed academic background, who has not taken game theory.",
+        "age": 2,
+        "gender": 1,
+        "GPA": 3.1,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 0,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 3510,
+        "persona": "A UC Berkeley undergraduate student, older-aged, female, GPA 3.4, with background in humanities, who has not taken game theory.",
+        "age": 1,
+        "gender": 1,
+        "GPA": 3.4,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 1,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    },
+    {
+      "traits": {
+        "_subject_id": 2706,
+        "persona": "A UC Berkeley undergraduate student, younger-aged, male, GPA 3.9, with background in humanities, who has not taken game theory.",
+        "age": 2,
+        "gender": 0,
+        "GPA": 3.9,
+        "econ": 0,
+        "gametheory": 0,
+        "humanities": 1,
+        "soc_sci": 0,
+        "stem": 0
+      },
+      "instruction": "You are participating in a decision-making experiment. In each round, you will see four prizes (labeled A, B, C, D) with monetary values. You must submit a rank-order list (ROL) by assigning each prize a unique rank from 1 to 4, where 1 means you want that prize most and 4 means you want it least. Each rank (1, 2, 3, and 4) must be used exactly once across all four prizes. You also have a private priority score. After all lists are submitted, prizes are allocated in priority-score order: the highest-priority player gets their top-ranked prize, the next player gets their top-ranked remaining prize, and so on. Ties in priority are broken randomly. Respond with integer ranks only.",
+      "edsl_version": "1.0.6",
+      "edsl_class_name": "Agent"
+    }
+  ],
+  "edsl_version": "1.0.6",
+  "edsl_class_name": "AgentList"
+}

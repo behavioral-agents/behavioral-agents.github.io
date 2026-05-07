@@ -1,0 +1,29 @@
+{
+  "paper_id": "aejmic_10_1_6",
+  "mappings": [
+    {
+      "generated": "stage1_signal_message_default.png",
+      "task_label": "Stage1 Signal Message Default",
+      "original_pages": [
+        "page_009.png"
+      ],
+      "screen_position": "top"
+    },
+    {
+      "generated": "stage2_type_message_default.png",
+      "task_label": "Stage2 Type Message Default",
+      "original_pages": [
+        "page_009.png"
+      ],
+      "screen_position": "bottom"
+    },
+    {
+      "generated": "final_vote_default.png",
+      "task_label": "Final Vote Default",
+      "original_pages": [
+        "page_010.png"
+      ],
+      "screen_position": "top"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reproduction package — The Simulation Gap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/site.css?v=5" />
+  <style>
+    /* ---- reproduce-page-specific design tokens (build on site.css) ---- */
+    .repro-back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .repro-back:hover { color: var(--ink); }
+
+    .repro-mode-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .repro-mode-card {
+      background: var(--surface-2, #f8fafc);
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 8px;
+      padding: 1.25rem 1.4rem;
+      text-decoration: none;
+      color: var(--ink);
+      display: block;
+      transition: border-color 0.12s, transform 0.12s;
+    }
+    .repro-mode-card:hover {
+      border-color: var(--ink-2);
+      transform: translateY(-1px);
+    }
+    .repro-mode-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      text-transform: capitalize;
+    }
+    .repro-mode-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .repro-exp-card {
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 8px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .repro-exp-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .repro-instructions ol {
+      margin: 0.6rem 0 0.5rem 1.25rem;
+      padding: 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .repro-instructions ul {
+      margin: 0.4rem 0 0.5rem 1.25rem;
+      padding: 0;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+    .repro-instructions code {
+      background: var(--surface-2, #f8fafc);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.85em;
+    }
+
+    .repro-actions {
+      display: flex;
+      gap: 0.6rem;
+      margin: 1rem 0 0.6rem;
+    }
+
+    .repro-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .repro-flow-item {
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--surface, #fff);
+    }
+    .repro-flow-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--border, #e5e7eb);
+    }
+    .repro-flow-label {
+      padding: 0.5rem 0.7rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+    .flow-badge {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin: 0.5rem;
+    }
+    .flow-badge-instruction { background: #e0e7ff; color: #3730a3; }
+    .flow-badge-decision    { background: #dbeafe; color: #1e40af; }
+
+    .repro-comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .repro-comparison-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 8px;
+      padding: 0.85rem;
+      background: var(--surface, #fff);
+    }
+    .repro-comparison-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid var(--border, #e5e7eb);
+    }
+    .repro-comparison-label {
+      font-size: 0.74rem;
+      color: var(--muted-2);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .repro-comparison-caption {
+      grid-column: 1 / -1;
+      padding-top: 0.4rem;
+      border-top: 1px dashed var(--border, #e5e7eb);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .repro-no-original {
+      padding: 1.5rem;
+      background: var(--surface-2, #f8fafc);
+      color: var(--muted-2);
+      text-align: center;
+      font-size: 0.82rem;
+      border-radius: 4px;
+      border: 1px dashed var(--border, #e5e7eb);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="brand" href="index.html">The Simulation Gap</a>
+      <nav class="site-nav">
+        <a href="index.html">Overview</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a href="papers.html">Papers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <div class="eyebrow">Reproduction package</div>
+        <h1 id="repro-title">Reproduction package</h1>
+        <p class="lede" id="repro-lede">
+          Download and run the exact same simulation locally. Each package is
+          a self-contained script with the survey, agent profiles and
+          scenarios serialized to JSON.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:1rem; padding-bottom:5rem;">
+      <div class="container">
+        <div id="repro-root">
+          <p class="loading">Loading…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>The Simulation Gap</strong> &middot;
+        <span class="muted">NOMIS Center for the Cognitive Foundations of Economics, University of Zurich.</span>
+      </div>
+      <div class="muted">
+        <a href="https://github.com/behavioral-agents/behavioral-agents.github.io" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/site.js?v=5"></script>
+  <script src="static/js/reproduce.js?v=1"></script>
+</body>
+</html>
