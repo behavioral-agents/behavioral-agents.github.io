@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scale Vote</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .outer-wrapper {
+    width: 700px;
+  }
+  .top-bar {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 2px;
+  }
+  .main-panel {
+    border: 1px solid #ccc;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    min-height: 320px;
+  }
+  .left-panel {
+    width: 240px;
+    border-right: 1px solid #ccc;
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .left-panel .role-line {
+    color: #cc0000;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .left-panel .sub-line {
+    color: #cc0000;
+    font-size: 12px;
+  }
+  .left-panel .info-line {
+    color: #333;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .middle-panel {
+    width: 220px;
+    border-right: 1px solid #ccc;
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .payoff-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+  }
+  .payoff-table th {
+    background: #e8e8e8;
+    border: 1px solid #bbb;
+    padding: 5px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .payoff-table td {
+    border: 1px solid #bbb;
+    padding: 8px 8px;
+    text-align: center;
+    font-size: 11px;
+    vertical-align: middle;
+  }
+  .outcome-label {
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .earnings-text {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .right-panel {
+    flex: 1;
+    padding: 14px 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .your-choices-box {
+    border: 2px solid #cc0000;
+    background: #fff;
+    padding: 6px 10px;
+    margin-bottom: 12px;
+    position: relative;
+    align-self: flex-end;
+    width: 100%;
+  }
+  .your-choices-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    line-height: 1.2;
+  }
+  .arrow-left {
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 18px solid #cc0000;
+  }
+  .vote-section {
+    margin-top: 8px;
+  }
+  .vote-label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  .vote-question {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .radio-option {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .radio-option input[type="radio"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .submit-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+  }
+  .submit-btn {
+    background: #e8e8e8;
+    border: 1px solid #999;
+    padding: 4px 16px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .submit-btn:hover {
+    background: #d0d0d0;
+  }
+  .history-section {
+    border-top: 1px solid #ccc;
+    background: #fff;
+    padding: 10px 14px;
+  }
+  .history-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  .history-table th {
+    background: #e8e8e8;
+    border: 1px solid #bbb;
+    padding: 3px 6px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .history-table td {
+    border: 1px solid #bbb;
+    padding: 3px 6px;
+    text-align: center;
+  }
+  .payoff-note {
+    font-size: 11px;
+    color: #333;
+    margin-top: 10px;
+    line-height: 1.6;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+  }
+  .payoff-note strong {
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="outer-wrapper">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    Your ID: &nbsp; &nbsp; Block: 2 &nbsp; &nbsp; Period: 2
+  </div>
+
+  <!-- Main panel -->
+  <div class="main-panel">
+
+    <!-- Left panel: role/info -->
+    <div class="left-panel">
+      <div class="role-line">This period you are: RED</div>
+      <div class="sub-line">Your match is random<br>(you are in a group of 12)</div>
+      <div class="info-line">You have 0 tickets</div>
+      <div class="info-line">You have met a BLUE who has 1 or more tickets</div>
+    </div>
+
+    <!-- Middle panel: payoff table -->
+    <div class="middle-panel">
+      <table class="payoff-table">
+        <thead>
+          <tr>
+            <th>POSSIBLE OUTCOMES</th>
+            <th>EARNINGS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="outcome-label">Y</span></td>
+            <td>
+              <div class="earnings-text">
+                BLUE gets 3 points<br>You get 6 points
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="outcome-label">Z</span></td>
+            <td>
+              <div class="earnings-text">
+                BLUE gets 18 points<br>You get 0 points
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Right panel: YOUR CHOICES + vote -->
+    <div class="right-panel">
+      <div class="your-choices-box">
+        <div class="arrow-left"></div>
+        <div class="your-choices-title">YOUR<br>CHOICES</div>
+      </div>
+
+      <div class="vote-section">
+        <div class="vote-label">Please make a choice:</div>
+        <div class="radio-option">
+          <input type="radio" name="vote" value="execute_y"> Execute Y
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="vote" value="execute_z"> Execute Z
+        </div>
+        <div class="radio-option">
+          <input type="radio" name="vote" value="execute_z_ticket"> Execute Z only if BLUE gives me a ticket
+        </div>
+
+        <div class="payoff-note">
+          <strong>End-of-block vote</strong> — You have just finished block 2 of the experiment.<br>
+          Your treatment is: <strong>tokens_available</strong> (blue can give a ticket to red as a side payment).<br><br>
+          Now you must vote on the matching structure for the <strong>NEXT block</strong>.<br>
+          If <strong>'fixed'</strong> wins by majority, you will be paired with a single partner for all periods of the next block.<br>
+          If <strong>'random'</strong> wins, you will be re-matched each period from a group of 12 participants.<br><br>
+          Recall the payoff structure (red, blue):<br>
+          &nbsp;&nbsp;- Fixed pair: Y → (6, 3); Z → (0, 15)<br>
+          &nbsp;&nbsp;- Random pair: Y → (6, 3); Z → (0, 18)<br><br>
+          <strong>Which matching structure do you prefer?</strong> Your vote will not be revealed to others.
+        </div>
+
+        <div style="margin-top:12px;">
+          <div class="radio-option">
+            <input type="radio" name="matching_vote" value="fixed"> Fixed pair
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="matching_vote" value="random"> Random matching
+          </div>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <button class="submit-btn">Submit</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- History section -->
+  <div class="history-section">
+    <div class="history-title">Results of previous periods in this block</div>
+    <table class="history-table">
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Your color</th>
+          <th>Outcome</th>
+          <th>Ticket Transfer</th>
+          <th>Your earnings</th>
+          <th>Same outcome in all pairs?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>BLUE</td>
+          <td>Z</td>
+          <td>YES</td>
+          <td>18</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</body>
+</html>

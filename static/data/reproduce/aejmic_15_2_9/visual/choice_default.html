@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Part C – Choice Task</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .outer-wrapper {
+    width: 700px;
+  }
+
+  .screen-container {
+    border: 2px solid #d4c200;
+    width: 100%;
+  }
+
+  .timer-bar {
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    text-align: right;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #333;
+  }
+
+  .timer-bar span.timer-value {
+    color: #d4c200;
+    font-weight: bold;
+  }
+
+  .part-label {
+    font-size: 12px;
+    color: #333;
+    padding: 4px 8px 0 8px;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+  }
+
+  .instructions-box {
+    border-bottom: 1px solid #ccc;
+    padding: 8px 10px;
+    background: #fff;
+    position: relative;
+  }
+
+  .instructions-box p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .instructions-box p strong {
+    font-weight: bold;
+  }
+
+  .instructions-box .underline {
+    text-decoration: underline;
+  }
+
+  .scrollbar-indicator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    background: #e0e0e0;
+    border-left: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0;
+  }
+
+  .scrollbar-indicator .arrow {
+    font-size: 10px;
+    color: #555;
+    line-height: 1;
+  }
+
+  .choice-area {
+    background: #c8c8c8;
+    padding: 60px 20px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .choice-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .choice-label-text {
+    font-size: 13px;
+    color: #000;
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #000;
+  }
+
+  .radio-option input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .button-bar {
+    background: #f0f0f0;
+    border-top: 1px solid #ccc;
+    padding: 6px 8px;
+    text-align: right;
+  }
+
+  .continue-btn {
+    background: #e8e8e8;
+    border: 1px solid #999;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .continue-btn:hover {
+    background: #d8d8d8;
+  }
+</style>
+</head>
+<body>
+<div class="outer-wrapper">
+  <div class="screen-container">
+
+    <!-- Timer bar -->
+    <div class="timer-bar">
+      Remaining time [sec]: <span class="timer-value">0</span>
+    </div>
+
+    <!-- Part label -->
+    <div class="part-label">Part C</div>
+
+    <!-- Instructions -->
+    <div class="instructions-box" style="padding-right: 26px;">
+      <p>
+        <strong>PART C.</strong> Please pick one object. (Your partner has been shown the same set of objects as you.) Each of you and your partner will receive $1.25 if you both pick the same object, $0 otherwise.
+      </p>
+      <br>
+      <p>
+        You may <span class="underline">pick your chosen object by ticking the box located next to the label</span>.
+      </p>
+      <div class="scrollbar-indicator">
+        <span class="arrow">▲</span>
+        <span class="arrow">▼</span>
+      </div>
+    </div>
+
+    <!-- Choice area -->
+    <div class="choice-area">
+      <div class="choice-inner">
+        <span class="choice-label-text">Select your choice:</span>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="object_choice" value="xxx"> xxx
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="object_choice" value="yyy"> yyy
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="object_choice" value="zzz"> zzz
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button bar -->
+    <div class="button-bar">
+      <button class="continue-btn">CONTINUE</button>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

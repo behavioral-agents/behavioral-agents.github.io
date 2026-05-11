@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decision Screen</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #f4f4f4;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #333;
+    padding: 30px 16px 60px;
+  }
+
+  .survey-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .survey-header {
+    background-color: #0070c0;
+    color: #fff;
+    padding: 14px 24px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+
+  .survey-header .progress-label {
+    font-weight: bold;
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  .question-block {
+    padding: 28px 32px 24px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .question-label {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: normal;
+  }
+
+  .question-text {
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .supergame-info {
+    background: #f7f9fc;
+    border: 1px solid #c8d8ea;
+    border-radius: 3px;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    font-size: 13.5px;
+    color: #2a4a6b;
+    line-height: 1.6;
+  }
+
+  .supergame-info .info-row {
+    margin-bottom: 3px;
+  }
+
+  .supergame-info .info-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .supergame-info strong {
+    color: #1a3a5c;
+  }
+
+  .section-heading {
+    font-size: 13.5px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+    margin-top: 18px;
+  }
+
+  /* Payoff matrix table */
+  .payoff-section {
+    margin-bottom: 20px;
+  }
+
+  .payoff-table-wrap {
+    overflow-x: auto;
+  }
+
+  .payoff-table {
+    border-collapse: collapse;
+    font-size: 13.5px;
+    min-width: 320px;
+  }
+
+  .payoff-table th,
+  .payoff-table td {
+    border: 1px solid #bbb;
+    padding: 9px 18px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .payoff-table thead th {
+    background-color: #e8f0f8;
+    font-weight: bold;
+    color: #1a3a5c;
+  }
+
+  .payoff-table .row-header {
+    background-color: #e8f0f8;
+    font-weight: bold;
+    color: #1a3a5c;
+    text-align: center;
+  }
+
+  .payoff-table .axis-label {
+    background-color: #d0e4f5;
+    font-weight: bold;
+    color: #0a2a4a;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+  }
+
+  .payoff-table .cell-highlight-cc {
+    background-color: #eaf5ea;
+  }
+
+  .payoff-table .cell-highlight-dd {
+    background-color: #fdf3f3;
+  }
+
+  .payoff-table .cell-highlight-dc {
+    background-color: #fff8e8;
+  }
+
+  .payoff-table .cell-highlight-cd {
+    background-color: #fff8e8;
+  }
+
+  .payoff-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* Continuation probability */
+  .continuation-box {
+    background: #fffbe6;
+    border: 1px solid #e0cc80;
+    border-radius: 3px;
+    padding: 9px 14px;
+    font-size: 13px;
+    color: #5a4a00;
+    margin-bottom: 20px;
+  }
+
+  /* Monitoring condition */
+  .monitoring-box {
+    background: #f3f0fa;
+    border: 1px solid #c0b0e0;
+    border-radius: 3px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #3a2a6a;
+    margin-bottom: 20px;
+    line-height: 1.55;
+  }
+
+  .monitoring-box .condition-tag {
+    display: inline-block;
+    background: #7b5ea7;
+    color: #fff;
+    font-size: 11.5px;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 1px 7px;
+    margin-right: 6px;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+  }
+
+  /* History summary */
+  .history-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 22px;
+    line-height: 1.6;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .history-label {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  /* Choice section */
+  .choice-section {
+    margin-top: 4px;
+  }
+
+  .choice-question {
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 14px;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background: #fafafa;
+    transition: border-color 0.15s;
+    min-width: 100px;
+    justify-content: center;
+  }
+
+  .radio-option:hover {
+    border-color: #0070c0;
+    background: #f0f7ff;
+  }
+
+  .radio-option input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #0070c0;
+    cursor: pointer;
+  }
+
+  .radio-option .choice-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+  }
+
+  .radio-option .choice-desc {
+    font-size: 12px;
+    color: #666;
+    margin-left: 2px;
+  }
+
+  /* Submit area */
+  .submit-area {
+    padding: 20px 32px 24px;
+    text-align: right;
+    background: #fafafa;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  .btn-submit {
+    background-color: #0070c0;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+  }
+
+  .btn-submit:hover {
+    background-color: #005a9e;
+  }
+
+  .required-note {
+    font-size: 12px;
+    color: #c00;
+    margin-bottom: 8px;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 18px 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="survey-container">
+
+  <!-- Header bar -->
+  <div class="survey-header">
+    <span class="progress-label">Repeated Prisoner's Dilemma Experiment</span>
+  </div>
+
+  <!-- Main question block -->
+  <div class="question-block">
+
+    <div class="question-label">Question 1 of 1</div>
+
+    <!-- Supergame / round info -->
+    <div class="supergame-info">
+      <div class="info-row"><strong>Supergame:</strong> 3 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Round in match:</strong> 5</div>
+      <div class="info-row"><strong>Condition:</strong> perfect_monitoring</div>
+    </div>
+
+    <!-- Payoff matrix section -->
+    <div class="payoff-section">
+      <div class="section-heading">Payoff Matrix (Your payoff, Partner's payoff)</div>
+      <div class="payoff-table-wrap">
+        <table class="payoff-table">
+          <thead>
+            <tr>
+              <th class="axis-label" style="background:#d0e4f5;"></th>
+              <th class="axis-label" colspan="2">Partner's Action</th>
+            </tr>
+            <tr>
+              <th class="axis-label">Your Action</th>
+              <th class="axis-label">C (Cooperate)</th>
+              <th class="axis-label">D (Defect)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-header">C (Cooperate)</td>
+              <td class="cell-highlight-cc"><strong>48</strong>, 48</td>
+              <td class="cell-highlight-cd">12, <strong>50</strong></td>
+            </tr>
+            <tr>
+              <td class="row-header">D (Defect)</td>
+              <td class="cell-highlight-dc"><strong>50</strong>, 12</td>
+              <td class="cell-highlight-dd">25, 25</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="payoff-note">Each cell shows (your payoff, partner's payoff) in points.</div>
+    </div>
+
+    <!-- Continuation probability -->
+    <div class="continuation-box">
+      <strong>Continuation rule:</strong> After each round, there is a <strong>90% chance</strong> the supergame continues to the next round, and a <strong>10% chance</strong> it ends.
+    </div>
+
+    <!-- Monitoring condition -->
+    <div class="monitoring-box">
+      <span class="condition-tag">FEEDBACK</span>
+      <strong>Information feedback by condition:</strong><br>
+      &bull; <strong>perfect_monitoring</strong> — You see your partner's exact last action.<br>
+      &bull; <strong>public</strong> — Both you and your partner see the same pair of noisy signals (each correct with probability 0.9) about both actions.<br>
+      &bull; <strong>private</strong> — You see only a noisy signal about your partner's last action; they see only one about yours.
+    </div>
+
+    <hr class="divider">
+
+    <!-- History summary -->
+    <div>
+      <div class="history-label">History Summary</div>
+      <div class="history-box">Last round you chose C (cooperate). The noisy signal you received about your partner's last action was C (cooperate). Their actual last action was C (cooperate) (visible only under perfect_monitoring; under public/private monitoring you do not see it directly).</div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Choice question -->
+    <div class="choice-section">
+      <div class="choice-question">What is your choice for this round?</div>
+      <div class="required-note">* Required — please select one option.</div>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="choice" value="C">
+          <span class="choice-label">C</span>
+          <span class="choice-desc">(Cooperate)</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="choice" value="D">
+          <span class="choice-label">D</span>
+          <span class="choice-desc">(Defect)</span>
+        </label>
+      </div>
+    </div>
+
+  </div><!-- end question-block -->
+
+  <!-- Submit area -->
+  <div class="submit-area">
+    <button type="button" class="btn-submit">Submit &rarr;</button>
+  </div>
+
+</div><!-- end survey-container -->
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voting Decision</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    background: #ffffff;
+    border: 2px solid #cccc00;
+    max-width: 700px;
+    width: 100%;
+    padding: 24px 28px;
+    box-sizing: border-box;
+  }
+
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+
+  .left-info {
+    text-align: center;
+    flex: 1;
+  }
+
+  .right-info {
+    border: 1px solid red;
+    padding: 6px 10px;
+    flex: 1;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+  }
+
+  .voter-type-label {
+    border: 1px solid red;
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: red;
+    margin-bottom: 4px;
+  }
+
+  .type-value {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .ball-section {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .ball-label {
+    font-size: 13px;
+    color: #000;
+  }
+
+  .color-red {
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .chat-notice {
+    border: 1px solid red;
+    padding: 5px 8px;
+    font-size: 12px;
+    color: red;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .chat-notice-de {
+    text-align: center;
+    font-size: 11px;
+    color: #000;
+    margin-bottom: 6px;
+  }
+
+  .chat-box {
+    border: 1px solid #999;
+    min-height: 100px;
+    padding: 6px 8px;
+    font-size: 12px;
+    color: #000;
+    background: #fff;
+    margin-bottom: 18px;
+  }
+
+  .chat-message {
+    color: #000;
+    font-size: 12px;
+  }
+
+  .decision-section {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .decision-label-en {
+    border: 1px solid red;
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 12px;
+    color: red;
+    margin-bottom: 4px;
+  }
+
+  .decision-label-de {
+    font-size: 13px;
+    color: #000;
+    margin-bottom: 8px;
+  }
+
+  .radio-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 6px;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+  }
+
+  .radio-option input[type="radio"] {
+    margin: 0;
+  }
+
+  .color-labels-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .blue-label {
+    color: blue;
+    font-weight: bold;
+  }
+
+  .red-label {
+    color: red;
+    font-weight: bold;
+  }
+
+  .next-btn-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+
+  .next-btn {
+    background: #d0d0d0;
+    border: 1px solid #999;
+    padding: 4px 14px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #000;
+  }
+
+  .question-text {
+    font-size: 11px;
+    color: #555;
+    border: 1px dashed #aaa;
+    padding: 8px;
+    margin-bottom: 14px;
+    background: #fafafa;
+    line-height: 1.5;
+  }
+
+  .placeholder {
+    font-style: italic;
+    color: #888;
+  }
+
+  .rule-note {
+    font-size: 11px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Top section: voter type (left) + other voter's indicated color (right) -->
+  <div class="top-section">
+    <div class="left-info">
+      <div class="voter-type-label">You are a voter of type L</div>
+      <div style="font-size:12px; color:#000; margin-top:2px;">Sie sind ein Wähler vom</div>
+      <div class="type-value">Typ L</div>
+    </div>
+    <div class="right-info">
+      The color of the ball of the other member of your group as indicated by him is red.<br>
+      <span style="font-size:11px;">Die Kugel, die der andere Wähler in ihrer Gruppe angab bekommen zu haben ist</span><br>
+      <span class="color-red">ROT</span>
+    </div>
+  </div>
+
+  <!-- Own ball color -->
+  <div class="ball-section">
+    <div class="ball-label">Die Kugel, die Sie erhalten haben ist</div>
+    <div class="color-red">ROT</div>
+  </div>
+
+  <!-- Chat review notice -->
+  <div class="chat-notice">
+    Here you can review the chat. Your ID was voter 1 and the other voter's ID was voter 2 for this chat.
+  </div>
+  <div class="chat-notice-de">
+    Hier können Sie den Chat noch einmal nachlesen. Ihre ID war "Wähler 1" und die des anderen Wählers "Wähler 2".
+  </div>
+
+  <!-- Chat transcript box -->
+  <div class="chat-box">
+    <div class="chat-message"><span class="placeholder">Voter 1: I am low type (L), not high type.</span></div>
+  </div>
+
+  <!-- Decision rule note -->
+  <div class="rule-note">
+    <em>Decision rule: unanimous to overturn — the group decision is Red only if BOTH voters vote Red; otherwise the status quo Blue holds.</em>
+  </div>
+
+  <!-- Final voting decision -->
+  <div class="decision-section">
+    <div class="decision-label-en">Now make your final voting decision:</div>
+    <div class="decision-label-de">Treffen Sie nun Ihre Entscheidung für die Abstimmung:</div>
+
+    <div class="radio-row">
+      <div class="radio-option">
+        <input type="radio" name="vote" value="blue" id="vote_blue">
+        <label for="vote_blue">BLAU</label>
+      </div>
+      <div class="radio-option">
+        <input type="radio" name="vote" value="red" id="vote_red">
+        <label for="vote_red">ROT</label>
+      </div>
+    </div>
+
+    <div class="color-labels-row">
+      <span class="blue-label">blue</span>
+      <span class="red-label">red</span>
+    </div>
+  </div>
+
+  <!-- Next button -->
+  <div class="next-btn-row">
+    <button class="next-btn">Weiter</button>
+  </div>
+
+</div>
+</body>
+</html>

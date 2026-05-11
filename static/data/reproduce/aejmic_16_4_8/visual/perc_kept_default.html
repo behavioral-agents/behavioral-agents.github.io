@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allocation Decision</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px 20px;
+  }
+  .container {
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 4px;
+    max-width: 700px;
+    width: 100%;
+    padding: 24px 28px;
+  }
+  .round-counter {
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 14px;
+    font-weight: bold;
+  }
+  .instruction-box {
+    border: 1px solid #aaa;
+    background: #fafafa;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .instruction-box strong { font-weight: bold; }
+
+  /* MouselabWEB grid */
+  .mouselab-section {
+    margin-bottom: 20px;
+  }
+  .mouselab-label {
+    font-size: 12.5px;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .mouselab-grid-wrapper {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .mouselab-panel {
+    background: #d4d4d4;
+    border: 1px solid #aaa;
+    padding: 10px 12px;
+    border-radius: 3px;
+    min-width: 200px;
+  }
+  .mouselab-panel table {
+    border-collapse: separate;
+    border-spacing: 6px;
+    width: 100%;
+  }
+  .mouselab-panel th {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    padding: 2px 4px;
+  }
+  .mouselab-panel td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .row-label {
+    font-size: 11px;
+    color: #333;
+    text-align: right !important;
+    padding-right: 4px;
+    white-space: nowrap;
+  }
+  .info-box {
+    width: 52px;
+    height: 28px;
+    background: #2ecc40;
+    border: 1px solid #27a535;
+    border-radius: 2px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+  }
+  .info-box.revealed {
+    background: #fff;
+    border: 1px solid #aaa;
+    font-size: 11px;
+    line-height: 28px;
+    color: #222;
+  }
+  .resize-icon {
+    font-size: 10px;
+    color: #666;
+    text-align: right;
+    margin-top: 4px;
+  }
+
+  /* Question text */
+  .question-text {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #222;
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+
+  /* Allocation input */
+  .allocation-section {
+    margin-bottom: 20px;
+  }
+  .allocation-label {
+    font-size: 13.5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  .slider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .slider-row input[type="range"] {
+    flex: 1;
+    height: 6px;
+    accent-color: #2ecc40;
+  }
+  .slider-value {
+    font-size: 13px;
+    min-width: 36px;
+    text-align: center;
+    border: 1px solid #aaa;
+    padding: 3px 6px;
+    border-radius: 3px;
+    background: #fff;
+    color: #333;
+  }
+  .slider-endpoints {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  /* Submit button */
+  .submit-btn {
+    display: block;
+    margin: 0 auto;
+    background: #4a90d9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 36px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+  }
+  .submit-btn:hover { background: #357abd; }
+
+  .timer-note {
+    font-size: 11.5px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="round-counter">Round <strong>1</strong> of <strong>20</strong></div>
+
+  <div class="instruction-box">
+    This information will be hidden in <strong>boxes</strong>.<br><br>
+    If you <strong>hover the mouse cursor</strong> over a box you will see the underlying information, as in the example below
+  </div>
+
+  <!-- MouselabWEB panels: two side-by-side (hidden vs revealed example) -->
+  <div class="mouselab-grid-wrapper">
+    <!-- Panel 1: all hidden -->
+    <div class="mouselab-panel">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Correct<br>Answers</th>
+            <th>Monetary<br>Contribution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">You</td>
+            <td><div class="info-box"></div></td>
+            <td><div class="info-box"></div></td>
+          </tr>
+          <tr>
+            <td class="row-label">Other</td>
+            <td><div class="info-box"></div></td>
+            <td><div class="info-box"></div></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="resize-icon">&#x2922;</div>
+    </div>
+
+    <!-- Panel 2: one box revealed (monetary contribution for You) -->
+    <div class="mouselab-panel">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Correct<br>Answers</th>
+            <th>Monetary<br>Contribution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">You</td>
+            <td><div class="info-box"></div></td>
+            <td><div class="info-box revealed">£ 10.0</div></td>
+          </tr>
+          <tr>
+            <td class="row-label">Other</td>
+            <td><div class="info-box"></div></td>
+            <td><div class="info-box"></div></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="resize-icon">&#x2922;</div>
+    </div>
+  </div>
+
+  <div class="timer-note">Information boxes are available to view for up to <strong>6 seconds</strong> per hover.</div>
+
+  <!-- Question text -->
+  <div class="question-text">
+    Round <strong>7</strong> of <strong>20</strong>. You are an <strong>Involved</strong> participant in this experiment. The total pie to be divided is <strong>£2.64</strong>.<br><br>
+    Your correct answers: <strong>18</strong>; your pay rate: <strong>£0.10</strong> per correct answer; your total contribution: <strong>£1.80</strong>.<br><br>
+    The other participant's correct answers: <strong>12</strong>; their pay rate: <strong>£0.07</strong> per correct answer; their total contribution: <strong>£0.84</strong>.<br><br>
+    <strong>What percentage of the total pie (0 to 100) do you choose to keep for yourself?</strong>
+  </div>
+
+  <!-- Allocation slider -->
+  <div class="allocation-section">
+    <div class="allocation-label">Percentage to keep for yourself:</div>
+    <div class="slider-row">
+      <span style="font-size:12px;color:#555;">0%</span>
+      <input type="range" min="0" max="100" value="50" style="flex:1;">
+      <span style="font-size:12px;color:#555;">100%</span>
+      <input type="number" class="slider-value" min="0" max="100" value="" placeholder="—" style="width:56px;">
+      <span style="font-size:12px;color:#555;">%</span>
+    </div>
+    <div class="slider-endpoints">
+      <span>Keep nothing (0%)</span>
+      <span>Keep everything (100%)</span>
+    </div>
+  </div>
+
+  <button class="submit-btn" type="button">Next</button>
+
+</div>
+</body>
+</html>

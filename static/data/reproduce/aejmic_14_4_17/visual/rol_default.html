@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game - ROL</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .outer-container {
+    max-width: 700px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 40px 50px;
+    box-sizing: border-box;
+  }
+
+  .game-title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 20px;
+  }
+
+  .instructions-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .instructions-text ol {
+    margin: 8px 0 8px 20px;
+    padding: 0;
+  }
+
+  .instructions-text ol li {
+    margin-bottom: 6px;
+  }
+
+  .prize-table-wrapper {
+    margin: 20px auto;
+    width: 380px;
+    border: 1px solid #aaaaaa;
+    background-color: #d9d9d9;
+    padding: 10px 15px 15px 15px;
+    box-sizing: border-box;
+  }
+
+  .prize-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #d9d9d9;
+  }
+
+  .prize-table th {
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    padding: 4px 8px;
+    border-bottom: none;
+  }
+
+  .prize-table th:first-child {
+    text-align: left;
+  }
+
+  .prize-table td {
+    padding: 8px 8px;
+    text-align: center;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+
+  .prize-table td:first-child {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  .prize-table input[type="text"] {
+    width: 60px;
+    height: 24px;
+    border: 1px solid #aaaaaa;
+    background-color: #cce0ff;
+    font-size: 13px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2px;
+  }
+
+  .info-box {
+    margin: 0 auto;
+    width: 380px;
+    background-color: #d9d9d9;
+    border: 1px solid #aaaaaa;
+    border-top: none;
+    padding: 10px 15px 12px 15px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .confirm-btn {
+    display: block;
+    margin: 10px 0 0 auto;
+    background-color: #cc0000;
+    color: #ffffff;
+    border: none;
+    padding: 6px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .page-counter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+<div class="outer-container">
+
+  <div class="game-title">GAME 3</div>
+
+  <div class="instructions-text">
+    You will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be <strong>the same for all the players</strong> in your group.
+  </div>
+
+  <div class="instructions-text">
+    At the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.
+  </div>
+
+  <div class="instructions-text">
+    The game proceeds as follows: We will ask you to list the prizes, <strong>in any order of your choice</strong>. All players will submit their lists privately and at the same time.
+  </div>
+
+  <div class="instructions-text">
+    After all the lists have been submitted, we will assign prizes using the following rule:
+    <ol>
+      <li>The player with the highest priority score will be assigned the top prize on his list.</li>
+      <li>The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.</li>
+      <li>The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.</li>
+      <li>The player with the lowest priority score will be assigned whatever prize remains.</li>
+    </ol>
+  </div>
+
+  <div class="instructions-text">
+    If two players have the same priority score, we will break the tie randomly.
+  </div>
+
+  <div class="instructions-text">
+    You will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says "Confirm Choices". Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says "Confirm Choices".
+  </div>
+
+  <div class="prize-table-wrapper">
+    <table class="prize-table">
+      <thead>
+        <tr>
+          <th>Prize</th>
+          <th>Value ($)</th>
+          <th>Choose (1-4)</th>
+          <th>Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>0.75</td>
+          <td><input type="text" maxlength="1"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>0.50</td>
+          <td><input type="text" maxlength="1"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>1.25</td>
+          <td><input type="text" maxlength="1"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>0.00</td>
+          <td><input type="text" maxlength="1"></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    Your priority score is 5.<br>
+    Rank the prizes in any order from 1 to 4.
+    <br>
+    <button class="confirm-btn">Confirm Choices</button>
+  </div>
+
+  <div class="page-counter">
+    <span>5 of 6</span>
+    <span>BB</span>
+  </div>
+
+</div>
+</body>
+</html>

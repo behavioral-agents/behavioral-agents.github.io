@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Observation: aejmic_10_1_6</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 1400px; margin: 2em auto; color: #222; }
+h1 { border-bottom: 2px solid #333; }
+h2 { margin-top: 2em; padding-top: 0.5em; border-top: 2px dashed #999; }
+h3 { color: #036; }
+h4 { color: #555; margin-top: 1em; margin-bottom: 0.3em; }
+pre { background: #f4f4f4; padding: 0.6em; border-radius: 4px;
+       white-space: pre-wrap; word-break: break-word; font-size: 0.82em;
+       max-height: 380px; overflow-y: auto; }
+img { max-width: 100%; max-height: 380px; border: 1px solid #888; margin: 0.4em 0; }
+.modes { display: flex; gap: 1em; align-items: flex-start; }
+.mode { flex: 1; min-width: 0; border: 1px solid #ccc; border-radius: 6px;
+         padding: 1em; background: #fafafa; }
+.mode-text { border-left: 4px solid #06c; }
+.mode-visual { border-left: 4px solid #c60; }
+.spec { background: #fff; padding: 0.5em 1em; border-radius: 4px;
+         margin-bottom: 0.8em; }
+.spec ul { margin: 0.3em 0; padding-left: 1.5em; }
+.summary { background: #ffd; padding: 1em; border-left: 4px solid #ec0;
+            margin: 1em 0; }
+.summary-table { border-collapse: collapse; }
+.summary-table th, .summary-table td { border: 1px solid #888; padding: 0.4em 0.8em; }
+.summary-table th { background: #eef; }
+.fidelity { background: #efe; padding: 0.6em 1em; border-left: 4px solid #4a4;
+             margin: 0.6em 0; }
+</style></head><body>
+
+<h1>Observation report: aejmic_10_1_6</h1>
+
+<div class="summary">
+<b>Model:</b> claude-sonnet-4-6<br>
+<b>Text-mode responses:</b> 0<br>
+<b>Visual-mode responses:</b> 530<br>
+<b>Questions:</b> context, straw_poll, type_chat, vote
+</div>
+
+<h2 style="border-top:none;padding-top:0;">Aggregate results</h2>
+<p><em>(no aggregate available)</em></p>
+<h2>Comparison: original vs simulated</h2>
+<table class="summary-table"><tr><th>Condition</th><th>Original mean</th><th>Replicated mean</th><th>Δ</th></tr>
+<tr><td>secrecy</td><td>0.2704</td><td>0.1525</td><td>-0.1179</td></tr>
+<tr><td>transparency</td><td>0.3325</td><td>0.1218</td><td>-0.2107</td></tr>
+</table>
+<div class="fidelity"><b>Fidelity:</b> F_individual = 0.3392, F_population = 0.3025 (matched n_subjects = 81)</div>
+<h3>Per-arm fidelity</h3><table class="summary-table"><tr><th>Condition</th><th>F_individual</th><th>F_population</th><th>n obs</th></tr>
+<tr><td>secrecy</td><td>+0.372</td><td>+0.566</td><td>289</td></tr>
+<tr><td>transparency</td><td>+0.301</td><td>-0.046</td><td>249</td></tr>
+</table>
+<h2>Distributions (humans vs AI, binned)</h2>
+<div style="display:flex;gap:2em;flex-wrap:wrap;">
+<div style="flex:1;min-width:380px"><h3>secrecy</h3>
+<div><strong>Humans</strong><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.38: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.25: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.13: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.01: </span><div style="background:#666;height:12px;width:1px"></div><span style="margin-left:6px">0 (0.1%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.89: </span><div style="background:#666;height:12px;width:1px"></div><span style="margin-left:6px">0 (0.2%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.77: </span><div style="background:#666;height:12px;width:3px"></div><span style="margin-left:6px">1 (0.5%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.64: </span><div style="background:#666;height:12px;width:5px"></div><span style="margin-left:6px">3 (1.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.52: </span><div style="background:#666;height:12px;width:10px"></div><span style="margin-left:6px">5 (1.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.40: </span><div style="background:#666;height:12px;width:16px"></div><span style="margin-left:6px">9 (3.2%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.28: </span><div style="background:#666;height:12px;width:24px"></div><span style="margin-left:6px">14 (4.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.16: </span><div style="background:#666;height:12px;width:35px"></div><span style="margin-left:6px">20 (6.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.03: </span><div style="background:#666;height:12px;width:45px"></div><span style="margin-left:6px">26 (8.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.09: </span><div style="background:#666;height:12px;width:53px"></div><span style="margin-left:6px">31 (10.6%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.21: </span><div style="background:#666;height:12px;width:58px"></div><span style="margin-left:6px">34 (11.6%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.33: </span><div style="background:#666;height:12px;width:58px"></div><span style="margin-left:6px">34 (11.6%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.45: </span><div style="background:#666;height:12px;width:53px"></div><span style="margin-left:6px">31 (10.6%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.58: </span><div style="background:#666;height:12px;width:45px"></div><span style="margin-left:6px">26 (8.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.70: </span><div style="background:#666;height:12px;width:35px"></div><span style="margin-left:6px">20 (6.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.82: </span><div style="background:#666;height:12px;width:24px"></div><span style="margin-left:6px">14 (4.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.94: </span><div style="background:#666;height:12px;width:16px"></div><span style="margin-left:6px">9 (3.2%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.06: </span><div style="background:#666;height:12px;width:10px"></div><span style="margin-left:6px">5 (1.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.18: </span><div style="background:#666;height:12px;width:5px"></div><span style="margin-left:6px">3 (1.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.31: </span><div style="background:#666;height:12px;width:3px"></div><span style="margin-left:6px">1 (0.5%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.43: </span><div style="background:#666;height:12px;width:1px"></div><span style="margin-left:6px">0 (0.2%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.55: </span><div style="background:#666;height:12px;width:1px"></div><span style="margin-left:6px">0 (0.1%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.67: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.79: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.92: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div></div>
+<div><strong>AI</strong><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.03: </span><div style="background:#48a;height:12px;width:300px"></div><span style="margin-left:6px">239 (84.8%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.94: </span><div style="background:#48a;height:12px;width:76px"></div><span style="margin-left:6px">43 (15.2%)</span></div></div>
+</div>
+<div style="flex:1;min-width:380px"><h3>transparency</h3>
+<div><strong>Humans</strong><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.99: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.81: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.64: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.47: </span><div style="background:#666;height:12px;width:1px"></div><span style="margin-left:6px">0 (0.1%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.30: </span><div style="background:#666;height:12px;width:1px"></div><span style="margin-left:6px">0 (0.2%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-1.13: </span><div style="background:#666;height:12px;width:3px"></div><span style="margin-left:6px">1 (0.5%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.96: </span><div style="background:#666;height:12px;width:5px"></div><span style="margin-left:6px">2 (1.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.78: </span><div style="background:#666;height:12px;width:10px"></div><span style="margin-left:6px">5 (1.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.61: </span><div style="background:#666;height:12px;width:16px"></div><span style="margin-left:6px">8 (3.2%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.44: </span><div style="background:#666;height:12px;width:24px"></div><span style="margin-left:6px">13 (4.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.27: </span><div style="background:#666;height:12px;width:35px"></div><span style="margin-left:6px">19 (6.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">-0.10: </span><div style="background:#666;height:12px;width:45px"></div><span style="margin-left:6px">25 (8.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.07: </span><div style="background:#666;height:12px;width:53px"></div><span style="margin-left:6px">29 (10.6%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.25: </span><div style="background:#666;height:12px;width:58px"></div><span style="margin-left:6px">32 (11.6%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.42: </span><div style="background:#666;height:12px;width:58px"></div><span style="margin-left:6px">32 (11.6%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.59: </span><div style="background:#666;height:12px;width:53px"></div><span style="margin-left:6px">29 (10.6%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.76: </span><div style="background:#666;height:12px;width:45px"></div><span style="margin-left:6px">25 (8.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.93: </span><div style="background:#666;height:12px;width:35px"></div><span style="margin-left:6px">19 (6.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.11: </span><div style="background:#666;height:12px;width:24px"></div><span style="margin-left:6px">13 (4.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.28: </span><div style="background:#666;height:12px;width:16px"></div><span style="margin-left:6px">8 (3.2%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.45: </span><div style="background:#666;height:12px;width:10px"></div><span style="margin-left:6px">5 (1.9%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.62: </span><div style="background:#666;height:12px;width:5px"></div><span style="margin-left:6px">2 (1.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.79: </span><div style="background:#666;height:12px;width:3px"></div><span style="margin-left:6px">1 (0.5%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.96: </span><div style="background:#666;height:12px;width:1px"></div><span style="margin-left:6px">0 (0.2%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">2.14: </span><div style="background:#666;height:12px;width:1px"></div><span style="margin-left:6px">0 (0.1%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">2.31: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">2.48: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">2.65: </span><div style="background:#666;height:12px;width:0px"></div><span style="margin-left:6px">0 (0.0%)</span></div></div>
+<div><strong>AI</strong><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.07: </span><div style="background:#48a;height:12px;width:300px"></div><span style="margin-left:6px">209 (87.8%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.93: </span><div style="background:#48a;height:12px;width:61px"></div><span style="margin-left:6px">29 (12.2%)</span></div></div>
+</div>
+</div>
+
+<h2>Question: <code>context</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<em>(no text-mode data)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>130508_1244_12</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>You are an undergraduate or graduate student from the University of Zurich or ETH Zurich, participating in a laboratory economics experiment.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>Overview
+
+Welcome to this experiment. We kindly ask you not to communicate with other participants during the experiment and to switch off your phones and other mobile devices.
+
+At the end of the experiment you will be paid out in cash for your participation in today's session. The amount of your pay-off depends in part on your decisions, on the decisions of other participants and on chance. For this reason it is important that you read the instructions carefully and understand them before the start of the experiment.
+
+In this experiment all interactions between participants take place via the computers that you are sitting in front of. You will interact anonymously and your decisions will only be stored together with your random ID number. Neither your name nor names of other participants will be made public, not today and not in future written analyses.
+
+Today's session consists of several rounds. At the end, 4 rounds will be randomly selected and paid out. The rounds that are not chosen will not be paid out. Your pay-off results from the points that you earn in the selected rounds, converted to Swiss Francs, plus your show-up fee of CHF 10. The conversion of points to Swiss Francs happens as follows: Every point is worth 15 cents, which means that
+20 points = CHF 3.00.
+
+Every participant will be paid out in private at the payment counter, so that no other participant can see how much you have earned.
+
+Experiment
+
+This experiment consists of 20 procedurally identical rounds. In each round a group decision has to be made that can be correct or wrong.
+
+Two members in each group of three make the group decision (henceforth we will call them the voters). There are well and less well informed voters and the task of the third group member is to observe the decision process of the other two members and then to indicate the probability with which he thinks that the other group members are well or less well informed (henceforth, we will call this member the observer).
+
+The higher the evaluation of the observer is with respect to the level of information of a voter, the higher is the pay-off to that voter in the round. The more accurate the evaluation of the observer is with respect to the level of information of the voters, the higher is his or her pay-off in the round. In addition, the observer receives a pay-off for correct group decisions.
+
+The Group
+
+In the first round you will be assigned a meta-group of 9 members. In the beginning of every round you will be randomly assigned to a new group which consists of randomly selected members of your meta-group. Every group has three members: 2 voters and 1 observer. Whether you will be assigned the role of a voter or an observer, is randomly determined each round. The voters receive, again randomly, the labels &quot;voter 1&quot; and &quot;voter 2&quot;.
+
+All interactions in a round take place within your group of three.
+
+The Voters
+
+There are two types of voters, well informed (type G) and (less well) informed (type I) voters. Of which type the group members are, is again determined randomly. With probability ¼ (or 25%) a voter receives good information which means he is of type G; with probability ¾ (or 75%) he receives less good information which means he is of type I.
+
+Because the assignment of types to the voters is independent of the assignment to other voters, there can be two voters of type G, two voters of type I, or one of each type in a group.
+
+The voters learn their type on the first screen of a round but not the type of the other voter in their group. The observer learns that he is an observer on the first screen but not the types of the voters in his group.
+
+Later, after observing the behavior of the voters, it will be the task of the observer to estimate the probabilities that voter 1 and voter 2 are of type G.
+
+The Jar
+
+There are two jars: one red jar and one blue jar. The red jar contains 11 red and 9 blue balls, the blue jar 11 blue and 9 red balls. Each round one jar will be randomly sel
+... [truncated, total 9748 chars]</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>## Summary of Information Before Casting My Vote
+
+**My situation:**
+- I am a **less-informed voter (type I)**
+- My private signal (ball drawn) is: **BLUE**
+- The true state of the jar is: **BLUE** (confirming my signal was correct)
+
+**Other voter's information:**
+- The other voter is **well-informed (type G)** with signal: **BLUE**
+- Being type G means they received the **actual jar color directly**
+
+**Communication stages:**
+- **S-chat (ball color):** Both I and the other voter communicated **BLUE** — consistent signals
+- **Sigma-chat (type claims):** I claimed to be **neither high nor low type** (no claim made); the other voter claimed to be **low type**
+
+**Transparency condition:** Full transparency — the observer can see voter types and signals
+
+**Key takeaway:**
+The evidence strongly points to **BLUE**: my own signal is BLUE, and the well-informed voter also signaled BLUE. Both signals are aligned. The type G voter's direct knowledge of the jar color makes their BLUE signal particularly reliable. Despite the other voter claiming low type in sigma-chat (possibly strategic), the underlying signal evidence is unanimous for BLUE.
+
+**I should vote: BLUE**</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+<h2>Question: <code>straw_poll</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<em>(no text-mode data)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>130508_1244_15</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>You are an undergraduate or graduate student from the University of Zurich or ETH Zurich, participating in a laboratory economics experiment.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>Overview
+
+Welcome to this experiment. We kindly ask you not to communicate with other participants during the experiment and to switch off your phones and other mobile devices.
+
+At the end of the experiment you will be paid out in cash for your participation in today's session. The amount of your pay-off depends in part on your decisions, on the decisions of other participants and on chance. For this reason it is important that you read the instructions carefully and understand them before the start of the experiment.
+
+In this experiment all interactions between participants take place via the computers that you are sitting in front of. You will interact anonymously and your decisions will only be stored together with your random ID number. Neither your name nor names of other participants will be made public, not today and not in future written analyses.
+
+Today's session consists of several rounds. At the end, 4 rounds will be randomly selected and paid out. The rounds that are not chosen will not be paid out. Your pay-off results from the points that you earn in the selected rounds, converted to Swiss Francs, plus your show-up fee of CHF 10. The conversion of points to Swiss Francs happens as follows: Every point is worth 15 cents, which means that
+20 points = CHF 3.00.
+
+Every participant will be paid out in private at the payment counter, so that no other participant can see how much you have earned.
+
+Experiment
+
+This experiment consists of 20 procedurally identical rounds. In each round a group decision has to be made that can be correct or wrong.
+
+Two members in each group of three make the group decision (henceforth we will call them the voters). There are well and less well informed voters and the task of the third group member is to observe the decision process of the other two members and then to indicate the probability with which he thinks that the other group members are well or less well informed (henceforth, we will call this member the observer).
+
+The higher the evaluation of the observer is with respect to the level of information of a voter, the higher is the pay-off to that voter in the round. The more accurate the evaluation of the observer is with respect to the level of information of the voters, the higher is his or her pay-off in the round. In addition, the observer receives a pay-off for correct group decisions.
+
+The Group
+
+In the first round you will be assigned a meta-group of 9 members. In the beginning of every round you will be randomly assigned to a new group which consists of randomly selected members of your meta-group. Every group has three members: 2 voters and 1 observer. Whether you will be assigned the role of a voter or an observer, is randomly determined each round. The voters receive, again randomly, the labels &quot;voter 1&quot; and &quot;voter 2&quot;.
+
+All interactions in a round take place within your group of three.
+
+The Voters
+
+There are two types of voters, well informed (type G) and (less well) informed (type I) voters. Of which type the group members are, is again determined randomly. With probability ¼ (or 25%) a voter receives good information which means he is of type G; with probability ¾ (or 75%) he receives less good information which means he is of type I.
+
+Because the assignment of types to the voters is independent of the assignment to other voters, there can be two voters of type G, two voters of type I, or one of each type in a group.
+
+The voters learn their type on the first screen of a round but not the type of the other voter in their group. The observer learns that he is an observer on the first screen but not the types of the voters in his group.
+
+Later, after observing the behavior of the voters, it will be the task of the observer to estimate the probabilities that voter 1 and voter 2 are of type G.
+
+The Jar
+
+There are two jars: one red jar and one blue jar. The red jar contains 11 red and 9 blue balls, the blue jar 11 blue and 9 red balls. Each round one jar will be randomly sel
+... [truncated, total 9748 chars]</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>Blue (B)</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+<h2>Question: <code>type_chat</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<em>(no text-mode data)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>130508_1244_15</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>You are an undergraduate or graduate student from the University of Zurich or ETH Zurich, participating in a laboratory economics experiment.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>Overview
+
+Welcome to this experiment. We kindly ask you not to communicate with other participants during the experiment and to switch off your phones and other mobile devices.
+
+At the end of the experiment you will be paid out in cash for your participation in today's session. The amount of your pay-off depends in part on your decisions, on the decisions of other participants and on chance. For this reason it is important that you read the instructions carefully and understand them before the start of the experiment.
+
+In this experiment all interactions between participants take place via the computers that you are sitting in front of. You will interact anonymously and your decisions will only be stored together with your random ID number. Neither your name nor names of other participants will be made public, not today and not in future written analyses.
+
+Today's session consists of several rounds. At the end, 4 rounds will be randomly selected and paid out. The rounds that are not chosen will not be paid out. Your pay-off results from the points that you earn in the selected rounds, converted to Swiss Francs, plus your show-up fee of CHF 10. The conversion of points to Swiss Francs happens as follows: Every point is worth 15 cents, which means that
+20 points = CHF 3.00.
+
+Every participant will be paid out in private at the payment counter, so that no other participant can see how much you have earned.
+
+Experiment
+
+This experiment consists of 20 procedurally identical rounds. In each round a group decision has to be made that can be correct or wrong.
+
+Two members in each group of three make the group decision (henceforth we will call them the voters). There are well and less well informed voters and the task of the third group member is to observe the decision process of the other two members and then to indicate the probability with which he thinks that the other group members are well or less well informed (henceforth, we will call this member the observer).
+
+The higher the evaluation of the observer is with respect to the level of information of a voter, the higher is the pay-off to that voter in the round. The more accurate the evaluation of the observer is with respect to the level of information of the voters, the higher is his or her pay-off in the round. In addition, the observer receives a pay-off for correct group decisions.
+
+The Group
+
+In the first round you will be assigned a meta-group of 9 members. In the beginning of every round you will be randomly assigned to a new group which consists of randomly selected members of your meta-group. Every group has three members: 2 voters and 1 observer. Whether you will be assigned the role of a voter or an observer, is randomly determined each round. The voters receive, again randomly, the labels &quot;voter 1&quot; and &quot;voter 2&quot;.
+
+All interactions in a round take place within your group of three.
+
+The Voters
+
+There are two types of voters, well informed (type G) and (less well) informed (type I) voters. Of which type the group members are, is again determined randomly. With probability ¼ (or 25%) a voter receives good information which means he is of type G; with probability ¾ (or 75%) he receives less good information which means he is of type I.
+
+Because the assignment of types to the voters is independent of the assignment to other voters, there can be two voters of type G, two voters of type I, or one of each type in a group.
+
+The voters learn their type on the first screen of a round but not the type of the other voter in their group. The observer learns that he is an observer on the first screen but not the types of the voters in his group.
+
+Later, after observing the behavior of the voters, it will be the task of the observer to estimate the probabilities that voter 1 and voter 2 are of type G.
+
+The Jar
+
+There are two jars: one red jar and one blue jar. The red jar contains 11 red and 9 blue balls, the blue jar 11 blue and 9 red balls. Each round one jar will be randomly sel
+... [truncated, total 9748 chars]</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>Claimed to be well informed (type G)</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+<h2>Question: <code>vote</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<em>(no text-mode data)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>130508_1244_15</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>You are an undergraduate or graduate student from the University of Zurich or ETH Zurich, participating in a laboratory economics experiment.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>Overview
+
+Welcome to this experiment. We kindly ask you not to communicate with other participants during the experiment and to switch off your phones and other mobile devices.
+
+At the end of the experiment you will be paid out in cash for your participation in today's session. The amount of your pay-off depends in part on your decisions, on the decisions of other participants and on chance. For this reason it is important that you read the instructions carefully and understand them before the start of the experiment.
+
+In this experiment all interactions between participants take place via the computers that you are sitting in front of. You will interact anonymously and your decisions will only be stored together with your random ID number. Neither your name nor names of other participants will be made public, not today and not in future written analyses.
+
+Today's session consists of several rounds. At the end, 4 rounds will be randomly selected and paid out. The rounds that are not chosen will not be paid out. Your pay-off results from the points that you earn in the selected rounds, converted to Swiss Francs, plus your show-up fee of CHF 10. The conversion of points to Swiss Francs happens as follows: Every point is worth 15 cents, which means that
+20 points = CHF 3.00.
+
+Every participant will be paid out in private at the payment counter, so that no other participant can see how much you have earned.
+
+Experiment
+
+This experiment consists of 20 procedurally identical rounds. In each round a group decision has to be made that can be correct or wrong.
+
+Two members in each group of three make the group decision (henceforth we will call them the voters). There are well and less well informed voters and the task of the third group member is to observe the decision process of the other two members and then to indicate the probability with which he thinks that the other group members are well or less well informed (henceforth, we will call this member the observer).
+
+The higher the evaluation of the observer is with respect to the level of information of a voter, the higher is the pay-off to that voter in the round. The more accurate the evaluation of the observer is with respect to the level of information of the voters, the higher is his or her pay-off in the round. In addition, the observer receives a pay-off for correct group decisions.
+
+The Group
+
+In the first round you will be assigned a meta-group of 9 members. In the beginning of every round you will be randomly assigned to a new group which consists of randomly selected members of your meta-group. Every group has three members: 2 voters and 1 observer. Whether you will be assigned the role of a voter or an observer, is randomly determined each round. The voters receive, again randomly, the labels &quot;voter 1&quot; and &quot;voter 2&quot;.
+
+All interactions in a round take place within your group of three.
+
+The Voters
+
+There are two types of voters, well informed (type G) and (less well) informed (type I) voters. Of which type the group members are, is again determined randomly. With probability ¼ (or 25%) a voter receives good information which means he is of type G; with probability ¾ (or 75%) he receives less good information which means he is of type I.
+
+Because the assignment of types to the voters is independent of the assignment to other voters, there can be two voters of type G, two voters of type I, or one of each type in a group.
+
+The voters learn their type on the first screen of a round but not the type of the other voter in their group. The observer learns that he is an observer on the first screen but not the types of the voters in his group.
+
+Later, after observing the behavior of the voters, it will be the task of the observer to estimate the probabilities that voter 1 and voter 2 are of type G.
+
+The Jar
+
+There are two jars: one red jar and one blue jar. The red jar contains 11 red and 9 blue balls, the blue jar 11 blue and 9 red balls. Each round one jar will be randomly sel
+... [truncated, total 9748 chars]</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>Blue (B)</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+
+<h2>Reproduction packages</h2>
+<ul>
+<li>Text: <code>data/aejmic_10_1_6/reproduce/text/aejmic_10_1_6/</code></li>
+<li>Visual: <code>data/aejmic_10_1_6/reproduce/visual/aejmic_10_1_6/</code></li>
+</ul>
+</body></html>

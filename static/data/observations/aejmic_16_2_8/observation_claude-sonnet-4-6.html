@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Observation: aejmic_16_2_8</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 1400px; margin: 2em auto; color: #222; }
+h1 { border-bottom: 2px solid #333; }
+h2 { margin-top: 2em; padding-top: 0.5em; border-top: 2px dashed #999; }
+h3 { color: #036; }
+h4 { color: #555; margin-top: 1em; margin-bottom: 0.3em; }
+pre { background: #f4f4f4; padding: 0.6em; border-radius: 4px;
+       white-space: pre-wrap; word-break: break-word; font-size: 0.82em;
+       max-height: 380px; overflow-y: auto; }
+img { max-width: 100%; max-height: 380px; border: 1px solid #888; margin: 0.4em 0; }
+.modes { display: flex; gap: 1em; align-items: flex-start; }
+.mode { flex: 1; min-width: 0; border: 1px solid #ccc; border-radius: 6px;
+         padding: 1em; background: #fafafa; }
+.mode-text { border-left: 4px solid #06c; }
+.mode-visual { border-left: 4px solid #c60; }
+.spec { background: #fff; padding: 0.5em 1em; border-radius: 4px;
+         margin-bottom: 0.8em; }
+.spec ul { margin: 0.3em 0; padding-left: 1.5em; }
+.summary { background: #ffd; padding: 1em; border-left: 4px solid #ec0;
+            margin: 1em 0; }
+.summary-table { border-collapse: collapse; }
+.summary-table th, .summary-table td { border: 1px solid #888; padding: 0.4em 0.8em; }
+.summary-table th { background: #eef; }
+.fidelity { background: #efe; padding: 0.6em 1em; border-left: 4px solid #4a4;
+             margin: 0.6em 0; }
+</style></head><body>
+
+<h1>Observation report: aejmic_16_2_8</h1>
+
+<div class="summary">
+<b>Model:</b> claude-sonnet-4-6<br>
+<b>Text-mode responses:</b> 0<br>
+<b>Visual-mode responses:</b> 4220<br>
+<b>Questions:</b> pg_contribution
+</div>
+
+<h2 style="border-top:none;padding-top:0;">Aggregate results</h2>
+<p><em>(no aggregate available)</em></p>
+<h2>Comparison: original vs simulated</h2>
+<table class="summary-table"><tr><th>Condition</th><th>Original mean</th><th>Replicated mean</th><th>Δ</th></tr>
+<tr><td>dynamic_mechanism</td><td>0.6227</td><td>0.1953</td><td>-0.4274</td></tr>
+<tr><td>static_mechanism</td><td>0.5878</td><td>0.1972</td><td>-0.3907</td></tr>
+</table>
+<div class="fidelity"><b>Fidelity:</b> F_individual = -0.299, F_population = -1.7534 (matched n_subjects = 134)</div>
+<h3>Per-arm fidelity</h3><table class="summary-table"><tr><th>Condition</th><th>F_individual</th><th>F_population</th><th>n obs</th></tr>
+<tr><td>dynamic_mechanism</td><td>-0.314</td><td>-1.646</td><td>4360</td></tr>
+<tr><td>static_mechanism</td><td>-0.271</td><td>-1.876</td><td>2280</td></tr>
+</table>
+
+
+<h2>Question: <code>pg_contribution</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<em>(no text-mode data)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>100.0</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>Purdue University undergraduate participating in a paid lab experiment on group decision-making, earning roughly $27 per hour-long session. Gender: . Major: . Year in school: . GPA: nan.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>You are answering as if you were a human participant in this experiment.</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>No</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+
+<h2>Reproduction packages</h2>
+<ul>
+<li>Text: <code>data/aejmic_16_2_8/reproduce/text/aejmic_16_2_8/</code></li>
+<li>Visual: <code>data/aejmic_16_2_8/reproduce/visual/aejmic_16_2_8/</code></li>
+</ul>
+</body></html>

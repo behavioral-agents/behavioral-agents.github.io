@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Observation: aejmic_11_2_7</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 1400px; margin: 2em auto; color: #222; }
+h1 { border-bottom: 2px solid #333; }
+h2 { margin-top: 2em; padding-top: 0.5em; border-top: 2px dashed #999; }
+h3 { color: #036; }
+h4 { color: #555; margin-top: 1em; margin-bottom: 0.3em; }
+pre { background: #f4f4f4; padding: 0.6em; border-radius: 4px;
+       white-space: pre-wrap; word-break: break-word; font-size: 0.82em;
+       max-height: 380px; overflow-y: auto; }
+img { max-width: 100%; max-height: 380px; border: 1px solid #888; margin: 0.4em 0; }
+.modes { display: flex; gap: 1em; align-items: flex-start; }
+.mode { flex: 1; min-width: 0; border: 1px solid #ccc; border-radius: 6px;
+         padding: 1em; background: #fafafa; }
+.mode-text { border-left: 4px solid #06c; }
+.mode-visual { border-left: 4px solid #c60; }
+.spec { background: #fff; padding: 0.5em 1em; border-radius: 4px;
+         margin-bottom: 0.8em; }
+.spec ul { margin: 0.3em 0; padding-left: 1.5em; }
+.summary { background: #ffd; padding: 1em; border-left: 4px solid #ec0;
+            margin: 1em 0; }
+.summary-table { border-collapse: collapse; }
+.summary-table th, .summary-table td { border: 1px solid #888; padding: 0.4em 0.8em; }
+.summary-table th { background: #eef; }
+.fidelity { background: #efe; padding: 0.6em 1em; border-left: 4px solid #4a4;
+             margin: 0.6em 0; }
+</style></head><body>
+
+<h1>Observation report: aejmic_11_2_7</h1>
+
+<div class="summary">
+<b>Model:</b> claude-sonnet-4-6<br>
+<b>Text-mode responses:</b> 722<br>
+<b>Visual-mode responses:</b> 768<br>
+<b>Questions:</b> scale_vote
+</div>
+
+<h2 style="border-top:none;padding-top:0;">Aggregate results</h2>
+<p><em>(no aggregate available)</em></p>
+<h2>Comparison: original vs simulated</h2>
+<table class="summary-table"><tr><th>Condition</th><th>Original mean</th><th>Replicated mean</th><th>Δ</th></tr>
+<tr><td>no_tokens_control</td><td>0.3932</td><td>0.2793</td><td>-0.1139</td></tr>
+<tr><td>tokens_available</td><td>0.5573</td><td>0.3791</td><td>-0.1782</td></tr>
+</table>
+<div class="fidelity"><b>Fidelity:</b> F_individual = 0.2909, F_population = -0.697 (matched n_subjects = 361)</div>
+<h3>Per-arm fidelity</h3><table class="summary-table"><tr><th>Condition</th><th>F_individual</th><th>F_population</th><th>n obs</th></tr>
+<tr><td>no_tokens_control</td><td>+0.318</td><td>+0.025</td><td>358</td></tr>
+<tr><td>tokens_available</td><td>+0.264</td><td>-2.095</td><td>364</td></tr>
+</table>
+
+
+<h2>Question: <code>scale_vote</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>10_14</pre></li>
+<li><code>gender</code> = <pre>Male</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>An undergraduate volunteer at Chapman University's Economic Science Institute participating in a decision-making experiment in fall 2014. Gender: Male.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>This is an experiment in decision-making. You will earn money based on the decisions you and others make in the experiment, and you will be paid in cash at the end of the experiment. Different participants may earn different amounts.
+
+Overview of the experiment
+
+The experiment is divided into six blocks. Each block is a separate section with many periods:
+
+There are 24 participants. At the start of each block, a computer program will form groups. In each period of the block you will be paired with someone in your group to interact with him or her.
+
+• In some blocks there will be random pairings inside two groups of 12 participants.
+• In other blocks there will be fixed pairings because groups will have only 2 participants.
+
+Groups change in each block so that you cannot interact with anyone for more than one block, except, possibly, block 6.
+
+How do you earn money in a period?
+
+You will earn points that depend on your choices and the choices of others in your group. Points will be converted into dollars at the end of the session in a manner that we explain later.
+
+In each period you interact with another participant called your &quot;match.&quot; If you are not in a fixed pair, then your match is a random person from your group. Your match will always remain anonymous.
+
+In each pair, one person will be red and the other blue. The red person must choose to execute either outcome Y or Z. This choice determines the point earnings in the pair; the earnings also depend on whether you are in a fixed pair or not, as shown in the following tables:
+
+In a fixed pair:
+o if Y is the outcome: red earns 6 points and blue earns 3 points.
+o if Z is the outcome: red earns 0 points and blue earns 15 points.
+
+In a random pair:
+o if Y is the outcome: red earns 6 points and blue earns 3 points.
+o if Z is the outcome: red earns 0 points and blue earns 18 points.
+
+Tickets
+
+In the first period of each block everyone who is blue will receive 1 ticket. Tickets:
+• do not yield points or dollars
+• cannot be carried over to the next block
+• cannot be redeemed for points or dollars
+• can be exchanged with your match as explained below.
+
+What happens in each period?
+
+Each period has the following timeline:
+1. You see your color and you are paired with another participant.
+2. You may be called to make a choice.
+3. You observe the outcome.
+4. The block may continue or may end.
+
+We now discuss these points in detail.
+
+1. Your color and your match
+
+In each period, half of the persons in your group are red and the others blue. Your initial color is random and then your color alternates from period to period:
+• If you are blue, then next period you will be red;
+• If you are red, then next period you will be blue.
+
+Your match has always a color different than yours. If there are fixed pairs, then your match remains the same in each period of the block. Otherwise, your match changes from period to period with a probability greater than 80% because your match can be anyone from your group who has a color different than yours. You will never know who you meet.
+
+2. Your choices
+
+• If you are blue, in general you must choose one of three options:
+o Keep your ticket(s)
+o Give a ticket to red
+o Give a ticket to red only if Z is the outcome.
+This option guarantees that your ticket goes to red only if red does not choose outcome Y.
+Note: If you are blue and do not have a ticket, then you have no choice to make.
+
+To make your choice, select the relevant option and click the &quot;Submit&quot; button. You can review results of past periods of the block by scrolling down the table at the bottom of the screen. Each line reports your color, the outcome Y or Z in your pair, if there was a ticket transfer in your pair, and your earnings in a past period. The last column reports whether the outcome was the same in all pairs of your group.
+
+• If you are red, in general you must choose one of three options:
+o Execute Y
+o Execute Z
+o Execute Z only if blue gives me a ticket.
+Choosing this last option gu
+... [truncated, total 8292 chars]</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt</h4><em>(none)</em>
+<h4>Answer</h4><p><code>Random partner from a larger group</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>10_16</pre></li>
+<li><code>gender</code> = <pre>2</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>An undergraduate volunteer at Chapman University's Economic Science Institute participating in a decision-making experiment in fall 2014. Gender: Female.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>This is an experiment in decision-making. You will earn money based on the decisions you and others make in the experiment, and you will be paid in cash at the end of the experiment. Different participants may earn different amounts.
+
+Overview of the experiment
+
+The experiment is divided into six blocks. Each block is a separate section with many periods:
+
+There are 24 participants. At the start of each block, a computer program will form groups. In each period of the block you will be paired with someone in your group to interact with him or her.
+
+• In some blocks there will be random pairings inside two groups of 12 participants.
+• In other blocks there will be fixed pairings because groups will have only 2 participants.
+
+Groups change in each block so that you cannot interact with anyone for more than one block, except, possibly, block 6.
+
+How do you earn money in a period?
+
+You will earn points that depend on your choices and the choices of others in your group. Points will be converted into dollars at the end of the session in a manner that we explain later.
+
+In each period you interact with another participant called your &quot;match.&quot; If you are not in a fixed pair, then your match is a random person from your group. Your match will always remain anonymous.
+
+In each pair, one person will be red and the other blue. The red person must choose to execute either outcome Y or Z. This choice determines the point earnings in the pair; the earnings also depend on whether you are in a fixed pair or not, as shown in the following tables:
+
+In a fixed pair:
+o if Y is the outcome: red earns 6 points and blue earns 3 points.
+o if Z is the outcome: red earns 0 points and blue earns 15 points.
+
+In a random pair:
+o if Y is the outcome: red earns 6 points and blue earns 3 points.
+o if Z is the outcome: red earns 0 points and blue earns 18 points.
+
+Tickets
+
+In the first period of each block everyone who is blue will receive 1 ticket. Tickets:
+• do not yield points or dollars
+• cannot be carried over to the next block
+• cannot be redeemed for points or dollars
+• can be exchanged with your match as explained below.
+
+What happens in each period?
+
+Each period has the following timeline:
+1. You see your color and you are paired with another participant.
+2. You may be called to make a choice.
+3. You observe the outcome.
+4. The block may continue or may end.
+
+We now discuss these points in detail.
+
+1. Your color and your match
+
+In each period, half of the persons in your group are red and the others blue. Your initial color is random and then your color alternates from period to period:
+• If you are blue, then next period you will be red;
+• If you are red, then next period you will be blue.
+
+Your match has always a color different than yours. If there are fixed pairs, then your match remains the same in each period of the block. Otherwise, your match changes from period to period with a probability greater than 80% because your match can be anyone from your group who has a color different than yours. You will never know who you meet.
+
+2. Your choices
+
+• If you are blue, in general you must choose one of three options:
+o Keep your ticket(s)
+o Give a ticket to red
+o Give a ticket to red only if Z is the outcome.
+This option guarantees that your ticket goes to red only if red does not choose outcome Y.
+Note: If you are blue and do not have a ticket, then you have no choice to make.
+
+To make your choice, select the relevant option and click the &quot;Submit&quot; button. You can review results of past periods of the block by scrolling down the table at the bottom of the screen. Each line reports your color, the outcome Y or Z in your pair, if there was a ticket transfer in your pair, and your earnings in a past period. The last column reports whether the outcome was the same in all pairs of your group.
+
+• If you are red, in general you must choose one of three options:
+o Execute Y
+o Execute Z
+o Execute Z only if blue gives me a ticket.
+Choosing this last option gu
+... [truncated, total 8292 chars]</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>Fixed pair (same partner all block)</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+
+<h2>Reproduction packages</h2>
+<ul>
+<li>Text: <code>data/aejmic_11_2_7/reproduce/text/aejmic_11_2_7/</code></li>
+<li>Visual: <code>data/aejmic_11_2_7/reproduce/visual/aejmic_11_2_7/</code></li>
+</ul>
+</body></html>

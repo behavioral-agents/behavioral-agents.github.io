@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decision Page</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px 15px;
+  }
+
+  .container {
+    background: #ffffff;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 700px;
+    padding: 24px 28px 28px 28px;
+  }
+
+  .page-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 4px;
+  }
+
+  .stage-label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .summary-box {
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    background: #fafafa;
+  }
+
+  .summary-box .summary-title {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #222;
+  }
+
+  .summary-box p {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+
+  .main-content {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .left-panel {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .right-panel {
+    flex-shrink: 0;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-line {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .info-line strong {
+    font-weight: bold;
+  }
+
+  .question-label {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 6px;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  .provision-rule {
+    font-size: 12.5px;
+    color: #444;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    background: #f0f4ff;
+    border-left: 3px solid #4a7fd4;
+    padding: 8px 10px;
+    border-radius: 2px;
+  }
+
+  .choose-label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+  }
+
+  select {
+    font-size: 13px;
+    padding: 4px 6px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    background: #fff;
+    color: #333;
+    min-width: 120px;
+    cursor: pointer;
+  }
+
+  /* Gauge / semicircle */
+  .gauge-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gauge-svg {
+    display: block;
+  }
+
+  .gauge-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .gauge-caption {
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .gauge-scale {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  .btn-next {
+    display: inline-block;
+    margin-top: 22px;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .btn-next:hover {
+    background-color: #1976D2;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="page-title">Decision Page &mdash; Round 21 of 40</div>
+  <div class="stage-label">Stage 1 of 3</div>
+
+  <div class="summary-box">
+    <div class="summary-title">Summary</div>
+    <p>The Group Project has value V = S1 + S2 + S3</p>
+    <p>The Private Project has value P = D1 + D2 + D3.</p>
+  </div>
+
+  <div class="main-content">
+    <div class="left-panel">
+
+      <p class="info-line">For all players in your group D1 = <strong>30</strong></p>
+      <p class="info-line">Your individual value of S1 for this round is S1 = <strong>81</strong></p>
+      <p class="info-line">Please indicate whether you choose the group project:</p>
+
+      <div class="provision-rule">
+        <strong>Provision rule:</strong> The GROUP PROJECT is implemented (and you receive V) only if at least 2 of the 3 group members choose the GROUP PROJECT. Otherwise you receive your PRIVATE PROJECT value P = D1 + D2 + D3.
+      </div>
+
+      <div class="choose-label">Choose the group project?</div>
+      <select>
+        <option value="" selected disabled>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+    </div>
+
+    <div class="right-panel">
+      <div class="gauge-wrapper">
+        <!-- Semicircle gauge SVG -->
+        <svg class="gauge-svg" width="160" height="90" viewBox="0 0 160 90">
+          <!-- Background arc (gray) -->
+          <path d="M 10 85 A 70 70 0 0 1 150 85" fill="none" stroke="#d0d0d0" stroke-width="18" stroke-linecap="butt"/>
+          <!-- Foreground arc (green) — 81/100 of the semicircle -->
+          <!-- Full semicircle arc length angle = 180 deg; 81% = 146.something deg -->
+          <!-- Start at left (180 deg from center), sweep 81% of 180 = 146.7 deg -->
+          <!-- Center: 80,85; radius 70 -->
+          <!-- Start point: (80 - 70, 85) = (10, 85) -->
+          <!-- End point for 81%: angle from left = 180 - (81/100)*180 = 180 - 145.8 = 34.2 deg from horizontal right -->
+          <!-- x = 80 + 70*cos(34.2°) = 80 + 70*0.8274 = 80 + 57.9 = 137.9 -->
+          <!-- y = 85 - 70*sin(34.2°) = 85 - 70*0.5616 = 85 - 39.3 = 45.7 -->
+          <path d="M 10 85 A 70 70 0 0 1 137.9 45.7" fill="none" stroke="#4caf50" stroke-width="18" stroke-linecap="butt"/>
+          <!-- Tick mark at 81 position -->
+          <line x1="137.9" y1="45.7" x2="143" y2="39" stroke="#333" stroke-width="2"/>
+        </svg>
+
+        <div class="gauge-scale">
+          <span>0</span>
+          <span>100</span>
+        </div>
+        <div class="gauge-value">81</div>
+        <div class="gauge-caption">Group project signal value</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-next">Next</button>
+
+</div>
+</body>
+</html>
