@@ -45,9 +45,16 @@
   const modelgenRoot = document.getElementById("modelgen-root");
   const modalityRoot = document.getElementById("modality-root");
 
-  fetch(`static/data/papers.json?${CACHE_BUST}`)
-    .then((r) => r.json())
-    .then((papers) => {
+  // Wait for the web font (Inter) before rendering — otherwise
+  // canvas.measureText() used by the scatter label placer reports
+  // system-font widths, then the SVG renders with Inter and the
+  // labels turn out wider than the bounding boxes we computed.
+  const fontsReady = (document.fonts && document.fonts.ready)
+    ? document.fonts.ready
+    : Promise.resolve();
+
+  Promise.all([fetch(`static/data/papers.json?${CACHE_BUST}`).then((r) => r.json()), fontsReady])
+    .then(([papers]) => {
       if (scatterRoot) renderScatter(papers);
       if (dtypeRoot)   renderDecisionTypes(papers);
       if (journalRoot) renderJournalBreakdown(papers);
@@ -147,35 +154,184 @@
     const zeroLine = `<line x1="${pad.l}" y1="${ys(0)}" x2="${pad.l + pw}" y2="${ys(0)}" stroke="#94a3b8" stroke-dasharray="4,4"/>`;
     const zeroLabel = `<text x="${pad.l + pw + 4}" y="${ys(0) + 3}" font-size="10" fill="#64748b">random</text>`;
 
-    // Points + label placement (no overlap)
-    const placed = [];
-    const points = rows.map((r) => {
+    // Points + label placement (collision-aware)
+    //
+    // For each label we try a list of candidate offsets around the dot —
+    // right, left, above, below, and combinations — and pick the first
+    // candidate whose bounding box does not overlap any previously-placed
+    // label and stays inside the plot. Falls back to the default offset
+    // if every candidate collides.
+    //
+    // Label widths come from a real SVG <text>.getBBox() call (rendered
+    // into a hidden off-screen SVG that inherits the same font as the
+    // chart) so the bounding box matches what the SVG renderer will
+    // actually paint. Canvas-based text measurement misses font-loading
+    // / font-fallback edge cases by 20-30%.
+    const placed  = [];
+    const LINE_H         = 15;    // gap between title and journal line
+    const XPAD_INNER     = pad.l + 4;
+    const XPAD_OUTER     = W - 8;
+    const YPAD_TOP       = pad.t + 8;
+    const YPAD_BOTTOM    = pad.t + ph - 4;  // keep above the x-axis tick row
+    const SAFETY_PAD     = 12;    // extra px on each side of the box
+
+    // Off-screen SVG used purely for measurement. Browsers return 0
+    // from getBBox() when the host SVG is 0×0 / visibility:hidden / not
+    // rendered, so we instead park a normally-sized SVG far off-screen
+    // (left:-99999px) and attach it to document.body so parent CSS
+    // cannot affect its layout.
+    const SVG_NS = "http://www.w3.org/2000/svg";
+    const measureSvg = document.createElementNS(SVG_NS, "svg");
+    measureSvg.setAttribute("width",  "2000");
+    measureSvg.setAttribute("height", "100");
+    measureSvg.style.position      = "absolute";
+    measureSvg.style.left          = "-99999px";
+    measureSvg.style.top           = "0";
+    measureSvg.style.pointerEvents = "none";
+    measureSvg.style.overflow      = "visible";
+    // Inherit Inter from the scatter root via inline font-family copy.
+    measureSvg.style.fontFamily = window.getComputedStyle(scatterRoot).fontFamily;
+    document.body.appendChild(measureSvg);
+
+    function measureSvgText(text, fontSize, fontWeight) {
+      const t = document.createElementNS(SVG_NS, "text");
+      t.setAttribute("x", "0");
+      t.setAttribute("y", "50");  // safely inside the 100px-tall svg
+      t.setAttribute("font-size", String(fontSize));
+      if (fontWeight != null) t.setAttribute("font-weight", String(fontWeight));
+      t.textContent = text || "";
+      measureSvg.appendChild(t);
+      let w = 0;
+      try { w = t.getBBox().width; } catch (_) { w = 0; }
+      measureSvg.removeChild(t);
+      // Defensive fallback: if the renderer still gives us 0 (e.g.
+      // Firefox before fonts are ready), estimate from character count
+      // with a generous bold-Inter multiplier so collisions don't slip.
+      if (!w || !isFinite(w)) {
+        const perChar = (fontWeight && +fontWeight >= 600) ? 8.0 : 6.6;
+        w = (text || "").length * perChar;
+      }
+      return w;
+    }
+
+    const sortedRows = rows.slice().sort((a, b) => {
+      // Place outliers (extreme low fidelity) last so they don't claim
+      // central real estate the cluster needs.
+      const aOut = Math.abs(a.fidelity) > 2 ? 1 : 0;
+      const bOut = Math.abs(b.fidelity) > 2 ? 1 : 0;
+      if (aOut !== bOut) return aOut - bOut;
+      return b.conclRate - a.conclRate;
+    });
+
+    function rectsOverlap(a, b) {
+      return !(a.x2 <= b.x1 || b.x2 <= a.x1 || a.y2 <= b.y1 || b.y2 <= a.y1);
+    }
+
+    // Pre-seed the obstacle list with every dot. Dots are r=10 with a
+    // 2.5 px stroke; add a small breathing margin so labels don't kiss
+    // the dot edge. Each dot is tagged with its owner doi so the label
+    // for that dot doesn't get rejected by its own dot.
+    const DOT_R       = 10;
+    const DOT_STROKE  = 2.5;
+    const DOT_MARGIN  = 4;
+    const dotHalf     = DOT_R + DOT_STROKE + DOT_MARGIN;
+    for (const r of rows) {
+      const dcx = xs(r.conclRate);
+      const dcy = ys(r.fidelity);
+      placed.push({
+        x1: dcx - dotHalf, y1: dcy - dotHalf,
+        x2: dcx + dotHalf, y2: dcy + dotHalf,
+        ownerDoi: r.doi,
+      });
+    }
+
+    const pointsByDoi = new Map();
+    for (const r of sortedRows) {
       const cx = xs(r.conclRate);
       const cy = ys(r.fidelity);
-      // Dot color: green if in top-right, red if in bottom-left, blue otherwise
-      const topRight = r.conclRate >= 0.5 && r.fidelity > 0;
-      const bottomLeft = r.conclRate < 0.5 && r.fidelity <= 0;
+      const topRight   = r.conclRate >= 0.5 && r.fidelity > 0;
+      const bottomLeft = r.conclRate <  0.5 && r.fidelity <= 0;
       const color = topRight ? "#16a34a" : bottomLeft ? "#dc2626" : "#2563eb";
 
-      const labelShort = truncateWords(r.title || "", 32);
-      let labelX = cx + 18;
-      let labelY = cy + 4;
-      for (const p of placed) {
-        if (Math.abs(p.x - labelX) < 6 && Math.abs(p.y - labelY) < 24) labelY = p.y + 28;
-      }
-      placed.push({ x: labelX, y: labelY });
+      const labelShort  = truncateWords(r.title || "", 32);
+      const journalText = `${shortJournal(r.journal)} ${r.year ?? ""}`.trim();
+      const titleW   = measureSvgText(labelShort,  12, 600);
+      const journalW = measureSvgText(journalText, 11, null);
+      const labelW   = Math.max(titleW, journalW) + SAFETY_PAD;
+      const labelH   = 12 + LINE_H + 3;   // title ascent + spacing + journal
 
-      return `
+      // Each candidate is (text-anchor, dx, dy) relative to dot center.
+      // dy is to the TITLE line's text baseline. We sweep dy outward in
+      // bands of ~20px so a label can settle several rows above or below
+      // the dot when its preferred spot is occupied.
+      const DY_BANDS = [4, -18, 24, -38, 44, -58, 64, -78, 84, -98, 104, -118];
+      const candidates = [];
+      for (const dy of DY_BANDS) {
+        candidates.push({ anchor: "start", dx:  14, dy });
+        candidates.push({ anchor: "end",   dx: -14, dy });
+      }
+      // Throw in a couple of centered fallbacks between bands.
+      candidates.push({ anchor: "middle", dx: 0, dy: -22 });
+      candidates.push({ anchor: "middle", dx: 0, dy:  34 });
+
+      let chosen = null;
+      for (const c of candidates) {
+        const lx = cx + c.dx;
+        const ly = cy + c.dy;
+        let x1;
+        if (c.anchor === "start")       x1 = lx;
+        else if (c.anchor === "end")    x1 = lx - labelW;
+        else /* middle */               x1 = lx - labelW / 2;
+        const x2 = x1 + labelW;
+        const y1 = ly - 12;
+        const y2 = ly + LINE_H + 3;
+        if (x1 < XPAD_INNER || x2 > XPAD_OUTER) continue;
+        if (y1 < YPAD_TOP   || y2 > YPAD_BOTTOM) continue;
+        const rect = { x1, y1, x2, y2 };
+        let collides = false;
+        for (const p of placed) {
+          if (p.ownerDoi === r.doi) continue;  // a label may sit beside its own dot
+          if (rectsOverlap(rect, p)) { collides = true; break; }
+        }
+        if (!collides) { chosen = { ...c, lx, ly, rect }; break; }
+      }
+      if (!chosen) {
+        // Nothing fit — fall back to the default offset and accept overlap.
+        const c = candidates[0];
+        const lx = cx + c.dx;
+        const ly = cy + c.dy;
+        const x1 = lx;
+        chosen = {
+          ...c, lx, ly,
+          rect: { x1, y1: ly - 12, x2: x1 + labelW, y2: ly + LINE_H + 3 },
+        };
+      }
+      placed.push(chosen.rect);
+
+      // Connector from circle edge toward the label
+      const dotEdgeX = cx + (chosen.anchor === "end"   ? -10
+                          : chosen.anchor === "start" ?  10 : 0);
+      const labelTieX = chosen.anchor === "end"   ? chosen.lx - 4
+                     : chosen.anchor === "start" ? chosen.lx + 4
+                     : chosen.lx;
+      const labelTieY = chosen.ly - 4;
+
+      pointsByDoi.set(r.doi, `
         <g>
           <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="10" fill="${color}" fill-opacity="0.8" stroke="#fff" stroke-width="2.5">
             <title>${escapeHtml(r.title)} — ${r.journal} ${r.year} — fidelity ${r.fidelity.toFixed(2)}, conclusion ${Math.round(r.conclRate * 100)}%</title>
           </circle>
-          <line x1="${(cx + 10).toFixed(1)}" y1="${cy.toFixed(1)}" x2="${(labelX - 4).toFixed(1)}" y2="${(labelY - 4).toFixed(1)}" stroke="#cbd5e1" stroke-width="1"/>
-          <text x="${labelX.toFixed(1)}" y="${labelY.toFixed(1)}" font-size="12" fill="#0a0a0a" font-weight="600">${escapeHtml(labelShort)}</text>
-          <text x="${labelX.toFixed(1)}" y="${(labelY + 15).toFixed(1)}" font-size="11" fill="#64748b">${r.journal} ${r.year ?? ""}</text>
+          <line x1="${dotEdgeX.toFixed(1)}" y1="${cy.toFixed(1)}" x2="${labelTieX.toFixed(1)}" y2="${labelTieY.toFixed(1)}" stroke="#cbd5e1" stroke-width="1"/>
+          <text x="${chosen.lx.toFixed(1)}" y="${chosen.ly.toFixed(1)}" text-anchor="${chosen.anchor}" font-size="12" fill="#0a0a0a" font-weight="600">${escapeHtml(labelShort)}</text>
+          <text x="${chosen.lx.toFixed(1)}" y="${(chosen.ly + LINE_H).toFixed(1)}" text-anchor="${chosen.anchor}" font-size="11" fill="#64748b">${escapeHtml(journalText)}</text>
         </g>
-      `;
-    }).join("");
+      `);
+    }
+    // Clean up the off-screen measurement SVG now that we have all widths.
+    if (measureSvg.parentNode) measureSvg.parentNode.removeChild(measureSvg);
+
+    // Preserve the original input order for stable rendering / DOM diffs.
+    const points = rows.map((r) => pointsByDoi.get(r.doi) || "").join("");
 
     const xLabel = `<text x="${pad.l + pw / 2}" y="${H - 18}" text-anchor="middle" font-size="13" fill="#334155" font-weight="600">Conclusion match (best AI)</text>`;
     const yLabel = `<text transform="translate(20,${pad.t + ph / 2}) rotate(-90)" text-anchor="middle" font-size="13" fill="#334155" font-weight="600">Fidelity (best AI)</text>`;
@@ -421,6 +577,29 @@
     const cut = s.slice(0, max);
     const lastSpace = cut.lastIndexOf(" ");
     return (lastSpace > max * 0.5 ? cut.slice(0, lastSpace) : cut) + "…";
+  }
+
+  // Compact journal names for chart labels. Full journal name remains
+  // in the tooltip on the dot. Without this, "American Economic Journal:
+  // Microeconomics 2023" is ~270 px wide and makes the scatter chart
+  // impossible to lay out without overlap on a 580 px-wide plot area.
+  const JOURNAL_SHORT = {
+    "American Economic Journal: Microeconomics":   "AEJ: Microeconomics",
+    "American Economic Journal: Macroeconomics":   "AEJ: Macroeconomics",
+    "American Economic Journal: Applied Economics":"AEJ: Applied",
+    "American Economic Journal: Economic Policy":  "AEJ: Policy",
+    "American Economic Review":                    "AER",
+    "Quarterly Journal of Economics":              "QJE",
+    "Journal of Political Economy":                "JPE",
+    "Review of Economic Studies":                  "RES",
+    "Econometrica":                                "Econometrica",
+  };
+  function shortJournal(name) {
+    if (!name) return "";
+    if (JOURNAL_SHORT[name]) return JOURNAL_SHORT[name];
+    // Fallback: keep prefix before the colon if any, then truncate.
+    const head = name.split(":")[0].trim();
+    return head.length > 28 ? head.slice(0, 27) + "…" : head;
   }
 
   function escapeHtml(s) {
