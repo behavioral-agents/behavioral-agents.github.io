@@ -151,9 +151,15 @@
         if (!fidByPM.has(key)) fidByPM.set(key, [0, 0]);
         const entry = fidByPM.get(key);
         for (const cond of c.conditions || []) {
-          // Use F_population for site-wide gauge (matches leaderboard.json).
-          // Fall back to legacy `fidelity` if F_pop is unavailable.
-          const v = cond.f_population != null ? cond.f_population : cond.fidelity;
+          // Use F_individual for the site-wide gauge — paired subject-level
+          // score (AI vs the specific human it simulated). Fall back to
+          // F_population, then legacy `fidelity`, if F_ind is unavailable.
+          const v =
+            cond.f_individual != null
+              ? cond.f_individual
+              : cond.f_population != null
+              ? cond.f_population
+              : cond.fidelity;
           if (v != null) {
             entry[0] += +v;
             entry[1] += 1;
