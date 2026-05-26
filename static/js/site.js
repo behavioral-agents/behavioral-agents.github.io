@@ -139,7 +139,12 @@
     const dois = new Set();
     const models = new Set();
     let nExperiments = 0;
-    const fidByPM = new Map(); // "doi|model" -> [sum, n]
+    // Flat mean across all text-mode condition-level F_individual values.
+    // No fallback to F_population (those are a different scale and mixing
+    // them collapses the gauge), and no per-paper grouping (each condition
+    // weighted equally).
+    let fidSum = 0;
+    let fidN = 0;
 
     for (const p of entries) {
       dois.add(p.doi);
@@ -147,30 +152,17 @@
       for (const c of p.comparisons || []) {
         models.add(c.model);
         if (c.modality && c.modality !== "text") continue;
-        const key = `${p.doi}|${c.model}`;
-        if (!fidByPM.has(key)) fidByPM.set(key, [0, 0]);
-        const entry = fidByPM.get(key);
         for (const cond of c.conditions || []) {
-          // Use F_individual for the site-wide gauge — paired subject-level
-          // score (AI vs the specific human it simulated). Fall back to
-          // F_population, then legacy `fidelity`, if F_ind is unavailable.
-          const v =
-            cond.f_individual != null
-              ? cond.f_individual
-              : cond.f_population != null
-              ? cond.f_population
-              : cond.fidelity;
+          const v = cond.f_individual;
           if (v != null) {
-            entry[0] += +v;
-            entry[1] += 1;
+            fidSum += +v;
+            fidN += 1;
           }
         }
       }
     }
 
-    const fids = [];
-    for (const [, [sum, n]] of fidByPM) if (n) fids.push(sum / n);
-    const avgFidelity = fids.length ? fids.reduce((a, b) => a + b, 0) / fids.length : null;
+    const avgFidelity = fidN ? fidSum / fidN : null;
 
     return {
       nPapers: dois.size,
