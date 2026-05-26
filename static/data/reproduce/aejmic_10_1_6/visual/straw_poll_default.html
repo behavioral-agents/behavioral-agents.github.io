@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Straw Poll</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    max-width: 700px;
+    width: 100%;
+    padding: 40px 50px;
+    box-sizing: border-box;
+  }
+
+  .type-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .type-section .label-text {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  .type-section .type-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1a5276;
+  }
+
+  .ball-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .ball-section .label-text {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  .ball-section .ball-value {
+    font-size: 26px;
+    font-weight: bold;
+    color: #cc0000;
+  }
+
+  .annotation-box {
+    border: 2px solid #cc0000;
+    padding: 4px 8px;
+    display: inline-block;
+    font-size: 13px;
+    color: #cc0000;
+    margin-bottom: 6px;
+  }
+
+  .annotation-right {
+    float: right;
+    border: 2px solid #cc0000;
+    padding: 4px 8px;
+    font-size: 13px;
+    color: #cc0000;
+    max-width: 160px;
+    text-align: left;
+  }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .header-left {
+    flex: 1;
+    text-align: center;
+  }
+
+  .header-right {
+    width: 170px;
+    margin-left: 20px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+  }
+
+  .question-box {
+    border: 2px solid #cc0000;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #cc0000;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .german-text {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+  }
+
+  .radio-group label {
+    font-size: 13px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .radio-labels {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .radio-labels span {
+    font-size: 13px;
+    color: #1a5276;
+    font-weight: bold;
+    width: 60px;
+    text-align: center;
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .next-button {
+    background-color: #5b8dd9;
+    color: white;
+    border: none;
+    padding: 6px 18px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  .next-button:hover {
+    background-color: #4a7bc8;
+  }
+
+  input[type="radio"] {
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header-row">
+    <div class="header-left">
+      <div class="label-text">Sie sind ein Wähler vom</div>
+      <div class="type-value">Typ L</div>
+    </div>
+    <div class="header-right">
+      <div class="annotation-box">You are a voter of type L</div>
+    </div>
+  </div>
+
+  <div class="header-row" style="margin-top: 10px;">
+    <div class="header-left">
+      <div class="label-text">Die Kugel, die Sie erhalten haben ist</div>
+      <div class="ball-value">ROT</div>
+    </div>
+    <div class="header-right">
+      <div class="annotation-box">The ball that you have received is RED</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="question-box">
+    During the first deliberation stage (s-chat), you sent the message: BLUE, and the other voter sent: BLUE. Based on your private signal BLUE and your voter type L, which color did you intend to signal in the straw poll?
+  </div>
+
+  <div class="german-text">
+    Sie können nun dem zweiten Wähler in ihrer Gruppe mitteilen, welche Farbe ihre
+    Kugel hatte. Sie können auch schweigen, oder die Farbe, die ihre Kugel nicht hatte,
+    als die Farbe ihrer Kugel angeben:
+  </div>
+
+  <div class="radio-group">
+    <label>
+      <input type="radio" name="straw_poll" value="blue"> BLAU
+    </label>
+    <label>
+      <input type="radio" name="straw_poll" value="red"> ROT
+    </label>
+    <label>
+      <input type="radio" name="straw_poll" value="abstain"> Keine Angabe
+    </label>
+  </div>
+
+  <div class="radio-labels">
+    <span>blue</span>
+    <span>red</span>
+    <span>abstain</span>
+  </div>
+
+  <div class="button-row">
+    <button class="next-button">Weiter</button>
+  </div>
+
+</div>
+</body>
+</html>

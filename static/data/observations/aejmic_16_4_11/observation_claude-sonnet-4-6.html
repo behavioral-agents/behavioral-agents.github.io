@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Observation: aejmic_16_4_11</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 1400px; margin: 2em auto; color: #222; }
+h1 { border-bottom: 2px solid #333; }
+h2 { margin-top: 2em; padding-top: 0.5em; border-top: 2px dashed #999; }
+h3 { color: #036; }
+h4 { color: #555; margin-top: 1em; margin-bottom: 0.3em; }
+pre { background: #f4f4f4; padding: 0.6em; border-radius: 4px;
+       white-space: pre-wrap; word-break: break-word; font-size: 0.82em;
+       max-height: 380px; overflow-y: auto; }
+img { max-width: 100%; max-height: 380px; border: 1px solid #888; margin: 0.4em 0; }
+.modes { display: flex; gap: 1em; align-items: flex-start; }
+.mode { flex: 1; min-width: 0; border: 1px solid #ccc; border-radius: 6px;
+         padding: 1em; background: #fafafa; }
+.mode-text { border-left: 4px solid #06c; }
+.mode-visual { border-left: 4px solid #c60; }
+.spec { background: #fff; padding: 0.5em 1em; border-radius: 4px;
+         margin-bottom: 0.8em; }
+.spec ul { margin: 0.3em 0; padding-left: 1.5em; }
+.summary { background: #ffd; padding: 1em; border-left: 4px solid #ec0;
+            margin: 1em 0; }
+.summary-table { border-collapse: collapse; }
+.summary-table th, .summary-table td { border: 1px solid #888; padding: 0.4em 0.8em; }
+.summary-table th { background: #eef; }
+.fidelity { background: #efe; padding: 0.6em 1em; border-left: 4px solid #4a4;
+             margin: 0.6em 0; }
+</style></head><body>
+
+<h1>Observation report: aejmic_16_4_11</h1>
+
+<div class="summary">
+<b>Model:</b> claude-sonnet-4-6<br>
+<b>Text-mode responses:</b> 0<br>
+<b>Visual-mode responses:</b> 1480<br>
+<b>Questions:</b> block_project
+</div>
+
+<h2 style="border-top:none;padding-top:0;">Aggregate results</h2>
+<p><em>(no aggregate available)</em></p>
+<h2>Comparison: original vs simulated</h2>
+<table class="summary-table"><tr><th>Condition</th><th>Original mean</th><th>Replicated mean</th><th>Δ</th></tr>
+<tr><td>direct_elicitation_noinfo</td><td>0.3493</td><td>0.9787</td><td>+0.6293</td></tr>
+<tr><td>hard_garbling_noinfo</td><td>0.5307</td><td>1.0000</td><td>+0.4693</td></tr>
+</table>
+<div class="fidelity"><b>Fidelity:</b> F_individual = -0.12, F_population = -5.1765 (matched n_subjects = 120)</div>
+<h3>Per-arm fidelity</h3><table class="summary-table"><tr><th>Condition</th><th>F_individual</th><th>F_population</th><th>n obs</th></tr>
+<tr><td>direct_elicitation_noinfo</td><td>-0.301</td><td>-3.319</td><td>750</td></tr>
+<tr><td>hard_garbling_noinfo</td><td>+0.061</td><td>-14.304</td><td>750</td></tr>
+</table>
+<h2>Distributions (humans vs AI, binned)</h2>
+<div style="display:flex;gap:2em;flex-wrap:wrap;">
+<div style="flex:1;min-width:380px"><h3>direct_elicitation_noinfo</h3>
+<div><strong>Humans</strong><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.34: </span><div style="background:#666;height:12px;width:300px"></div><span style="margin-left:6px">750 (100.0%)</span></div></div>
+<div><strong>AI</strong><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.01: </span><div style="background:#48a;height:12px;width:11px"></div><span style="margin-left:6px">16 (2.1%)</span></div><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.99: </span><div style="background:#48a;height:12px;width:300px"></div><span style="margin-left:6px">734 (97.9%)</span></div></div>
+</div>
+<div style="flex:1;min-width:380px"><h3>hard_garbling_noinfo</h3>
+<div><strong>Humans</strong><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">0.53: </span><div style="background:#666;height:12px;width:300px"></div><span style="margin-left:6px">750 (100.0%)</span></div></div>
+<div><strong>AI</strong><div style="display:flex;align-items:center;margin:1px 0;font-size:0.8em"><span style="width:80px">1.00: </span><div style="background:#48a;height:12px;width:300px"></div><span style="margin-left:6px">750 (100.0%)</span></div></div>
+</div>
+</div>
+
+<h2>Question: <code>block_project</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<em>(no text-mode data)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>113</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>You are an HEC Lausanne undergraduate participating in a laboratory experiment as a monitor in an agent-monitor dyad.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>Instructions
+
+Introduction
+
+You are about to participate in an experiment of the University of Lausanne. During this experiment you have the opportunity to earn a sum of money that will be paid to you at the end of the experiment. The amount of money you earn may be more significant if
+
+• you read the instructions carefully.
+• you think carefully about the decisions you make.
+
+If you have any questions while reading the instructions or while the experiment is in progress, feel free to call us by raising your hand. By contrast, any communication between participants—except through the channels offered as part of the experiment—is prohibited. In the event of non-compliance with these instructions, we will be obliged to exclude you from the experience without any payment.
+
+In today's experiment, you will interact with other participants via your computer. The decisions you make will have an impact on your profit. Your decisions will also influence the profit of other participants, just as the decisions of other participants may influence your profit.
+
+Your profit is calculated in points. At the end of the experiment your points will be converted into Swiss Francs according to the following exchange rate:
+
+60 points = 1 Swiss Franc
+
+Regardless of your decisions in the experiment, you will also receive a fixed amount of CHF 10 for your participation.
+
+The experiment consists of several identical rounds. At the end of the session, your remuneration will be calculated as the sum of your income obtained in all these rounds.
+
+I. Summary of the Experiment
+
+There are 20 participants in this experiment. Each participant is randomly assigned to one of two roles: sender or reporter. There are 10 participants of each type.
+
+You see your role displayed on your screen. Please write down your role here: .......................
+
+The experiment will last for 25 rounds. At the beginning of every round, each sender is randomly assigned to a new reporter with whom the sender will interact in this round. This interaction follows the same rules in each round. However, since the sender will be assigned to a new reporter in each round, he/she will interact with different reporters throughout the experiment.
+
+The purpose of this first part of the instructions is to give you an overview of what will happen in the experiment. In the second part of these instructions, we will provide you with a much more detailed description of each step, including illustrations of how you will enter your decisions on the computer.
+
+Interaction between the sender and the reporter
+
+At the beginning of each round each sender receives a project. The sender's project can be of good quality, or of bad quality. The quality of the project is randomly determined and the sender cannot influence the quality.
+
+After having been informed of the quality of his/her project, the sender must submit his/her project for inspection to the reporter. When the sender submits the project, he/she must send a message to the reporter. In this message the sender indicates whether or not he/she will reduce the reporter's profit if the project is blocked. This message is final and the sender cannot change his/her opinion later.
+
+Subsequently, there are two possibilities: 1) Sometimes the reporter is asked to answer the question whether or not he/she wants to block the sender's project. 2) In other cases, the reporter is asked to answer &quot;yes&quot; to a question unrelated to the project. The sender never knows to which type of question the reporter has answered. The sender's project is always blocked if the reporter's answer is &quot;yes&quot; regardless of the question to which the reporter has answered. That is, if a sender's project has been blocked, the sender never knows for sure whether the project has been blocked because the reporter wanted to block the project or because the reporter answered a question unrelated to the project.
+
+If a project is implemented, the sender receives a bonus. This bonus does not dep
+... [truncated, total 22515 chars]</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>Yes</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+
+<h2>Reproduction packages</h2>
+<ul>
+<li>Text: <code>data/aejmic_16_4_11/reproduce/text/aejmic_16_4_11/</code></li>
+<li>Visual: <code>data/aejmic_16_4_11/reproduce/visual/aejmic_16_4_11/</code></li>
+</ul>
+</body></html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Committee Member - Chat Screen</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #aaa;
+    padding: 20px 24px 20px 24px;
+    background: #fff;
+    position: relative;
+  }
+
+  .timer-row {
+    text-align: right;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .info-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .info-left {
+    flex: 1;
+    padding-right: 20px;
+  }
+
+  .info-right {
+    flex: 1;
+    padding-left: 10px;
+  }
+
+  .label-small {
+    font-size: 12px;
+    color: #000;
+  }
+
+  .label-red {
+    color: red;
+    font-size: 12px;
+  }
+
+  .type-label {
+    font-size: 13px;
+    color: #000;
+  }
+
+  .type-value {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a5276;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .ball-label {
+    font-size: 13px;
+    color: #000;
+    margin-top: 12px;
+  }
+
+  .ball-value {
+    font-size: 22px;
+    font-weight: bold;
+    color: #c0392b;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .other-label {
+    font-size: 13px;
+    color: #000;
+  }
+
+  .other-value {
+    font-size: 22px;
+    font-weight: bold;
+    color: #c0392b;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .other-note {
+    font-size: 12px;
+    color: red;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  .highlight-box {
+    border: 1px solid #e74c3c;
+    padding: 2px 4px;
+    display: inline;
+    color: red;
+    font-size: 12px;
+  }
+
+  .chat-instruction {
+    background: #fff;
+    border: none;
+    margin-bottom: 8px;
+  }
+
+  .chat-instruction-en {
+    color: red;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+
+  .chat-instruction-de {
+    color: #555;
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .question-section {
+    margin-top: 14px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border: 1px solid #c0392b;
+    background: #fff8f8;
+  }
+
+  .question-text {
+    font-size: 12px;
+    color: #c0392b;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .placeholder {
+    font-style: italic;
+    color: #888;
+  }
+
+  .chat-area {
+    width: 100%;
+    border: 1px solid #aaa;
+    background: #fff;
+    min-height: 120px;
+    padding: 6px;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 4px;
+    resize: none;
+  }
+
+  .chat-message {
+    font-size: 12px;
+    color: #333;
+    padding: 2px 0;
+  }
+
+  .chat-input-row {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+  }
+
+  .chat-input {
+    flex: 1;
+    border: 1px solid #aaa;
+    padding: 4px 6px;
+    font-size: 12px;
+    height: 24px;
+  }
+
+  .button-row {
+    text-align: right;
+    margin-top: 16px;
+  }
+
+  .btn-weiter {
+    background-color: #5b8dd9;
+    color: white;
+    border: none;
+    padding: 5px 16px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .btn-weiter:hover {
+    background-color: #4a7bc8;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 14px 0;
+  }
+
+  .voter-id-note {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Timer -->
+  <div class="timer-row">
+    Verbleibende Zeit [sec]: &nbsp;<strong>72</strong>
+  </div>
+
+  <!-- Top info section -->
+  <div class="info-top">
+    <div class="info-left">
+      <div>
+        <span class="highlight-box">You are a voter of type L</span>
+      </div>
+      <div class="type-label" style="margin-top:4px;">Sie sind ein Wähler vom</div>
+      <span class="type-value">Typ L</span>
+
+      <div class="ball-label" style="margin-top:10px;">
+        <span class="label-red">The ball you received is red.</span>
+      </div>
+      <div class="ball-label">Die Kugel, die Sie erhalten haben ist</div>
+      <span class="ball-value">ROT</span>
+    </div>
+
+    <div class="info-right">
+      <div class="other-label">Die Kugel, die der andere Wähler in ihrer Gruppe angibt bekommen zu haben ist</div>
+      <span class="other-value">ROT</span>
+      <div class="other-note">The color of the ball of the other member of your group as indicated by him is red.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Chat instruction -->
+  <div class="chat-instruction">
+    <div class="chat-instruction-en">
+      You can now chat with the other voter in your group. You will have the ID voter 1 and the other voter the ID voter 2 for this chat. Every entry has to be confirmed by pressing the enter button.
+    </div>
+    <div class="chat-instruction-de">
+      Sie können nun mit dem anderen Wähler in ihrer Gruppe chatten. Im Chat bekommen Sie die ID "Wähler 1" und der andere Wähler die ID "Wähler 2". Jede Texteingabe muss mit der Enter-Taste bestätigt werden.
+    </div>
+  </div>
+
+  <!-- Question section -->
+  <div class="question-section">
+    <div class="question-text">
+      During the second deliberation stage (sigma-chat), you claimed to be high type: <span class="placeholder">no</span>, and claimed to be low type: <span class="placeholder">yes</span>. The other voter's type is <span class="placeholder">well-informed (type G)</span> and their signal is <span class="placeholder">BLUE</span>. What did you communicate about your type in the sigma-chat?
+    </div>
+  </div>
+
+  <!-- Chat display area -->
+  <div class="voter-id-note">Wähler 2: Hallo</div>
+  <textarea class="chat-area" readonly></textarea>
+
+  <!-- Chat input -->
+  <div class="chat-input-row">
+    <input type="text" class="chat-input" placeholder="" />
+  </div>
+
+  <!-- Submit button -->
+  <div class="button-row">
+    <button class="btn-weiter">Weiter</button>
+  </div>
+
+</div>
+</body>
+</html>

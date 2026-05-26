@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Observation: aejmic_14_4_17</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 1400px; margin: 2em auto; color: #222; }
+h1 { border-bottom: 2px solid #333; }
+h2 { margin-top: 2em; padding-top: 0.5em; border-top: 2px dashed #999; }
+h3 { color: #036; }
+h4 { color: #555; margin-top: 1em; margin-bottom: 0.3em; }
+pre { background: #f4f4f4; padding: 0.6em; border-radius: 4px;
+       white-space: pre-wrap; word-break: break-word; font-size: 0.82em;
+       max-height: 380px; overflow-y: auto; }
+img { max-width: 100%; max-height: 380px; border: 1px solid #888; margin: 0.4em 0; }
+.modes { display: flex; gap: 1em; align-items: flex-start; }
+.mode { flex: 1; min-width: 0; border: 1px solid #ccc; border-radius: 6px;
+         padding: 1em; background: #fafafa; }
+.mode-text { border-left: 4px solid #06c; }
+.mode-visual { border-left: 4px solid #c60; }
+.spec { background: #fff; padding: 0.5em 1em; border-radius: 4px;
+         margin-bottom: 0.8em; }
+.spec ul { margin: 0.3em 0; padding-left: 1.5em; }
+.summary { background: #ffd; padding: 1em; border-left: 4px solid #ec0;
+            margin: 1em 0; }
+.summary-table { border-collapse: collapse; }
+.summary-table th, .summary-table td { border: 1px solid #888; padding: 0.4em 0.8em; }
+.summary-table th { background: #eef; }
+.fidelity { background: #efe; padding: 0.6em 1em; border-left: 4px solid #4a4;
+             margin: 0.6em 0; }
+</style></head><body>
+
+<h1>Observation report: aejmic_14_4_17</h1>
+
+<div class="summary">
+<b>Model:</b> claude-sonnet-4-6<br>
+<b>Text-mode responses:</b> 0<br>
+<b>Visual-mode responses:</b> 718<br>
+<b>Questions:</b> rol
+</div>
+
+<h2 style="border-top:none;padding-top:0;">Aggregate results</h2>
+<p><em>(no aggregate available)</em></p>
+
+<div class="fidelity"><b>Fidelity:</b> F_individual = 0.4194, F_population = -0.3841 (matched n_subjects = 72)</div>
+<h2>Distributions (humans vs AI, binned)</h2>
+<div style="display:flex;gap:2em;flex-wrap:wrap;">
+</div>
+
+<h2>Question: <code>rol</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<em>(no text-mode data)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>GPA</code> = <pre>3.200000047683716</pre></li>
+<li><code>_subject_id</code> = <pre>304</pre></li>
+<li><code>age</code> = <pre>1.0</pre></li>
+<li><code>econ</code> = <pre>0.0</pre></li>
+<li><code>gametheory</code> = <pre>0.0</pre></li>
+<li><code>gender</code> = <pre>0.0</pre></li>
+<li><code>humanities</code> = <pre>0.0</pre></li>
+<li><code>soc_sci</code> = <pre>0.0</pre></li>
+<li><code>stem</code> = <pre>0.0</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>UC Berkeley student in a 10-round lab experiment assigning prizes via Random Serial Dictatorship, submitting rank-order lists with a 90-second deadline and cash payment. Age: 1. GPA: 3.20.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>GAME 3
+
+You will play this game for 10 rounds. In each round of this game, there are four prizes, labeled A, B, C, and D. Prizes will be worth between $0.00 and $1.25. For each prize, its value will be the same for all the players in your group.
+
+At the start of each round, you will learn the value of each prize. You will also learn your priority score, which is a random number between 1 and 10. Every whole number between 1 and 10 is equally likely to be chosen.
+
+The game proceeds as follows: We will ask you to list the prizes, in any order of your choice. All players will submit their lists privately and at the same time.
+
+After all the lists have been submitted, we will assign prizes using the following rule:
+1. The player with the highest priority score will be assigned the top prize on his list.
+2. The player with the second-highest priority score will be assigned the top prize on his list, among the prizes that remain.
+3. The player with the third-highest priority score will be assigned the top prize on his list, among the prizes that remain.
+4. The player with the lowest priority score will be assigned whatever prize remains.
+
+If two players have the same priority score, we will break the tie randomly.
+
+You will have 90 seconds to form your list. You do this by typing a number, from 1 to 4, next to each prize, and then clicking the button that says &quot;Confirm Choices&quot;. Each prize must be assigned a different number, from 1 (top) to 4 (bottom). Your choices will not count unless you click the button that says &quot;Confirm Choices&quot;.
+
+Your priority score is 5.
+Rank the prizes in any order from 1 to 4.</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>['Prize A', 'Prize C', 'Prize B', 'Prize D']</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+
+<h2>Reproduction packages</h2>
+<ul>
+<li>Text: <code>data/aejmic_14_4_17/reproduce/text/aejmic_14_4_17/</code></li>
+<li>Visual: <code>data/aejmic_14_4_17/reproduce/visual/aejmic_14_4_17/</code></li>
+</ul>
+</body></html>

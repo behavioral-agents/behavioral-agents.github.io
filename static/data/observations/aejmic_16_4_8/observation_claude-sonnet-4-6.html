@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Observation: aejmic_16_4_8</title>
+<style>
+body { font-family: -apple-system, sans-serif; max-width: 1400px; margin: 2em auto; color: #222; }
+h1 { border-bottom: 2px solid #333; }
+h2 { margin-top: 2em; padding-top: 0.5em; border-top: 2px dashed #999; }
+h3 { color: #036; }
+h4 { color: #555; margin-top: 1em; margin-bottom: 0.3em; }
+pre { background: #f4f4f4; padding: 0.6em; border-radius: 4px;
+       white-space: pre-wrap; word-break: break-word; font-size: 0.82em;
+       max-height: 380px; overflow-y: auto; }
+img { max-width: 100%; max-height: 380px; border: 1px solid #888; margin: 0.4em 0; }
+.modes { display: flex; gap: 1em; align-items: flex-start; }
+.mode { flex: 1; min-width: 0; border: 1px solid #ccc; border-radius: 6px;
+         padding: 1em; background: #fafafa; }
+.mode-text { border-left: 4px solid #06c; }
+.mode-visual { border-left: 4px solid #c60; }
+.spec { background: #fff; padding: 0.5em 1em; border-radius: 4px;
+         margin-bottom: 0.8em; }
+.spec ul { margin: 0.3em 0; padding-left: 1.5em; }
+.summary { background: #ffd; padding: 1em; border-left: 4px solid #ec0;
+            margin: 1em 0; }
+.summary-table { border-collapse: collapse; }
+.summary-table th, .summary-table td { border: 1px solid #888; padding: 0.4em 0.8em; }
+.summary-table th { background: #eef; }
+.fidelity { background: #efe; padding: 0.6em 1em; border-left: 4px solid #4a4;
+             margin: 0.6em 0; }
+</style></head><body>
+
+<h1>Observation report: aejmic_16_4_8</h1>
+
+<div class="summary">
+<b>Model:</b> claude-sonnet-4-6<br>
+<b>Text-mode responses:</b> 0<br>
+<b>Visual-mode responses:</b> 3536<br>
+<b>Questions:</b> perc_kept
+</div>
+
+<h2 style="border-top:none;padding-top:0;">Aggregate results</h2>
+<table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Mode</th>
+      <th>Condition</th>
+      <th>N</th>
+      <th>Mean</th>
+      <th>SD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Visual</td>
+      <td>advantaged</td>
+      <td>1748</td>
+      <td>72.5482</td>
+      <td>17.7437</td>
+    </tr>
+    <tr>
+      <td>Visual</td>
+      <td>disadvantaged</td>
+      <td>1788</td>
+      <td>28.9407</td>
+      <td>19.7030</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Comparison: original vs simulated</h2>
+<table class="summary-table"><tr><th>Condition</th><th>Original mean</th><th>Replicated mean</th><th>Δ</th></tr>
+<tr><td>advantaged</td><td>61.5054</td><td>68.5186</td><td>+7.0132</td></tr>
+<tr><td>disadvantaged</td><td>49.5523</td><td>32.3188</td><td>-17.2336</td></tr>
+</table>
+<div class="fidelity"><b>Fidelity:</b> F_individual = 0.2147, F_population = -0.1549 (matched n_subjects = 180)</div>
+<h3>Per-arm fidelity</h3><table class="summary-table"><tr><th>Condition</th><th>F_individual</th><th>F_population</th><th>n obs</th></tr>
+<tr><td>advantaged</td><td>+0.309</td><td>+0.250</td><td>1873</td></tr>
+<tr><td>disadvantaged</td><td>+0.110</td><td>-0.621</td><td>1714</td></tr>
+</table>
+
+
+<h2>Question: <code>perc_kept</code></h2>
+<div class="modes">
+<div class="mode mode-text">
+<h3>Text mode</h3>
+<em>(no text-mode data)</em>
+</div>
+<div class="mode mode-visual">
+<h3>Visual mode</h3>
+<div class="spec">
+<h4>Agent traits</h4>
+<ul>
+<li><code>_subject_id</code> = <pre>12</pre></li>
+<li><code>age</code> = <pre>20</pre></li>
+<li><code>country</code> = <pre>Poland</pre></li>
+<li><code>education</code> = <pre>3</pre></li>
+<li><code>gender</code> = <pre>1</pre></li>
+<li><code>income</code> = <pre>3</pre></li>
+<li><code>party</code> = <pre>3</pre></li>
+<li><code>redistribution</code> = <pre>3</pre></li>
+</ul>
+<h4>Persona</h4>
+<pre>An online participant recruited via Prolific.co who completed a real-effort task and was randomly assigned Advantaged or Disadvantaged status before making allocation decisions. Age: 20; Gender: 1; Country: Poland; Education: 3; Income: 3; Political party affiliation: 3; Redistribution preference: 3.</pre>
+<h4>Agent instruction (system prompt context)</h4>
+<pre>Welcome!
+
+This is a study conducted by researchers at the University of Amsterdam.
+
+[UNIVERSITEIT VAN AMSTERDAM]
+
+---
+
+All the tasks in this study are not mobile-compatible.
+
+You can only participate with a desk- or laptop, preferably with a mouse instead of a mousepad.
+
+---
+
+The Ethics Committee Economics and Business (EBEC) of the University of Amsterdam has approved our study (EC 20200214090248). You can contact our Ethics Committee writing to secbs-abs@uva.nl.
+
+To receive the approval we committed not to use misleading or untruthful instructions.
+
+[UNIVERSITEIT VAN AMSTERDAM]
+
+---
+
+On top of the base earnings, in this study you can earn a bonus.
+
+The amount of the bonus may depend on:
+• Your performance
+• Your decisions or the decisions of another participant
+• Luck
+
+---
+
+The Ethics Committee Economics and Business (EBEC) of the University of Amsterdam has approved our study (EC 20200214090248). You can contact our Ethics Committee writing to secbs-abs@uva.nl.
+
+To receive the approval we committed not to use misleading or untruthful instructions.
+
+[UNIVERSITEIT VAN AMSTERDAM]
+
+Please answer the questions on the next webpage.
+
+---
+
+Instructions for Session 1
+
+---
+
+In this session, you will do 8 tasks.
+
+In each task you will have to answer several questions.
+
+---
+
+Within each task, every correct answer gives the same monetary reward.
+
+However, different tasks give different monetary rewards per correct answer.
+
+---
+
+There are two possible reward levels, high and low.
+
+---
+
+We will split participants into two groups:
+
+50% in the High Reward Group     50% in the Low Reward Group
+
+---
+
+What is the difference?
+
+Participants in the High Reward Group will always receive the High Reward per correct answer.
+
+Participants in the Low Reward Group will always receive the Low Reward per correct answer.
+
+---
+
+Luck decides if you are in the High or Low Reward Group.
+
+The computer determines your group randomly. You have 50% chance to be in either group.
+
+---
+
+If the computer assigns you to the High Reward Group, then you will be in the High Reward Group for the whole study.
+
+Similarly, if the computer assigns you to the Low Reward Group, then you will be in the Low Reward Group for the whole study.
+
+You will know if you are in the High or Low Reward Group only at a later stage.
+
+---
+
+In each task, you are matched with a different participant.
+
+After each task, the reward that both you and the other participant earned flows into a common account.
+
+At a later stage, we will explain how the money in this account is paid out to the members of the pair.
+
+---
+
+Please answer the questions on the next webpage.
+
+---
+
+Welcome to Session 2 of this study.
+
+This session consists of three parts that will last for approximately 55 minutes.
+
+---
+
+In Session 1, you completed a series of tasks online and you earned a reward for each correct answer.
+
+[Moving Sliders Task] [Counting Zeros Task] [Quiz Questions Task] [Missing Tiles Task]
+
+---
+
+In every round, the earnings from both participants on one of the tasks are combined into a common account.
+
+Your earnings + The other's earnings = The Common Account
+
+---
+
+Your task in Part 1 is to divide these common accounts between yourself and the other participants.
+
+Your decision on one of the rounds might determine the bonus that you and the other participant receive at the end.
+
+The Common Account → Your final bonus
+The Common Account → The other's final bonus
+
+---
+
+Your final bonus is based on one randomly selected decision in Part 1 or Part 2.
+
+If your bonus comes from Part 1, one of the rounds will be randomly selected by the computer.
+
+You and the other participant will earn the bonus determined by your division of the common account in that round.
+
+---
+
+You will be paid the money you allocated for yourself, and the other participant will receive the money you allocated to them.
+
+Consider each decision carefully, as any of them could be selected for payment.</pre>
+</div>
+<h4>System prompt</h4><em>(none)</em>
+<h4>User prompt (text portion)</h4><em>(none)</em>
+<h4>Answer</h4><p><code>57.0</code></p>
+<h4>Comment</h4><em>(none)</em>
+</div>
+</div>
+
+<h2>Reproduction packages</h2>
+<ul>
+<li>Text: <code>data/aejmic_16_4_8/reproduce/text/aejmic_16_4_8/</code></li>
+<li>Visual: <code>data/aejmic_16_4_8/reproduce/visual/aejmic_16_4_8/</code></li>
+</ul>
+</body></html>

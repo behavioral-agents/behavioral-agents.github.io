@@ -34,6 +34,17 @@
   const modelLabel = (m) => MODEL_LABELS[m] || m;
   const modelColor = (m) => MODEL_COLORS[m] || "#64748b";
 
+  // Distinct hue per (model, modality) so we can overlay Text + Visual
+  // distributions in one plot without ambiguity. Claude Text=indigo,
+  // Claude Visual=violet. Other models keep their MODEL_COLORS entry
+  // regardless of modality.
+  function modelModalityColor(m, modality) {
+    if (m === "claude-sonnet-4-6") {
+      return modality === "visual" ? "#7c3aed" : "#6366f1";
+    }
+    return modelColor(m);
+  }
+
   const container = document.getElementById("paper-list-root");
   const countEl = document.getElementById("paper-count");
   const searchInput = document.getElementById("paper-search");
@@ -158,6 +169,27 @@
           const g = groups.find((x) => x.doi === doi);
           if (g) body.innerHTML = renderDetail(g);
           body.dataset.rendered = "1";
+
+          // Wire the column-header modality pickers via event delegation.
+          // There may now be multiple .modality-picker selects in a single
+          // card (one in each AI column header). When any of them changes,
+          // we re-render the entire detail grid — the new render naturally
+          // sets every picker's "selected" option to the new modality, so
+          // all pickers stay in sync.
+          const grid = body.querySelector(".detail-grid");
+          if (grid) {
+            const expId = grid.dataset.expId;
+            const exp = (g && g.experiments || []).find((e) => e.id === expId) || (g && g.experiments && g.experiments[0]);
+            grid.addEventListener("change", (ev) => {
+              const t = ev.target;
+              if (!t || !t.classList || !t.classList.contains("modality-picker")) return;
+              if (!exp) return;
+              const modality = t.value;
+              const modalities = (grid.dataset.modalities || "text").split(",").filter(Boolean);
+              grid.dataset.modality = modality;
+              grid.innerHTML = renderExperimentDetail(exp, modality, modalities);
+            });
+          }
         }
       });
     });
@@ -203,11 +235,18 @@
     const hasRepro = g.experiments.some((e) => e.has_reproduce_text || e.has_reproduce_visual);
     // baseId = shortest experiment ID in the group, matching old/app.js convention
     const baseId = g.experiments.reduce((a, b) => (a.id.length <= b.id.length ? a : b)).id;
+    // What modalities does this experiment have? Used to render the picker.
+    const modalities = [...new Set((exp.comparisons || []).map((c) => c.modality || "text"))];
+    const defaultModality = modalities.includes("text") ? "text" : (modalities[0] || "text");
+    // We stash the modality list on the grid so column-header pickers
+    // (rendered inside each block) can read it when re-rendering. The
+    // dropdown itself now lives inline at the AI column header in the
+    // comparison table + the conclusion tests table.
     return `
       ${g.paper_brief ? `<p class="paper-brief">${escapeHtml(g.paper_brief)}</p>` : ""}
       ${tabs}
-      <div class="detail-grid" data-exp-id="${exp.id}">
-        ${renderExperimentDetail(exp)}
+      <div class="detail-grid" data-exp-id="${exp.id}" data-modality="${defaultModality}" data-modalities="${escapeHtml(modalities.join(","))}">
+        ${renderExperimentDetail(exp, defaultModality, modalities)}
       </div>
       <div class="detail-actions">
         <a class="btn" href="https://doi.org/${encodeURIComponent(g.doi)}" target="_blank" rel="noopener">Original paper (DOI) &rarr;</a>
@@ -217,6 +256,43 @@
           ? `<a class="btn" href="reproduce.html?paper=${encodeURIComponent(baseId)}" target="_blank" rel="noopener">Reproduction package (simulated data) &rarr;</a>` : ""}
       </div>
     `;
+  }
+
+  // The picker lives INSIDE the AI column header of each AI-data table
+  // (comparison table + conclusion tests). Styled as a clearly-clickable
+  // pill: a Claude-purple-tinted background, soft 1px purple border, rounded
+  // corners, and an explicit chevron. Reads as "[ CLAUDE SONNET 4.6 (TEXT) ▾ ]"
+  // — a first-time visitor immediately sees it's a control, not static text.
+  //
+  // `data-col-picker` lets the change-event delegator find these and sync
+  // every picker in the card to a single modality value.
+  function renderColumnModalityPicker(model, modalities, current) {
+    if (modalities.length < 2) return escapeHtml(modelLabel(model));
+    const options = modalities.map((m) =>
+      `<option value="${m}" ${m === current ? "selected" : ""}>${modalityLabel(m)}</option>`
+    ).join("");
+    // `appearance:none` strips the native select chrome; the pill styling
+    // makes the control discoverable. Text-transform inherits so it matches
+    // the surrounding uppercase column-header treatment.
+    return `<span class="modality-picker-wrap" style="display:inline-flex;align-items:center;gap:6px;cursor:pointer;padding:3px 10px;background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.32);border-radius:14px;transition:background 0.15s, border-color 0.15s;"
+      onmouseover="this.style.background='rgba(124,58,237,0.16)';this.style.borderColor='rgba(124,58,237,0.55)'"
+      onmouseout="this.style.background='rgba(124,58,237,0.08)';this.style.borderColor='rgba(124,58,237,0.32)'">
+      <select class="modality-picker" data-col-picker="1" autocomplete="off"
+        style="appearance:none;-webkit-appearance:none;-moz-appearance:none;background:transparent;border:none;padding:0;margin:0;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;cursor:pointer;outline:none;">${options}</select>
+      <span aria-hidden="true" style="font-size:0.78em;color:#7c3aed;line-height:1;font-weight:600;">▾</span>
+    </span>`;
+  }
+
+  // Used by the column-header picker's <option> labels.
+  function modalityLabel(m) {
+    return m === "visual" ? "Claude Sonnet 4.6 (Visual)" : "Claude Sonnet 4.6 (Text)";
+  }
+  // For model-specific column headers WITHOUT a picker (single modality, or a
+  // non-Claude model). Appends the modality to the Claude label.
+  function modelHeaderLabel(model, modality) {
+    const base = modelLabel(model);
+    if (model !== "claude-sonnet-4-6") return base;
+    return modality === "visual" ? `${base} (Visual)` : `${base} (Text)`;
   }
 
   function renderExperimentTabs(g) {
@@ -230,20 +306,52 @@
     `;
   }
 
-  function renderExperimentDetail(exp) {
+  function renderExperimentDetail(exp, modality = "text", modalities = null) {
+    if (!modalities) {
+      modalities = [...new Set((exp.comparisons || []).map((c) => c.modality || "text"))];
+    }
     return [
       renderDesignBlock(exp),
-      renderCombinedComparisonBlock(exp),
-      renderFidelityBlock(exp),
-      renderDistributionBlock(exp),
-      renderConclusionTestsBlock(exp),
+      renderCombinedComparisonBlock(exp, modality, modalities),
+      renderFidelityBlock(exp, modality),
+      renderDistributionBlock(exp, modality),
+      renderConclusionTestsBlock(exp, modality, modalities),
+      renderModalityCaveatsBlock(exp, modality),
       renderNotesBlock(exp),
     ].join("");
   }
 
+  // For visual mode, surface the per-paper coverage caveats Prashant flagged
+  // in the bundle README (partial subject coverage, condition exclusions, etc).
+  function renderModalityCaveatsBlock(exp, modality) {
+    if (modality !== "visual") return "";
+    const visual = (exp.comparisons || []).find((c) => c.modality === "visual");
+    if (!visual || !visual.coverage) return "";
+    const cov = visual.coverage;
+    const parts = [];
+    if (cov.subjects) {
+      const [a, b, label] = cov.subjects;
+      parts.push(`<li><b>Subject coverage:</b> ${a}/${b} — ${escapeHtml(label)}</li>`);
+    }
+    if (cov.rows) {
+      const [a, b, label] = cov.rows;
+      parts.push(`<li><b>Row coverage:</b> ${a.toLocaleString()}/${b.toLocaleString()} — ${escapeHtml(label)}</li>`);
+    }
+    if (cov.note) {
+      parts.push(`<li><b>Note:</b> ${escapeHtml(cov.note)}</li>`);
+    }
+    if (!parts.length) return "";
+    return `
+      <div class="detail-block">
+        <h4>Visual-mode coverage caveats</h4>
+        <ul style="font-size:0.88rem; color:var(--muted-2); line-height:1.55;">${parts.join("")}</ul>
+      </div>
+    `;
+  }
+
   // --- Per-condition fidelity table ------------------------------------
-  function renderFidelityBlock(exp) {
-    const comps = (exp.comparisons || []).filter((c) => !c.modality || c.modality === "text");
+  function renderFidelityBlock(exp, modality = "text") {
+    const comps = (exp.comparisons || []).filter((c) => (c.modality || "text") === modality);
     if (!comps.length) return "";
     const rows = [];
     for (const c of comps) {
@@ -288,7 +396,7 @@
       const tone = r.isAvg ? "background:var(--surface-2);font-weight:500" : "";
       return `
         <tr style="${tone}">
-          ${showModelCol ? `<td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${modelColor(r.model)};margin-right:6px"></span>${escapeHtml(modelLabel(r.model))}</td>` : ""}
+          ${showModelCol ? `<td><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${modelColor(r.model)};margin-right:6px"></span>${escapeHtml(modelHeaderLabel(r.model, modality))}</td>` : ""}
           <td>${escapeHtml(titleCase(r.condition))}</td>
           <td class="num" style="${cellColor(r.f_ind)}">${fmt(r.f_ind)}</td>
           <td class="num" style="${cellColor(r.f_pop)}">${fmt(r.f_pop)}</td>
@@ -364,9 +472,10 @@
   }
 
   // --- Combined comparison: Human + each AI model, pooled conditions ---
-  function renderCombinedComparisonBlock(exp) {
-    const comps = (exp.comparisons || []).filter((c) => !c.modality || c.modality === "text");
+  function renderCombinedComparisonBlock(exp, modality = "text", modalities = null) {
+    const comps = (exp.comparisons || []).filter((c) => (c.modality || "text") === modality);
     if (!comps.length) return "";
+    if (!modalities) modalities = [...new Set((exp.comparisons || []).map((c) => c.modality || "text"))];
 
     const ds = exp.design_summary || {};
     const rawConds = ds.conditions || [];
@@ -425,14 +534,20 @@
       <tr>
         <th>Condition</th>
         <th class="num">Human</th>
-        ${comps.map((c) => `
+        ${comps.map((c) => {
+          const isClaude = c.model === "claude-sonnet-4-6";
+          const headerLabel = isClaude && modalities.length >= 2
+            ? renderColumnModalityPicker(c.model, modalities, modality)
+            : escapeHtml(modelHeaderLabel(c.model, modality));
+          return `
           <th class="num" style="white-space:nowrap">
             <span style="display:inline-flex;align-items:center;gap:6px">
               <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${modelColor(c.model)}"></span>
-              ${escapeHtml(modelLabel(c.model))}
+              ${headerLabel}
             </span>
           </th>
-        `).join("")}
+        `;
+        }).join("")}
       </tr>
     `;
 
@@ -518,9 +633,18 @@
   }
 
   // --- Distributions ---------------------------------------------------
-  function renderDistributionBlock(exp) {
-    const comps = (exp.comparisons || []).filter((c) => c.distributions && Object.keys(c.distributions).length > 0 && (!c.modality || c.modality === "text"));
+  // Per Timo's spec, the distribution panel shows ALL modalities overlaid
+  // in one plot (humans + Claude Sonnet 4.6 (Text) + Claude Sonnet 4.6
+  // (Visual)). The dropdown does NOT filter this block — it only affects
+  // the per-condition comparison table, fidelity table, and paper-tests
+  // table. That keeps the visual + text distributions directly comparable
+  // at a glance.
+  function renderDistributionBlock(exp, modality = "text") {
+    const comps = (exp.comparisons || []).filter(
+      (c) => c.distributions && Object.keys(c.distributions).length > 0,
+    );
     if (!comps.length) return "";
+
     const condSet = new Map();
     for (const c of comps) for (const cn of Object.keys(c.distributions)) condSet.set(cn, true);
     const conds = [...condSet.keys()];
@@ -529,7 +653,11 @@
     const legend = `
       <div class="chart-legend">
         <span><span class="swatch" style="background:#dc2626"></span>Humans</span>
-        ${comps.map((c) => `<span><span class="swatch" style="background:${modelColor(c.model)}"></span>${escapeHtml(modelLabel(c.model))}</span>`).join("")}
+        ${comps.map((c) => {
+          const mod = c.modality || "text";
+          const col = modelModalityColor(c.model, mod);
+          return `<span><span class="swatch" style="background:${col}"></span>${escapeHtml(modelHeaderLabel(c.model, mod))}</span>`;
+        }).join("")}
       </div>
     `;
     const plots = conds.map((cond) => distPlot(cond, comps, xLabel)).filter(Boolean).join("");
@@ -548,7 +676,13 @@
     const pad = { t: 14, r: 14, b: 34, l: 44 };
     const plotW = W - pad.l - pad.r;
     const plotH = H - pad.t - pad.b;
-    const dists = comps.filter((c) => c.distributions?.[cond]).map((c) => ({ model: c.model, dist: c.distributions[cond] }));
+    const dists = comps
+      .filter((c) => c.distributions?.[cond])
+      .map((c) => ({
+        model: c.model,
+        modality: c.modality || "text",
+        dist: c.distributions[cond],
+      }));
     if (!dists.length) return "";
     const ref = dists[0].dist;
     const centers = ref.bin_centers;
@@ -585,8 +719,8 @@
       const pts = centers.map((c, i) => `${xs(c).toFixed(1)},${ys(origDensity[i]).toFixed(1)}`).join(" ");
       origLayer = `<polyline points="${pts}" fill="none" stroke="#dc2626" stroke-width="2.2"/>`;
     }
-    const modelLayers = dists.map(({ model, dist }) => {
-      const col = modelColor(model);
+    const modelLayers = dists.map(({ model, modality, dist }) => {
+      const col = modelModalityColor(model, modality);
       const dd = dist.replicated_density || toDensity(dist.replicated_counts, dist.bin_width || bw);
       const pts = centers.map((c, i) => `${xs(c).toFixed(1)},${ys(dd[i]).toFixed(1)}`).join(" ");
       const baseY = (pad.t + plotH).toFixed(1);
@@ -594,8 +728,8 @@
       const lastX = xs(centers[centers.length - 1]).toFixed(1);
       const fill = `${firstX},${baseY} ${pts} ${lastX},${baseY}`;
       return `
-        <polygon points="${fill}" fill="${col}" opacity="0.2"/>
-        <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="2" opacity="0.85"/>
+        <polygon points="${fill}" fill="${col}" opacity="0.18"/>
+        <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="2" opacity="0.9"/>
       `;
     }).join("");
     const ticks = niceTicks(xMin, xMax, centers);
@@ -649,9 +783,10 @@
   }
 
   // --- Conclusion tests: rows=tests, columns=models --------------------
-  function renderConclusionTestsBlock(exp) {
-    const comps = (exp.comparisons || []).filter((c) => c.paper_tests && c.paper_tests.length && (!c.modality || c.modality === "text"));
+  function renderConclusionTestsBlock(exp, modality = "text", modalities = null) {
+    const comps = (exp.comparisons || []).filter((c) => c.paper_tests && c.paper_tests.length && (c.modality || "text") === modality);
     if (!comps.length) return "";
+    if (!modalities) modalities = [...new Set((exp.comparisons || []).map((c) => c.modality || "text"))];
 
     // Build a map: test_index -> { description, test_name, originalEffect, perModel: {model -> {effect, conclusion}} }
     const tests = new Map();
@@ -683,14 +818,20 @@
       <tr>
         <th style="width:42%">Test</th>
         <th class="num">Human<br>effect</th>
-        ${modelList.map((m) => `
+        ${modelList.map((m) => {
+          const isClaude = m === "claude-sonnet-4-6";
+          const headerLabel = isClaude && modalities.length >= 2
+            ? renderColumnModalityPicker(m, modalities, modality)
+            : escapeHtml(modelHeaderLabel(m, modality));
+          return `
           <th class="num" style="white-space:nowrap">
             <span style="display:inline-flex;align-items:center;gap:6px">
               <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${modelColor(m)}"></span>
-              ${escapeHtml(modelLabel(m))}
+              ${headerLabel}
             </span>
           </th>
-        `).join("")}
+        `;
+        }).join("")}
       </tr>
     `;
 

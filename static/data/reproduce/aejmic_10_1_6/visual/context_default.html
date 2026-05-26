@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluation Screen - Transparency Treatment</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    background: #fff;
+    border: 2px solid #c8a800;
+    max-width: 700px;
+    width: 100%;
+    padding: 20px 24px 16px 24px;
+    box-sizing: border-box;
+  }
+  .task-counter {
+    text-align: right;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 6px;
+  }
+  .section-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .german-text {
+    text-align: center;
+    font-size: 13px;
+  }
+  .english-box {
+    border: 1px solid red;
+    color: red;
+    font-size: 12px;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+  .red-bold {
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .red-text {
+    color: red;
+    font-weight: bold;
+  }
+  hr.divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+  }
+  .votes-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 6px;
+  }
+  .vote-col {
+    text-align: center;
+    width: 45%;
+  }
+  .vote-col .label {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .vote-col .vote-value {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .vote-col .english-box {
+    display: inline-block;
+    margin-top: 2px;
+  }
+  .group-decision-row {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  .communication-section {
+    margin-bottom: 8px;
+  }
+  .comm-header {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .comm-header .german {
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .comm-header .english {
+    border: 1px solid red;
+    color: red;
+    font-size: 12px;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  .comm-cols {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .comm-col {
+    width: 48%;
+  }
+  .comm-col .indicated-label {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .comm-col .indicated-label .english-inline {
+    border: 1px solid red;
+    color: red;
+    font-size: 11px;
+    padding: 1px 4px;
+    display: inline-block;
+  }
+  .chat-box {
+    border: 1px solid #999;
+    min-height: 50px;
+    padding: 4px;
+    font-size: 12px;
+    background: #fafafa;
+  }
+  .evaluation-section {
+    margin-top: 10px;
+  }
+  .eval-header {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .eval-header .german {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .eval-header .english {
+    border: 1px solid red;
+    color: red;
+    font-size: 12px;
+    padding: 1px 5px;
+    display: inline-block;
+  }
+  .eval-cols {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .eval-col {
+    width: 48%;
+  }
+  .eval-col .desc {
+    font-size: 11px;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .eval-col .english-note {
+    border: 1px solid red;
+    color: red;
+    font-size: 11px;
+    padding: 1px 4px;
+    display: block;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+  .eval-col input[type="text"] {
+    width: 60px;
+    border: 1px solid #999;
+    padding: 2px 4px;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .next-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 12px;
+    background: #c8a800;
+    color: white;
+    border: none;
+    padding: 5px 16px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .summary-section {
+    background: #fffbe6;
+    border: 1px solid #c8a800;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .summary-section .summary-title {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #333;
+  }
+  .summary-section .summary-item {
+    margin-bottom: 2px;
+  }
+  .summary-section .summary-item span.val {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="task-counter">Trial 2 of 2</div>
+
+  <!-- Summary / Context Section -->
+  <div class="summary-section">
+    <div class="summary-title">Context Summary</div>
+    <div class="summary-item">You are participating in a committee voting experiment. The true state of the jar this round is: <span class="val">BLUE</span>.</div>
+    <div class="summary-item">Your voter type is: <span class="val">less-informed (type I)</span>. Your private signal (ball color drawn) is: <span class="val">BLUE</span>.</div>
+    <div class="summary-item">The other voter's type is: <span class="val">well-informed (type G)</span> and their signal is: <span class="val">BLUE</span>.</div>
+    <div class="summary-item">In the first deliberation stage (s-chat), you communicated: <span class="val">BLUE</span>, and the other voter communicated: <span class="val">BLUE</span>.</div>
+    <div class="summary-item">In the second deliberation stage (sigma-chat), you claimed to be high type: <span class="val">no</span>, and claimed to be low type: <span class="val">yes</span>.</div>
+    <div class="summary-item">The transparency condition is: <span class="val">transparency</span>.</div>
+    <div class="summary-item" style="margin-top:6px; font-style:italic;">Please briefly summarize the information you have before casting your vote.</div>
+  </div>
+
+  <!-- Jar Color Row -->
+  <div class="section-row">
+    <div class="german-text">Die Dose hat die Farbe &nbsp;<span class="red-bold">ROT</span></div>
+    <div class="english-box">The color of the jar is red.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Voters voted row -->
+  <div class="section-row">
+    <div class="german-text">Die Wähler haben wie folgt abgestimmt</div>
+    <div class="english-box">The voters have voted as follows</div>
+  </div>
+
+  <!-- Individual votes -->
+  <div class="votes-section">
+    <div class="vote-col">
+      <div class="label">Wähler 1 hat für folgende Farbe abgestimmt:</div>
+      <div class="vote-value">ROT</div>
+      <div><span class="english-box">Voter 1 voted for RED.</span></div>
+    </div>
+    <div class="vote-col">
+      <div class="label">Wähler 2 hat für folgende Farbe abgestimmt:</div>
+      <div class="vote-value">ROT</div>
+      <div><span class="english-box">Voter 2 voted for RED.</span></div>
+    </div>
+  </div>
+
+  <!-- Group decision -->
+  <div class="group-decision-row">
+    Die Gruppenentscheidung ist somit: &nbsp;<span class="red-bold">ROT</span>
+    &nbsp;<span class="english-box">The resulting group decision is: RED.</span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Communication section -->
+  <div class="communication-section">
+    <div class="comm-header">
+      <span class="german">Hier sehen Sie die Kommunikation zwischen den Wählern noch einmal</span><br>
+      <span class="english">Here you can once again review the communication between the voters.</span>
+    </div>
+
+    <div class="comm-cols">
+      <div class="comm-col">
+        <div class="indicated-label">
+          Die Kugel, die Wähler 1 angab, ist: &nbsp;<span class="red-text">ROT</span><br>
+          <span class="english-inline">Voter 1 indicated a red ball.</span>
+        </div>
+        <div class="chat-box">Wähler 2: Hallo</div>
+      </div>
+      <div class="comm-col">
+        <div class="indicated-label">
+          Die Kugel, die Wähler 2 angab, ist: &nbsp;<span class="red-text">ROT</span><br>
+          <span class="english-inline">Voter 2 indicated a red ball.</span>
+        </div>
+        <div class="chat-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Evaluation section -->
+  <div class="evaluation-section">
+    <div class="eval-header">
+      <span class="german">Geben Sie nun Ihre Einschätzung zu Wähler 1 und Wähler 2 an.</span><br>
+      <span class="english">Now, please, indicate your evaluation of voter 1 and voter 2.</span>
+    </div>
+
+    <div class="eval-cols">
+      <div class="eval-col">
+        <div class="desc">
+          Geben Sie die Wahrscheinlichkeit in Prozent an, mit der Sie glauben, dass <strong>Wähler 1</strong> ein Typ G ist (eine Zahl zwischen 0 und 100):
+          <span class="english-note">Enter the probability in per cent, with which you believe that voter 1 is a high type.</span>
+        </div>
+        <input type="text" placeholder="">
+      </div>
+      <div class="eval-col">
+        <div class="desc">
+          Geben Sie die Wahrscheinlichkeit in Prozent an, mit der Sie glauben, dass <strong>Wähler 2</strong> ein Typ G ist (eine Zahl zwischen 0 und 100):
+          <span class="english-note">Enter the probability in per cent, with which you believe that voter 2 is a high type.</span>
+        </div>
+        <input type="text" placeholder="">
+      </div>
+    </div>
+  </div>
+
+  <button class="next-btn">Weiter</button>
+</div>
+</body>
+</html>
